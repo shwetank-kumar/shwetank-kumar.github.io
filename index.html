@@ -10,22 +10,56 @@
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0; /* Optional: Set background color */
+    align-items: flex-start; /* Align items at the start (top) */
+    min-height: 100vh;
+    background-color: #fff; /* Set background color to white */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px; /* Set default font size to 16px */
   }
 
   .content {
-    text-align: center;
     padding: 20px;
-    background-color: #fff; /* Optional: Set content background color */
+    background-color: #fff; /* Set content background color */
+    max-width: 800px; /* Limit the width of the content */
+    width: 100%; /* Ensure content takes full width */
+    margin-top: 20px; /* Add margin to top */
   }
+
+  h1 {
+    margin-left: 0px; /* Adjust margin as needed */
+    margin-top: 0; /* Remove default margin from top */
+    font-size: 24px; /* Set default font size to 18px */
+  }
+  ul {
+    padding-left: 40px; /* Add left padding to indent list items */
+    margin-top: 10px; /* Add some space above the list */
+  }
+
+  li {
+    margin-bottom: 5px; /* Add space between list items */
+  }
+
 </style>
 </head>
 <body>
   <div class="content">
-    <h1>This is centered text</h1>
-    <p>You can add more content here.</p>
+    <h1>Shwetank Kumar</h1>
+    <p>I am an scientist, engineering exec, and investor.</p>
+    <p>Some things about me:</p>
+    <ul>
+        <li>Born and brought up in New Delhi, India. I still consider myself a Delhi native</li>
+        <li>Went to school at IIT Delhi for EE (B.Tech.), Caltech for Applied Physics (Ph.D.)</li>
+        <li>Live in SF and like to spend my time here and in NCR India</li>
+    </ul>
+    <p>Over the years I have done some interesting technical work. Reverse chronologically:</p>
+    <ul>
+        <li>Created an <a href="https://www.sec.gov/Archives/edgar/data/1514587/000119312522005696/d145731ds1.htm">ML based risk framework</a> i.e. risk score, to improve cost of risk car sharing marketplace (Turo)</li>
+        <li>Conceived and created <a href="https://orbitalinsight.com/geospatial-technology">geospatial analytics platform</a> (Orbital Insight)</li>
+        <li>Founded and was technical editor for the first <a href="https://universalstylus.org/">universal stylus initiative specification</a> (Intel)</li>    
+        <li>Architected <a href="https://www.synaptics.com/products/touchpad-family/forcepad-product">forcepad</a> and palm rejection (Synaptics)</li>
+        <li>One of the 2 scientists to build out the quantum computing experiments group. <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp">List</a> of publications (IBM)</li>
+    </ul>
   </div>
 </body>
 </html>
+
