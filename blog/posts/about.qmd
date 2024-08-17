@@ -1,0 +1,29 @@
+---
+title: "About"
+author: "Shwetank Kumar"
+date: "2024-08-17"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+## Introduction
+
+Welcome to my first blog post! In this post, we'll explore...
+
+## Main Content
+
+Here's where you write your main content. You can use Markdown syntax for formatting.
+
+### Subheading
+
+- You can create lists
+- Add code blocks
+- Insert images
+
+```python
+print("Hello, Quarto blog!")
+```
+
+## Conclusion
+
+Thanks for reading my about post!
