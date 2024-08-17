@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+author: "Shwetank Kumar"
 date: "2024-08-14"
 categories: [news]
 ---

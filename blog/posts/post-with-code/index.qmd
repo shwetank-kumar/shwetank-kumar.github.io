@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Shwetank Kumar"
 date: "2024-08-17"
 categories: [news, code, analysis]
 image: "image.jpg"
