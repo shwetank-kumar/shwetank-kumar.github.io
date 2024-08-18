@@ -1,7 +1,12 @@
 ---
 title: "Post With Code"
+<<<<<<< HEAD:posts/post-with-code/index.qmd
 author: "Harlow Malloc"
 date: "2024-08-18"
+=======
+author: "Shwetank Kumar"
+date: "2024-08-17"
+>>>>>>> 6557728 (initial commit -m):blog/posts/post-with-code/index.qmd
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
