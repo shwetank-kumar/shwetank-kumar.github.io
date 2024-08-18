@@ -118,7 +118,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -146,9 +152,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- ## About Me -->
+<div class="navbar">
+  <div class="nav-left">
+    <a href="#about">About</a>
+    <a href="./blog">Blog</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://twitter.com/shwetankumar" target="_blank">Twitter</a>
+    <a href="https://github.com/shwetank-kumar" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/shwetankkumar" target="_blank">LinkedIn</a>
+  </div>
+</div>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
 <p>I’m a physicist, engineering exec, investor.</p>
-<p>I am an scientist, engineering exec, and investor.</p>
 <p>Some things about me:</p>
 <ul>
 <li>Born and brought up in New Delhi, India. I still consider myself a Delhi native</li>
@@ -163,33 +180,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Architected <a href="https://www.synaptics.com/products/touchpad-family/forcepad-product">forcepad</a> and palm rejection (Synaptics)</li>
 <li>One of the 2 scientists to build out the quantum computing experiments group. <a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C5&amp;q=shwetank+kumar+quantum+computing&amp;btnG=&amp;oq=shwetank+kumar+quantum+comp">List</a> of publications (IBM)</li>
 </ul>
-<!-- ## Investing
-
-- My current areas of interest are AI, infrastructure, open source, and (some) frontier tech
-- I lead seed and series A rounds, and some growth, investing between $1M and $100M
-- Frequently I [invest with Daniel Gross](https://nfdg.com/)
-- You can email me: nat@nfdg.com
-
-I've invested in more than 100 startups, including [Eleven Labs](https://elevenlabs.io), [Keen Technologies](https://twitter.com/ID_AA_Carmack/status/1560728042959507457), 
-[Character.ai](https://character.ai/), [Terraform Industries](https://terraformindustries.com/), [Retool](https://retool.com/),
-ggml.ai, Scale, Vercel, WandB, Perplexity, AssemblyAI, Magic.dev, Apollo, Sentry, Klarity, Pilot, Streamlit... and many others. -->
-<!-- ```{css, echo=false}
-/* styles.css */
-body {
-  line-height: 1.4;
-  font-size: 16px;
-  padding: 0 10px;
-  margin: 50px auto;
-  max-width: 650px;
-}
-
-#quarto-content {
-  max-width: 42em;
-  margin: 15px auto;
-}
-``` -->
+<p>```{css, echo=false} /* styles.css */ body { line-height: 1.4; font-size: 16px; padding: 0 10px; margin: 50px auto; max-width: 650px; }</p>
+<p>#quarto-content { max-width: 42em; margin: 15px auto; }</p>
+<p>.navbar { display: flex; justify-content: space-between; padding: 10px 0; }</p>
+<p>.nav-left, .nav-right { display: flex; gap: 20px; }</p>
+<p>.navbar a { text-decoration: none; color: #333; }</p>
+<p>.navbar a:hover { text-decoration: underline; } ```</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
