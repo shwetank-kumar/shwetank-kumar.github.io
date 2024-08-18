@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/about.html",
+    "href": "posts/about.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to my first blog post! In this post, we’ll explore…"
+  },
+  {
+    "objectID": "posts/about.html#introduction",
+    "href": "posts/about.html#introduction",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to my first blog post! In this post, we’ll explore…"
+  },
+  {
+    "objectID": "posts/about.html#main-content",
+    "href": "posts/about.html#main-content",
+    "title": "About",
+    "section": "Main Content",
+    "text": "Main Content\nHere’s where you write your main content. You can use Markdown syntax for formatting.\n\nSubheading\n\nYou can create lists\nAdd code blocks\nInsert images\n\nprint(\"Hello, Quarto blog!\")"
+  },
+  {
+    "objectID": "posts/about.html#conclusion",
+    "href": "posts/about.html#conclusion",
+    "title": "About",
+    "section": "Conclusion",
+    "text": "Conclusion\nThanks for reading my about post!"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "shwetank-kumar.github.io",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 17, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 17, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
+  }
+]
