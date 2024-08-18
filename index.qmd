@@ -5,13 +5,13 @@ format:
     css: styles.css
     toc: true
     toc-location: left
-description: "A few things about me"
+# description: "A few things about me"
 twitter-card:
   card-style: summary
   creator: "@shwetankumar"
 ---
 
-## About Me
+<!-- ## About Me -->
 
 I'm an scientist, engineering exec, investor.
 
