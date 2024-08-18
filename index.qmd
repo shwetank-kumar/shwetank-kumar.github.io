@@ -18,8 +18,8 @@ twitter-card:
   </div>
   <div class="nav-right">
     <a href="https://twitter.com/shwetankumar" target="_blank">Twitter</a>
-    <a href="https://github.com/shwetank-kumar" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/shwetankkumar" target="_blank">LinkedIn</a>
+    <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
   </div>
 </div>
 ```
@@ -45,22 +45,25 @@ Over the years I have done some interesting technical work. Reverse chronologica
 ```{css, echo=false}
 /* styles.css */
 body {
-  line-height: 1.4;
+  line-height: 1.6;
   font-size: 16px;
-  padding: 0 10px;
-  margin: 50px auto;
-  max-width: 650px;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 800px;  /* Increased from 650px */
+  color: #1a1a1a;  /* Darker text color */
 }
 
 #quarto-content {
-  max-width: 42em;
-  margin: 15px auto;
+  max-width: 100%;  /* Allow content to use full width of body */
+  margin: 20px auto;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
 }
 
 .nav-left, .nav-right {
@@ -70,10 +73,29 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: #1a1a1a;  /* Darker link color */
+  font-weight: 500;
 }
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0a0a0a;  /* Even darker color for headings */
+}
+
+a {
+  color: #0066cc;  /* Darker blue for links */
+}
+
+/* Ensure table of contents doesn't overlap with content */
+.sidebar-menu-container {
+  max-width: 300px;
+}
+
+/* Adjust main content area when TOC is present */
+.quarto-layout-panel > .quarto-layout-row > .quarto-layout-cell:nth-child(2) {
+  padding-left: 2em;
 }
 ```
