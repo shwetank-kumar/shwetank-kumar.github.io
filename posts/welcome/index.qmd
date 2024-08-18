@@ -1,12 +1,7 @@
 ---
 title: "Welcome To My Blog"
-<<<<<<< HEAD:posts/welcome/index.qmd
-author: "Tristan O'Malley"
-date: "2024-08-15"
-=======
 author: "Shwetank Kumar"
 date: "2024-08-14"
->>>>>>> 6557728 (initial commit -m):blog/posts/welcome/index.qmd
 categories: [news]
 ---
 
