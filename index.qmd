@@ -5,44 +5,44 @@ format:
     css: styles.css
     toc: true
     toc-location: left
-# description: "A few things about me"
 twitter-card:
   card-style: summary
   creator: "@shwetankumar"
 ---
 
-<!-- ## About Me -->
+```{=html}
+<div class="navbar">
+  <div class="nav-left">
+    <a href="#about">About</a>
+    <a href="/blog">Blog</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://twitter.com/shwetankumar" target="_blank">Twitter</a>
+    <a href="https://github.com/shwetank-kumar" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/shwetankkumar" target="_blank">LinkedIn</a>
+  </div>
+</div>
+```
+
+## About {#about}
 
 I'm a physicist, engineering exec, investor.
 
-I am an scientist, engineering exec, and investor.
-
 Some things about me:
 
-  - Born and brought up in New Delhi, India. I still consider myself a Delhi native
-  - Went to school at IIT Delhi for EE (B.Tech.), Caltech for Applied Physics (Ph.D.)
-  - Live in SF and like to spend my time here and in NCR India
+- Born and brought up in New Delhi, India. I still consider myself a Delhi native
+- Went to school at IIT Delhi for EE (B.Tech.), Caltech for Applied Physics (Ph.D.)
+- Live in SF and like to spend my time here and in NCR India
 
-  Over the years I have done some interesting technical work. Reverse chronologically:
+Over the years I have done some interesting technical work. Reverse chronologically:
 
-  - Created an [ML based risk framework](https://www.sec.gov/Archives/edgar/data/1514587/000119312522005696/d145731ds1.htm) i.e. risk score, to improve cost of risk car sharing marketplace (Turo)
-  - Conceived and created [geospatial analytics platform](https://orbitalinsight.com/geospatial-technology) (Orbital Insight)
-  - Founded and was technical editor for the first [universal stylus initiative specification](https://universalstylus.org/) (Intel)
-  - Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
-  - One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM)
+- Created an [ML based risk framework](https://www.sec.gov/Archives/edgar/data/1514587/000119312522005696/d145731ds1.htm) i.e. risk score, to improve cost of risk car sharing marketplace (Turo)
+- Conceived and created [geospatial analytics platform](https://orbitalinsight.com/geospatial-technology) (Orbital Insight)
+- Founded and was technical editor for the first [universal stylus initiative specification](https://universalstylus.org/) (Intel)
+- Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
+- One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM)
 
-<!-- ## Investing
-
-- My current areas of interest are AI, infrastructure, open source, and (some) frontier tech
-- I lead seed and series A rounds, and some growth, investing between $1M and $100M
-- Frequently I [invest with Daniel Gross](https://nfdg.com/)
-- You can email me: nat@nfdg.com
-
-I've invested in more than 100 startups, including [Eleven Labs](https://elevenlabs.io), [Keen Technologies](https://twitter.com/ID_AA_Carmack/status/1560728042959507457), 
-[Character.ai](https://character.ai/), [Terraform Industries](https://terraformindustries.com/), [Retool](https://retool.com/),
-ggml.ai, Scale, Vercel, WandB, Perplexity, AssemblyAI, Magic.dev, Apollo, Sentry, Klarity, Pilot, Streamlit... and many others. -->
-
-<!-- ```{css, echo=false}
+```{css, echo=false}
 /* styles.css */
 body {
   line-height: 1.4;
@@ -56,4 +56,24 @@ body {
   max-width: 42em;
   margin: 15px auto;
 }
-``` -->
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+```
