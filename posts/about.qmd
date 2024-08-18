@@ -1,9 +1,9 @@
 ---
-title: "About"
-author: "Shwetank Kumar"
-date: "2024-08-17"
-categories: [news, code, analysis]
-image: "image.jpg"
+title: "Shwetank Kumar"
+# author: "Shwetank Kumar"
+# date: "2024-08-17"
+# categories: [news, code, analysis]
+# image: "image.jpg"
 ---
 
 ## Introduction
