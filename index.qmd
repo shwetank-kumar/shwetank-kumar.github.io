@@ -42,7 +42,7 @@ I've invested in more than 100 startups, including [Eleven Labs](https://elevenl
 [Character.ai](https://character.ai/), [Terraform Industries](https://terraformindustries.com/), [Retool](https://retool.com/),
 ggml.ai, Scale, Vercel, WandB, Perplexity, AssemblyAI, Magic.dev, Apollo, Sentry, Klarity, Pilot, Streamlit... and many others. -->
 
-```{css, echo=false}
+<!-- ```{css, echo=false}
 /* styles.css */
 body {
   line-height: 1.4;
@@ -56,4 +56,4 @@ body {
   max-width: 42em;
   margin: 15px auto;
 }
-```
+``` -->
