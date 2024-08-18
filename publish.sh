@@ -18,8 +18,11 @@ check_status "git commit"
 git push origin main
 check_status "git push"
 
-# Run quarto publish and automatically answer Y to any prompt
-yes Y | quarto publish gh-pages
+# Run quarto publish and handle the prompt
+echo "Running quarto publish gh-pages. You may be prompted for confirmation."
+quarto publish gh-pages <<EOF
+Y
+EOF
 check_status "quarto publish"
 
 echo "All commands executed successfully!"
