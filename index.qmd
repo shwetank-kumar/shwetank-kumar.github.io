@@ -26,23 +26,21 @@ Over the years I have done some interesting technical work. Reverse chronologica
 - Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
 - One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM) -->
 
-**Shwetank Kumar**
+<p class="large-bold">Shwetank Kumar</p>
 
 I'm a physicist, engineering exec, investor. Here's my story:
 
 * Born and raised in NCR, India. Delhi native, I live in SF.
-* Got hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech. Learned business by working at startups (Orbital Insight, Turo, Achieve) and getting MBA at Wharton.
-* Internet has been my playground and I specialize in Data and AI related games. Some systems I have enjoyed building over time:
-  * Turo: [ML based risk framework](https://www.sec.gov/Archives/edgar/data/1514587/000119312522005696/d145731ds1.htm)
-  * Orbital Insight: [Geospatial analytics platform at Orbital Insight](https://orbitalinsight.com/geospatial-technology)
-  * Intel: [universal stylus initiative specification](https://universalstylus.org/)
-* I founded a bootstrapped company to help data teams optimize their Snowflake spend
+* Got hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.
+* Learned business by working at startups for 10+ years and getting MBA at Wharton.
+* Internet has been my playground and I specialize in Data and AI games.
+* I founded a bootstrapped company to help data teams optimize their Snowflake spend.
 
 **Some things I've done**
 
 * Built AI systems that crunch petabytes of data across image, text, and tabular formats
 * Scaled these systems to serve millions of customers simultaneously at Achieve and Turo
-* Created Orbital Insight's flagship product for analyzing satellite imagery, growing it from $0 to $10M
+* Created Orbital Insight's flagship product for analyzing satellite imagery
 * Doubled conversion rates and slashed acquisition costs using AI-driven personalization
 * Led teams of 120+ brilliant minds in data science, engineering, and analytics
 
