@@ -10,21 +10,7 @@ twitter-card:
   creator: "@shwetankumar"
 ---
 
-<!-- ```{=html}
-<div class="navbar">
-  <div class="nav-left">
-    <a href="#about">About</a>
-    <a href="/blog">Blog</a>
-  </div>
-  <div class="nav-right">
-    <a href="https://twitter.com/shwetankumar" target="_blank">Twitter</a>
-    <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
-  </div>
-</div>
-``` -->
-
-## About {#about}
+<!-- ## About {#about} -->
 
 I'm a physicist, engineering exec, investor.
 
