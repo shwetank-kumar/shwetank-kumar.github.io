@@ -1,68 +1,57 @@
-/* styles.css */
 body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  display: flex;
+  padding: 20px 0;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.quarto-grid-item {
+  flex: 0 0 auto;
+  width: 80vw !important;
+  height: 80vh;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quarto-grid-item .listing-title {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.quarto-grid-item .listing-description {
+  font-size: 1.2em;
   line-height: 1.6;
-  font-size: 16px;
-  padding: 0 20px;
-  margin: 0 auto;
-  max-width: 800px;  /* Increased from 650px */
-  color: #1a1a1a;  /* Darker text color */
-}
-
-#quarto-content {
-  max-width: 100%;  /* Allow content to use full width of body */
-  margin: 20px auto;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 20px;
-}
-
-.nav-left, .nav-right {
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #1a1a1a;  /* Darker link color */
-  font-weight: 500;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #0a0a0a;  /* Even darker color for headings */
-}
-
-a {
-  color: #0066cc;  /* Darker blue for links */
 }
 
 .quarto-listing-container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.quarto-listing-container .quarto-grid-item {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.quarto-title-block .quarto-title-banner {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 992px) {
-  .quarto-listing-container .quarto-grid-item {
-    max-width: 33.333%;
-    flex: 0 0 33.333%;
-  }
+.quarto-listing-container .list.quarto-listing-default {
+  margin: 0;
+  padding: 0;
 }

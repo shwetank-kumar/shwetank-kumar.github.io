@@ -4,11 +4,15 @@ listing:
   contents: posts
   sort: "date desc"
   type: grid
-  categories: true
+  categories: false
   sort-ui: false
   filter-ui: false
-  fields: [date, title, reading-time, description, categories]
-  feed: true
+  fields: [title, description]
+  grid-columns: 1
 page-layout: full
-title-block-banner: true
+title-block-banner: false
 ---
+
+<div class="horizontal-scroll">
+{{< include _listing.qmd >}}
+</div>
