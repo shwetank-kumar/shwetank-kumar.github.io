@@ -10,8 +10,6 @@ twitter-card:
   creator: "@shwetankumar"
 ---
 
-<!-- ## About {#about} -->
-
 I'm a physicist, engineering exec, investor.
 
 Some things about me:
