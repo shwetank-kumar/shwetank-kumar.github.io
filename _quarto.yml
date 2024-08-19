@@ -11,6 +11,7 @@ website:
         href: https://twitter.com/shwetankumar
       - icon: linkedin
         href: https://www.linkedin.com/in/shwetankkumar
+  search: false 
 format:
   html:
     theme: cosmo
@@ -20,8 +21,3 @@ format:
     # toc-location: left
     # page-layout: article
     # toc-expand: false
-
-
-
-
-
