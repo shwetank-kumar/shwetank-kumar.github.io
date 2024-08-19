@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shwetank-kumar.github.io/index.html</loc>
-    <lastmod>2024-08-19T00:29:45.259Z</lastmod>
+    <loc>https://shwetank-kumar.github.io/blog.html</loc>
+    <lastmod>2024-08-19T19:45:19.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shwetank-kumar.github.io/posts/welcome/index.html</loc>
+    <lastmod>2024-08-18T19:08:19.544Z</lastmod>
   </url>
   <url>
     <loc>https://shwetank-kumar.github.io/posts/post-with-code/index.html</loc>
     <lastmod>2024-08-18T19:08:19.544Z</lastmod>
   </url>
   <url>
-    <loc>https://shwetank-kumar.github.io/posts/welcome/index.html</loc>
-    <lastmod>2024-08-18T19:08:19.544Z</lastmod>
+    <loc>https://shwetank-kumar.github.io/index.html</loc>
+    <lastmod>2024-08-19T00:29:45.259Z</lastmod>
   </url>
 </urlset>
