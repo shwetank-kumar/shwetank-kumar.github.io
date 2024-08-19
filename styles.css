@@ -1,12 +1,10 @@
 /* styles.css */
 body {
-    font-family: "Times New Roman", Times, serif;
-    line-height: 1.6;
+    line-height: 1.4;
     font-size: 16px;
-    padding: 0 20px;
-    margin: 0 auto;
-    max-width: 800px;  /* Increased from 650px */
-    color: #1a1a1a;  /* Darker text color */
+    padding: 0 10px;
+    margin: 50px auto;
+    max-width: 650px;
   }
   
   #quarto-content {
