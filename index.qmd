@@ -26,7 +26,7 @@ Over the years I have done some interesting technical work. Reverse chronologica
 - Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
 - One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM) -->
 
-# Shwetank Kumar
+**Shwetank Kumar**
 
 I'm a physicist, engineering exec, investor. Here's my story:
 
@@ -38,7 +38,8 @@ I'm a physicist, engineering exec, investor. Here's my story:
   * Intel: [universal stylus initiative specification](https://universalstylus.org/)
 * I founded a bootstrapped company to help data teams optimize their Snowflake spend
 
-## Some things I've done:
+**Some things I've done**
+
 * Built AI systems that crunch petabytes of data across image, text, and tabular formats
 * Scaled these systems to serve millions of customers simultaneously at Achieve and Turo
 * Created Orbital Insight's flagship product for analyzing satellite imagery, growing it from $0 to $10M
