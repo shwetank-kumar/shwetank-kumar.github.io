@@ -26,50 +26,34 @@ Over the years I have done some interesting technical work. Reverse chronologica
 - Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
 - One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM) -->
 
-## Shwetank Kumar
-
+## Personal info in a nutshell
 I'm a physicist, engineering exec, investor. Here's my story:
 
 * Born and raised in NCR, India. Delhi native, I live in SF.
 * Got hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.
 * Learned business by working at startups for 10+ years and getting MBA at Wharton.
-* Internet has been my playground and I specialize in Data and AI games.
 * I founded a bootstrapped company to help data teams optimize their Snowflake spend.
+* I enjoy building stuff for internet and physical systems using data and AI games.
 
 ## Some things I've done
-
-* Built AI systems that crunch petabytes of data across image, text, and tabular formats
-* Scaled these systems to serve millions of customers simultaneously at Achieve and Turo
-* Created Orbital Insight's flagship product for analyzing satellite imagery
-* Doubled conversion rates and slashed acquisition costs using AI-driven personalization
-* Led teams of 120+ brilliant minds in data science, engineering, and analytics
+* Built AI systems that crunch petabytes of data across image, text, and tabular formats.
+* Scaled these systems to serve millions of customers simultaneously [1](achieve.com), [2](turo.com).
+* [Created systems](https://orbitalinsight.com/geospatial-technology) that use neural networks to analyze satellite imagery at planet scale.
+* Led teams of 120+ [brilliant minds](https://www.fastcompany.com/3067492/why-orbital-insight-is-one-of-the-most-innovative-companies-of-201) in data science, engineering, and analytics.
 
 ## Tech I love working with:
 * PyTorch, Hugging Face, Langchain, Pydantic
-* GCP, Snowflake
-* Anything that pushes the boundaries of what's possible with data
+* GCP, Snowflake, Bigquery
+* Anything that pushes the boundaries of what's possible with data 
 
-## Some things I believe:
-* AI and machine learning are reshaping every industry - get on board or get left behind
-* The best AI solutions come from a deep understanding of both technology and business needs
-* Speed matters - deploy fast, learn faster
-* Great teams are the secret sauce to any successful project
-* Ethical considerations should be baked into AI development from day one
-
-## I'm an active investor in the AI and data space:
-* Founded and chair the due diligence committee for Invest in Data
-* Committed $100K+ of my own capital to shape the next generation of AI infrastructure
-* Always on the lookout for startups pushing the boundaries of what's possible with data and AI
-
-[Space for startups invested in]
+## Investing:
+* My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.
+* Some companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion...
+* I am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.
+* We vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let's talk: shwetank.kumar@gmail.com.
 
 ## Where you can find me:
-* Writing about AI, tech leadership, and data science on this blog
+* Writing about AI musings, tech & leadership, and data science on this blog
 * Sharing insights on [LinkedIn](https://www.linkedin.com/in/shwetankkumar/)
 * Tinkering with code on [GitHub](https://github.com/shwetank-kumar)
-* Speaking at conferences about the future of AI and data
-* Mentoring the next generation of data scientists and AI engineers
-
-Got an exciting AI project or a game-changing startup idea? Let's talk: shwetank.kumar@gmail.com
-
-Remember: The laws of physics are the only real limit. Everything else is just waiting to be disrupted by the right application of AI and data.
+* Speaking on panels about the future of AI and data
