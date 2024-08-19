@@ -12,7 +12,7 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
-
+<!-- 
 <div class="horizontal-scroll">
 {{< include _listing.qmd >}}
-</div>
+</div> -->
