@@ -14,11 +14,11 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
-    toc-title: Table of contents
-    toc-location: left
-    page-layout: article
-    toc-expand: false
+    toc: false
+    # toc-title: Table of contents
+    # toc-location: left
+    # page-layout: article
+    # toc-expand: false
 
 
 
