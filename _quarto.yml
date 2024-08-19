@@ -12,11 +12,13 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/shwetankkumar
   search: false
-  sidebar: false  # This will disable any sidebar, including TOC
+  sidebar: false
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: false
-    page-layout: full  # This ensures a full-width layout without sidebars
+    page-layout: full
+    template-partials:
+      - title-block.html
