@@ -10,7 +10,7 @@ twitter-card:
   creator: "@shwetankumar"
 ---
 
-```{=html}
+<!-- ```{=html}
 <div class="navbar">
   <div class="nav-left">
     <a href="#about">About</a>
@@ -22,7 +22,7 @@ twitter-card:
     <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
   </div>
 </div>
-```
+``` -->
 
 ## About {#about}
 

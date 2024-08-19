@@ -2,14 +2,16 @@ project:
   type: website
 
 website:
-  title: "shwetank-kumar.github.io"
+  title: "Shwetank Kumar"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/shwetank-kumar
       - icon: twitter
-        href: https://twitter.com
+        href: https://twitter.com/shwetankumar
+      - icon: linkedin
+        href: https://www.linkedin.com/in/shwetankkumar
 format:
   html:
     theme: cosmo
@@ -19,6 +21,8 @@ format:
     # toc-location: left
     # page-layout: article
     # toc-expand: false
+
+
 
 
 
