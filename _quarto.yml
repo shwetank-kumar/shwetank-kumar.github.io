@@ -18,6 +18,8 @@ website:
   search: false
   sidebar: false
 
+toc: false
+
 format:
   html:
     theme: cosmo
