@@ -25,48 +25,41 @@
     "href": "index.html",
     "title": "Shwetank Kumar",
     "section": "",
-    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nInternet has been my playground and I specialize in Data and AI games.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend."
+    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games."
   },
   {
-    "objectID": "index.html#shwetank-kumar",
-    "href": "index.html#shwetank-kumar",
+    "objectID": "index.html#personal-info-in-a-nutshell",
+    "href": "index.html#personal-info-in-a-nutshell",
     "title": "Shwetank Kumar",
     "section": "",
-    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nInternet has been my playground and I specialize in Data and AI games.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend."
+    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games."
   },
   {
     "objectID": "index.html#some-things-ive-done",
     "href": "index.html#some-things-ive-done",
     "title": "Shwetank Kumar",
     "section": "Some things I’ve done",
-    "text": "Some things I’ve done\n\nBuilt AI systems that crunch petabytes of data across image, text, and tabular formats\nScaled these systems to serve millions of customers simultaneously at Achieve and Turo\nCreated Orbital Insight’s flagship product for analyzing satellite imagery\nDoubled conversion rates and slashed acquisition costs using AI-driven personalization\nLed teams of 120+ brilliant minds in data science, engineering, and analytics"
+    "text": "Some things I’ve done\n\nBuilt AI systems that crunch petabytes of data across image, text, and tabular formats.\nScaled these systems to serve millions of customers simultaneously 1, 2.\nCreated systems that use neural networks to analyze satellite imagery at planet scale.\nLed teams of 120+ brilliant minds in data science, engineering, and analytics."
   },
   {
     "objectID": "index.html#tech-i-love-working-with",
     "href": "index.html#tech-i-love-working-with",
     "title": "Shwetank Kumar",
     "section": "Tech I love working with:",
-    "text": "Tech I love working with:\n\nPyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake\nAnything that pushes the boundaries of what’s possible with data"
+    "text": "Tech I love working with:\n\nPyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake, Bigquery\nAnything that pushes the boundaries of what’s possible with data"
   },
   {
-    "objectID": "index.html#some-things-i-believe",
-    "href": "index.html#some-things-i-believe",
+    "objectID": "index.html#investing",
+    "href": "index.html#investing",
     "title": "Shwetank Kumar",
-    "section": "Some things I believe:",
-    "text": "Some things I believe:\n\nAI and machine learning are reshaping every industry - get on board or get left behind\nThe best AI solutions come from a deep understanding of both technology and business needs\nSpeed matters - deploy fast, learn faster\nGreat teams are the secret sauce to any successful project\nEthical considerations should be baked into AI development from day one"
-  },
-  {
-    "objectID": "index.html#im-an-active-investor-in-the-ai-and-data-space",
-    "href": "index.html#im-an-active-investor-in-the-ai-and-data-space",
-    "title": "Shwetank Kumar",
-    "section": "I’m an active investor in the AI and data space:",
-    "text": "I’m an active investor in the AI and data space:\n\nFounded and chair the due diligence committee for Invest in Data\nCommitted $100K+ of my own capital to shape the next generation of AI infrastructure\nAlways on the lookout for startups pushing the boundaries of what’s possible with data and AI\n\n[Space for startups invested in]"
+    "section": "Investing:",
+    "text": "Investing:\n\nMy current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.\nSome companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…\nI am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.\nWe vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com."
   },
   {
     "objectID": "index.html#where-you-can-find-me",
     "href": "index.html#where-you-can-find-me",
     "title": "Shwetank Kumar",
     "section": "Where you can find me:",
-    "text": "Where you can find me:\n\nWriting about AI, tech leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking at conferences about the future of AI and data\nMentoring the next generation of data scientists and AI engineers\n\nGot an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com\nRemember: The laws of physics are the only real limit. Everything else is just waiting to be disrupted by the right application of AI and data."
+    "text": "Where you can find me:\n\nWriting about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
   }
 ]
