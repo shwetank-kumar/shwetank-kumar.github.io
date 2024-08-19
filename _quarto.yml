@@ -18,11 +18,9 @@ website:
   search: false
   sidebar: false
 
-toc: false
-
 format:
   html:
+    toc: false
     theme: cosmo
     css: styles.css
-    # toc: false
     # page-layout: full
