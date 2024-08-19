@@ -2,14 +2,13 @@ project:
   type: website
 
 website:
-  # title: "Shwetank Kumar"
+  title: "Shwetank Kumar"
   navbar:
-    left:
+    right:
       - text: "Blog"
         href: blog.qmd
       - text: "About"
         href: index.qmd
-    right:
       - icon: github
         href: https://github.com/shwetank-kumar
       - icon: twitter
