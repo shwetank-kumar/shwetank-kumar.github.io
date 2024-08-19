@@ -5,10 +5,10 @@ website:
   title: "Shwetank Kumar"
   navbar:
     right:
-      - text: "Blog"
-        href: blog.qmd
       - text: "About"
         href: index.qmd
+      - text: "Blog"
+        href: blog.qmd
       - icon: github
         href: https://github.com/shwetank-kumar
       - icon: twitter

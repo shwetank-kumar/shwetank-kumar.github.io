@@ -10,22 +10,6 @@ twitter-card:
   creator: "@shwetankumar"
 ---
 
-<!-- I'm a physicist, engineering exec, investor.
-
-Some things about me:
-
-- Born and brought up in New Delhi, India. I still consider myself a Delhi native
-- Went to school at IIT Delhi for EE (B.Tech.), Caltech for Applied Physics (Ph.D.)
-- Live in SF and like to spend my time here and in NCR India
-
-Over the years I have done some interesting technical work. Reverse chronologically:
-
-- Created an [ML based risk framework](https://www.sec.gov/Archives/edgar/data/1514587/000119312522005696/d145731ds1.htm) i.e. risk score, to improve cost of risk car sharing marketplace (Turo)
-- Conceived and created [geospatial analytics platform](https://orbitalinsight.com/geospatial-technology) (Orbital Insight)
-- Founded and was technical editor for the first [universal stylus initiative specification](https://universalstylus.org/) (Intel)
-- Architected [forcepad](https://www.synaptics.com/products/touchpad-family/forcepad-product) and palm rejection (Synaptics)
-- One of the 2 scientists to build out the quantum computing experiments group. [List](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=shwetank+kumar+quantum+computing&btnG=&oq=shwetank+kumar+quantum+comp) of publications (IBM) -->
-
 ## Personal info in a nutshell
 I'm a physicist, engineering exec, investor. Here's my story:
 
