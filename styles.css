@@ -44,8 +44,25 @@ a {
   color: #0066cc;  /* Darker blue for links */
 }
 
-/* Adjust main content area when TOC is present
-.quarto-layout-panel > .quarto-layout-row > .quarto-layout-cell:nth-child(2) {
-  padding-left: 2em;
-} */
+.quarto-listing-container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.quarto-listing-container .quarto-grid-item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.quarto-title-block .quarto-title-banner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 992px) {
+  .quarto-listing-container .quarto-grid-item {
+    max-width: 33.333%;
+    flex: 0 0 33.333%;
+  }
+}
