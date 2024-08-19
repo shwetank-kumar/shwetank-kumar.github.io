@@ -44,10 +44,10 @@ a {
   color: #0066cc;  /* Darker blue for links */
 }
 
-/* Ensure table of contents doesn't overlap with content */
+/* Ensure table of contents doesn't overlap with content
 .sidebar-menu-container {
   max-width: 300px;
-}
+} */
 
 /* Adjust main content area when TOC is present
 .quarto-layout-panel > .quarto-layout-row > .quarto-layout-cell:nth-child(2) {
