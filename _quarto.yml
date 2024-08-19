@@ -4,6 +4,11 @@ project:
 website:
   title: "Shwetank Kumar"
   navbar:
+    left:
+      - text: "Blog"
+        href: blog.qmd
+      - text: "About"
+        href: about.qmd
     right:
       - icon: github
         href: https://github.com/shwetank-kumar
