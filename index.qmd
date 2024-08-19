@@ -4,8 +4,7 @@ sidebar: false
 format:
   html:
     css: styles.css
-    toc: true
-    toc-location: left
+    toc: false
 twitter-card:
   card-style: summary
   creator: "@shwetankumar"

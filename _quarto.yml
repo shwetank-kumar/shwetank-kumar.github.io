@@ -16,7 +16,6 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/shwetankkumar
   search: false
-  # sidebar: false
 
 format:
   html:
