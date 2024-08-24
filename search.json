@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 17, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
+    "text": "How to build a recommender system from a scratch\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 17, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -49,13 +49,6 @@
     "text": "Where you can find me:\n\nWriting about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
@@ -63,17 +56,31 @@
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "Shwetank Kumar",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran"
+    "text": "This is a post with executable code."
   },
   {
-    "objectID": "people.html#list-of-people-i-like-to-learn-from",
-    "href": "people.html#list-of-people-i-like-to-learn-from",
+    "objectID": "posts/cold-start/index.html",
+    "href": "posts/cold-start/index.html",
+    "title": "How to build a recommender system from a scratch",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "explorations-and-experts.html",
+    "href": "explorations-and-experts.html",
     "title": "Shwetank Kumar",
     "section": "",
-    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran"
+    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
+  },
+  {
+    "objectID": "explorations-and-experts.html#list-of-topics-i-like-to-explore-and-experts-i-like-to-learn-from",
+    "href": "explorations-and-experts.html#list-of-topics-i-like-to-explore-and-experts-i-like-to-learn-from",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
   }
 ]

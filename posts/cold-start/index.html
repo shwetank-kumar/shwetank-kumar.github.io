@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shwetank Kumar">
+<meta name="dcterms.date" content="2024-08-24">
 
-<title>Shwetank Kumar</title>
+<title>How to build a recommender system from a scratch – Shwetank Kumar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +25,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,21 +54,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Shwetank Kumar">
-<meta name="twitter:description" content="">
-<meta name="twitter:creator" content="@shwetankumar">
-<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Shwetank Kumar</span>
     </a>
   </div>
@@ -76,15 +74,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.qmd"> 
+    <a class="nav-link" href="../../people.qmd"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item compact">
@@ -110,64 +108,52 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How to build a recommender system from a scratch</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">recommenders</div>
+                <div class="quarto-category">code</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shwetank Kumar </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 24, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<section id="personal-info-in-a-nutshell" class="level2">
-<h2 class="anchored" data-anchor-id="personal-info-in-a-nutshell">Personal info in a nutshell</h2>
-<p>I’m a physicist, engineering exec, investor. Here’s my story:</p>
-<ul>
-<li>Born and raised in NCR, India. Delhi native, I live in SF.</li>
-<li>Got hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.</li>
-<li>Learned business by working at startups for 10+ years and getting MBA at Wharton.</li>
-<li>I founded a bootstrapped company to help data teams optimize their Snowflake spend.</li>
-<li>I enjoy building stuff for internet and physical systems using data and AI games.</li>
-</ul>
-</section>
-<section id="some-things-ive-done" class="level2">
-<h2 class="anchored" data-anchor-id="some-things-ive-done">Some things I’ve done</h2>
-<ul>
-<li>Built AI systems that crunch petabytes of data across image, text, and tabular formats.</li>
-<li>Scaled these systems to serve millions of customers simultaneously <a href="achieve.com">1</a>, <a href="turo.com">2</a>.</li>
-<li><a href="https://orbitalinsight.com/geospatial-technology">Created systems</a> that use neural networks to analyze satellite imagery at planet scale.</li>
-<li>Led teams of 120+ <a href="https://www.fastcompany.com/3067492/why-orbital-insight-is-one-of-the-most-innovative-companies-of-201">brilliant minds</a> in data science, engineering, and analytics.</li>
-</ul>
-</section>
-<section id="tech-i-love-working-with" class="level2">
-<h2 class="anchored" data-anchor-id="tech-i-love-working-with">Tech I love working with:</h2>
-<ul>
-<li>PyTorch, Hugging Face, Langchain, Pydantic</li>
-<li>GCP, Snowflake, Bigquery</li>
-<li>Anything that pushes the boundaries of what’s possible with data</li>
-</ul>
-</section>
-<section id="investing" class="level2">
-<h2 class="anchored" data-anchor-id="investing">Investing:</h2>
-<ul>
-<li>My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.</li>
-<li>Some companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…</li>
-<li>I am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.</li>
-<li>We vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com.</li>
-</ul>
-</section>
-<section id="where-you-can-find-me" class="level2">
-<h2 class="anchored" data-anchor-id="where-you-can-find-me">Where you can find me:</h2>
-<ul>
-<li>Writing about AI musings, tech &amp; leadership, and data science on this blog</li>
-<li>Sharing insights on <a href="https://www.linkedin.com/in/shwetankkumar/">LinkedIn</a></li>
-<li>Tinkering with code on <a href="https://github.com/shwetank-kumar">GitHub</a></li>
-<li>Speaking on panels about the future of AI and data</li>
-</ul>
+
+<p>This is a post with executable code.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
