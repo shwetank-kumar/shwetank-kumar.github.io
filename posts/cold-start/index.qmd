@@ -3,7 +3,7 @@ title: "How to build a recommender system from a scratch"
 author: "Shwetank Kumar"
 date: "2024-08-24"
 categories: [recommenders, code]
-image: "image.jpg"
+image: "recommender-syster-diagram.svg"
 draft: true
 ---
 
