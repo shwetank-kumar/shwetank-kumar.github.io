@@ -1,0 +1,9 @@
+---
+title: "How to augment that recommender system using sequence modeling"
+author: "Shwetank Kumar"
+date: "2024-08-24"
+categories: [recommenders, code]
+image: "image.jpg"
+---
+
+Talk about why recommender system does not work. It takes no account of purchase history and if you just purchased shoes it doesnt show socks to go along with just more shoes.
