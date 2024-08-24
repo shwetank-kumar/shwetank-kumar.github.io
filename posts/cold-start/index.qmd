@@ -4,7 +4,7 @@ author: "Shwetank Kumar"
 date: "2024-08-24"
 categories: [recommenders, code]
 image: "recommender-syster-diagram.svg"
-draft: true
+# draft: true
 ---
 
 # The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash
