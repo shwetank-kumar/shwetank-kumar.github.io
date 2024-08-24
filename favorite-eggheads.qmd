@@ -10,7 +10,7 @@ twitter-card:
   creator: "@shwetankumar"
 ---
 
-## My favorite experts and what I learn from them
+## Favorite experts & what I learn from them
 
 * AI tutorials - Andrej Karpathy
 * Public company valuations - Ashwath Damodaran
