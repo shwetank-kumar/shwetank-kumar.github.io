@@ -9,8 +9,8 @@ website:
         href: index.qmd
       - text: "Blog"
         href: blog.qmd
-      - text: "explorations & experts"
-        href: explorations-and-experts.qmd
+      - text: "Eggheadery"
+        href: favorite-eggheads.qmd
       - icon: github
         href: https://github.com/shwetank-kumar
       - icon: twitter
