@@ -3,6 +3,8 @@ project:
 
 website:
   title: "Shwetank Kumar"
+  site-url: "https://shwetank-kumar.github.io/"
+  description: "Shwetank Kumar's personal website"
   navbar:
     right:
       - text: "About"
