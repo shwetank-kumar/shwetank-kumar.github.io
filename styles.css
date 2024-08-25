@@ -9,58 +9,53 @@ body {
 
 .quarto-content {
   display: flex;
-  flex: 1;
-  flex-direction: column; /* Changed to column layout */
+  flex-direction: column;
+  width: 100%;
 }
 
 main {
-  flex: 1;
-  width: 100%; /* Use full width */
-  max-width: 100%;
-  padding-right: 0; /* Remove right padding */
-}
-
-#quarto-margin-sidebar {
-  width: 100%; /* Full width for sidebar */
-  min-width: unset; /* Remove min-width */
-  padding-left: 0; /* Remove left padding */
-  border-left: none; /* Remove left border */
-  margin-top: 2em; /* Add some top margin */
-}
-
-/* Target specific content elements for full width */
-.quarto-title-block .quarto-title-banner,
-.quarto-body-text,
-.section {
   width: 100%;
-  max-width: none;
-  padding: 0;
+  max-width: 100%;
+}
+
+/* Target the title, body, and comments to ensure consistent width */
+.quarto-title-block,
+.quarto-body-text,
+.section,
+#comments {
+  width: 100%;
+  max-width: 900px; /* Adjust this value as needed */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Ensure content inside main is full width */
 main > * {
   width: 100%;
-  max-width: none;
 }
 
-/* Add a max-width for better readability on very wide screens */
-@media (min-width: 1200px) {
-  .quarto-body-text,
-  .section {
-    max-width: 900px; /* Adjust this value as needed */
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* Style for better readability */
+.quarto-body-text {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+#quarto-margin-sidebar {
+  width: 100%;
+  max-width: 900px; /* Match the main content width */
+  margin: 2em auto 0;
+  padding: 1em 0;
+  border-top: 1px solid #e0e0e0;
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-  body {
-    padding: 0 10px;
-  }
-  
+@media (max-width: 920px) { /* Adjust breakpoint as needed */
+  .quarto-title-block,
+  .quarto-body-text,
+  .section,
+  #comments,
   #quarto-margin-sidebar {
-    border-top: 1px solid #e0e0e0;
-    padding-top: 20px;
+    max-width: 100%;
+    padding: 0 10px;
   }
 }
