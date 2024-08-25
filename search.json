@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nHow to augment that recommender system using sequence modeling\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 17, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
+    "text": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "favorite-eggheads.html",
@@ -82,27 +82,6 @@
     "title": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash",
     "section": "The Plot Thickens: A Teaser for the Sequel",
     "text": "The Plot Thickens: A Teaser for the Sequel\nNow, if you think we’ve reached the pinnacle of recommendation wizardry, hold onto your pocket protectors, folks. We’re about to dive deeper into the rabbit hole of personalization than Alice ever dreamed possible. In our next thrilling installment, we’ll be cooking up a recommendation system so bespoke, it’ll make Savile Row tailors jealish. We’re talking about harnessing the power of cutting-edge AI to create personalized purchase sequences that’ll make your customers feel like you’re reading their minds (in a totally non-creepy, GDPR-compliant way, of course).\nThink less “Customers who bought this also bought…” and more “Your next favorite purchase is just around the corner.” It’s like if your favorite personal shopper got bitten by a radioactive data scientist and developed super-powered prediction abilities. Intrigued? Excited? Contemplating a career change to data science? Stay tuned for Part 2, where we’ll turn your recommendation engine from a skilled matchmaker into a retail fortune teller. Don’t forget to bring your lucky algorithms!"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/sequence-model/index.html",
-    "href": "posts/sequence-model/index.html",
-    "title": "How to augment that recommender system using sequence modeling",
-    "section": "",
-    "text": "Talk about why recommender system does not work. It takes no account of purchase history and if you just purchased shoes it doesnt show socks to go along with just more shoes."
   },
   {
     "objectID": "index.html",
