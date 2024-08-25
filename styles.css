@@ -53,3 +53,9 @@ main {
   max-width: 300px;
   margin: 0 auto;
 }
+
+.quarto-title-block .quarto-title-banner,
+.quarto-body-text {
+  max-width: 100%;
+  width: 100%;
+}
