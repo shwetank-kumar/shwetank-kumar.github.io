@@ -28,3 +28,8 @@ format:
     toc: false
     theme: cosmo
     css: styles.css
+    page-layout: full  # Add this line
+    grid:
+      sidebar-width: 0px  # Add this line
+      body-width: 1200px  # Add this line
+    mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
