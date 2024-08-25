@@ -7,5 +7,16 @@
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/blog.html",
+      "/favorite-eggheads.html",
+      "/posts/sequence-model/index.html",
+      "/posts/post-with-code/index.html",
+      "/posts/cold-start/index.html",
+      "/posts/welcome/index.html"
+    ]
   }
 ]
