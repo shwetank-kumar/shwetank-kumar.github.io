@@ -17,6 +17,8 @@ website:
         href: https://twitter.com/shwetankumar
       - icon: linkedin
         href: https://www.linkedin.com/in/shwetankkumar
+      - icon: rss
+        href: index.xml
   search: false
 
 format:
