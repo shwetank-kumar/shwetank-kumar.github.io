@@ -16,7 +16,7 @@ body {
 
 main {
   flex: 1;
-  max-width: 70%;
+  max-width: 100%; /* Changed from 70% to 100% */
   padding-right: 30px;
 }
 
@@ -47,15 +47,13 @@ main {
   }
 }
 
-/* Adjust Mailchimp form */
-#mc_embed_signup {
-  width: 100% !important;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
 .quarto-title-block .quarto-title-banner,
 .quarto-body-text {
   max-width: 100%;
   width: 100%;
+}
+
+/* Add this new rule to ensure body text spans full width */
+.quarto-body-text {
+  max-width: none;
 }
