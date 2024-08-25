@@ -4,13 +4,26 @@ body {
   font-size: 16px;
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1000px;  /* Increased from 650px */
-  color: #1a1a1a;  /* Darker text color */
+  max-width: 1200px;  /* Increased to accommodate sidebar */
+  color: #1a1a1a;
 }
 
 #quarto-content {
-  max-width: 100%;  /* Allow content to use full width of body */
+  display: flex;  /* Use flexbox for layout */
+  justify-content: space-between;  /* Space between main content and sidebar */
+  max-width: 100%;
   margin: 20px auto;
+}
+
+.main-content {
+  flex: 1;  /* Take up available space */
+  max-width: 70%;  /* Limit width to prevent overlap */
+  padding-right: 30px;  /* Add space between content and sidebar */
+}
+
+.sidebar {
+  width: 25%;  /* Fixed width for sidebar */
+  min-width: 200px;  /* Ensure minimum width on smaller screens */
 }
 
 .navbar {
@@ -28,7 +41,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #1a1a1a;  /* Darker link color */
+  color: #1a1a1a;
   font-weight: 500;
 }
 
@@ -37,15 +50,22 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #0a0a0a;  /* Even darker color for headings */
+  color: #0a0a0a;
 }
 
 a {
-  color: #0066cc;  /* Darker blue for links */
+  color: #0066cc;
 }
 
-/* Adjust main content area when TOC is present
-.quarto-layout-panel > .quarto-layout-row > .quarto-layout-cell:nth-child(2) {
-  padding-left: 2em;
-} */
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  #quarto-content {
+    flex-direction: column;  /* Stack content on smaller screens */
+  }
 
+  .main-content, .sidebar {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0;
+  }
+}
