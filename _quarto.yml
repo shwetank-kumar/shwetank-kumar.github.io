@@ -22,7 +22,6 @@ website:
       - icon: rss
         href: index.xml
   search: false
-  margin-header: subscribe.html
 
 format:
   html:
