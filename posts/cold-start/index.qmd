@@ -1,5 +1,5 @@
 ---
-title: "How to build a recommender system from a scratch"
+title: "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash"
 author: "Shwetank Kumar"
 date: "2024-08-24"
 categories: [recommenders, code]
@@ -7,9 +7,7 @@ image: "recommender-system-diagram.svg"
 # draft: true
 ---
 
-# The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash
-
-Hey there, data scientists! Grab a cup of your favorite caffeinated beverage (I'm on my third espresso as I write this), and let's dive into the world of recommendation systems. But not just any recommendation systems - we're talking about bootstrapping a brand recommender from absolutely nothing to a money-printing machine. Buckle up, because this is going to be a wild ride through the land of data, algorithms, and unexpectedly delightful customer experiences.
+Hey there fellow data scientists! Grab a cup of your favorite caffeinated beverage (I'm on my third espresso as I write this), and let's dive into the world of recommendation systems. But not just any recommendation systems - we're talking about bootstrapping a brand recommender from absolutely nothing to a money-printing machine. Buckle up, because this is going to be a wild ride through the land of data, algorithms, and unexpectedly delightful customer experiences.
 
 ## The Problem: E-commerce Is a Jungle (And Your Customers Are Lost)
 
