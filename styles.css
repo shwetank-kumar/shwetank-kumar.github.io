@@ -1,71 +1,55 @@
-/* styles.css */
+/* Add this to your styles.css */
+
 body {
-  line-height: 1.6;
-  font-size: 16px;
-  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 1200px;  /* Increased to accommodate sidebar */
-  color: #1a1a1a;
+  padding: 0 20px;
 }
 
-#quarto-content {
-  display: flex;  /* Use flexbox for layout */
-  justify-content: space-between;  /* Space between main content and sidebar */
-  max-width: 100%;
-  margin: 20px auto;
-}
-
-.main-content {
-  flex: 1;  /* Take up available space */
-  max-width: 70%;  /* Limit width to prevent overlap */
-  padding-right: 30px;  /* Add space between content and sidebar */
-}
-
-.sidebar {
-  width: 25%;  /* Fixed width for sidebar */
-  min-width: 200px;  /* Ensure minimum width on smaller screens */
-}
-
-.navbar {
+.quarto-content {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 20px;
+  flex: 1;
 }
 
-.nav-left, .nav-right {
-  display: flex;
-  gap: 20px;
+main {
+  flex: 1;
+  max-width: 70%;
+  padding-right: 30px;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 500;
+#quarto-margin-sidebar {
+  width: 25%;
+  min-width: 200px;
+  padding-left: 20px;
+  border-left: 1px solid #e0e0e0;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #0a0a0a;
-}
-
-a {
-  color: #0066cc;
-}
-
-/* Media query for responsiveness */
+/* Responsive design */
 @media (max-width: 768px) {
-  #quarto-content {
-    flex-direction: column;  /* Stack content on smaller screens */
+  .quarto-content {
+    flex-direction: column;
   }
-
-  .main-content, .sidebar {
-    max-width: 100%;
+  
+  main, #quarto-margin-sidebar {
     width: 100%;
-    padding-right: 0;
+    max-width: 100%;
+    padding: 0;
   }
+  
+  #quarto-margin-sidebar {
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+/* Adjust Mailchimp form */
+#mc_embed_signup {
+  width: 100% !important;
+  max-width: 300px;
+  margin: 0 auto;
 }
