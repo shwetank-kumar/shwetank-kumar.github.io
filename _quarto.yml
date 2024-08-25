@@ -22,6 +22,9 @@ website:
       - icon: rss
         href: index.xml
   search: false
+  comments: 
+    utterances:
+      repo: shwetank-kumar.github.io
 
 format:
   html:
