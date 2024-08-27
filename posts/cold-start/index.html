@@ -306,29 +306,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-3-the-six-degrees-of-kevin-bacon-phase---transitive-association-model" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-the-six-degrees-of-kevin-bacon-phase---transitive-association-model">Step 3: The “Six Degrees of Kevin Bacon” Phase - Transitive Association Model</h2>
-<p>Alright, pop culture reference time. Have you ever played “Six Degrees of Kevin Bacon”? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we’re going to do something similar with our brands, and it’s going to blow your recommendation socks off. You see, direct associations are great, but they’re limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It’s like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded. This is where transitive associations come in. And boy, do we have a neat trick up our sleeves. Behold, the magic of matrix expansion: pythonCopydef expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5): ““” Expands the adjacency matrix to include higher-order connections with normalization.</p>
-<pre><code>:param adj_matrix: pandas DataFrame representing the adjacency matrix
-:param max_order: int, the maximum order of connections to consider
-:param weight_factor: float, the factor by which to reduce weight for each higher order
-:return: pandas DataFrame representing the expanded adjacency matrix
-"""
-expanded_matrix = adj_matrix.copy()
-current_matrix = normalize_matrix(adj_matrix)
-
-for order in range(2, max_order + 1):
-    # Calculate higher-order connections
-    current_matrix = current_matrix.dot(normalize_matrix(adj_matrix))
-    
-    # Apply weight factor
-    weighted_connections = current_matrix * (weight_factor ** (order - 1))
-    
-    # Update expanded matrix, adding the weighted connections
-    expanded_matrix += weighted_connections
-
-# Final normalization to ensure all values are between 0 and 1
-expanded_matrix = normalize_matrix(expanded_matrix)
-
-return expanded_matrix</code></pre>
+<p>Alright, pop culture reference time. Have you ever played “Six Degrees of Kevin Bacon”? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we’re going to do something similar with our brands, and it’s going to blow your recommendation socks off. You see, direct associations are great, but they’re limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It’s like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded. This is where transitive associations come in. And boy, do we have a neat trick up our sleeves. Behold, the magic of matrix expansion:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> expand_adjacency_matrix(adj_matrix, max_order<span class="op">=</span><span class="dv">5</span>, weight_factor<span class="op">=</span><span class="fl">0.5</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Expands the adjacency matrix to include higher-order connections with normalization.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    :param adj_matrix: pandas DataFrame representing the adjacency matrix</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    :param max_order: int, the maximum order of connections to consider</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    :param weight_factor: float, the factor by which to reduce weight for each higher order</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    :return: pandas DataFrame representing the expanded adjacency matrix</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    expanded_matrix <span class="op">=</span> adj_matrix.copy()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    current_matrix <span class="op">=</span> normalize_matrix(adj_matrix)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> order <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, max_order <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Calculate higher-order connections</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        current_matrix <span class="op">=</span> current_matrix.dot(normalize_matrix(adj_matrix))</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Apply weight factor</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        weighted_connections <span class="op">=</span> current_matrix <span class="op">*</span> (weight_factor <span class="op">**</span> (order <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update expanded matrix, adding the weighted connections</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        expanded_matrix <span class="op">+=</span> weighted_connections</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Final normalization to ensure all values are between 0 and 1</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    expanded_matrix <span class="op">=</span> normalize_matrix(expanded_matrix)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> expanded_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, let me break this down for you, because this is where the magic really happens:</p>
 <p>We start with our original adjacency matrix, which represents direct connections between brands. We then calculate higher-order connections. It’s like saying, “If A is connected to B, and B is connected to C, then A has a second-order connection to C.” We do this up to a specified maximum order (default is 5, because, you know, six degrees of separation and all that). Here’s the clever bit: we apply a weight factor. Each higher-order connection gets a reduced weight because, let’s face it, your friend’s friend’s friend’s opinion probably shouldn’t count as much as your direct friend’s. We add all these weighted connections to our original matrix, creating a rich tapestry of brand relationships. Finally, we normalize everything to keep our numbers manageable.</p>
 <p>The result? A supercharged adjacency matrix that captures not just direct relationships between brands, but a whole network of indirect connections.</p>
