@@ -329,4 +329,4 @@ In our next installment, we'll explore how cutting-edge AI techniques can take o
 
 From leveraging deep learning to harnessing the power of contextual bandits, we'll explore how to create a recommendation engine that doesn't just react to customer behavior, but anticipates it. It's the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D. in data science).
 
-So stay tuned, keep experimenting with your models, and get ready to take your recommendation game to the next level. The future of e-commerce personalization is bright, and armed with the right algorithms, you'll be well-positioned to shine. See you in the next post!
+So stay tuned, keep experimenting with your models, and get ready to take your recommendation game to the next level. The future of e-commerce personalization is bright, and armed with the right algorithms, you'll be well-positioned to shine. See you in the next post! In the meantime if you want to talk finer technical points of bootstrapping a recommendation system the comments section and DMs are wide open!
