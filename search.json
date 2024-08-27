@@ -25,7 +25,7 @@
     "href": "posts/cold-start/index.html",
     "title": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash",
     "section": "",
-    "text": "Hey there fellow data scientists! Grab a cup of your favorite caffeinated beverage (I’m on my third espresso as I write this), and let’s dive into the world of recommendation systems. But not just any recommendation systems - we’re talking about bootstrapping a brand recommender from absolutely nothing to a money-printing machine. Buckle up, because this is going to be a wild ride through the land of data, algorithms, and unexpectedly delightful customer experiences."
+    "text": "Welcome, data enthusiasts and e-commerce innovators. Today, we’re diving into the fascinating world of recommendation systems - specifically, how to build a brand recommender from the ground up. We’ll explore the journey from raw data to a sophisticated system that can significantly boost your bottom line. This post will guide you through the process of creating a recommendation engine that not only predicts customer preferences but also enhances the overall shopping experience. So, let’s embark on this data-driven adventure and unlock the potential of personalized recommendations in e-commerce."
   },
   {
     "objectID": "posts/cold-start/index.html#the-problem-e-commerce-is-a-jungle-and-your-customers-are-lost",
