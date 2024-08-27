@@ -170,7 +170,9 @@ By considering not just direct connections between items, but also second-order 
 Alright, pop culture reference time. Have you ever played "Six Degrees of Kevin Bacon"? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we're going to do something similar with our brands, and it's going to blow your recommendation socks off.
 You see, direct associations are great, but they're limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It's like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded.
 This is where transitive associations come in. And boy, do we have a neat trick up our sleeves. Behold, the magic of matrix expansion:
-pythonCopydef expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5):
+
+```python
+def expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5):
     """
     Expands the adjacency matrix to include higher-order connections with normalization.
     
@@ -196,6 +198,8 @@ pythonCopydef expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5
     expanded_matrix = normalize_matrix(expanded_matrix)
     
     return expanded_matrix
+```
+
 Now, let me break this down for you, because this is where the magic really happens:
 
 We start with our original adjacency matrix, which represents direct connections between brands.
