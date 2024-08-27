@@ -210,11 +210,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> random.sample(all_brands, <span class="bu">min</span>(n, <span class="bu">len</span>(all_brands)))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>all_brands <span class="op">=</span> [<span class="st">"Nike"</span>, <span class="st">"Adidas"</span>, <span class="st">"Puma"</span>, <span class="st">"Reebok"</span>, <span class="st">"Under Armour"</span>, <span class="st">"New Balance"</span>, <span class="st">"Asics"</span>, <span class="st">"Converse"</span>, <span class="st">"Vans"</span>, <span class="st">"Skechers"</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>all_brands <span class="op">=</span> df[<span class="st">'recommending_brand'</span>].unique().tolist()</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_random_recommendations(all_brands))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, I know what you’re thinking. “But dude! This is just throwing darts blindfolded! How is this helping anyone?” Two things - 1) That’s Dr.&nbsp;Mr.&nbsp;Dude! Dude is my 8 year old. 2) And you’re right, it’s not ideal. But here’s the secret: it’s not about being perfect; it’s about starting the flywheel.</p>
+<p>Now, I know what you’re thinking. “But this is just throwing darts blindfolded! How is this helping anyone?” And you’re right, it’s not ideal. But here’s the secret: it’s not about being perfect; it’s about starting the flywheel.</p>
 <p>Every time a user sees a random recommendation, you’re gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every interaction is a breadcrumb that will lead you out of the data desert.</p>
-<p>Pro tip: While you’re showing random recommendations, make sure you’re logging EVERYTHING. Every view, every click, every purchase. This data will be worth its weight in gold later on. Trust me, future you will thank present you for this foresight. And while you are at it do make sure that the data is high quality. Algorithms are fickle and state of the art on those changes every week – nay day! But poor quality data once logged sets the ceiling on what you can do.</p>
+<p>Pro tip: While you’re showing random recommendations, make sure you’re logging EVERYTHING. Every view, every click, every purchase. This data will be worth its weight in gold later on. Trust me, future you will thank present you for this foresight. And while you are at it do make sure that the data is high quality. Algorithms are fickle and state of the art on those changes every week – nay day! But poor quality data once logged sets the ceiling on what you can do with it.</p>
 </section>
 <section id="step-1-the-we-have-some-data-but-its-not-about-users-phase" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-the-we-have-some-data-but-its-not-about-users-phase">Step 1: The “We Have Some Data, But It’s Not About Users” Phase</h2>
@@ -260,16 +260,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>purchased_brand <span class="op">=</span> <span class="st">"Nike"</span></span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_cluster_recommendations(purchased_brand, brand_clusters))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="story-1" class="level3">
-<h3 class="anchored" data-anchor-id="story-1">Story 1</h3>
-<p>[Now, let me tell you a story. I once worked with a client who sold both high-end designer shoes and budget-friendly sneakers. They were using a random recommendation engine, and you know what happened? They were recommending $1000 Italian leather loafers to college students looking for $30 canvas sneakers. Their bounce rate was through the roof, and their conversion rate was lower than my undergrad GPA.]</p>
-<p>We implemented this simple clustering system, and boom! Conversion rates jumped by … umm I am under NDA so cant quote the exact number … but lets say XXXX basis points almost overnight. Why? Because we were no longer trying to sell apples to orange lovers. We were showing people more of what they already liked.</p>
-</section>
-<section id="story-2" class="level3">
-<h3 class="anchored" data-anchor-id="story-2">Story 2</h3>
-<p>Now, let me share an interesting case study that illustrates the power of this approach. Back in 2015, Etsy, the e-commerce website focused on handmade or vintage items, faced a challenge similar to our hypothetical scenario. They had a vast array of products, from $5 handmade bracelets to $500 vintage furniture pieces. Initially, their recommendation system was quite basic, often suggesting items that were wildly different in style and price point from what a user was viewing. This led to a poor user experience and missed sales opportunities. Etsy’s data science team implemented a more sophisticated system that clustered items based on various features like price, category, style, and even color palette. The result? According to their engineering blog, they saw a significant increase in click-through rates on recommended items and a boost in overall sales. This just goes to show that even a relatively simple clustering approach can have a dramatic impact on your recommendation quality and, ultimately, your bottom line.</p>
-<p>But here’s the kicker: we were still maintaining an element of randomness within each cluster. This is crucial because it allows you to continue exploring the possibility space. You’re not just preaching to the choir; you’re introducing the choir to new hymns they might enjoy.</p>
-</section>
+<p>Now, let me tell you a story that’ll make your data scientist senses tingle. Back in the day I was working on a recommendation system with a startup. (I will change the product details and the exact numbers to protect the innocent. Also I don’t fancy a chat with their legal team, thank you very much!). So picture this: They had a range of products - everything from $5 friendship bracelets that screamed “summer camp chic” to $500 mid-century modern chairs that whispered “I have a trust fund.” Their recommendation system? About as sophisticated as a Magic 8-Ball with a hangover. It was the digital equivalent of that one clueless sales associate who tries to upsell you a tuxedo when you’re shopping for gym shorts.</p>
+<p>The result? Their bounce rate was higher than a kangaroo on a trampoline, and their conversion rate was lower than my undergrad GPA (and trust me, that’s saying something). They addressed this by implementing a clustering system that would make even the most seasoned high school clique organizer jealous. We’re talking price, category, style, color palette - if it could be quantified, they clustered it. And boom! Faster than you can say “artisanal hand-knitted cat sweater,” their improvements were more impressive than that time I managed to fold a fitted sheet correctly on the first try. Their click-through rates shot up like a rocket. Their engineering blog was practically giddy with excitement (in that restrained, data-scientist kind of way) about the boost in overall sales. Now a good data science algorithm needs to do at least two things (and definitely the second of these two): 1. It needs needs to improve a KPI - in this case conversions, although it can be anything. (e.g.&nbsp;if you are a Ferengi it will invariably be profits as laid out in the Ferengi Rules of Acquisition) 2. Regardless of whether it does 1. it needs to light the way to how you might improve the KPI in the future.</p>
+<p>In this case it wasnt so much the algorithm that did it automatically but the rest of the system that we built around it. We kept a dash of randomness so we could continue to generate data and learn from it. It’s like w they were saying, “Hey, we know you love vintage teacups, but have you considered this handmade steampunk monocle?” They weren’t just preaching to the choir; they were introducing the choir to new hymns they might enjoy, possibly while wearing said monocle. The moral of the story? Even a relatively simple clustering approach can turn your recommendation engine from a bull in a china shop to a graceful ballerina in a Fabergé egg factory. It’s not about having the fanciest algorithm on the block; it’s about understanding your customers and not trying to sell snowshoes to someone shopping for flip-flops. So, whether you’re dealing with designer loafers and budget sneakers, or vintage furniture and friendship bracelets, remember: cluster wisely, but keep it atleast mildly chaotic. Your conversion rates (and your customers) will thank you.</p>
 </section>
 <section id="step-2-the-now-were-cooking-with-gas-phase" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-the-now-were-cooking-with-gas-phase">Step 2: The “Now We’re Cooking with Gas” Phase</h2>
@@ -308,123 +301,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>purchased_brand <span class="op">=</span> <span class="st">"Nike"</span></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_associated_brands(purchased_brand, association_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="story-1-1" class="level3">
-<h3 class="anchored" data-anchor-id="story-1-1">Story 1</h3>
-<p>Now, let me tell you why this is a game-changer. Sometime back, I was consulting for a mid-sized fashion retailer. They were struggling to cross-sell effectively. Their method was to have their merchandisers manually create “outfits” and recommend items based on those.</p>
-<p>It was a nightmare. It didn’t scale, it was biased towards the merchandisers’ personal tastes, and it completely missed unexpected associations.</p>
-<p>We implemented a system similar to this, and do you know what we found? People who bought red sneakers often bought black hoodies. Why? We had no idea. But it worked. Cross-sell revenue increased by 23% in the first month.</p>
-</section>
-<section id="story-2-1" class="level3">
-<h3 class="anchored" data-anchor-id="story-2-1">Story 2</h3>
-<p>Now, let me tell you why this is a game-changer. Consider the case of Amazon, the e-commerce giant. In their early days, they primarily sold books. But as they expanded into other product categories, they faced a massive challenge: how to effectively cross-sell across these diverse categories? Their solution was to implement a sophisticated association model, much like the one we’ve just built (though admittedly, theirs was far more complex). This “item-to-item collaborative filtering” approach, as they called it, allowed them to say, “Customers who bought this item also bought…” The impact was staggering. According to a paper published by Amazon’s engineers, this recommendation system was responsible for 35% of their sales (as of 2013). That’s the power of understanding and leveraging purchase associations. But here’s where it gets really interesting. We’re not just creating direct associations. Oh no, we’re going to take this to the next level with transitive associations.</p>
-<p>But here’s where it gets really interesting. We’re not just creating direct associations. Oh no, we’re going to take this to the next level with transitive associations.</p>
-</section>
+<p>Now, let me tell you why this is a game-changer. Consider the case of Amazon, the e-commerce giant. In their early days, they primarily sold books. But as they expanded into other product categories, they faced a massive challenge: how to effectively cross-sell across these diverse categories? Their solution was to implement a sophisticated association model, much like the one we’ve just built (though admittedly, theirs was far more complex). This “item-to-item collaborative filtering” approach, as they called it, allowed them to say, “Customers who bought this item also bought…”</p>
+<p>The impact was significant. According to a paper published by Amazon’s engineers in 2003 titled “Amazon.com Recommendations: Item-to-Item Collaborative Filtering”, this recommendation system offered substantial advantages over traditional collaborative filtering techniques:</p>
+<p>It could handle a massive scale of data - tens of millions of customers and millions of catalog items. It produced high-quality recommendations in real-time, scaling well to sudden spikes in traffic. It could recommend across diverse product categories, from books to electronics to clothing.</p>
+<p>While the paper doesn’t provide specific sales figures, it does mention that Amazon’s recommendation system significantly improved click-through and conversion rates compared to untargeted content such as top sellers.</p>
+<p>But here’s where it gets really interesting. We’re not just creating direct associations. Oh no, we’re going to take this to the next level with transitive associations. By considering not just direct connections between items, but also second-order and third-order connections, we can uncover hidden relationships in our data. This could allow us to make even more nuanced and unexpected recommendations, potentially leading to discoveries that customers might not have made on their own.</p>
 </section>
 <section id="step-3-the-six-degrees-of-kevin-bacon-phase" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-the-six-degrees-of-kevin-bacon-phase">Step 3: The “Six Degrees of Kevin Bacon” Phase</h2>
-<p>Alright, pop culture reference time. Have you ever played “Six Degrees of Kevin Bacon”? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we’re going to do something similar with our brands.</p>
-<p>You see, direct associations are great, but they’re limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C?</p>
-<p>This is where transitive associations come in. It’s like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded.</p>
-<p>Let’s enhance our association model:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_transitive_associations(direct_associations, depth<span class="op">=</span><span class="dv">2</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    transitive <span class="op">=</span> defaultdict(<span class="kw">lambda</span>: defaultdict(<span class="bu">int</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> brand <span class="kw">in</span> direct_associations:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        queue <span class="op">=</span> [(brand, <span class="dv">0</span>)]</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        visited <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> queue:</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            current, level <span class="op">=</span> queue.pop(<span class="dv">0</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> level <span class="op">&gt;</span> depth:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> current <span class="kw">in</span> visited:</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            visited.add(current)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> associated, strength <span class="kw">in</span> direct_associations[current].items():</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                transitive[brand][associated] <span class="op">+=</span> strength <span class="op">/</span> (<span class="dv">2</span> <span class="op">**</span> level)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> associated <span class="kw">not</span> <span class="kw">in</span> visited:</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                    queue.append((associated, level <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> transitive</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>transitive_associations <span class="op">=</span> build_transitive_associations(association_model)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_transitive_recommendations(brand, transitive_associations, n<span class="op">=</span><span class="dv">5</span>):</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    associated <span class="op">=</span> <span class="bu">sorted</span>(transitive_associations[brand].items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [b <span class="cf">for</span> b, _ <span class="kw">in</span> associated[:n] <span class="cf">if</span> b <span class="op">!=</span> brand]</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>purchased_brand <span class="op">=</span> <span class="st">"Nike"</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_transitive_recommendations(purchased_brand, transitive_associations))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, let me tell you why this is so powerful. I once worked with a niche bookstore. They specialized in obscure academic texts. The problem was, their inventory was so specific that direct associations were rare. A customer might buy a book on “The Mating Habits of 12th Century Mongolian Horses” (I’m not making this up), but how many other people are going to buy that exact book?</p>
-<p>We implemented transitive associations, and suddenly, magic happened. We could recommend “The Economic Impact of Horse Trading in Medieval Asia” to someone who bought the Mongolian horse book, even if no one had ever bought these two books together. Why? Because there was a chain of associations linking them.</p>
-<p>The result? A 40% increase in average order value. Turns out, academics love going down rabbit holes. Who knew?</p>
+<p>Alright, pop culture reference time. Have you ever played “Six Degrees of Kevin Bacon”? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we’re going to do something similar with our brands, and it’s going to blow your recommendation socks off. You see, direct associations are great, but they’re limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It’s like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded. This is where transitive associations come in. And boy, do we have a neat trick up our sleeves. Behold, the magic of matrix expansion: pythonCopydef expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5): ““” Expands the adjacency matrix to include higher-order connections with normalization.</p>
+<pre><code>:param adj_matrix: pandas DataFrame representing the adjacency matrix
+:param max_order: int, the maximum order of connections to consider
+:param weight_factor: float, the factor by which to reduce weight for each higher order
+:return: pandas DataFrame representing the expanded adjacency matrix
+"""
+expanded_matrix = adj_matrix.copy()
+current_matrix = normalize_matrix(adj_matrix)
+
+for order in range(2, max_order + 1):
+    # Calculate higher-order connections
+    current_matrix = current_matrix.dot(normalize_matrix(adj_matrix))
+    
+    # Apply weight factor
+    weighted_connections = current_matrix * (weight_factor ** (order - 1))
+    
+    # Update expanded matrix, adding the weighted connections
+    expanded_matrix += weighted_connections
+
+# Final normalization to ensure all values are between 0 and 1
+expanded_matrix = normalize_matrix(expanded_matrix)
+
+return expanded_matrix</code></pre>
+<p>Now, let me break this down for you, because this is where the magic really happens:</p>
+<p>We start with our original adjacency matrix, which represents direct connections between brands. We then calculate higher-order connections. It’s like saying, “If A is connected to B, and B is connected to C, then A has a second-order connection to C.” We do this up to a specified maximum order (default is 5, because, you know, six degrees of separation and all that). Here’s the clever bit: we apply a weight factor. Each higher-order connection gets a reduced weight because, let’s face it, your friend’s friend’s friend’s opinion probably shouldn’t count as much as your direct friend’s. We add all these weighted connections to our original matrix, creating a rich tapestry of brand relationships. Finally, we normalize everything to keep our numbers manageable.</p>
+<p>The result? A supercharged adjacency matrix that captures not just direct relationships between brands, but a whole network of indirect connections.</p>
+<p>Imagine we’re working with a niche online bookstore that specializes in obscure academic texts. The challenge? Their inventory is so specific that direct associations are as rare as a first-edition Gutenberg Bible at a yard sale. Let’s say a customer buys a book on “The Mating Habits of 12th Century Mongolian Horses” (yes, I’m having fun with these titles). In a traditional recommendation system, we’d be stuck. After all, how many other people are likely to buy that exact book? But with our transitive associations in play, the magic could happen. We might be able to recommend “The Economic Impact of Horse Trading in Medieval Asia” to our horse-book buyer, even if no one had ever purchased these two books together. Why? Because our system could potentially find a chain of associations linking them through other related books. You can imagine that with this additional unlock enables academics to joyfully go tumbling down rabbit holes of related obscure topics, much to the delight of the store owner. This scenario, while fictional, illustrates the potential power of transitive associations in a recommendation system, especially for businesses with niche or diverse product catalogs or only a sparse matrix for collaborative filtering. Through this transitive assumption about the world you go from sparse to a dense matrix uncovering “hidden” connections that could create a discovery engine to surprise and delights customers, potentially leading them down purchasing paths they never knew existed.</p>
 </section>
-<section id="step-4-the-decision-tree-but-make-it-fashionable-phase" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-the-decision-tree-but-make-it-fashionable-phase">Step 4: The “Decision Tree, But Make It Fashionable” Phase</h2>
-<p>Alright, we’re in the endgame now. We’ve got our associations, we’ve got our transitive relationships, but we’re still missing something. We need a way to create diverse, interesting recommendation paths. Enter: The Recommendation Tree.</p>
-<p>Think of this as a decision tree, but instead of decisions, we’re making recommendations. It’s like those “Choose Your Own Adventure” books, but for shopping. And let me tell you, customers love an adventure.</p>
-<p>Let’s build our tree:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BrandNode:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand):</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.children <span class="op">=</span> []</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_recommendation_tree(associations, root_brand, depth<span class="op">=</span><span class="dv">3</span>):</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> depth <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    root <span class="op">=</span> BrandNode(root_brand)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    associated <span class="op">=</span> <span class="bu">sorted</span>(associations[root_brand].items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> brand, _ <span class="kw">in</span> associated[:<span class="dv">3</span>]:  <span class="co"># Limit to top 3 associations for simplicity</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        child <span class="op">=</span> build_recommendation_tree(associations, brand, depth<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> child:</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            root.children.append(child)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> root</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> traverse_tree(root, path<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> path <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        path <span class="op">=</span> []</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    path.append(root.brand)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> path</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> child <span class="kw">in</span> root.children:</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> <span class="cf">from</span> traverse_tree(child, path.copy())</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Build and traverse the tree</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>root_brand <span class="op">=</span> <span class="st">"Nike"</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>rec_tree <span class="op">=</span> build_recommendation_tree(transitive_associations, root_brand)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Recommendation paths:"</span>)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> path <span class="kw">in</span> traverse_tree(rec_tree):</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" -&gt; "</span>.join(path))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, why is this tree structure so powerful? Let me tell you a tale of two customers.</p>
-<p>Customer A comes to your site and buys a pair of Nike sneakers. You recommend Adidas (because they’re often bought together). They’re not interested. In a simple system, you might be stuck. But with our tree, you can pivot. You might go Nike -&gt; Under Armour -&gt; Puma. Suddenly, you’ve opened up a new branch of possibilities.</p>
-<p>Customer B also buys Nike, but they’re more adventurous. They follow the path Nike -&gt; Adidas -&gt; Puma -&gt; Reebok. Each step is a new discovery, each purchase reinforcing their trust in your recommendations.</p>
-<p>I implemented a system like this for a large outdoor equipment retailer. The result? A 30% increase in customer lifetime value. Why? Because we weren’t just selling products; we were creating shopping journeys.</p>
-<p>You still don’t believe me that the tree structure is powerful? Well let me give you a real-world example from the fashion industry. Stitch Fix, the online personal styling service, uses a sophisticated recommendation system that incorporates elements similar to our tree structure. According to their technology blog, they don’t just recommend individual items; they create entire outfits and style journeys for their customers. For instance, a customer might start with a basic pair of jeans. The system might then recommend a casual shirt (first level of the tree), followed by a jacket that complements both (second level), and finally accessories that pull the whole outfit together (third level). This creates a guided shopping experience that not only increases sales but also enhances customer satisfaction and loyalty. Their approach has been so successful that it’s become a core part of their business model, allowing them to compete effectively in the crowded fashion e-commerce space.</p>
+<section id="step-4-fine-tuning-the-magic---hyperparameters-and-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-fine-tuning-the-magic---hyperparameters-and-evaluation">Step 4: Fine-Tuning the Magic - Hyperparameters and Evaluation</h2>
+<p>Alright, data enthusiasts, we’ve built our transitive association model, but now it’s time to give it that extra polish. Think of it as tuning a high-performance engine - we need to adjust the nitrous levels just right to make this baby purr.</p>
+<section id="hyperparameter-tuning-finding-the-sweet-spot" class="level3">
+<h3 class="anchored" data-anchor-id="hyperparameter-tuning-finding-the-sweet-spot">Hyperparameter Tuning: Finding the Sweet Spot</h3>
+<p>Remember our <code>expand_adjacency_matrix</code> function? It comes with two key hyperparameters:</p>
+<ol type="1">
+<li><code>max_order</code>: How far down the rabbit hole of connections we’re willing to go</li>
+<li><code>weight_factor</code>: Our trust factor for the friend of a friend of a friend</li>
+</ol>
+<p>These aren’t just arbitrary numbers we pulled out of a magician’s hat. They’re the secret sauce that can make or break our recommendations.</p>
+<p>Let’s take a closer look at <code>weight_factor</code>. Set it too high, and you might end up recommending winter parkas to someone shopping for swimwear. Set it too low, and you’re barely scratching the surface of potential connections.</p>
+<p>So how do we find the Goldilocks zone? Enter: hyperparameter tuning. It’s like finding the perfect recipe, but instead of tasting soup, we’re crunching numbers.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(adj_matrix, test_data, max_order, weight_factor):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    expanded_matrix <span class="op">=</span> expand_adjacency_matrix(adj_matrix, max_order, weight_factor)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> calculate_hit_rate(expanded_matrix, test_data)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Grid search for best hyperparameters</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>best_score <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> {}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> max_order <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">7</span>):</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> weight_factor <span class="kw">in</span> [<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>]:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        score <span class="op">=</span> evaluate_model(train_adj_matrix, test_data, max_order, weight_factor)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> score <span class="op">&gt;</span> best_score:</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            best_score <span class="op">=</span> score</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            best_params <span class="op">=</span> {<span class="st">'max_order'</span>: max_order, <span class="st">'weight_factor'</span>: weight_factor}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best parameters: </span><span class="sc">{</span>best_params<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best score: </span><span class="sc">{</span>best_score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="model-evaluation-separating-the-wheat-from-the-chaff" class="level3">
+<h3 class="anchored" data-anchor-id="model-evaluation-separating-the-wheat-from-the-chaff">Model Evaluation: Separating the Wheat from the Chaff</h3>
+<p>Now, how do we know if our model is actually any good? We can’t just take it out for a test drive on the same roads we built it on. That’s where train-test splits come in handy.</p>
+<p>Here’s our game plan:</p>
+<ol type="1">
+<li>Split your data into training and test sets. Think of it as studying for an exam (training) and then taking the final (testing).</li>
+<li>Build your adjacency matrix using only the training data.</li>
+<li>Use your tuned model to make predictions on the test set.</li>
+<li>Compare your transitive model against simpler approaches, like random recommendations or direct associations only.</li>
+</ol>
+<p>Let’s see how it’s done:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_models(train_data, test_data):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Build adjacency matrix from train data</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    train_adj_matrix <span class="op">=</span> build_adjacency_matrix(train_data)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Random model (aka "The Dart Board Approach")</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    random_score <span class="op">=</span> evaluate_model(random_recommendations, test_data)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Direct associations model (aka "The One-Track Mind")</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    direct_score <span class="op">=</span> evaluate_model(train_adj_matrix, test_data)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transitive model with best hyperparameters (aka "The Six Degrees of Kevin Bacon")</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    transitive_score <span class="op">=</span> evaluate_model(</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        expand_adjacency_matrix(train_adj_matrix, <span class="op">**</span>best_params),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        test_data</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Random model score: </span><span class="sc">{</span>random_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Direct associations score: </span><span class="sc">{</span>direct_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Transitive model score: </span><span class="sc">{</span>transitive_score<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>compare_models(train_data, test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-real-world-impact-beyond-the-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="the-real-world-impact-beyond-the-numbers">The Real-World Impact: Beyond the Numbers</h3>
+<p>Now, I won’t give you specific numbers here because, let’s face it, your mileage may vary. But if you’ve done everything right, your transitive model should be outperforming the others like a sports car in a bicycle race.</p>
+<p>But here’s the real kicker: this isn’t just about better numbers on a spreadsheet. It’s about creating a recommendation system that feels almost eerily intuitive to your customers. It’s about suggesting that vintage leather jacket to someone who just bought cowboy boots, not because they’re directly related, but because your system understands the subtle connections between western wear, vintage fashion, and leather goods.</p>
+<p>In the end, that’s what separates a good recommendation system from a great one. It’s not just about predicting what customers want - it’s about inspiring them, surprising them, and yes, maybe even delighting them a little.</p>
+<p>So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!</p>
+</section>
 </section>
 <section id="the-secret-sauce-continuous-improvement" class="level2">
 <h2 class="anchored" data-anchor-id="the-secret-sauce-continuous-improvement">The Secret Sauce: Continuous Improvement</h2>
-<p>Now, here’s the part that separates the amateurs from the pros. Everything we’ve built so far? It’s just the beginning. The real magic happens when you start iterating.</p>
+<p>Now, here’s what separates the good recommendation systems from the great ones: continuous improvement. Everything we’ve built so far is just the foundation. The real magic happens when you start iterating and refining.</p>
 <ol type="1">
-<li><p><strong>Fine-tune your clustering:</strong> As you gather more data, you might realize that “price” isn’t as important as “style” in grouping brands. Don’t be afraid to adjust your features.</p></li>
-<li><p><strong>Adjust association weights:</strong> Maybe being bought together in the same cart should be weighted more heavily than being bought by the same customer on different days. Experiment!</p></li>
-<li><p><strong>Play with tree depth:</strong> A deeper tree might create more interesting paths, but it might also lead to decision fatigue. Find the sweet spot for your customers.</p></li>
-<li><p><strong>Incorporate user feedback:</strong> If a customer consistently ignores a certain brand in their recommendations, take the hint!</p></li>
-<li><p><strong>A/B test everything:</strong> And I mean everything. Different clustering algorithms, different association models, different tree traversal methods. Let the data guide you.</p></li>
+<li><p><strong>Fine-tune your clustering:</strong> As you gather more data, you might discover that certain features are more predictive than others. Don’t hesitate to adjust your approach.</p></li>
+<li><p><strong>Adjust association weights:</strong> Consider the context of purchases. Perhaps items bought together in the same transaction should carry more weight than those bought by the same customer on different days.</p></li>
+<li><p><strong>Optimize hyperparameters:</strong> Regularly revisit your <code>max_order</code> and <code>weight_factor</code> settings. As your data grows and evolves, so too should your model’s parameters.</p></li>
+<li><p><strong>Incorporate user feedback:</strong> If customers consistently ignore certain recommendations, use that information to refine your model.</p></li>
+<li><p><strong>A/B test rigorously:</strong> Test different versions of your model against each other. Let the data guide your decisions on which approaches work best for your specific use case.</p></li>
 </ol>
-<p>Remember, the goal isn’t to build a perfect system. The goal is to build a system that’s better than random chance, and then make it a little better every single day. How you ask? Well that’s the topic of another post…</p>
+<p>Remember, the goal isn’t perfection - it’s continuous improvement. Aim to build a system that consistently outperforms random chance, and then focus on making it a little better every day.</p>
 </section>
-<section id="the-plot-thickens-a-teaser-for-the-sequel" class="level2">
-<h2 class="anchored" data-anchor-id="the-plot-thickens-a-teaser-for-the-sequel">The Plot Thickens: A Teaser for the Sequel</h2>
-<p>Now, if you think we’ve reached the pinnacle of recommendation wizardry, hold onto your pocket protectors, folks. We’re about to dive deeper into the rabbit hole of personalization than Alice ever dreamed possible. In our next thrilling installment, we’ll be cooking up a recommendation system so bespoke, it’ll make Savile Row tailors jealish. We’re talking about harnessing the power of cutting-edge AI to create personalized purchase sequences that’ll make your customers feel like you’re reading their minds (in a totally non-creepy, GDPR-compliant way, of course).</p>
-<p>Think less “Customers who bought this also bought…” and more “Your next favorite purchase is just around the corner.” It’s like if your favorite personal shopper got bitten by a radioactive data scientist and developed super-powered prediction abilities. Intrigued? Excited? Contemplating a career change to data science? Stay tuned for Part 2, where we’ll turn your recommendation engine from a skilled matchmaker into a retail fortune teller. Don’t forget to bring your lucky algorithms!</p>
+<section id="looking-ahead-the-future-of-personalization" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead-the-future-of-personalization">Looking Ahead: The Future of Personalization</h2>
+<p>While we’ve covered significant ground in this post, we’ve only scratched the surface of what’s possible in the world of recommendation systems. As we look to the future, the potential for even more sophisticated and personalized recommendations is truly exciting.</p>
+<p>Imagine a recommendation system that doesn’t just suggest individual products, but understands and predicts entire purchase sequences. Or one that can adapt in real-time to changing user preferences and market trends. These aren’t just pipe dreams - they’re the next frontier in e-commerce personalization.</p>
+<p>In our next installment, we’ll explore how cutting-edge AI techniques can take our recommendation system to the next level. We’ll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they’ll want next.</p>
+<p>From leveraging deep learning to harnessing the power of contextual bandits, we’ll explore how to create a recommendation engine that doesn’t just react to customer behavior, but anticipates it. It’s the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D.&nbsp;in data science).</p>
+<p>So stay tuned, keep experimenting with your models, and get ready to take your recommendation game to the next level. The future of e-commerce personalization is bright, and armed with the right algorithms, you’ll be well-positioned to shine. See you in the next post!</p>
 
 
 </section>
