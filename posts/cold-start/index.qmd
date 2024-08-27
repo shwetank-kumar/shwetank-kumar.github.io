@@ -11,24 +11,23 @@ Welcome, data enthusiasts and e-commerce innovators. Today, we're diving into th
 
 ## The Problem: E-commerce Is a Jungle (And Your Customers Are Lost)
 
-Picture this: You've just launched your e-commerce platform. It's beautiful, it's fast, and it's got more brands than you can shake a stick at. You're feeling pretty good about yourself. But then reality hits you like a ton of bricks wrapped in user feedback forms:
+Imagine you've just launched an e-commerce platform. It's sleek, efficient, and boasts an impressive array of brands. Initially, you're confident in its success. However, user feedback quickly reveals a common challenge in the e-commerce world:
+"I'm overwhelmed by the number of options."
+"The recommendations don't seem relevant to my interests."
+"I can't find products that match my specific needs."
+These concerns are not uncommon. In the realm of online retail, the balance between variety and accessibility is crucial. Insufficient options can leave customers feeling limited, while an overabundance can lead to decision fatigue. This phenomenon, often referred to as the "paradox of choice," can significantly impact user experience and, consequently, your conversion rates.
 
-"I can't find anything I like!"
-"There are too many options!"
-"Why are you showing me diving equipment? I live in a desert!"
-"I just bought shoes! Why are you showing me more shoes!"
+This, my friends, is why a good recommendation system is invaluable. It's like having a wise, all-knowing friend who gently guides your customers to their next favorite purchase. And today, we're going to build that friend from scratch.
 
-Sound familiar? If it doesn't yet, trust me, it will. You see, in the world of e-commerce, choice is both a blessing and a curse. Too little choice, and customers feel constrained. Too much choice, and they feel overwhelmed. It's like being a kid in a candy store, except the candy store is the size of a Walmart, and the kid has analysis paralysis.
+## Step 0: The "Oh Crap, We Have No Data" Phase - Totally Random Model
 
-This, my friends, is where a good recommendation system comes in. It's like having a wise, all-knowing friend who gently guides your customers to their next favorite purchase. And today, we're going to build that friend from scratch.
+Let's start at the very beginning (a very good place to start...). You've just launched your platform, and your data cupboard is as bare as Old Mother Hubbard's. What do you do?
 
-## Step 0: The "Oh Crap, We Have No Data" Phase
+Well, first, take a deep breath and repeat after me: "Random is better than nothing."
 
-Let's start at the very beginning (a very good place to start, as Julie Andrews would say). You've just launched your platform, and your data cupboard is as bare as Old Mother Hubbard's. What do you do?
+You see, when you have no data, your best friend is Mr. Random. It's not ideal, but it's a start. And in the world of startups, starting is half the battle. Now, I know what you're thinking. "But this is just throwing darts blindfolded! How is this helping anyone?" And you're right, it's not ideal. But here's the secret: it's not about being perfect; it's about starting the flywheel.
 
-Well, first, take a deep breath. Now, repeat after me: "Random is better than nothing."
-
-You see, when you have no data, your best friend is Mr. Random. It's not ideal, but it's a start. And in the world of startups, starting is half the battle.
+Every time a user sees a random recommendation, you're gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every interaction is a breadcrumb that will lead you out of the data desert.
 
 Let's whip up a quick Python function to generate random recommendations:
 
@@ -43,13 +42,9 @@ all_brands = df['recommending_brand'].unique().tolist()
 print(get_random_recommendations(all_brands))
 ```
 
-Now, I know what you're thinking. "But this is just throwing darts blindfolded! How is this helping anyone?" And you're right, it's not ideal. But here's the secret: it's not about being perfect; it's about starting the flywheel.
-
-Every time a user sees a random recommendation, you're gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every interaction is a breadcrumb that will lead you out of the data desert.
-
 Pro tip: While you're showing random recommendations, make sure you're logging EVERYTHING. Every view, every click, every purchase. This data will be worth its weight in gold later on. Trust me, future you will thank present you for this foresight. And while you are at it do make sure that the data is high quality. Algorithms are fickle and state of the art on those changes every week -- nay day! But poor quality data once logged sets the ceiling on what you can do with it.
 
-## Step 1: The "We Have Some Data, But It's Not About Users" Phase
+## Step 1: The "We Have Some Data, But It's Not About Users" Phase - Feature-Based Clustering Model
 
 Alright, so you've been running your random recommendation engine for a while. You've got some sales, you've got some brand data, but you still don't have enough user interaction data to build a proper collaborative filtering system. Don't worry, we're going to make lemonade out of these lemons.
 
@@ -113,7 +108,7 @@ In this case it wasnt so much the algorithm that did it automatically but the re
 The moral of the story? Even a relatively simple clustering approach can turn your recommendation engine from a bull in a china shop to a graceful ballerina in a Fabergé egg factory. It's not about having the fanciest algorithm on the block; it's about understanding your customers and not trying to sell snowshoes to someone shopping for flip-flops.
 So, whether you're dealing with designer loafers and budget sneakers, or vintage furniture and friendship bracelets, remember: cluster wisely, but keep it atleast mildly chaotic. Your conversion rates (and your customers) will thank you.
 
-## Step 2: The "Now We're Cooking with Gas" Phase
+## Step 2: The "Now We're Cooking with Gas" Phase - Purchase-Based Association Model
 
 Alright, my data-hungry friends, we've arrived at the juicy part. You've been diligently collecting user interaction data (you have, haven't you?), and now it's time to put it to use. We're going to build a purchase-based association model.
 
@@ -170,7 +165,7 @@ While the paper doesn't provide specific sales figures, it does mention that Ama
 But here's where it gets really interesting. We're not just creating direct associations. Oh no, we're going to take this to the next level with transitive associations. 
 By considering not just direct connections between items, but also second-order and third-order connections, we can uncover hidden relationships in our data. This could allow us to make even more nuanced and unexpected recommendations, potentially leading to discoveries that customers might not have made on their own.
 
-## Step 3: The "Six Degrees of Kevin Bacon" Phase
+## Step 3: The "Six Degrees of Kevin Bacon" Phase - Transitive Association Model
 
 Alright, pop culture reference time. Have you ever played "Six Degrees of Kevin Bacon"? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we're going to do something similar with our brands, and it's going to blow your recommendation socks off.
 You see, direct associations are great, but they're limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It's like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded.
