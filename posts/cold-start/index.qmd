@@ -7,7 +7,9 @@ image: "recommender-system-diagram.svg"
 # draft: true
 ---
 
-Welcome, data enthusiasts and e-commerce innovators. Today, we're diving into the fascinating world of recommendation systems - specifically, how to build a brand recommender from the ground up. We'll explore the journey from raw data to a sophisticated system that can significantly boost your bottom line. This post will guide you through the process of creating a recommendation engine that not only predicts customer preferences but also enhances the overall shopping experience. So, let's embark on this data-driven adventure and unlock the potential of personalized recommendations in e-commerce.
+While everyone seems captivated by AGI and busy building Just-Another-Chatbot (JAC<sup>TM</sup>), they're overlooking the real problems that can be solved (and the money to be made) through practical ML Engineering. In this inaugural series of blog posts, I'll dive deep into one such problem: bootstrapping and building a brand recommender system from the ground up. Drawing from my experience as an engineer, executive, and consultant across multiple consumer tech companies and marketplaces, I'll guide you through the process of creating a recommendation engine that not only predicts customer preferences but also enhances their overall shopping experience.
+
+We'll explore the journey from raw data to a sophisticated system that can significantly boost your bottom line while offering your customers a personalized and delightful experience. So, let's embark on this data-driven adventure and unlock the potential of personalized recommendations in e-commerce. By the end of this series, you'll have the tools to transform your e-commerce platform into a cash machine that keeps both your customers and CFOs happy.
 
 ## The Problem: E-commerce Is a Jungle (And Your Customers Are Lost)
 
@@ -23,13 +25,11 @@ This, my friends, is why a good recommendation system is invaluable. It's like h
 
 ## Step 0: The "Oh Crap, We Have No Data" Phase - Totally Random Model
 
-Let's start at the very beginning (a very good place to start...). You've just launched your platform, and your data cupboard is as bare as Old Mother Hubbard's. What do you do?
+Let's start at the beginning (a very good place to start...). You've just launched your e-commerce platform. It looks great, it works smoothly, but there's one big problem: you have no data. Your recommendation system is a blank slate. What do you do?
 
-Well, first, take a deep breath and repeat after me: "Random is better than nothing."
+Take a deep breath and repeat after me: "Random is better than nothing." Now, I know what you're thinking. "But this is just throwing darts blindfolded! How is this helping anyone?" And you're right, it's not ideal. But here's the secret: it's not about being perfect; it's about starting the flywheel.
 
-You see, when you have no data, your best friend is Mr. Random. It's not ideal, but it's a start. And in the world of startups, starting is half the battle. Now, I know what you're thinking. "But this is just throwing darts blindfolded! How is this helping anyone?" And you're right, it's not ideal. But here's the secret: it's not about being perfect; it's about starting the flywheel.
-
-Every time a user sees a random recommendation, you're gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every interaction is a breadcrumb that will lead you out of the data desert.
+Every time a user sees a random recommendation, you're gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every product interaction (or lack thereof) is a breadcrumb that will lead you out of the data desert.
 
 Let's whip up a quick Python function to generate random recommendations:
 
@@ -52,7 +52,7 @@ Alright, so you've been running your random recommendation engine for a while. Y
 
 Enter: Feature-Based Clustering.
 
-Now, gather 'round, because I'm about to share a secret that took me embarrassingly long to figure out: brands, like people, have personalities. And just like you wouldn't set up your quiet, bookish friend with your party-animal cousin (trust me, I've made that mistake), you shouldn't be recommending wildly dissimilar brands to your users.
+Now, gather 'round, because I'm about to share a secret: brands, like people, have personalities. And just like you wouldn't set up your quiet, bookish friend with your party-animal cousin (trust me, I've made that mistake), you shouldn't be recommending wildly dissimilar brands to your users.
 
 Let's create a simple example using K-means clustering. Don't let the fancy name scare you - it's just a way of grouping similar things together.
 
@@ -97,18 +97,19 @@ purchased_brand = "Nike"
 print(get_cluster_recommendations(purchased_brand, brand_clusters))
 ```
 
-Now, let me tell you a story that'll make your data scientist senses tingle. Back in the day I was working on a recommendation system with a startup. (I will change the product details and the exact numbers to protect the innocent. Also I don't fancy a chat with their legal team, thank you very much!). So picture this: They had a range of products - everything from $5 friendship bracelets that screamed "summer camp chic" to $500 mid-century modern chairs that whispered "I have a trust fund." Their recommendation system? About as sophisticated as a Magic 8-Ball with a hangover. It was the digital equivalent of that one clueless sales associate who tries to upsell you a tuxedo when you're shopping for gym shorts. 
+Let me share a real-world example that illustrates the power of this approach. Back in the day I worked with a startup that had a range of products - everything from $5 friendship bracelets that screamed "summer camp chic" to $500 mid-century modern chairs that whispered "I have a trust fund." Their recommendation system? About as sophisticated as a Magic 8-Ball with a hangover. It was the digital equivalent of that one clueless sales associate who tries to upsell you a tuxedo when you're shopping for gym shorts. 
 
-The result? Their bounce rate was higher than a kangaroo on a trampoline, and their conversion rate was lower than my undergrad GPA (and trust me, that's saying something).
-They addressed this by implementing a clustering system that would make even the most seasoned high school clique organizer jealous. We're talking price, category, style, color palette - if it could be quantified, they clustered it.
-And boom! Faster than you can say "artisanal hand-knitted cat sweater," their improvements were more impressive than that time I managed to fold a fitted sheet correctly on the first try. Their click-through rates shot up like a rocket. Their engineering blog was practically giddy with excitement (in that restrained, data-scientist kind of way) about the boost in overall sales.
+The result? Their conversion rate was lower than my undergrad GPA (and trust me, that's saying something).
+They addressed this by implementing a clustering system based on various product attributes. We're talking price, category, style, color palette - if it could be quantified, they clustered it. 
+And boom! Faster than you can say "artisanal hand-knitted cat sweater," their click-through rates went through the roof! Their engineering blog was practically giddy with excitement (in that restrained, data-scientist kind of way) about the boost in overall sales.
+
 Now a good data science algorithm needs to do at least two things (and definitely the second of these two):
 1. It needs needs to improve a KPI - in this case conversions, although it can be anything. (e.g. if you are a Ferengi it will invariably be profits as laid out in the Ferengi Rules of Acquisition)
 2. Regardless of whether it does 1. it needs to light the way to how you might improve the KPI in the future.
 
-In this case it wasnt so much the algorithm that did it automatically but the rest of the system that we built around it. We kept a dash of randomness so we could continue to generate data and learn from it. It's like w they were saying, "Hey, we know you love vintage teacups, but have you considered this handmade steampunk monocle?" They weren't just preaching to the choir; they were introducing the choir to new hymns they might enjoy, possibly while wearing said monocle.
-The moral of the story? Even a relatively simple clustering approach can turn your recommendation engine from a bull in a china shop to a graceful ballerina in a Fabergé egg factory. It's not about having the fanciest algorithm on the block; it's about understanding your customers and not trying to sell snowshoes to someone shopping for flip-flops.
-So, whether you're dealing with designer loafers and budget sneakers, or vintage furniture and friendship bracelets, remember: cluster wisely, but keep it atleast mildly chaotic. Your conversion rates (and your customers) will thank you.
+In this case, it wasn't just the algorithm doing the work automatically, but the entire system we built around it. We maintained a degree of randomness in our recommendations to continue generating new data and learning from it. It's like saying, "We know you're interested in vintage decor, but have you considered this modern minimalist piece?" This approach not only serves immediate customer interests but also introduces them to new products they might enjoy.
+The lesson here? Even a relatively simple clustering approach can significantly improve your recommendation engine. It's not about having the fanciest algorithm on the block; it's about understanding your customers and not trying to sell snowshoes to someone shopping for flip-flops.
+So, whether you're dealing with luxury items and budget options, or niche products and mainstream goods, remember: cluster wisely, but maintain some variety. Your conversion rates (and your customers) will thank you.
 
 ## Step 2: The "Now We're Cooking with Gas" Phase - Purchase-Based Association Model
 
@@ -156,72 +157,54 @@ print(get_associated_brands(purchased_brand, association_model))
 Now, let me tell you why this is a game-changer. Consider the case of Amazon, the e-commerce giant. In their early days, they primarily sold books. But as they expanded into other product categories, they faced a massive challenge: how to effectively cross-sell across these diverse categories?
 Their solution was to implement a sophisticated association model, much like the one we've just built (though admittedly, theirs was far more complex). This "item-to-item collaborative filtering" approach, as they called it, allowed them to say, "Customers who bought this item also bought..."
 
-The impact was significant. According to a paper published by Amazon's engineers in 2003 titled "Amazon.com Recommendations: Item-to-Item Collaborative Filtering", this recommendation system offered substantial advantages over traditional collaborative filtering techniques:
+The impact was significant. According to a paper published by Amazon's engineers in 2003 titled "Amazon.com Recommendations: Item-to-Item Collaborative Filtering", this recommendation system offered substantial advantages over traditional collaborative filtering techniques as it could:
 
-It could handle a massive scale of data - tens of millions of customers and millions of catalog items.
-It produced high-quality recommendations in real-time, scaling well to sudden spikes in traffic.
-It could recommend across diverse product categories, from books to electronics to clothing.
+- Handle a massive scale of data - tens of millions of customers and millions of catalog items.
+- Produce high-quality recommendations in real-time, scaling well to sudden spikes in traffic.
+- Recommend across diverse product categories, from books to electronics to clothing.
 
 While the paper doesn't provide specific sales figures, it does mention that Amazon's recommendation system significantly improved click-through and conversion rates compared to untargeted content such as top sellers.
 
-But here's where it gets really interesting. We're not just creating direct associations. Oh no, we're going to take this to the next level with transitive associations. 
-By considering not just direct connections between items, but also second-order and third-order connections, we can uncover hidden relationships in our data. This could allow us to make even more nuanced and unexpected recommendations, potentially leading to discoveries that customers might not have made on their own.
-
 ## Step 3: The "Six Degrees of Kevin Bacon" Phase - Transitive Association Model
 
-Alright, pop culture reference time. Have you ever played "Six Degrees of Kevin Bacon"? The game where you try to connect any actor to Kevin Bacon through no more than six movie connections? Well, we're going to do something similar with our brands, and it's going to blow your recommendation socks off.
-You see, direct associations are great, but they're limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect connection between A and C? It's like being at a party and having your friend introduce you to their friend, who then introduces you to their friend. Suddenly, your network has exploded.
-This is where transitive associations come in. And boy, do we have a neat trick up our sleeves. Behold, the magic of matrix expansion:
+Ever played "Six Degrees of Kevin Bacon"? Well, we're about to do something similar with our brands, and it's going to blow your recommendation socks off.
+
+Direct associations are great, but they're limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect link between A and C? It's like being at a party where your network explodes as friends introduce you to their friends.
+
+By considering second-order and third-order connections, we can uncover hidden relationships in our data, leading to nuanced and unexpected recommendations. Here's how to do it in < 10 lines of code:
 
 ```python
 def expand_adjacency_matrix(adj_matrix, max_order=5, weight_factor=0.5):
-    """
-    Expands the adjacency matrix to include higher-order connections with normalization.
-    
-    :param adj_matrix: pandas DataFrame representing the adjacency matrix
-    :param max_order: int, the maximum order of connections to consider
-    :param weight_factor: float, the factor by which to reduce weight for each higher order
-    :return: pandas DataFrame representing the expanded adjacency matrix
-    """
     expanded_matrix = adj_matrix.copy()
     current_matrix = normalize_matrix(adj_matrix)
-    
+
     for order in range(2, max_order + 1):
-        # Calculate higher-order connections
         current_matrix = current_matrix.dot(normalize_matrix(adj_matrix))
-        
-        # Apply weight factor
         weighted_connections = current_matrix * (weight_factor ** (order - 1))
-        
-        # Update expanded matrix, adding the weighted connections
         expanded_matrix += weighted_connections
-    
-    # Final normalization to ensure all values are between 0 and 1
-    expanded_matrix = normalize_matrix(expanded_matrix)
-    
-    return expanded_matrix
+
+    return normalize_matrix(expanded_matrix)
 ```
 
-Now, let me break this down for you, because this is where the magic really happens:
+Let's break this down:
 
-We start with our original adjacency matrix, which represents direct connections between brands.
-We then calculate higher-order connections. It's like saying, "If A is connected to B, and B is connected to C, then A has a second-order connection to C."
-We do this up to a specified maximum order (default is 5, because, you know, six degrees of separation and all that).
-Here's the clever bit: we apply a weight factor. Each higher-order connection gets a reduced weight because, let's face it, your friend's friend's friend's opinion probably shouldn't count as much as your direct friend's.
-We add all these weighted connections to our original matrix, creating a rich tapestry of brand relationships.
-Finally, we normalize everything to keep our numbers manageable.
+1. We start with our original adjacency matrix of direct brand connections.
+2. We calculate higher-order connections up to a specified maximum (default 5, because six degrees of separation, right?).
+3. Here's the clever bit: we apply a weight factor. Each higher-order connection gets reduced weight because your friend's friend's friend's opinion shouldn't count as much as your direct friend's.
+4. We add all these weighted connections to our original matrix, creating a rich tapestry of brand relationships.
+5. Finally, we normalize everything to keep our numbers manageable.
 
-The result? A supercharged adjacency matrix that captures not just direct relationships between brands, but a whole network of indirect connections.
+The result? A supercharged adjacency matrix capturing not just direct relationships, but a whole network of indirect connections.
 
-Imagine we're working with a niche online bookstore that specializes in obscure academic texts. The challenge? Their inventory is so specific that direct associations are as rare as a first-edition Gutenberg Bible at a yard sale.
-Let's say a customer buys a book on "The Mating Habits of 12th Century Mongolian Horses" (yes, I'm having fun with these titles). In a traditional recommendation system, we'd be stuck. After all, how many other people are likely to buy that exact book?
-But with our transitive associations in play, the magic could happen. We might be able to recommend "The Economic Impact of Horse Trading in Medieval Asia" to our horse-book buyer, even if no one had ever purchased these two books together. Why? Because our system could potentially find a chain of associations linking them through other related books.
-You can imagine that with this additional unlock enables academics to joyfully go tumbling down rabbit holes of related obscure topics, much to the delight of the store owner.
-This scenario, while fictional, illustrates the potential power of transitive associations in a recommendation system, especially for businesses with niche or diverse product catalogs or only a sparse matrix for collaborative filtering. Through this transitive assumption about the world you go from sparse to a dense matrix uncovering "hidden" connections that could create a discovery engine to surprise and delights customers, potentially leading them down purchasing paths they never knew existed.
+Now, imagine a niche online bookstore specializing in obscure academic texts. Their inventory is so specific that direct associations are as rare as a first-edition Gutenberg Bible at a yard sale.
+
+A customer buys "The Mating Habits of 12th Century Mongolian Horses" (yes, I'm having fun with these titles). In a traditional system, we'd be stuck. But with our transitive associations, we might recommend "The Economic Impact of Horse Trading in Medieval Asia", even if no one had ever purchased these together. Our system could find a chain of associations linking them through other related books.
+
+This approach enables academics to joyfully tumble down rabbit holes of related obscure topics, much to the store owner's delight. It illustrates the power of transitive associations, especially for businesses with niche catalogs or sparse collaborative filtering matrices. We're transforming a sparse matrix into a dense one, uncovering "hidden" connections that create a discovery engine to surprise and delight customers, potentially leading them down purchasing paths they never knew existed.
 
 ## Step 4: Fine-Tuning the Magic - Hyperparameters and Evaluation
 
-Alright, data enthusiasts, we've built our transitive association model, but now it's time to give it that extra polish. Think of it as tuning a high-performance engine - we need to adjust the nitrous levels just right to make this baby purr.
+Alright, data enthusiasts, we've built our transitive association model, but now it's time to give it that extra polish. Think of it as tuning a high-performance engine - we need to adjust the nitrous levels just right.
 
 ### Hyperparameter Tuning: Finding the Sweet Spot
 
@@ -234,7 +217,7 @@ These aren't just arbitrary numbers we pulled out of a magician's hat. They're t
 
 Let's take a closer look at `weight_factor`. Set it too high, and you might end up recommending winter parkas to someone shopping for swimwear. Set it too low, and you're barely scratching the surface of potential connections.
 
-So how do we find the Goldilocks zone? Enter: hyperparameter tuning. It's like finding the perfect recipe, but instead of tasting soup, we're crunching numbers.
+So how do we find the Goldilocks zone? Enter: hyperparameter tuning. It's like finding the perfect recipe, but instead of slurping soup, we're crunching numbers.
 
 ```python
 def evaluate_model(adj_matrix, test_data, max_order, weight_factor):
@@ -293,16 +276,6 @@ def compare_models(train_data, test_data):
 compare_models(train_data, test_data)
 ```
 
-### The Real-World Impact: Beyond the Numbers
-
-Now, I won't give you specific numbers here because, let's face it, your mileage may vary. But if you've done everything right, your transitive model should be outperforming the others like a sports car in a bicycle race.
-
-But here's the real kicker: this isn't just about better numbers on a spreadsheet. It's about creating a recommendation system that feels almost eerily intuitive to your customers. It's about suggesting that vintage leather jacket to someone who just bought cowboy boots, not because they're directly related, but because your system understands the subtle connections between western wear, vintage fashion, and leather goods.
-
-In the end, that's what separates a good recommendation system from a great one. It's not just about predicting what customers want - it's about inspiring them, surprising them, and yes, maybe even delighting them a little.
-
-So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!
-
 ## The Secret Sauce: Continuous Improvement
 
 Now, here's what separates the good recommendation systems from the great ones: continuous improvement. Everything we've built so far is just the foundation. The real magic happens when you start iterating and refining.
@@ -319,14 +292,17 @@ Now, here's what separates the good recommendation systems from the great ones: 
 
 Remember, the goal isn't perfection - it's continuous improvement. Aim to build a system that consistently outperforms random chance, and then focus on making it a little better every day.
 
-## Looking Ahead: The Future of Personalization
+### The Real-World Impact: Beyond the Numbers
 
-While we've covered significant ground in this post, we've only scratched the surface of what's possible in the world of recommendation systems. As we look to the future, the potential for even more sophisticated and personalized recommendations is truly exciting.
+Now, I won't give you specific numbers here because, let's face it, your mileage may vary. But if you've done everything right, your transitive model should be outperforming the others like a sports car in a bicycle race. But here's the real kicker: this isn't just about better numbers on a spreadsheet. It's about creating a recommendation system that feels almost eerily intuitive to your customers. 
 
-Imagine a recommendation system that doesn't just suggest individual products, but understands and predicts entire purchase sequences. Or one that can adapt in real-time to changing user preferences and market trends. These aren't just pipe dreams - they're the next frontier in e-commerce personalization.
 
-In our next installment, we'll explore how cutting-edge AI techniques can take our recommendation system to the next level. We'll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they'll want next.
+While we've covered significant ground in this post, we've only scratched the surface of what's possible. In our next installment, we'll explore how cutting-edge AI techniques can take our recommendation system to the next level. We'll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they'll want next. From leveraging deep learning to harnessing the power of contextual bandits, we'll explore how to create a recommendation engine that doesn't just react to customer behavior, but anticipates it. It's the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D. in data science). In the end, that's what separates a good recommendation system from a great one. It's not just about predicting what customers want - it's about inspiring them, delighting them, and yes, maybe even surprising them a little. So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!
 
-From leveraging deep learning to harnessing the power of contextual bandits, we'll explore how to create a recommendation engine that doesn't just react to customer behavior, but anticipates it. It's the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D. in data science).
 
-So stay tuned, keep experimenting with your models, and get ready to take your recommendation game to the next level. The future of e-commerce personalization is bright, and armed with the right algorithms, you'll be well-positioned to shine. See you in the next post! In the meantime if you want to talk finer technical points of bootstrapping a recommendation system the comments section and DMs are wide open!
+
+
+
+
+
+
