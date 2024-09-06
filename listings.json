@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/llm-evals-ndcg/index.html",
+      "/posts/genai-ceiling-floor/index.html",
       "/posts/cold-start/index.html"
     ]
   }
