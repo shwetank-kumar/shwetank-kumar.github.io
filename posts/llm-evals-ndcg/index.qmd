@@ -1,0 +1,5 @@
+* LLMs are evaluated as general purpose thinking machines - which they are not
+* The modality that is being used in is a better search algorithm
+* So should be evaluated using typical search metrics like NDCG etc.
+* Provide an overview of current metrics being used
+* Explain what NDCG is and how it would be applied

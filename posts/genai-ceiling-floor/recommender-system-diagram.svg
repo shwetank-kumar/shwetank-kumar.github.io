@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f0f0f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" fill="#333" text-anchor="middle">Evolution of a Recommender System</text>
+  
+  <!-- Stages -->
+  <g transform="translate(50, 80)">
+    <!-- Random Stage -->
+    <rect x="0" y="0" width="150" height="100" rx="10" ry="10" fill="#FFB3BA"/>
+    <text x="75" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Random</text>
+    
+    <!-- Clustering Stage -->
+    <rect x="200" y="0" width="150" height="100" rx="10" ry="10" fill="#BAFFC9"/>
+    <text x="275" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Clustering</text>
+    
+    <!-- Association Stage -->
+    <rect x="400" y="0" width="150" height="100" rx="10" ry="10" fill="#BAE1FF"/>
+    <text x="475" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Association</text>
+    
+    <!-- Tree Stage -->
+    <rect x="600" y="0" width="150" height="100" rx="10" ry="10" fill="#FFFFBA"/>
+    <text x="675" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle">Tree-based</text>
+    
+    <!-- Arrows -->
+    <line x1="150" y1="50" x2="200" y2="50" stroke="#333" stroke-width="2"/>
+    <line x1="350" y1="50" x2="400" y2="50" stroke="#333" stroke-width="2"/>
+    <line x1="550" y1="50" x2="600" y2="50" stroke="#333" stroke-width="2"/>
+    
+    <!-- Arrow tips -->
+    <polygon points="198,46 198,54 210,50" fill="#333"/>
+    <polygon points="398,46 398,54 410,50" fill="#333"/>
+    <polygon points="598,46 598,54 610,50" fill="#333"/>
+  </g>
+  
+  <!-- Data representation -->
+  <g transform="translate(50, 220)">
+    <!-- Random data -->
+    <circle cx="75" cy="50" r="5" fill="#333"/>
+    <circle cx="60" cy="70" r="5" fill="#333"/>
+    <circle cx="90" cy="30" r="5" fill="#333"/>
+    <circle cx="40" cy="40" r="5" fill="#333"/>
+    <circle cx="100" cy="60" r="5" fill="#333"/>
+    
+    <!-- Clustered data -->
+    <circle cx="260" cy="50" r="5" fill="#FF5733"/>
+    <circle cx="270" cy="60" r="5" fill="#FF5733"/>
+    <circle cx="280" cy="55" r="5" fill="#FF5733"/>
+    <circle cx="290" cy="40" r="5" fill="#3498DB"/>
+    <circle cx="300" cy="35" r="5" fill="#3498DB"/>
+    
+    <!-- Associated data -->
+    <line x1="460" y1="50" x2="490" y2="50" stroke="#333" stroke-width="2"/>
+    <circle cx="460" cy="50" r="5" fill="#333"/>
+    <circle cx="490" cy="50" r="5" fill="#333"/>
+    <line x1="470" y1="70" x2="500" y2="30" stroke="#333" stroke-width="2"/>
+    <circle cx="470" cy="70" r="5" fill="#333"/>
+    <circle cx="500" cy="30" r="5" fill="#333"/>
+    
+    <!-- Tree data -->
+    <line x1="675" y1="30" x2="650" y2="50" stroke="#333" stroke-width="2"/>
+    <line x1="675" y1="30" x2="700" y2="50" stroke="#333" stroke-width="2"/>
+    <line x1="650" y1="50" x2="625" y2="70" stroke="#333" stroke-width="2"/>
+    <line x1="650" y1="50" x2="675" y2="70" stroke="#333" stroke-width="2"/>
+    <circle cx="675" cy="30" r="5" fill="#333"/>
+    <circle cx="650" cy="50" r="5" fill="#333"/>
+    <circle cx="700" cy="50" r="5" fill="#333"/>
+    <circle cx="625" cy="70" r="5" fill="#333"/>
+    <circle cx="675" cy="70" r="5" fill="#333"/>
+  </g>
+</svg>
