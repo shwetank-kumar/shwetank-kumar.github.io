@@ -1,3 +1,12 @@
+---
+title: "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash"
+author: "Shwetank Kumar"
+date: "2024-08-24"
+categories: [recommenders, code]
+# image: "recommender-system-diagram.svg"
+draft: true
+---
+
 * LLMs are evaluated as general purpose thinking machines - which they are not
 * The modality that is being used in is a better search algorithm
 * So should be evaluated using typical search metrics like NDCG etc.
