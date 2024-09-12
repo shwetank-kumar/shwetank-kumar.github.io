@@ -21,6 +21,7 @@ website:
         href: https://www.linkedin.com/in/shwetankkumar
       - icon: rss
         href: index.xml
+  google-analytics: "G-WYRPY1S3G7"
   search: false
 
 format:
