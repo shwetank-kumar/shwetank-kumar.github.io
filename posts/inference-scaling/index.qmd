@@ -1,20 +1,24 @@
 ---
-title: "The Great Data Famine: Why the AI that Ate the Web Is Still Starving"
+title: "Less Magic, More Math: Why Inference Scaling is the New Black"
 author: "Shwetank Kumar"
 date: "2024-09-06"
-categories: [genai, strategy, investment]
+categories: [genai, inference]
 image: "robot.jpeg"
-# draft: true
+draft: true
 ---
 
-If you're a software engineer or data scientist who's been losing sleep over the Twitter-fueled hysteria that "English is the new coding language," I've got news for you: put down the panic button and step away from the job boards. I am here to tell you that despite what the Twitterverse might have you believe, AI isn't about to steal your job or create Skynet. And if you're an exec or investor who thinks otherwise, I've got a Nigerian prince who'd love to chat. 
+Ah, the sweet smell of progress in the morning! OpenAI has just dropped their shiny new o1-mini and o1 models, and the internet is abuzz with hot takes faster than you can say "AGI winter is coming." You've probably seen the YouTube videos: wide-eyed tech bros marveling at the models' ability to solve differential equations or explain quantum mechanics to their goldfish. 
 
-After a weekend of wrestling with the latest and supposedly greatest codegen tools, I've come to a startling conclusion: our AI overlords aren't quite ready to steal your job or usher in the age of Skynet. In fact, they're struggling with tasks that would make a junior dev roll their eyes.
+Terence Tao has a particularly thoughtful post [here] on how he thinks we are a few steps away from a graduate student with all the caveats associated with measuring this in graduate student units.
 
-Let me paint you a picture: There I was, surrounded by caffeine and a stack of AI whitepapers, trying to coax these silicon savants into solving some basic coding problems. It became painfully clear that to tackle even the most fundamental challenges, we're in desperate need of a quantum leap in LLM complexity.
+But let's be real: you're not here for another "OMG, AI can [insert mundane task]!" video. No, you, dear reader, are a person of substance. You crave the meaty, first-principles concepts that will help you navigate the choppy waters of AI progress without drowning in a sea of hype. You're tired of every Tom, Dick, and Elon barging into the AI field like a bull in a china shop, asking everyone to consider their groundbreaking idea of a "spherically symmetric cow in n-dimensional Hilbert space." [link to joke] 
 
-What we really need is for these models to channel their inner project manager – breaking down problems into bite-sized chunks, crafting plans, and methodically conquering each incremental hurdle. But instead of this sophisticated problem-solving, our current crop of AI tools often resemble a caffeinated squirrel trying to solve a Rubik's cube – lots of frantic activity, not a lot of progress.
+That's why we're diving into inference scaling today. It's a crucial concept that's driving the impressive performance of these new models, and understanding it is key to grasping the current state of AI technology.
 
+Now, if you're here to debate whether we're on the cusp of AGI or if these models are secretly plotting to overthrow humanity and replace us with more efficient toasters, I'm going to have to ask you to see yourself out. There are plenty of Twitter threads and subreddits where you can indulge in that particular flavor of speculation. We're here for the nitty-gritty, the nuts and bolts, the "how does this actually work?" of it all.
+
+So, strap in, silence your phone (unless you're reading this on it, in which case, carry on), and let's embark on a journey into the heart of inference scaling. It's time to learn why OpenAI is betting big on this approach, and why you should care. Welcome to the bleeding edge of AI, where the cows are spherical, the Hilbert spaces are infinite, and the potential for groundbreaking insights is limitless.
+  
 ## The Transformer Plateau: When Bigger Isn't Always Better
 
 Remember when we thought the solution to every AI challenge was simply to make it bigger? It was like Silicon Valley's version of "supersize me," but instead of fries, we were supersizing parameters and datasets. Well, folks, that all-you-can-eat buffet of data and compute has reached its limit.
