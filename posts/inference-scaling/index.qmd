@@ -1,7 +1,7 @@
 ---
 title: "Less Magic, More Math: Why Inference Scaling is the New Black"
 author: "Shwetank Kumar"
-date: "2024-09-06"
+date: "2024-09-16"
 categories: [genai, inference]
 image: "robot.jpeg"
 draft: true
