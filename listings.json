@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/inference-scaling/index.html",
       "/posts/data-scarcity/index.html",
       "/posts/cold-start/index.html"
     ]
