@@ -3,8 +3,8 @@ title: "Less Magic, More Math: Why Inference Scaling is the New Black"
 author: "Shwetank Kumar"
 date: "2024-09-16"
 categories: [genai, inference]
-image: "robot.jpeg"
-draft: true
+image: "robot.png"
+# draft: true
 ---
 
 Ah, the sweet smell of progress in the morning! OpenAI has just dropped their shiny new o1-mini and o1 models, and the internet is abuzz with hot takes faster than you can say "AGI winter is coming." You've probably seen the YouTube videos: wide-eyed tech bros marveling at the models' ability to solve differential equations or explain quantum mechanics to their goldfish. 
