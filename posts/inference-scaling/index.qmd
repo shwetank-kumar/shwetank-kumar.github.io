@@ -9,170 +9,320 @@ draft: true
 
 Ah, the sweet smell of progress in the morning! OpenAI has just dropped their shiny new o1-mini and o1 models, and the internet is abuzz with hot takes faster than you can say "AGI winter is coming." You've probably seen the YouTube videos: wide-eyed tech bros marveling at the models' ability to solve differential equations or explain quantum mechanics to their goldfish. 
 
-Terence Tao has a particularly thoughtful post [here] on how he thinks we are a few steps away from a graduate student with all the caveats associated with measuring this in graduate student units.
-
-But let's be real: you're not here for another "OMG, AI can [insert mundane task]!" video. No, you, dear reader, are a person of substance. You crave the meaty, first-principles concepts that will help you navigate the choppy waters of AI progress without drowning in a sea of hype. You're tired of every Tom, Dick, and Elon barging into the AI field like a bull in a china shop, asking everyone to consider their groundbreaking idea of a "spherically symmetric cow in n-dimensional Hilbert space." [link to joke] 
+But let's be real: you're not here for another "OMG, AI can [insert mundane task]!" video. No, you, dear reader, are a person of substance. You crave the meaty, first-principles concepts that will help you navigate the choppy waters of AI progress without drowning in a sea of hype. You're tired of every Tom, Dick, and Elon barging into the AI field like a bull in a china shop, asking everyone to consider their groundbreaking idea of a [spherically symmetric cow in n-dimensional Hilbert space.](https://en.wikipedia.org/wiki/Spherical_cow)
 
 That's why we're diving into inference scaling today. It's a crucial concept that's driving the impressive performance of these new models, and understanding it is key to grasping the current state of AI technology.
 
 Now, if you're here to debate whether we're on the cusp of AGI or if these models are secretly plotting to overthrow humanity and replace us with more efficient toasters, I'm going to have to ask you to see yourself out. There are plenty of Twitter threads and subreddits where you can indulge in that particular flavor of speculation. We're here for the nitty-gritty, the nuts and bolts, the "how does this actually work?" of it all.
 
 So, strap in, silence your phone (unless you're reading this on it, in which case, carry on), and let's embark on a journey into the heart of inference scaling. It's time to learn why OpenAI is betting big on this approach, and why you should care. Welcome to the bleeding edge of AI, where the cows are spherical, the Hilbert spaces are infinite, and the potential for groundbreaking insights is limitless.
-  
-## The Transformer Plateau: When Bigger Isn't Always Better
 
-Remember when we thought the solution to every AI challenge was simply to make it bigger? It was like Silicon Valley's version of "supersize me," but instead of fries, we were supersizing parameters and datasets. Well, folks, that all-you-can-eat buffet of data and compute has reached its limit.
+> **Disclaimer:** Before we dive in, I just want to be super clear: what follows is my best understanding of inference scaling based on publicly available information. As for what's really going on inside OpenAI's secret volcano lair? Well, your guess is as good as mine. They're about as forthcoming with their methods as a cat is with its tax returns.
 
-Since the "Attention is all you need" paper dropped and gave us the Transformer architecture, we've been playing a game of "who can build the biggest model?" It's been like a digital arms race, with each new model flexing more parameters. And for a while, it worked! We fed these hungry, hungry hippos more data, cranked up the parameter count, and watched the benchmarks climb.
+> **Navigation Prompt:** If you are familiar with different LLM layers, how they work and what roles they accomplish you can skip this section otherwise please read on.
 
-But now, we've hit a wall. A big, data-shaped wall that's putting a damper on our "bigger is better" party. We're now facing a trifecta of challenges that even the most optimistic VC can't hand-wave away:
+# The Assembly Line of Sentences: How Language Models Work (Infer)
 
-1. **Data Scarcity:** We're scraping the bottom of the digital barrel, and it's not pretty. Turns out, the internet isn't infinite after all.
+Now that we've cleared the air of AGI speculation and spherical bovines, let's delve into the intricacies underpinning inference scaling. Note that this is not only about throwing more FLOPs at the problem. To understand how inference scaling works we need to first understand how basic inference works.
 
-2. **Power Consumption:** Our models are energy gluttons that could outshine Las Vegas. At this rate, we'll need a small nuclear reactor for each training run.
+Imagine, for a moment, that you're running a factory. Not just any factory, mind you, but one that produces bespoke, artisanal sentences on demand. Your raw materials? Vectors of floating-point numbers. Your end product? Everything from Shakespearean sonnets to Python code.
 
-3. **System Complexity:** We're playing high-stakes Jenga with GPUs, hoping that one wobbly card doesn't bring down the entire expensive house of silicon (aka cluster).
+Welcome to the world of Large Language Model inferencing. It's a bit like running a just-in-time manufacturing operation, except instead of assembling cars, you're assembling words. And let me tell you, the logistics are _fascinating_.
 
-Unless we see some major breakthroughs in model architecture or how these Large Language Models (LLMs) learn, we're stuck. Future AI products will be reheating the same capabilities we have today, just with fancier marketing. It's like we've trained our AI to be a really eloquent parrot, but now we need it to write a novel.
+Let's break down this process, shall we? It all starts with a prompt. Think of this as the order form for your sentence factory. "I need a limerick about database optimization, stat!" your customer (who is suspiciously often yourself) demands. Your factory springs into action:
 
-Lets explore why our current AI models are perpetually data-starved, uncover the fundamental limitations of our learning approaches (backprop, SGD ...), and maybe even find a path forward that doesn't involve sacrificing our firstborns to the GPU gods. Welcome to the frontlines of the AI data crisis, in the land of diminishing returns – where the future is bright, but the training datasets are running on empty.
+1. **The Tokenizer**: This is your receiving department. It breaks down the incoming order into bite-sized pieces the rest of the factory can work with. "Database" might become "data" and "base", while "optimization" could be "optim" and "ization". It's like those old "FRAGILE: HANDLE WITH CARE" stamps, except here it's "LANGUAGE: HANDLE WITH VECTORS". The tokenizer layer is the gatekeeper of language models, transforming raw text into a format the model can understand. Think of it as a translator that converts human-readable text into a sequence of numbers (tokens) that the AI can process. 
+   
+                                 Tokenize(text) = [token_1, token_2, ..., token_n]
 
+   where $token_i = vocabulary_{index}(subword_i)$. Algorithmically, the process works in 3 sub-steps:
 
-## Beyond Chinchilla: Llama 3.1 and the Quest for More Data
+   *  **Text Segmentation:** The input text is broken down into subwords, words, or characters, depending on the tokenization strategy.
+   * **Vocabulary Lookup:** Each subword is mapped to a unique integer index in the model's vocabulary.
+   * **Token Generation:** The sequence of these indices forms the final token sequence.
 
-Imagine an AI as a toddler with an endless appetite for knowledge. Now, picture that toddler devouring the entire internet and still asking for seconds. That's our current predicament with Large Language Models (LLMs). These digital gluttons are slow learners with an insatiable hunger for data, and folks, we're running out of internet to feed them. Who would've thought "we've run out of internet" would be a legitimate concern in 2024?
+2. **The Embedding Layer**: This is where the magic of turning words into numbers happens. It's as if each word is run through a very complex, very mathy Instagram filter. "Data" doesn't just mean "data" anymore; it's now a list of 768 floating-point numbers that somehow capture the essence of "data-ness". Imagine the embedding layer as a massive, multidimensional dictionary or lookup table. Here's is its structure:
 
-### Exhibit A: Meta's Llama 3.1 - The Data Devourer
+   * **Rows:** Each row in this table corresponds to a token in your vocabulary. If your model has a vocabulary of 50,000 words, your table has 50,000 rows.
+   * **Columns:** Each column represents a dimension of the embedding. If you're using 300-dimensional embeddings, your table has 300 columns.
+   * **Cells:** Each cell in this table contains a single number, typically a floating-point value.
 
-Let's dive into a real-world example that'll make your head spin: Meta's latest 8B parameter Llama 3.1 model. This digital beast was fed a whopping 15 trillion tokens during training. For those keeping score at home, that's essentially the entire publicly available internet. The Llama paper [1] claims it's all public data, but they're keeping the exact dataset under wraps. The closest we've got to peeking behind the curtain is the "Fine Web Dataset" [2] on Hugging Face, tipping the scales at a hefty 44TB.
+                                    Embedding(token_id) = LookupTable[token_id]
 
-### Breaking the Rules: When More is... More?
+   where LookupTable is a matrix of shape (vocab_size, embedding_dim)
 
-Now, if you've been following the AI literature like it's the new Netflix, you might be thinking, "Wait a minute, isn't that overkill?" And you'd be right - sort of. The Chinchilla paper [3], our previous guidebook for "compute optimal" training, would suggest that an 8B parameter model only needs about 160B tokens. Llama 3.1 ate roughly 100 times that amount!
+3. **The Transformer Layers**: These layers have been covered very well in multiple posts all over the net, specifically look at [3] for more detail. This is the real engine of your factory. Imagine a room full of savants, each one looking at your partial sentence, conferring with other savants based on information they have, and then scribbling notes about what word should come next. Now imagine doing this dozens of times in parallel while sharing information. That's what's happening here, except the savants are matrix multiplications and the notes are more vectors. There are other parts to the layer but at the heart of of this communcation and compute is the attention layer which can be specified by Key, Value, Query triplets (K,Q,V) as follows:
+$$
+                                    Attention(Q, K, V) = softmax((QK^T) / √d_k) V
+$$
 
-But here's the kicker: it worked. Meta's decision to massively overindulge their model led to continued performance improvements. This reveals two mind-bending facts:
+   where, Key represents information that each of them has, Query is each one asking - hey who has this information that I need and Value is the information that they share with each other once they identify the overlap between whats needed and what they have based on the dot product between K and Q.
 
-   1. Many existing models are actually undernourished by comparison.
-   2. High-quality data is the new oil in the AI gold rush.
+4. **The Output Layer**: This is your quality control department. It takes all those scribbled savant notes and turns them into actual probabilities for each word in your vocabulary. "The" might get a 2% chance, "database" a 0.5% chance, and "aardvark" a 0.0001% chance. (Hey, you never know when you might need an aardvark in your limerick about databases).
+   
+   This is embodied by our Softmax layer. It takes the raw scores (often called logits) associated with each possible token in the vocabulary and transforms them into a probability distribution. Essentially, for each position in a sequence, the softmax layer calculates the likelihood of each token in the vocabulary appearing in that position. It does this by exponentiating the scores and then normalizing them so that they sum to 1. This process ensures that the model outputs a valid probability distribution over all possible tokens, allowing it to make predictions about the most likely next token in a sequence or to classify tokens into different categories. Mathematically, you can write it as: 
+$$
+softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
+$$
 
-Even after this data feast, Llama 3.1 hadn't reached what we'd classically call convergence. It was still improving, like a bottomless pit of potential [4]. This, combined with Microsoft's Tiny Stories paper [5], is forcing us to rethink the data requirements for training these models.
+   where i is the current token and j iterates over all tokens in the vocabulary.
 
-### The Bigger They Are, The Hungrier They Get
+5. **Token Selection and Iteration**: This is where your factory's assembly line completes its cycle by choosing the next token based on Softmax output, transforming probability distributions into the next token in the sequence. This step is also where you decide how wild you want your factory's output to be. e.g. Greedy search tends to produce more repetitive text, while sampling methods can lead to more varied and sometimes surprising results*.
 
-And now consider the data requirements for 405B parameter version of Llama 3.1. It should ideally be trained on proportionally more data - we're talking "several internets" worth. But guess what? It was trained on the same 15T tokens as its smaller sibling. If that dataset was barely enough for the 8B model, it's like trying to feed a blue whale with a goldfish bowl for the 405B version.
+   Finally, we get a sequence of tokens that we convert into readable text using the inverse transform from look up tables in Step 1. i.e. if you were inputting rows and reading off columns as the output, here you input columns and read off rows and vice-versa. 
 
-### A Silver Lining in the AI Cloud
+By repeating this process, your AI factory can churn out everything from simple sentences to complex essays - Or entire essay about why PostgreSQL is actually a misunderstood performance art piece. (Don't judge. GPT-4o has some weird hobbies.) How you generate tokens, iterate, and post process in this last step is what defines how "thoughtful" your LLM sounds. Lets dig into that in the next section.
 
-Before you start stockpiling hard drives and building your own internet, there's a glimmer of hope. For enterprises sitting on a goldmine of non-public data (that you're legally allowed to use, of course), you're in luck. This is your chance to fine-tune these models for specialized tasks and potentially push their performance beyond what's publicly possible. And for the efficiency enthusiasts out there, there's still plenty of room to explore knowledge distillation - teaching smaller models to mimic their bigger, data-guzzling cousins.
+> **Navigation Prompt:** Details of algorithms in Step 5 is what inference scaling is all about. If you are familiar with various token generation strategies skip ahead otherwise please read on.
 
-### The TL;DR Version
+## The Fundamentals of Token Selection: Navigating Vast Probability Spaces
 
-1. Llama 3.1's training reveals that our "well-trained" models might actually be underfed data-wise.
-2. We've essentially run out of high-quality public data to train these ever-growing models.
-3. The next frontier? Leveraging private data to push these models even further.
+At its core, inference in a Large Language Model (LLM) is about predicting the next token in a sequence, given the previous tokens. It's like playing a cosmic game of "what comes next?" where the stakes are coherent communication. LLMs accomplish this feat by learning the underlying distribution of the training data and storing a compressed version of it in their parameters. However, this nominally simple task hides a universe of complexity that would make even the most seasoned computer scientists break out in a cold sweat.
 
-Welcome to the era of data scarcity in AI - where the models are hungry, the internet is finite, and every byte counts!
+### The Vastness of Possibility
 
-## Synthetic Data: AI's Infinite Mirror of Confusion
+Imagine you're an LLM with a vocabulary of |V| tokens, trying to generate a sequence of length T. The naive search space for this task is O(|V|^T). To put this into perspective, if you have a modest vocabulary of 50,000 tokens (which is on the small side for modern LLMs) and you're generating a sequence of just 20 tokens, you're looking at 50,000^20 possibilities.
 
-When faced with data scarcity, researchers and engineers came up with a brilliant idea: Why not leverage AI models to generate their own training data? This concept, far from being a desperate measure, is actually a legitimate and innovative approach to addressing the data hunger of large language models which offers many advantages like unparalleled scalability, solution for privacy preservation in training data, and customization for specialized tasks. However, it also comes with its own set of challenges. 
+That's a number so large it makes the number of atoms in the observable universe look like pocket change. If each possibility were a grain of sand, you'd have enough to build a beach that stretches from here to Alpha Centauri, with enough left over to fill the Mariana Trench. Twice.
 
-### Model Collapse: When AI Goes on a Bland Diet
-  
-This self-cannibalization of data leads to what's ominously known as 'model collapse'. Don't let the fancy term scare you - it's simply what happens when your AI goes on a diet of nothing but its own increasingly bland word salad.
-  
-Here's how it works: the model (or its bigger cousin) generates tokens based on probability distributions so it favors tokens closer to the mean (the "average" outputs) providing fewer examples of tokens out in the wings of the distribution. After a few cycles of generating and training on synthetic data, you lose all the diverse content from the original dataset. Result? Your models over generations lose the brilliance and versatility that would come from diversity and start generating singular, monochromatic data which doesn't capture the real world anymore.
-  
-Its like making a photocopy of a photocopy - each generation gets blurrier and weirder until you end up with something that looks like it came from a glitchy parallel universe where creativity went to die.
+Clearly, brute-forcing our way through this cosmic beach of possibilities isn't feasible, even with the most powerful supercomputers at our disposal. We need a smarter approach.
 
-### Bias on Steroids
+### Enter the Decoding Strategies
 
-The opposite side of the same coin is that any small biases in the initial dataset get amplified out of propostion. So now the slight bias in your dataset is dialed to 11 on a scale of 10 and it thinks the entire world population consists of cat-loving, pizza-eating coders who never see the sun. Diversity? That's just a myth, like inbox zero or bug-free code.
+So given these insurmountable odds, how do LLMs figure out what token to generate next? Enter the world of decoding strategies! Depending on the strategies used and the choice of parameters used to tune them you might get text that is coherent, engaging, surprising or a combination there of. Just remember it will always be sampled from the underlying probability distribution that was learned during the training phase. 
 
-### Quality Control Nightmare
+Let's dive into some of these strategies which we will need to understand inference scaling. There are many more which are well covered in [2] and similar articles.
 
-Validating synthetic data is like fact-checking a politician's promises - a Sisyphusean task (i.e. can't be done, easily anyway). It's a guessing game where the grand prize is "maybe your AI won't embarrass itself in public." And good luck keeping it current - by the time you've generated your synthetic data, the real world has moved on, leaving your AI stuck in last season's trends like a digital fashion faux pas.
+#### 1. Beam Search: The Chess Grandmaster
 
-### Cybersecurity Swiss Cheese
+Beam search is like a chess grandmaster, always thinking several moves ahead to find the best overall strategy. It explores multiple possible sequences simultaneously, keeping track of the most promising paths.
 
-Just when you thought it couldn't get worse, enter the hackers. Synthetic data is like a new chew toy for cybercriminals. They're gleefully exploring all the ways they can mess with your data generation process, turning your AI into their personal puppet show.
+At each step, beam search maintains a set number (let's call it `k`) of the most likely partial sequences, known as hypotheses. This allows the model to consider sequences that may start with lower probability tokens but have higher overall probability, potentially leading to better quality outputs than simple greedy search.
 
-### Silver Linings for Synthetic Data
+The beauty of beam search is that it strikes a balance between exploration and exploitation. It's not just picking the best immediate option, but considering how that choice might pan out in the long run. The final output is the sequence with the highest overall probability.
 
-But wait! Don't despair just yet. One person's data dilemma is another's research opportunity. Here are some tantalizing questions for the brave AI researchers of tomorrow:
+```python
+# Beam Search Example
+checkpoint = "openai-community/gpt2-medium"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForCausalLM.from_pretrained(checkpoint)
 
-- Can we develop smarter sampling strategies to generate synthetic data from the neglected "wings" of the probability distribution?
-- What's the perfect cocktail of real and synthetic data? Is there a golden ratio, or does it depend on the task?
-- How can we build Fort Knox-level security around our synthetic data generation process?
+inputs = tokenizer("The cat sat on the", return_tensors="pt")
+outputs = model.generate(**inputs, num_beams=5, max_new_tokens=50)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
 
-### The TL;DR Version
+Importantly, traditional beam search with a width k reduces our astronomical search space from O(|V|^T) to O(k|V|T). That's a significant improvement, though still a hefty computational load for real-time applications!
 
-1. Synthetic data is a promising solution to data scarcity, offering scalability, privacy, and customization.
-2. However, it comes with significant challenges: model collapse, bias amplification, quality control issues, and security risks.
-3. The future of synthetic data lies in developing better generation strategies, finding optimal real-synthetic data ratios, and creating robust security frameworks.
+#### 2. Multinomial Sampling: The Creative Writer
 
-Until we crack these problems, synthetic data is the AI world's equivalent of combating climate change by painting everything green. It looks fantastic in PowerPoint presentations, but step outside, and you'll find a world of plastic trees where your AI thinks photosynthesis is just the latest Instagram filter.
+If beam search is our chess grandmaster, multinomial sampling is the free-spirited writer who throws caution to the wind and lets inspiration guide their pen. 
 
-## Deep Networks are Slow Learners
+This method introduces an element of controlled randomness into the text generation process. Unlike greedy search, which always picks the most probable token, multinomial sampling randomly selects the next token based on the probability distribution provided by the model. It's like rolling a weighted die, where each face represents a possible next word, and the size of each face corresponds to its probability.
 
-The underlying problem that is a root cause of all our AI woes is that neural networks and other architectures using a combination of back propagation and stochastic gradient descent (let's call these SGD & Progeny Pvt. Ltd. to include other algorithms like Adam, Ada etc.) are slow learners - absorbing knowledge at the speed of continental drift. They're the Pangaea of machine learning, slowly but inexorably shuffling bits of information around until, eons later, you might just have a functional model. Let's look at how these work.
+Why is this important? It allows for more diverse outputs. Every token with a non-zero probability has a chance of being selected, reducing the risk of bland, repetitive text. It's how AI can surprise us with creative turns of phrase or unexpected (yet coherent) continuations of a prompt.
 
-### The SGD Conundrum: Navigating IKEA Blindfolded
+```python
+# Multinomial Sampling Example
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-Stochastic Gradient Descent (SGD) and its variants are the cornerstone of modern machine learning optimization techniques. However, their effectiveness is limited by their inherent randomness. It's basically like trying to find your way out of an IKEA blindfolded by randomly stumbling around, making small adjustments to your trajectory based on very limited local information. You might eventually find the exit, but you'll bump into a lot of BILLY bookcases along the way. 
+checkpoint = "openai-community/gpt2-large"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForCausalLM.from_pretrained(checkpoint)
 
-### Escape from Local Minima: The Comfortable Rut
+inputs = tokenizer("The cat sat on the", return_tensors="pt")
+outputs = model.generate(**inputs, do_sample=True, num_beams=1, max_new_tokens=50)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
 
-Neural networks often get trapped in suboptimal solutions, or "local minima," during training. To overcome this, we need to expose our models to diverse, high-quality data repeatedly. However, the scale at which this needs to happen is staggering - often requiring millions of iterations. Of course, there are heuristics that can help you along in the process, but coming up with the right set of parameters for training and escaping each minima requires a lot of experimentation with hyperparameters.
+#### 3. Beam Search Multinomial Sampling: The Best of Both Worlds
 
-### The Hyperparameter Labyrinth: Cracking the Infinite Safe
+What if we could combine the strategic foresight of beam search with the creative spark of multinomial sampling? Enter beam search multinomial sampling, the hybrid approach that aims to give us the best of both worlds.
 
-Hyperparameter tuning in machine learning is akin to trying to crack a safe with an infinite number of dials. Each parameter - learning rate, batch size, network architecture, etc. - can dramatically affect model performance, yet their interactions are often unpredictable and non-linear. It's not uncommon for researchers to spend more time tuning hyperparameters than actually training models. This process is often more art than science, relying heavily on intuition, experience, and, frankly, a fair bit of luck.
+This method maintains multiple hypotheses like beam search, but instead of always choosing the most probable token for each beam, it samples from the probability distribution. It's as if our chess player occasionally makes a slightly unorthodox move, not because it's objectively the best, but because it might lead to an interesting game state.
 
-Automated hyperparameter optimization techniques exist, and while helpful, often require significant computational resources and can still miss optimal configurations due to the vast search space. Moreover, hyperparameters that work well for one dataset or task might fail spectacularly on another, making it challenging to develop generalizable best practices.
+The result? Outputs that are both high-quality and diverse, striking a delicate balance between coherence and creativity.
 
-The complexity of hyperparameter tuning also raises questions about the robustness and interpretability of our models. If slight tweaks to these parameters can lead to drastically different results, how can we trust the stability and reliability of our AI systems?
+```python
+# Beam Search Multinomial Sampling Example
+from transformers import AutoModelForSeq2SeqLM
 
-### The Curse of Memorization: AI's "The Office" Obsession
+checkpoint = "google-t5/t5-small"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
-These models are turning into the Rain Man of useless information. Great if you need to count toothpicks, not so great for actual intelligence. As these models grow larger, they're not getting smarter – they're just getting better at regurgitating what they've seen before. It's like that friend who can recite every line from "The Office" but can't hold a conversation about anything else.
+inputs = tokenizer("translate English to German: The cat sat on the mat.", return_tensors="pt")
+outputs = model.generate(**inputs, num_beams=5, do_sample=True, max_new_tokens=50)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
 
-### The Silver Lining: Future Directions
+#### 4. Diverse Beam Search: The Brainstorming Session
 
-Data scarcity, which is a direct result of these fundamental limitations, is pushing us towards an inflection point. We can't just keep making models bigger and feeding them more data. We need to fundamentally rethink how these models learn and generalize. It's like we've been trying to build a skyscraper by just piling up more and more bricks. Now we need to stop and think about architecture, efficiency, and maybe invest in an elevator or two.
+Sometimes, we don't just want one good output – we want several distinctly different options. That's where diverse beam search comes in. Think of it as a brainstorming session where participants are explicitly told to come up with ideas that are different from each other.
 
-Some promising directions include:
+Diverse beam search divides the beams into groups and applies a diversity penalty to ensure that the outputs from different groups are distinct. Within each group, standard beam search is applied. This approach is particularly useful when you want to generate multiple alternative outputs that are significantly different from each other, not just minor variations.
 
-- Algorithms that rely on second-order moments, though they require more memory to store gradients.
-- Combining these techniques with simplifying assumptions about the nature of the matrix [7], allowing us to store sparser versions.
-- Coupling these approaches with newer execution engines in GPUs for sparse matrices.
-- Exploring hardware-software co-design as a powerful research direction.
+```python
+# Diverse Beam Search Example
+checkpoint = "google/pegasus-xsum"
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
-### The TL;DR Version
+inputs = tokenizer("Summarize: The cat sat on the mat. The dog slept by the fire. The bird sang in the tree.", return_tensors="pt")
+outputs = model.generate(**inputs, num_beams=10, num_beam_groups=5, diversity_penalty=1.0, max_new_tokens=30)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
 
-1. Deep networks learn slowly due to limitations in optimization techniques like SGD.
-2. Key challenges include navigating complex loss landscapes, escaping local minima, tuning hyperparameters, and avoiding mere memorization.
-3. We need to rethink our approach to model architecture and learning processes.
-4. Promising directions include advanced optimization algorithms, sparse matrix techniques, and hardware-software co-design.
+### The Art of Balancing
 
-Remember, in the world of AI, we're not just teaching machines to learn – we're learning how to teach. And right now, we're realizing we might need to go back to teacher school ourselves.
+Each of these decoding strategies offers different trade-offs between output quality, diversity, & computational cost. The choice of strategy depends on the specific requirements of your task and the desired characteristics of the generated text. For example by playing with just a few parameters you can go from Greedy algorithm with extremely repetitive responses to versatile text giving human like responses. 
 
-## Conclusion: The Tip of the AI Iceberg
+Understanding these strategies is crucial for anyone working with or developing language models. They're not just technical details – they're the brushstrokes that determine the final picture painted by our AI artists and to emulate reflection and thoughtfulness by your friendly neighborhood AI which is what we cover in the next section.
 
-As we've explored in this article, the challenges facing AI development are numerous and complex. We've only scratched the surface of the data scarcity issue, and there are still two major hurdles we haven't yet discussed: power consumption and system complexity.
+## In AI's Deep Reflection: Where Probability Flirts with Search and Models Judge Other Models' Pickup Lines
 
-The energy requirements for training and running these increasingly large AI models are staggering. As we push the boundaries of model size and complexity, we're also pushing the limits of our computational infrastructure. The power consumption of these models isn't just a technical issue—it's an environmental and economic concern that the AI community will need to address.
+For years, the AI community has been on a bulk-up routine that would make bodybuilders jealous - just feed the model more parameters and data. Inference scaling changes this up by giving AI models a gym membership and a personal trainer instead. It asks the question - instead of always making our models bigger, how do we make them think harder? Let's dive into the three main approaches for that with a bit more technical detail this time.
 
-System complexity is another critical challenge. As our AI systems grow more sophisticated, managing and optimizing them becomes increasingly difficult. We're rapidly approaching a point where the complexity of these systems may outpace our ability to understand and control them effectively.
+### 1. Parallel Sampling: The Brute Force Charmer
 
-Down the road I intend to delve deeper into these issues, exploring the implications of AI's growing energy appetite and the challenges posed by increasingly complex systems. In the meanwhile if there are things in this space that you would like to learn about - DMs are always open! 
+Parallel sampling is a straightforward yet powerful technique in the world of inference scaling. At its core, it's about generating multiple independent solutions and selecting the best one.
 
-1. [The Llama 3 Herd of Models](https://arxiv.org/pdf/2407.21783)
-2. [Fineweb dataset](https://huggingface.co/datasets/HuggingFaceFW/fineweb)
-3. [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
-4. [@Karpathy](https://x.com/karpathy/status/1781028605709234613?lang=en)
-5. [TinyStories: How Small Can Language Models Be and Still Speak Coherent English?](https://arxiv.org/abs/2305.07759)
-6. [Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data](https://arxiv.org/abs/2404.01413)
-7. [Shampoo: Preconditioned Stochastic Tensor Optimization](https://arxiv.org/pdf/1802.09568)
+**How It Works:**
 
+When presented with an input, the AI model doesn't generate just one answer. Instead, it produces N complete, independent answers. This process is akin to running the model N times in parallel, each time generating a full response to the input.
 
+The key to this method's effectiveness lies in its evaluation step. We employ a sophisticated evaluator, an Outcome Reward Model (ORM). This is an AI model, trained to assess the quality of generated answers based on various criteria. The ORM examines each of the N answers and assigns them a score. This scoring isn't just based on correctness, but can include factors such as the quality of reasoning, clarity of explanation, and adherence to the task requirements.
+
+Once all N answers have been scored, we can use a "best-of-N weighted" selection method to choose the final answer. This method is more nuanced than simply selecting the highest-scoring response. Instead, it considers all answers that arrived at the same conclusion and sums their scores. The conclusion with the highest total score is then selected as the final output.
+
+**Mathematical Formulation:**
+
+For a given input x:
+
+1. Generate outputs: y₁, y₂, ..., yₙ
+2. Score each output: s₁ = PRM(y₁), s₂ = PRM(y₂), ..., sₙ = PRM(yₙ)
+3. Final selection: y* = argmax(s₁, s₂, ..., sₙ)
+
+In practice, the selection process might be more complex, involving grouping similar outputs and summing their scores before selecting the highest-scoring group.
+
+**Strengths:**
+
+1. Simple and scalable. Improving results often involves simply increasing N, effectively leveraging additional computational resources to boost performance - a clear trade-off.
+2. Works well for easier questions or tasks where generating a large number of attempts is likely to produce at least one high-quality answer. 
+3. Works especially when the space of possible good answers is relatively large and diverse.
+
+**Weaknesses:**
+
+1. Computationally inefficient for complex problems.
+2. While it will eventually find a good solution if N is large enough, it may use significantly more resources than more targeted approaches. 
+3. The compute costs can become prohibitive if N is set too high, especially for resource-intensive models.
+4. Each generation is independent, potentially repeating work or mistakes made in other attempts. It doesn't learn from or build upon partial successes within a single attempt.
+
+All-in-all it is a simple but brute-force approach to inference scaling. Its straightforward nature makes it an attractive option, especially when dealing with tasks where the generation of multiple diverse attempts is likely to yield at least one high-quality result. However, its effectiveness needs to be balanced against its potential computational costs, especially for more complex tasks or when scaling to very large N.
+
+### 2. Beam Search: The Chess Grandmaster of Inference
+
+Unlike parallel sampling, which generates complete independent answers, beam search constructs solutions incrementally, making decisions at each step about which partial solutions are most promising to develop further.
+
+**How It Works:**
+
+1. Initialization: The process begins by generating N initial predictions for the first step of the solution. These represent different starting points for the answer.
+2. Scoring: A Process Reward Model (PRM) is used to score each of these N initial steps. The PRM evaluates the quality and potential of each partial solution. Note that this is also how it is different from an ORM above.
+3. Pruning: Instead of keeping all N initial steps, beam search retains only the top N/M highest-scoring ones, where M is the beam width. This step focuses the search on the most promising partial solutions.
+4. Expansion: For each of the retained partial solutions, the model generates M new proposals for the next step. This brings the total number of candidates back to N (N/M * M = N).
+5. Iteration: Steps 2-4 are repeated until either a complete solution is reached or a maximum number of rounds is hit.
+
+This process allows beam search to maintain a diverse set of partially completed solutions, continually evaluating and refining them as it progresses.
+
+**Mathematical Formulation:**
+
+At each step t:
+
+1. Generate candidates: C_t = {c₁, c₂, ..., cₙ}
+2. Score candidates: S_t = {PRM(c₁), PRM(c₂), ..., PRM(cₙ)}
+3. Keep top k: B_t = top_k(C_t, S_t, k=N/M)
+4. Expand: C_{t+1} = ⋃_{b ∈ B_t} expand(b, M)
+
+where:
+
+* C_t is the set of candidate partial solutions at step t
+* S_t is the set of scores for these candidates
+* B_t is the set of top-scoring candidates retained
+* expand(b, M) generates M new candidates from partial solution b
+
+**Strengths:**
+
+1. Complex problem-solving where the solution is built incrementally.
+2. Natural language generation tasks requiring coherent, long-form responses.
+3. Multi-step planning or decision-making processes.
+
+**Weaknesses:**
+
+1. There is potential for pruning prematurely. By discarding lower-scoring partial solutions early, beam search might miss unconventional but ultimately superior solutions that don't appear promising in their early stages.
+2. While more efficient than exhaustive search, beam search can still be computationally intensive, especially with large beam widths or for problems requiring many steps.
+3. Its performance can be highly dependent on the choice of N and M. Optimal values may vary significantly between different types of problems.
+
+Beam search is particularly suited for problems where the solution quality depends on a series of interconnected decisions. Its ability to maintain and explore multiple promising solution paths makes it a go-to approach for complex, multi-step reasoning tasks in AI.
+
+### 3. Revision-Based Approach: The Perfectionist's Dream
+
+This approach is focuses on iterative improvement of an initial response. Unlike parallel sampling or beam search, which generate multiple independent answers or explore multiple paths simultaneously, this approach generates a single answer and then repeatedly refines it.
+
+**How It Works:**
+
+1. Initial Generation: The model produces an initial answer to the given input.
+2. Iterative Refinement: The model is then presented with its previous answer(s) along with the original input and asked to generate an improved version.
+3. Repetition: This process of refinement is repeated for a predetermined number of iterations or until some convergence criterion is met.
+4. Selection: Once all iterations are complete, the best version is selected using either an Outcome Reward Model (ORM) or a majority voting mechanism.
+
+**Mathematical Formulation:**
+```
+1. Initial generation: y₀ = model(x)
+2. for i = 1 to k:
+      yᵢ = model(x, y₀, y₁, ..., yᵢ₋₁)
+3. Final selection:
+      y* = argmax(ORM(y₀), ORM(y₁), ..., ORM(yₖ))
+      or
+      y* = mode(y₀, y₁, ..., yₖ)
+```
+
+Where:
+
+* x is the input
+* yᵢ is the i-th revision
+* k is the total number of revisions
+* ORM is the Outcome Reward Model
+
+**Key Components:**
+
+1. Revision Model: This is typically a fine-tuned version of the base language model, specifically trained to improve upon previous answers. The training process involves exposing the model to sequences of increasingly better answers to the same question.
+2. Outcome Reward Model (ORM): This is a separate model trained to evaluate the quality of complete answers. It's used to score each revision and select the best one.
+3. Majority Voting: An alternative to ORM, this method selects the most common answer among all revisions. It's particularly useful when multiple independent revision sequences are generated.
+
+**Strengths:**
+
+1. This approach allows for gradual refinement of the answer, potentially leading to high-quality results, especially for medium-difficulty questions.
+2. It can be more computationally efficient than generating multiple complete answers, as in parallel sampling.
+3. By considering previous attempts, the model can build upon its own insights and correct its mistakes.
+
+**Weaknesses:**
+
+1. This approach may get stuck in a local optimum, repeatedly making similar refinements without considering radically different approaches.
+2. The quality of the final output can be heavily influenced by the quality of the initial answer.
+3. Training a model to effectively revise its own work is a complex task, requiring sophisticated training data and techniques.
+
+Revision-based approach represents a unique strategy in inference scaling, mimicking a facet of the human creative  process of drafting and refining ideas. As I have mentioned elsewhere that I don't think that's the whole story as far as human creativity is concerned. However, the ability to iteratively improve upon its own output makes for a powerful tool in the AI toolkit, especially for tasks where quality can be enhanced through careful refinement and consideration of previous attempts.
+
+## Conclusion: The Art of Thinking Harder, Not Just Bigger
+
+This post has become way longer than originally intended so thanks for staying with it. For more details on performance metrics, and specific use-cases for each technique, I highly recommend checking out reference [3] below. 
+
+As I wrap up this journey, it's clear to me that we are amid a paradigm shift (no not AGI). We're moving from an era of "bigger is better" during training to a more nuanced approach that folds in clever inference algorithms as well in which  ORM and PRM models are the unsung heroes. Their quality will set the upper bound on the quality of your inference scaling strategy.
+
+And while these techniques will enable us to use copilots capable of more nuanced approaches to the problem this shift also means what earlier used to be a heavy training related capital expense borne by the model provider will turn more into an operational expense borne by the user.
+
+## References
+
+1. [The illustrated transformer](https://jalammar.github.io/illustrated-transformer/)
+2. [Text generation strategies](https://huggingface.co/docs/transformers/en/generation_strategies)
+3. [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/pdf/2408.03314)
