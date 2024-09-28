@@ -11,9 +11,11 @@ Are you ready to join the ranks of AI demigods? Meta's Llama Stack is here to tr
 
 [Watch the Llama Stack Setup Guide](https://youtu.be/b39eWyfjPzo)
 
-<a href="https://youtu.be/b39eWyfjPzo">
-  <img src="https://img.youtube.com/vi/b39eWyfjPzo/0.jpg" alt="Llama Stack Setup Guide">
-</a>
+<div class="video-container">
+  <a href="https://www.youtube.com/watch?v=b39eWyfjPzo">
+    <img src="https://img.youtube.com/vi/b39eWyfjPzo/0.jpg" alt="Llama Stack Setup Guide">
+  </a>
+</div>
 
 ## What is Llama Stack?
 
