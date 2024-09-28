@@ -67,26 +67,17 @@ main > * {
 }
 
 .video-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
-  margin: 1em auto;
-}
-
-.video-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.video-container a {
-  display: inline-block;
-  margin-top: 10px; /* Adds space between image and link */
-  text-align: center;
-}
-
-.video-container a:first-child {
-  width: 100%; /* Makes the image link full width */
+  height: 100%;
 }
