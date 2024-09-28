@@ -1,0 +1,54 @@
+---
+title: "Llama Stack: Meta's Impressive Stride in the AI Framework Marathon"
+author: "Shwetank Kumar"
+date: "2024-09-27"
+categories: [genai, inference]
+image: "robot.png"
+# draft: true
+---
+
+Are you ready to join the ranks of AI demigods? Meta's Llama Stack is here to transform you from a mere coder into a conductor of the silicon symphony. In this video, we're not just installing software – we're igniting a revolution in AI development. 
+
+[Watch the Llama Stack Setup Guide](https://youtu.be/b39eWyfjPzo)
+
+<a href="https://youtu.be/b39eWyfjPzo">
+  <img src="https://img.youtube.com/vi/b39eWyfjPzo/0.jpg" alt="Llama Stack Setup Guide">
+</a>
+
+## What is Llama Stack?
+
+Llama Stack is Meta's comprehensive framework for developing generative AI applications. It's not just a stack; it's a skyscraper of possibilities reaching into the cloud(s). This multi-layered, API-standardized, fine-tuning-friendly behemoth streamlines the entire AI development process, from model training to production deployment.
+
+## Key Components of Llama Stack
+
+1. **Inference API:** Predict the future (results may vary)
+2. **Safety API:** Because with great power comes great responsibility
+3. **Memory API:** Bend data to your will like a silicon sorcerer
+4. **Agentic System API:** Orchestrate AI agents with ease
+5. **Telemetry API:** Achieve AI enlightenment through deep insights
+
+## What You'll Learn in the Video
+
+1. How to deploy Llama Stack effectively, avoiding common pitfalls like a seasoned AI navigator
+2. The art of testing your AI creation using nothing but a browser - no magic wand required!
+3. Exploring mind-bending use cases with an IPython Notebook, turning code into AI gold
+4. Deploying AI solutions faster than you can say "Is this magic?"
+
+## Getting Started with Llama Stack
+
+The video guide will walk you through:
+
+1. **Installing the Llama CLI:** Your Swiss Army knife for all things Llama Stack
+2. **Downloading Models:** Choose from a variety of Llama models
+3. **Building and Configuring Distributions:** Customize your AI stack
+4. **Running Your Llama Stack Server:** Bring your AI creation to life
+5. **Testing with Clients:** Witness the power of your newly created AI system
+
+## Embrace the Llama, be the Llama
+Llama Stack represents a significant step forward in making AI development more accessible and efficient. For businesses looking to leverage AI, it's a powerful ally. For developers, it's an opportunity to elevate your skills and streamline your workflow.
+
+After all, in the world of tech, sometimes you need to spit in the face of convention to make progress. And what better way to do that than with a framework named after a creature known for its spitting prowess? 🦙💻
+
+By the end of our video, you'll be slinging APIs, fine-tuning models, and deploying AI solutions with the casual ease of a seasoned pro. Your colleagues will whisper your name in awe, and your LinkedIn profile might just spontaneously combust from the sheer radiance of your newly acquired skills.
+So, are you ready to evolve from a developer into a digital deity? Click play, and let's turn that Llama into a unicorn! 
+
