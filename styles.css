@@ -67,8 +67,8 @@ main > * {
 }
 
 .video-container {
-  width: 100%;
-  max-width: 800px; /* Adjust this value to your desired video width */
+  width: 70%;
+  max-width: 600px; /* Adjust this value to your desired video width */
   margin: 1em auto; /* This centers the container */
 }
 
