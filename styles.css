@@ -67,10 +67,12 @@ main > * {
 }
 
 .video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 600px; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
   margin: 1em auto;
-  text-align: center;
 }
 
 .video-container img {
@@ -79,11 +81,7 @@ main > * {
   object-fit: cover;
 }
 
-.video-link {
-  margin-top: 10px; /* Adjust spacing as needed */
-}
-
-.video-link a {
-  color: blue;
-  text-decoration: underline;
+.video-container a {
+  margin-top: 10px; /* Adds space between image and link */
+  text-align: center;
 }
