@@ -65,3 +65,25 @@ main > * {
   margin-left: 0;
   margin-right: 0;
 }
+
+.video-container {
+  width: 100%;
+  max-width: 900px; /* Match the max-width of your main content */
+  margin: 1em 0;
+}
+
+.video-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.quarto-body-text,
+.section,
+#comments,
+.video-container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
