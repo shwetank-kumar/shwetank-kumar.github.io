@@ -3,7 +3,7 @@ title: "Llama Stack: Meta's Impressive Stride in the AI Framework Marathon"
 author: "Shwetank Kumar"
 date: "2024-09-27"
 categories: [genai, inference]
-image: "robot.png"
+image: "llama-stack.jpeg"
 # draft: true
 ---
 
