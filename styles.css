@@ -84,6 +84,6 @@ main > * {
 }
 
 .video-link a {
-  display: inline-block;
-  /* Add any additional styling for the link here */
+  color: blue;
+  text-decoration: underline;
 }
