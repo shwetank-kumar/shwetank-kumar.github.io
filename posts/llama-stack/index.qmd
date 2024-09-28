@@ -15,6 +15,7 @@ But why should you care? Because in the fast-paced world of AI, Llama Stack is y
 
 Ready to dive in and see what all the fuss is about? Feast your eyes on this video guide and prepare for your ascension to AI greatness - we're not just installing software here, we're igniting a revolution in AI development!
 
+<br><br>
 <div class="video-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/b39eWyfjPzo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
