@@ -81,12 +81,12 @@ main > * {
   object-fit: cover;
 }
 
-.video-link {
+.video-container a {
+  display: inline-block;
   margin-top: 10px; /* Adds space between image and link */
   text-align: center;
 }
 
-.video-link a {
-  color: blue; /* Ensures the link is blue */
-  text-decoration: underline; /* Adds underline to make it clear it's a link */
+.video-container a:first-child {
+  width: 100%; /* Makes the image link full width */
 }
