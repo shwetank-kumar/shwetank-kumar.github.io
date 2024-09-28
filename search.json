@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Less Magic, More Math: Why Inference Scaling is the New Black\n\n\n\n\n\n\ngenai\n\n\ninference\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nThe Great Data Famine: Why the AI that Ate the Web Is Still Starving\n\n\n\n\n\n\ngenai\n\n\nstrategy\n\n\ninvestment\n\n\n\n\n\n\n\n\n\nSep 6, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nThe Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
+    "text": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon\n\n\n\n\n\n\ngenai\n\n\ninference\n\n\n\n\n\n\n\n\n\nSep 27, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nLess Magic, More Math: Why Inference Scaling is the New Black\n\n\n\n\n\n\ngenai\n\n\ninference\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nThe Great Data Famine: Why the AI that Ate the Web Is Still Starving\n\n\n\n\n\n\ngenai\n\n\nstrategy\n\n\ninvestment\n\n\n\n\n\n\n\n\n\nSep 6, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\n\n\n\n\n\n\nThe Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\nrecommenders\n\n\ncode\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\nShwetank Kumar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "favorite-eggheads.html",
@@ -54,6 +54,48 @@
     "title": "Less Magic, More Math: Why Inference Scaling is the New Black",
     "section": "References",
     "text": "References\n\nThe illustrated transformer\nText generation strategies\nScaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters"
+  },
+  {
+    "objectID": "posts/llama-stack/index.html",
+    "href": "posts/llama-stack/index.html",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "",
+    "text": "Are you ready to join the ranks of AI demigods? Meta’s Llama Stack is here to transform you from a mere coder into a conductor of the silicon symphony. In this video, we’re not just installing software – we’re igniting a revolution in AI development.\nWatch the Llama Stack Setup Guide"
+  },
+  {
+    "objectID": "posts/llama-stack/index.html#what-is-llama-stack",
+    "href": "posts/llama-stack/index.html#what-is-llama-stack",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "What is Llama Stack?",
+    "text": "What is Llama Stack?\nLlama Stack is Meta’s comprehensive framework for developing generative AI applications. It’s not just a stack; it’s a skyscraper of possibilities reaching into the cloud(s). This multi-layered, API-standardized, fine-tuning-friendly behemoth streamlines the entire AI development process, from model training to production deployment."
+  },
+  {
+    "objectID": "posts/llama-stack/index.html#key-components-of-llama-stack",
+    "href": "posts/llama-stack/index.html#key-components-of-llama-stack",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "Key Components of Llama Stack",
+    "text": "Key Components of Llama Stack\n\nInference API: Predict the future (results may vary)\nSafety API: Because with great power comes great responsibility\nMemory API: Bend data to your will like a silicon sorcerer\nAgentic System API: Orchestrate AI agents with ease\nTelemetry API: Achieve AI enlightenment through deep insights"
+  },
+  {
+    "objectID": "posts/llama-stack/index.html#what-youll-learn-in-the-video",
+    "href": "posts/llama-stack/index.html#what-youll-learn-in-the-video",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "What You’ll Learn in the Video",
+    "text": "What You’ll Learn in the Video\n\nHow to deploy Llama Stack effectively, avoiding common pitfalls like a seasoned AI navigator\nThe art of testing your AI creation using nothing but a browser - no magic wand required!\nExploring mind-bending use cases with an IPython Notebook, turning code into AI gold\nDeploying AI solutions faster than you can say “Is this magic?”"
+  },
+  {
+    "objectID": "posts/llama-stack/index.html#getting-started-with-llama-stack",
+    "href": "posts/llama-stack/index.html#getting-started-with-llama-stack",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "Getting Started with Llama Stack",
+    "text": "Getting Started with Llama Stack\nThe video guide will walk you through:\n\nInstalling the Llama CLI: Your Swiss Army knife for all things Llama Stack\nDownloading Models: Choose from a variety of Llama models\nBuilding and Configuring Distributions: Customize your AI stack\nRunning Your Llama Stack Server: Bring your AI creation to life\nTesting with Clients: Witness the power of your newly created AI system"
+  },
+  {
+    "objectID": "posts/llama-stack/index.html#embrace-the-llama-be-the-llama",
+    "href": "posts/llama-stack/index.html#embrace-the-llama-be-the-llama",
+    "title": "Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon",
+    "section": "Embrace the Llama, be the Llama",
+    "text": "Embrace the Llama, be the Llama\nLlama Stack represents a significant step forward in making AI development more accessible and efficient. For businesses looking to leverage AI, it’s a powerful ally. For developers, it’s an opportunity to elevate your skills and streamline your workflow.\nAfter all, in the world of tech, sometimes you need to spit in the face of convention to make progress. And what better way to do that than with a framework named after a creature known for its spitting prowess? 🦙💻\nBy the end of our video, you’ll be slinging APIs, fine-tuning models, and deploying AI solutions with the casual ease of a seasoned pro. Your colleagues will whisper your name in awe, and your LinkedIn profile might just spontaneously combust from the sheer radiance of your newly acquired skills. So, are you ready to evolve from a developer into a digital deity? Click play, and let’s turn that Llama into a unicorn!"
   },
   {
     "objectID": "posts/cold-start/index.html",
