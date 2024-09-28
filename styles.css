@@ -68,8 +68,8 @@ main > * {
 
 .video-container {
   width: 100%;
-  max-width: 900px; /* Match the max-width of your main content */
-  margin: 1em 0;
+  max-width: 1200px; /* Match the max-width of your body */
+  margin: 1em auto; /* Center the container */
 }
 
 .video-container img {
@@ -78,12 +78,21 @@ main > * {
   object-fit: cover;
 }
 
+/* Ensure the main content and video container have consistent width */
+main, .video-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Adjust other content to match if necessary */
+.quarto-title-block,
 .quarto-body-text,
 .section,
-#comments,
-.video-container {
+#comments {
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
