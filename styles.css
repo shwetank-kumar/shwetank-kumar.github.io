@@ -67,9 +67,10 @@ main > * {
 }
 
 .video-container {
-  width: 70%;
-  max-width: 600px; /* Adjust this value to your desired video width */
-  margin: 1em auto; /* This centers the container */
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 1em auto;
+  text-align: center;
 }
 
 .video-container img {
@@ -78,11 +79,11 @@ main > * {
   object-fit: cover;
 }
 
-.quarto-body-text .video-container {
-  margin-left: auto;
-  margin-right: auto;
+.video-link {
+  margin-top: 10px; /* Adjust spacing as needed */
 }
 
-.quarto-body-text a {
-  max-width: none;
+.video-link a {
+  display: inline-block;
+  /* Add any additional styling for the link here */
 }

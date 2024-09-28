@@ -9,12 +9,11 @@ image: "llama-stack.jpeg"
 
 Are you ready to join the ranks of AI demigods? Meta's Llama Stack is here to transform you from a mere coder into a conductor of the silicon symphony. In this video, we're not just installing software – we're igniting a revolution in AI development. 
 
-[Watch the Llama Stack Setup Guide](https://youtu.be/b39eWyfjPzo)
-
 <div class="video-container">
-  <a href="https://www.youtube.com/watch?v=b39eWyfjPzo">
-    <img src="https://img.youtube.com/vi/b39eWyfjPzo/0.jpg" alt="Llama Stack Setup Guide">
-  </a>
+  <img src="https://img.youtube.com/vi/b39eWyfjPzo/0.jpg" alt="Llama Stack Setup Guide">
+  <div class="video-link">
+    <a href="https://www.youtube.com/watch?v=b39eWyfjPzo">Watch the Llama Stack Setup Guide</a>
+  </div>
 </div>
 
 ## What is Llama Stack?
