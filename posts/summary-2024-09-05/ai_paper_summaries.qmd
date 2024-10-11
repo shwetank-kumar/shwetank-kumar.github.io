@@ -9,8 +9,6 @@ draft: false
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from September 05 to August 30, 2024.
 
-Here's a summary of the AI papers from last week, formatted as a markdown post for your Quarto blog:
-
 **"Writing in the Margins"** introduces a novel inference pattern for large language models (LLMs) that significantly enhances their performance on long-context retrieval tasks. By leveraging chunked prefill of the key-value cache, this approach achieves an impressive 7.5% boost in reasoning accuracy and a whopping 30% increase in F1-score for aggregation tasks. What's particularly exciting is that these improvements come without the need for fine-tuning, potentially revolutionizing how we handle complex, multi-hop reasoning and summarization tasks with off-the-shelf models. This could be a game-changer for applications requiring efficient processing of lengthy documents or intricate data analysis.
 
 [arXiv:2408.14906v1](https://arxiv.org/pdf/2408.14906v1) 👍102
