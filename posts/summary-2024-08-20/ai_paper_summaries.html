@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shwetank Kumar">
+<meta name="dcterms.date" content="2024-08-20">
 
-<title>Blog – Shwetank Kumar</title>
+<title>🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024 – Shwetank Kumar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,20 +25,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,35 +52,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WYRPY1S3G7"></script>
 
 <script type="text/javascript">
@@ -91,37 +62,8 @@ gtag('js', new Date());
 gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -131,7 +73,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Shwetank Kumar</span>
     </a>
   </div>
@@ -141,15 +83,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./favorite-eggheads.html"> 
+    <a class="nav-link" href="../../favorite-eggheads.html"> 
 <span class="menu-text">Eggheadery</span></a>
   </li>  
   <li class="nav-item compact">
@@ -168,7 +110,7 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -182,15 +124,38 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-                      </div>
+    <div class="quarto-title column-page">
+      <h1 class="title">🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Reinforcement Learning</div>
+                <div class="quarto-category">dataset_distillation</div>
+                <div class="quarto-category">Cross-Modal Segmentation</div>
+                <div class="quarto-category">Image Synthesis</div>
+                <div class="quarto-category">Logic Synthesis</div>
+                <div class="quarto-category">Optical Flow Estimation</div>
+                <div class="quarto-category">Visual Language Models</div>
+                <div class="quarto-category">Text-to-Video Generation</div>
+                <div class="quarto-category">3D Mesh Generation</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shwetank Kumar </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 20, 2024</p>
+      </div>
+    </div>
     
       
     </div>
@@ -199,230 +164,39 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="3D Mesh Generation">3D Mesh Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Cross-Modal Segmentation">Cross-Modal Segmentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Image Synthesis">Image Synthesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Logic Synthesis">Logic Synthesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Optical Flow Estimation">Optical Flow Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reinforcement Learning">Reinforcement Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Text-to-Video Generation">Text-to-Video Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Visual Language Models">Visual Language Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dataset_distillation">dataset_distillation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="genai">genai <span class="quarto-category-count">(3)</span></div><div class="category" data-category="inference">inference <span class="quarto-category-count">(2)</span></div><div class="category" data-category="investment">investment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="recommenders">recommenders <span class="quarto-category-count">(1)</span></div><div class="category" data-category="strategy">strategy <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
+<p>Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care.</p>
+<p>With that, let’s dive into the most exciting AI research from August 15 to August 20, 2024.</p>
+<p><strong>LongVILA: Scaling Long-Context Visual Language Models for Long Videos</strong> is tackling the challenge of processing lengthy video content. By employing a novel sharding strategy and 2D-attention mechanism, LongVILA achieves impressive results, including 99.5% accuracy in a needle-in-a-haystack experiment with 1400 frames. This translates to a context length of 274k tokens - a significant leap forward. The system also boasts a 2.1× to 5.7× speedup compared to traditional methods. Why should you care? This breakthrough could revolutionize video understanding, enabling more sophisticated applications in areas like content moderation, video search, and automated video summarization.</p>
+<p><a href="https://arxiv.org/pdf/2408.10188v3">arXiv:2408.10188v3</a> 👍33</p>
+<p><strong>DeepSeek-Prover-V1.5</strong> is pushing the boundaries of formal theorem proving in Lean 4. By combining reinforcement learning with Monte-Carlo tree search, the model achieves a 63.5% pass rate on the miniF2F-test benchmark and 25.3% on ProofNet. That’s not just an incremental improvement - it’s outperforming GPT-3.5 and GPT-4 on these tasks. The implications? We’re moving closer to AI systems that can assist in complex mathematical proofs, potentially accelerating discoveries in fields ranging from pure mathematics to theoretical physics.</p>
+<p><a href="https://arxiv.org/pdf/2408.08152v1">arXiv:2408.08152v1</a> 👍24</p>
+<p><strong>MeshFormer: High-Quality Mesh Generation with 3D-Guided Reconstruction Model</strong> is addressing a key challenge in computer vision: generating high-quality 3D meshes from sparse-view images. The model achieves state-of-the-art results, with F-scores of 0.963 and 0.914 on the GSO and OmniObject3D datasets respectively. What’s exciting is that MeshFormer can be trained efficiently using only 8 GPUs, converging in about two days. This could democratize 3D modeling, allowing even novices to create high-quality 3D assets in seconds - a game-changer for industries like gaming, VR, and digital twin technology.</p>
+<p><a href="https://arxiv.org/pdf/2408.10198v1">arXiv:2408.10198v1</a> 👍22</p>
+<p><strong>Segment Anything with Multiple Modalities (MM-SAM)</strong> extends the capabilities of the Segment Anything Model to non-RGB sensor modalities. The results are impressive: improvements of up to 12.6% mIoU on the MFNet dataset for cross-modal segmentation, and an average improvement of 6.4% mIoU across seven datasets for multi-modal segmentation. This breakthrough could enhance perception systems’ robustness and accuracy in challenging conditions, with potential applications in autonomous vehicles, robotics, and medical imaging.</p>
+<p><a href="https://arxiv.org/pdf/2408.09085v1">arXiv:2408.09085v1</a> 👍13</p>
+<p><strong>Heavy Labels Out! Dataset Distillation with Label Space Lightening (HeLlO)</strong> tackles the storage costs associated with large-scale dataset distillation. By leveraging pre-trained foundation models and introducing a novel label-lightening approach, HeLlO achieves comparable performance to state-of-the-art methods while using only 0.003% of the original label storage space. This could make large-scale dataset distillation more feasible for widespread adoption, potentially accelerating AI model training and reducing computational resources.</p>
+<p><a href="https://arxiv.org/pdf/2408.08201v1">arXiv:2408.08201v1</a> 👍13</p>
+<p><strong>ShortCircuit: AlphaZero-Driven Circuit Design</strong> brings deep learning to logic synthesis, achieving a 98% success rate in generating AND-Inverter Graphs (AIGs) from 8-input truth tables. The resulting AIGs are 18.62% smaller than those generated by state-of-the-art tools, with a comparable running time. This approach could revolutionize circuit design, potentially leading to more efficient hardware and faster electronic systems.</p>
+<p><a href="https://arxiv.org/pdf/2408.09858v2">arXiv:2408.09858v2</a> 👍11</p>
+<p><strong>NeuFlow v2: High-Efficiency Optical Flow Estimation on Edge Devices</strong> achieves a remarkable 10x-70x speedup compared to state-of-the-art methods, while maintaining comparable accuracy. It can run at over 20 FPS on 512x384 resolution images on a Jetson Orin Nano. This breakthrough could enable real-time optical flow estimation on edge devices, with significant implications for robotics, autonomous vehicles, and augmented reality applications.</p>
+<p><a href="https://arxiv.org/pdf/2408.10161v2">arXiv:2408.10161v2</a> 👍10</p>
+<p><strong>Generative Photomontage</strong> introduces a novel approach to creating high-quality image composites with seamless seams. The method achieves PSNR scores up to 23.44 and LPIPS losses down to 0.104, outperforming existing image blending methods in terms of realism and fidelity. This could revolutionize image manipulation techniques, with applications in fields like digital art, film production, and advertising.</p>
+<p><a href="https://arxiv.org/pdf/2408.07116v2">arXiv:2408.07116v2</a> 👍10</p>
+<p><strong>Factorized-Dreamer: Training A High-Quality Video Generator with Limited and Low-Quality Data</strong> addresses the challenge of creating high-quality video generators using publicly available, low-quality datasets. The framework achieves competitive scores on various benchmarks, including a visual quality score of 67.12 on the EvalCrafter benchmark. This could democratize high-quality video generation, enabling smaller teams and researchers to create sophisticated video content without access to large, high-quality datasets.</p>
+<p><a href="https://arxiv.org/pdf/2408.10119v1">arXiv:2408.10119v1</a> 👍9</p>
+<p>And that’s a wrap! See you next week!</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="genai,inference" data-listing-date-sort="1727420400000" data-listing-file-modified-sort="1728411760422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="516">
-<div class="thumbnail">
-<p><a href="./posts/llama-stack/index.html" class="no-external"></a></p><a href="./posts/llama-stack/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/llama-stack/llama-stack.jpeg" class="thumbnail-image"></p>
-</a><p><a href="./posts/llama-stack/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/llama-stack/index.html" class="no-external">Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/llama-stack/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('genai'); return false;">
-genai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('inference'); return false;">
-inference
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/llama-stack/index.html" class="no-external">Ready to level up from AI novice to silicon symphony conductor? Meta’s latest brainchild, Llama Stack, is here to make that happen! This freshly minted framework isn’t just…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/llama-stack/index.html" class="no-external">
-<div class="listing-date">
-Sep 27, 2024
-</div>
-<div class="listing-author">
-Shwetank Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="genai,inference" data-listing-date-sort="1726470000000" data-listing-file-modified-sort="1728411760409" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4311">
-<div class="thumbnail">
-<p><a href="./posts/inference-scaling/index.html" class="no-external"></a></p><a href="./posts/inference-scaling/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/inference-scaling/robot.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/inference-scaling/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/inference-scaling/index.html" class="no-external">Less Magic, More Math: Why Inference Scaling is the New Black</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/inference-scaling/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('genai'); return false;">
-genai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('inference'); return false;">
-inference
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/inference-scaling/index.html" class="no-external">Ah, the sweet smell of progress in the morning! OpenAI has just dropped their shiny new o1-mini and o1 models, and the internet is abuzz with hot takes faster than you can…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/inference-scaling/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2024
-</div>
-<div class="listing-author">
-Shwetank Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="genai,strategy,investment" data-listing-date-sort="1725606000000" data-listing-file-modified-sort="1728411760392" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2732">
-<div class="thumbnail">
-<p><a href="./posts/data-scarcity/index.html" class="no-external"></a></p><a href="./posts/data-scarcity/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/data-scarcity/robot.jpeg" class="thumbnail-image"></p>
-</a><p><a href="./posts/data-scarcity/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/data-scarcity/index.html" class="no-external">The Great Data Famine: Why the AI that Ate the Web Is Still Starving</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/data-scarcity/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('genai'); return false;">
-genai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('strategy'); return false;">
-strategy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('investment'); return false;">
-investment
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/data-scarcity/index.html" class="no-external">If you’re a software engineer or data scientist who’s been losing sleep over the Twitter-fueled hysteria that “English is the new coding language,” I’ve got news for you…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/data-scarcity/index.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2024
-</div>
-<div class="listing-author">
-Shwetank Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="recommenders,code" data-listing-date-sort="1724482800000" data-listing-file-modified-sort="1728411760381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3124">
-<div class="thumbnail">
-<p><a href="./posts/cold-start/index.html" class="no-external"></a></p><a href="./posts/cold-start/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/cold-start/recommender-system-diagram.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/cold-start/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/cold-start/index.html" class="no-external">The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/cold-start/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('recommenders'); return false;">
-recommenders
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/cold-start/index.html" class="no-external">While everyone seems captivated by AGI and busy building Just-Another-Chatbot (JAC<sup>TM</sup>), they’re overlooking the real problems that can be solved (and the money to be made)…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/cold-start/index.html" class="no-external">
-<div class="listing-date">
-Aug 24, 2024
-</div>
-<div class="listing-author">
-Shwetank Kumar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Reinforcement Learning,dataset_distillation,Cross-Modal Segmentation,Image Synthesis,Logic Synthesis,Optical Flow Estimation,Visual Language Models,Text-to-Video Generation,3D Mesh Generation" data-listing-date-sort="1724137200000" data-listing-file-modified-sort="1728600768370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="684">
-<div class="thumbnail">
-<p><a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external"></a></p><a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Reinforcement Learning'); return false;">
-Reinforcement Learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dataset_distillation'); return false;">
-dataset_distillation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Cross-Modal Segmentation'); return false;">
-Cross-Modal Segmentation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Image Synthesis'); return false;">
-Image Synthesis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Logic Synthesis'); return false;">
-Logic Synthesis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Optical Flow Estimation'); return false;">
-Optical Flow Estimation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Visual Language Models'); return false;">
-Visual Language Models
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Text-to-Video Generation'); return false;">
-Text-to-Video Generation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('3D Mesh Generation'); return false;">
-3D Mesh Generation
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Aug 20, 2024
-</div>
-<div class="listing-author">
-Shwetank Kumar
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -842,6 +616,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="shwetank-kumar/blog-comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
