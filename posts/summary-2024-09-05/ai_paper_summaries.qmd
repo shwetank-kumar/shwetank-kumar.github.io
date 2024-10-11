@@ -1,5 +1,5 @@
 ---
-title: "🌙 AI Afterhours: Top AI Papers for Sep 05 - Aug 30, 2024"
+title: "🌙 AI Afterhours: Top AI Papers for Aug 30 - Sep 05, 2024"
 author: "Shwetank Kumar"
 date: "Aug 30, 2024"
 categories: [Vision Transformers, Audio-Driven Video Generation, Large Language Models, Generative Diffusion Models, Multimodal Large Language Models (MLLMs)]
@@ -7,7 +7,7 @@ categories: [Vision Transformers, Audio-Driven Video Generation, Large Language 
 draft: false
 ---
 
-Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from September 05 to August 30, 2024.
+Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from August 30 to September 05, 2024.
 
 **"Writing in the Margins"** introduces a novel inference pattern for large language models (LLMs) that significantly enhances their performance on long-context retrieval tasks. By leveraging chunked prefill of the key-value cache, this approach achieves an impressive 7.5% boost in reasoning accuracy and a whopping 30% increase in F1-score for aggregation tasks. What's particularly exciting is that these improvements come without the need for fine-tuning, potentially revolutionizing how we handle complex, multi-hop reasoning and summarization tasks with off-the-shelf models. This could be a game-changer for applications requiring efficient processing of lengthy documents or intricate data analysis.
 
