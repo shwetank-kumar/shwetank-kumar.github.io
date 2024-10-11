@@ -4,7 +4,7 @@ author: "Shwetank Kumar"
 date: "Aug 27, 2024"
 categories: [Generative Models, Video Foundation Models, Vision Transformers, Table Question Answering, Controllable Text Generation, Large Language Models, Diffusion Models, Vision-Language Models, Language Model Compression]
 # image: "ai-papers-summary.svg"
-draft: true
+draft: false
 ---
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care.
