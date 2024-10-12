@@ -1,0 +1,60 @@
+---
+title: "🌙 AI Afterhours: Top AI Papers for Sep 30 - Oct 02, 2024"
+author: "Shwetank Kumar"
+date: "Sep 30, 2024"
+categories: [Multimodal Learning, Imitation Learning, MIMO, Natural Language Processing, Multimodal Generation, Knowledge Distillation, 3D Computer Vision, Large Language Models, Multimodal Models]
+# image: "ai-papers-summary.svg"
+draft: false
+---
+
+Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from September 30 to October 02, 2024.
+
+**"Emu3" demonstrates that next-token prediction is all you need** for achieving state-of-the-art performance in multimodal generation and perception tasks. By tokenizing images, text, and videos into a discrete space and training a single transformer from scratch, Emu3 outperforms established task-specific models. It achieves a zero-shot FID score of 0.43 and a CLIP-T score of 0.67 on various benchmarks. In video generation, it produces high-fidelity results with a PSNR of 22.69 and SSIM of 0.690. This approach suggests that next-token prediction could be a powerful paradigm for developing versatile multimodal models, potentially revolutionizing multimedia AI applications.
+
+[arXiv:2409.18869v1](https://arxiv.org/pdf/2409.18869v1) 👍47
+
+**"Molmo and PixMo" introduce open weights and open data for state-of-the-art multimodal models**, addressing the challenge of building advanced vision-language models (VLMs) without relying on proprietary systems. The Molmo family outperforms other open-weight models on academic benchmarks, with the 72B model ranking second in human preference evaluations. Notably, it achieves 88.7% low-level accuracy and 69.0% high-level accuracy on the AndroidControl benchmark. This work provides a foundation for developing more transparent and open AI systems, potentially democratizing access to powerful multimodal models.
+
+[arXiv:2409.17146v1](https://arxiv.org/pdf/2409.17146v1) 👍41
+
+**"Programming Every Example" (PROX) lifts pre-training data quality like experts at scale**, improving large language model (LLM) performance while reducing computing power. The PROX framework uses language models to refine pre-training data, resulting in over 2% improvement on various downstream benchmarks. Models trained on PROX-curated tokens yield significant improvements with 20× fewer tokens. The additional computational overhead is equivalent to training an extra 12B tokens on TLM-S and 5B tokens on TLM-M. This approach could be a game-changer for LLM development, making training more efficient and potentially reducing the environmental impact of AI research.
+
+[arXiv:2409.17115v1](https://arxiv.org/pdf/2409.17115v1) 👍36
+
+**The "Law of the Weakest Link" study reveals crucial insights into cross capabilities of Large Language Models** (LLMs). Using the CrossEval benchmark, comprising 1,400 prompts and 8,400 human ratings, the research shows that LLMs' cross-capability performance is significantly constrained by their weakest component. Out of 58 cross-capability scores from 17 models, 38 are lower than all individual capabilities. This finding has profound implications for LLM development, suggesting that focusing on improving weaker capabilities could lead to significant gains in cross-capability tasks, potentially revolutionizing how we approach AI model enhancement.
+
+[arXiv:2409.19951v2](https://arxiv.org/pdf/2409.19951v2) 👍34
+
+**"MIO" introduces a foundation model on multimodal tokens**, integrating text, image, video, and speech modalities. Trained using a four-stage process, MIO demonstrates competitive performance compared to previous dual-modal and modality-specific baselines. It shows a 10% improvement in image captioning and 15% in visual question answering. MIO also exhibits advanced capabilities like interleaved video-text generation and chain-of-visual-thought reasoning. While it has some limitations with OCR-related images and video generation, MIO represents a significant step towards more versatile and capable AI systems that can seamlessly work across multiple modalities.
+
+[arXiv:2409.17692v1](https://arxiv.org/pdf/2409.17692v1) 👍32
+
+**"HelloBench" provides a comprehensive evaluation of long text generation capabilities in Large Language Models** (LLMs). The study reveals that current LLMs struggle with generating text longer than 4000 words, often producing degraded quality for longer outputs. The proposed HelloEval method achieves a correlation of around 30 with human evaluation, highlighting the limitations of LLM-as-a-Judge approaches. The research identifies several error modes in long text generation, including repetition and meaningless content. These findings underscore the need for improved long-form text generation in LLMs, which could significantly impact applications like content creation and summarization.
+
+[arXiv:2409.16191v1](https://arxiv.org/pdf/2409.16191v1) 👍28
+
+**"MaskLLM" introduces learnable semi-structured sparsity for Large Language Models**, addressing the challenge of reducing computational overhead while maintaining performance. Using Gumbel Softmax sampling, MaskLLM achieves superior results compared to state-of-the-art methods, with a Wikitext perplexity of 6.72 on LLaMA-2 7B, outperforming SparseGPT's 10.42. The method effectively scales to large datasets and accelerates training through transfer learning with pre-computed masks. This approach could significantly enhance the efficiency of LLMs, making them more practical for real-world AI applications where computational resources are a constraint.
+
+[arXiv:2409.17481v1](https://arxiv.org/pdf/2409.17481v1) 👍25
+
+**"RATIONALYST" pre-trains process-supervision for improving reasoning** in Large Language Models (LLMs). By training on implicit rationales extracted from unlabeled data, RATIONALYST improves reasoning accuracy by an average of 3.9% across seven representative benchmarks. It outperforms other verifiers, including GPT-4, and demonstrates that implicit supervision surpasses explicit supervision, with a 2.6% improvement on ECQA and 4.0% on GSM8K. This approach could significantly enhance LLMs' reasoning capabilities, potentially leading to more reliable AI systems for complex decision-making tasks.
+
+[arXiv:2410.01044v1](https://arxiv.org/pdf/2410.01044v1) 👍23
+
+**"RACER" introduces rich language-guided failure recovery policies for imitation learning** in robotic manipulation. By using a vision-language model as a supervisor and a language-conditioned visuomotor policy as an actor, RACER achieves an average success rate of 70.2% on 18 RLbench tasks, outperforming the state-of-the-art RVT by 7.3%. The use of rich instructions improves performance by 2% compared to simple instructions. This approach could significantly enhance the robustness and adaptability of robotic systems, particularly in complex and dynamic environments where failure recovery is crucial.
+
+[arXiv:2409.14674v1](https://arxiv.org/pdf/2409.14674v1) 👍22
+
+**"PHI-S" introduces distribution balancing for label-free multi-teacher distillation**, addressing the challenge of balancing teacher distributions in knowledge distillation. Using a Hadamard matrix to standardize teacher outputs, PHI-S outperforms other normalization methods, achieving mean squared errors of 4.7200, 4.9010, 0.8865, and 8.3330 for DFN CLIP, SigLIP, DINOv2, and SAM, respectively. The PHI-S-RADIO-B and PHI-S-RADIO-L models reach classification accuracies of 73.16 and 80.45 on ImageNet-1K. This method could significantly improve multi-teacher knowledge distillation, benefiting various applications in computer vision and beyond.
+
+[arXiv:2410.01680v1](https://arxiv.org/pdf/2410.01680v1) 👍21
+
+**"LLaVA-3D" offers a simple yet effective pathway to empowering Large Multimodal Models (LMMs) with 3D-awareness**. By introducing the 3D Patch representation, which augments 2D patch-wise features with 3D positional embeddings, LLaVA-3D achieves state-of-the-art performance on various 3D tasks. It reaches 91.7% accuracy on ScanQA, 79.21% CIDEr on Scan2Cap, and 54.1% accuracy on ScanRefer. Notably, it converges 3.5× faster than existing 3D LMMs. This approach could significantly advance the development of generalist models capable of handling both 2D and 3D tasks, potentially revolutionizing fields like robotics and augmented reality.
+
+[arXiv:2409.18125v1](https://arxiv.org/pdf/2409.18125v1) 👍21
+
+**"MIMO" enables controllable character video synthesis with spatial decomposed modeling**, addressing the challenge of generating realistic videos with controllable attributes. Using a spatial decomposed diffusion model, MIMO achieves 95% accuracy in reconstructing input videos, with 90% of generated characters showing high similarity to input images. It can generate videos with novel 3D motions at 85% accuracy and interactive scenes at 90% accuracy. This technology could have far-reaching implications for entertainment, education, and advertising, offering new ways to create personalized and interactive video content.
+
+[arXiv:2409.16160v1](https://arxiv.org/pdf/2409.16160v1) 👍21
+
+And that's a wrap! See you next week!

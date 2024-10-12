@@ -1,0 +1,118 @@
+Date: 03-10-2024
+Paper Title,Upvotes
+RATIONALYST: Pre-training Process-Supervision for Improving Reasoning,23
+PHI-S: Distribution Balancing for Label-Free Multi-Teacher Distillation,21
+LEOPARD : A Vision Language Model For Text-Rich Multi-Image Tasks,20
+From Code to Correctness: Closing the Last Mile of Code Generation with Hierarchical Debugging,17
+Quantifying Generalization Complexity for Large Language Models,11
+ComfyGen: Prompt-Adaptive Workflows for Text-to-Image Generation,11
+Not All LLM Reasoners Are Created Equal,11
+Is Preference Alignment Always the Best Option to Enhance LLM-Based Translation? An Empirical Analysis,7
+HelpSteer2-Preference: Complementing Ratings with Preferences,7
+MOSEL: 950,000 Hours of Speech Data for Open-Source Speech Foundation Model Training on EU Languages,6
+3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection,5
+FactAlign: Long-form Factuality Alignment of Large Language Models,4
+
+Date: 02-10-2024
+Paper Title,Upvotes
+Law of the Weakest Link: Cross Capabilities of Large Language Models,34
+TPI-LLM: Serving 70B-scale LLMs Efficiently on Low-resource Edge Devices,20
+One Token to Seg Them All: Language Instructed Reasoning Segmentation in Videos,13
+Flex3D: Feed-Forward 3D Generation With Flexible Reconstruction Model And Input View Curation,11
+Illustrious: an Open Advanced Illustration Model,8
+ACE: All-round Creator and Editor Following Instructions via Diffusion Transformer,8
+Atlas-Chat: Adapting Large Language Models for Low-Resource Moroccan Arabic Dialect,8
+SyntheOcc: Synthesize Geometric-Controlled Street View Images through 3D Semantic MPIs,7
+Posterior-Mean Rectified Flow: Towards Minimum MSE Photo-Realistic Image Restoration,6
+DressRecon: Freeform 4D Human Reconstruction from Monocular Video,5
+Visual Context Window Extension: A New Perspective for Long Video Understanding,5
+Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models,5
+
+Date: 01-10-2024
+Paper Title,Upvotes
+MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning,26
+Ruler: A Model-Agnostic Method to Control Generated Length for Large Language Models,17
+DiaSynth -- Synthetic Dialogue Generation Framework,15
+Hyper-Connections,10
+Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers,9
+UniAff: A Unified Representation of Affordances for Tool Usage and Articulation with Vision-Language Models,9
+Cottention: Linear Transformers With Cosine Attention,7
+Image Copy Detection for Diffusion Models,6
+Coffee-Gym: An Environment for Evaluating and Improving Natural Language Feedback on Erroneous Code,5
+Can Models Learn Skill Composition from Examples?,4
+Visual Question Decomposition on Multimodal Large Language Models,3
+IDEAW: Robust Neural Audio Watermarking with Invertible Dual-Embedding,1
+
+Date: 30-09-2024
+Paper Title,Upvotes
+Emu3: Next-Token Prediction is All You Need, 47
+MIO: A Foundation Model on Multimodal Tokens, 32
+VPTQ: Extreme Low-bit Vector Post-Training Quantization for Large Language Models, 16
+PhysGen: Rigid-Body Physics-Grounded Image-to-Video Generation, 14
+MinerU: An Open-Source Solution for Precise Document Content Extraction, 10
+Modulated Intervention Preference Optimization (MIPO): Keep the Easy, Refine the Difficult, 9
+HDFlow: Enhancing LLM Complex Problem-Solving with Hybrid Thinking and Dynamic Workflows, 5
+A Survey on the Honesty of Large Language Models, 5
+MSI-Agent: Incorporating Multi-Scale Insight into Embodied Agents for Superior Planning and Decision-Making, 5
+LML: Language Model Learning a Dataset for Data-Augmented Prediction, 3
+
+Date: 27-09-2024
+Paper Title,Upvotes
+MaskLLM: Learnable Semi-Structured Sparsity for Large Language Models, 25
+LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D-awareness, 21
+EMOVA: Empowering Language Models to See, Hear and Speak with Vivid Emotions, 19
+Discovering the Gems in Early Layers: Accelerating Long-Context LLMs with 1000x Input Token Reduction, 13
+Lotus: Diffusion-based Visual Foundation Model for High-quality Dense Prediction, 13
+Pixel-Space Post-Training of Latent Diffusion Models, 11
+Reducing the Footprint of Multi-Vector Retrieval with Minimal Performance Impact via Token Pooling, 7
+Instruction Following without Instruction Tuning, 4
+Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction, 4
+Disco4D: Disentangled 4D Human Generation and Animation from a Single Image, 4
+The Imperative of Conversation Analysis in the Era of LLMs: A Survey of Tasks, Techniques, and Trends, 3
+Enhancing Structured-Data Retrieval with GraphRAG: Soccer Data Case Study, 2
+
+Date: 26-09-2024
+Paper Title,Upvotes
+Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Multimodal Models,41
+Programming Every Example: Lifting Pre-training Data Quality like Experts at Scale,36
+Boosting Healthcare LLMs Through Retrieved Context,13
+AIM 2024 Sparse Neural Rendering Challenge: Dataset and Benchmark,7
+Synchronize Dual Hands for Physics-Based Dexterous Guitar Playing,7
+DreamWaltz-G: Expressive 3D Gaussian Avatars from Skeleton-Guided 2D Diffusion,6
+NoTeeline: Supporting Real-Time Notetaking from Keypoints with Large Language Models,3
+Degradation-Guided One-Step Image Super-Resolution with Diffusion Priors,3
+Game4Loc: A UAV Geo-Localization Benchmark from Game Data,2
+TalkinNeRF: Animatable Neural Fields for Full-Body Talking Humans,1
+HyperAgent: Generalist Software Engineering Agents to Solve Coding Tasks at Scale,1
+Self-Supervised Any-Point Tracking by Contrastive Random Walks,1
+
+Date: 25-09-2024
+Paper Title,Upvotes
+HelloBench: Evaluating Long Text Generation Capabilities of Large Language Models, 28
+MIMO: Controllable Character Video Synthesis with Spatial Decomposed Modeling, 21
+Making Text Embedders Few-Shot Learners, 18
+OmniBench: Towards The Future of Universal Omni-Language Models, 17
+Present and Future Generalization of Synthetic Image Detectors, 15
+MonoFormer: One Transformer for Both Diffusion and Autoregression, 13
+Seeing Faces in Things: A Model and Dataset for Pareidolia, 11
+EuroLLM: Multilingual Language Models for Europe, 10
+MaskBit: Embedding-free Image Generation via Bit Tokens, 8
+Gen2Act: Human Video Generation in Novel Scenarios enables Generalizable Robot Manipulation, 6
+Improvements to SDXL in NovelAI Diffusion V3, 5
+Reward-Robust RLHF in LLMs, 4
+
+
+Date: 24-09-2024
+Paper Title,Upvotes
+RACER: Rich Language-Guided Failure Recovery Policies for Imitation Learning,22
+A Preliminary Study of o1 in Medicine: Are We Closer to an AI Doctor?,20
+PixWizard: Versatile Image-to-Image Visual Assistant with Open-Language Instructions,18
+Phantom of Latent for Large Language and Vision Models,17
+Beyond Fine-tuning: Unleashing the Potential of Continuous Pretraining for Clinical LLMs,16
+Reflecting Reality: Enabling Diffusion Models to Produce Faithful Mirror Reflections,9
+Style over Substance: Failure Modes of LLM Judges in Alignment Benchmarking,7
+An adapted large language model facilitates multiple medical tasks in diabetes care,6
+MaterialFusion: Enhancing Inverse Rendering with Material Diffusion Priors,6
+Zero-shot Cross-lingual Voice Transfer for TTS,5
+MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting,4
+A Case Study of Web App Coding with OpenAI Reasoning Models,3 
