@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/summary-2024-10-10/ai_paper_summaries.html",
       "/posts/summary-2024-10-03/ai_paper_summaries.html",
       "/posts/llama-stack/index.html",
       "/posts/inference-scaling/index.html",
