@@ -1,0 +1,74 @@
+Date: 10-10-2024
+Paper Title,Upvotes
+GLEE: A Unified Framework and Benchmark for Language-based Economic Environments,63
+Personalized Visual Instruction Tuning,57
+Aria: An Open Multimodal Native Mixture-of-Experts Model,39
+IterComp: Iterative Composition-Aware Feedback Learning from Model Gallery for Text-to-Image Generation,38
+Pixtral 12B,36
+Towards World Simulator: Crafting Physical Commonsense-Based Benchmark for Video Generation,33
+Deciphering Cross-Modal Alignment in Large Vision-Language Models with Modality Integration Rate,31
+Pyramidal Flow Matching for Efficient Video Generative Modeling,24
+Unveiling the Backbone-Optimizer Coupling Bias in Visual Representation Learning,24
+MM-Ego: Towards Building Egocentric Multimodal LLMs,17
+Falcon Mamba: The First Competitive Attention-free 7B Language Model,14
+Self-Boosting Large Language Models with Synthetic Preference Data,13
+
+Date: 09-10-2024
+Paper Title,Upvotes
+Only-IF:Revealing the Decisive Effect of Instruction Diversity on Generalization, 13
+LongGenBench: Long-context Generation Benchmark, 11
+A Spark of Vision-Language Intelligence: 2-Dimensional Autoregressive Transformer for Efficient Finegrained Image Generation, 8
+RevisEval: Improving LLM-as-a-Judge via Response-Adapted References, 7
+MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions, 5
+DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search, 5
+Grounded-VideoLLM: Sharpening Fine-grained Temporal Grounding in Video Large Language Models, 5
+ControlAR: Controllable Image Generation with Autoregressive Models, 4
+Hyper-multi-step: The Truth Behind Difficult Long-context Tasks, 4
+TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention, 2
+EBES: Easy Benchmarking for Event Sequences, 2
+Inference Scaling for Long-Context Retrieval Augmented Generation, 1
+
+Date: 08-10-2024
+Paper Title,Upvotes
+Differential Transformer, 55
+LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations, 29
+VideoGuide: Improving Video Diffusion Models without Training Through a Teacher's Guide, 22
+FAN: Fourier Analysis Networks, 20
+ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery, 13
+Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents, 12
+TLDR: Token-Level Detective Reward Model for Large Vision Language Models, 12
+Presto! Distilling Steps and Layers for Accelerating Music Generation, 11
+GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models, 10
+Named Clinical Entity Recognition Benchmark, 10
+UniMuMo: Unified Text, Music and Motion Generation, 10
+MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion, 10
+
+Date: 07-10-2024
+Paper Title,Upvotes
+Addition is All You Need for Energy-efficient Language Models, 67
+Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise, 12
+Selective Attention Improves Transformer, 12
+NL-Eye: Abductive NLI for Images, 9
+Erasing Conceptual Knowledge from Language Models, 7
+RoCoTex: A Robust Method for Consistent Texture Synthesis with Diffusion Models, 7
+A Comprehensive Survey of Mamba Architectures for Medical Image Analysis: Classification, Segmentation, Restoration and Beyond, 5
+MIGA: Mixture-of-Experts with Group Aggregation for Stock Market Prediction, 5
+CANVAS: Commonsense-Aware Navigation System for Intuitive Human-Robot Interaction, 4
+NRGBoost: Energy-Based Generative Boosted Trees, 3
+Horizon-Length Prediction: Advancing Fill-in-the-Middle Capabilities for Code Generation with Lookahead Planning, 2
+AuroraCap: Efficient, Performant Video Detailed Captioning and a New Benchmark, 1
+
+Date: 04-10-2024
+Paper Title,Upvotes
+Revisit Large-Scale Image-Caption Data in Pre-training Multimodal Foundation Models,40
+Video Instruction Tuning With Synthetic Data,28
+Loong: Generating Minute-level Long Videos with Autoregressive Language Models,27
+LLaVA-Critic: Learning to Evaluate Multimodal Models,22
+Contrastive Localized Language-Image Pre-Training,20
+Depth Pro: Sharp Monocular Metric Depth in Less Than a Second,19
+Distilling an End-to-End Voice Assistant Without Instruction Training Data,14
+Large Language Models as Markov Chains,14
+Eliminating Oversaturation and Artifacts of High Guidance Scales in Diffusion Models,12
+CLIP-MoE: Towards Building Mixture of Experts for CLIP with Diversified Multiplet Upcycling,10
+Training Language Models on Synthetic Edit Sequences Improves Code Synthesis,9
+SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration,9
