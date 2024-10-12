@@ -1,0 +1,214 @@
+Date: 12-09-2024
+Paper Title,Upvotes
+PingPong: A Benchmark for Role-Playing Language Models with User Emulation and Multi-Model Evaluation,46
+MEDIC: Towards a Comprehensive Framework for Evaluating LLMs in Clinical Applications,33
+Agent Workflow Memory,15
+Gated Slot Attention for Efficient Linear-Time Sequence Modeling,14
+Hi3D: Pursuing High-Resolution Image-to-3D Generation with Video Diffusion Models,8
+gsplat: An Open-Source Library for Gaussian Splatting,8
+VMAS: Video-to-Music Generation via Semantic Alignment in Web Music Videos,8
+Self-Harmonized Chain of Thought,8
+MVLLaVA: An Intelligent Agent for Unified and Flexible Novel View Synthesis,7
+ProteinBench: A Holistic Evaluation of Protein Foundation Models,6
+Can Large Language Models Unlock Novel Scientific Research Ideas?,5
+Instant Facial Gaussians Translator for Relightable and Interactable Facial Rendering,5 
+
+Date: 10-09-2024
+Paper Title,Upvotes
+Towards a Unified View of Preference Learning for Large Language Models: A Survey, 48
+MMEvol: Empowering Multimodal Large Language Models with Evol-Instruct, 33
+OneGen: Efficient One-Pass Unified Generation and Retrieval for LLMs, 21
+MemoRAG: Moving towards Next-Gen RAG Via Memory-Inspired Knowledge Discovery, 14
+Benchmarking Chinese Knowledge Rectification in Large Language Models, 11
+Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance, 11
+POINTS: Improving Your Vision-language Model with Affordable Strategies, 7
+Robot Utility Models: General Policies for Zero-Shot Deployment in New Environments, 5
+UniDet3D: Multi-dataset Indoor 3D Object Detection, 5
+Open Language Data Initiative: Advancing Low-Resource Machine Translation for Karakalpak, 4
+Insights from Benchmarking Frontier Language Models on Web App Code Generation, 2
+Evaluating Multiview Object Consistency in Humans and Image Models, 1
+
+Date: 06-09-2024
+Paper Title,Upvotes
+Guide-and-Rescale: Self-Guidance Mechanism for Effective Tuning-Free Real Image Editing, 71
+Attention Heads of Large Language Models: A Survey, 54
+FuzzCoder: Byte-level Fuzzing Test via Large Language Model, 34
+CDM: A Reliable Metric for Fair and Accurate Formula Recognition Evaluation, 16
+mPLUG-DocOwl2: High-resolution Compressing for OCR-free Multi-page Document Understanding, 16
+WildVis: Open Source Visualizer for Million-Scale Chat Logs in the Wild, 14
+From MOOC to MAIC: Reshaping Online Teaching and Learning through LLM-driven Agents, 13
+Geometry Image Diffusion: Fast and Data-Efficient Text-to-3D with Image-Based Surface Representation, 11
+FrozenSeg: Harmonizing Frozen Foundation Models for Open-Vocabulary Segmentation, 9
+Building Math Agents with Multi-Turn Iterative Preference Learning, 6
+Report Cards: Qualitative Evaluation of Language Models Using Natural Language Summaries, 6
+Statically Contextualizing Large Language Models with Typed Holes, 2
+
+Date: 05-09-2024
+Paper Title,Upvotes
+Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency, 41
+LongLLaVA: Scaling Multi-modal LLMs to 1000 Images Efficiently via Hybrid Architecture, 37
+LongCite: Enabling LLMs to Generate Fine-grained Citations in Long-context QA, 30
+MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark, 20
+Arctic-SnowCoder: Demystifying High-Quality Data in Code Pretraining, 13
+FastVoiceGrad: One-step Diffusion-Based Voice Conversion with Adversarial Conditional Diffusion Distillation, 6
+Political DEBATE: Efficient Zero-shot and Few-shot Classifiers for Political Text, 4
+Affordance-based Robot Manipulation with Flow Matching, 4 
+
+Date: 02-09-2024
+Paper Title,Upvotes
+SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding,16
+UrBench: A Comprehensive Benchmark for Evaluating Large Multimodal Models in Multi-View Urban Scenarios,11
+CoRe: Context-Regularized Text Embedding Learning for Text-to-Image Personalization,11
+InkubaLM: A small language model for low-resource African languages,6
+The VoxCeleb Speaker Recognition Challenge: A Retrospective,6
+VQ4DiT: Efficient Post-Training Vector Quantization for Diffusion Transformers,5
+CrossViewDiff: A Cross-View Diffusion Model for Satellite-to-Street View Synthesis,5
+CURLoRA: Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation,5
+Automatic Differential Diagnosis using Transformer-Based Multi-Label Sequence Classification,4
+VLM4Bio: A Benchmark Dataset to Evaluate Pretrained Vision-Language Models for Trait Discovery from Biological Images,4
+ClimDetect: A Benchmark Dataset for Climate Change Detection and Attribution,3
+Jina-ColBERT-v2: A General-Purpose Multilingual Late Interaction Retriever,3
+
+Date: 30-08-2024
+Paper Title,Upvotes
+Law of Vision Representation in MLLMs,55
+CogVLM2: Visual Language Models for Image and Video Understanding,37
+ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model,22
+WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling,21
+SAM2Point: Segment Any 3D as Videos in Zero-shot and Promptable Manners,17
+CSGO: Content-Style Composition in Text-to-Image Generation,10
+Physics of Language Models: Part 2.2, How to Learn From Mistakes on Grade-School Math Problems,6
+StyleRemix: Interpretable Authorship Obfuscation via Distillation and Perturbation of Style Elements,6
+3D Reconstruction with Spatial Memory,6
+Scaling Up Diffusion and Flow-based XGBoost Models,5
+Meta Flow Matching: Integrating Vector Fields on the Wasserstein Manifold,2
+
+Date: 28-08-2024
+Paper Title,Upvotes
+Writing in the Margins: Better Inference Pattern for Long Context Retrieval,102
+Diffusion Models Are Real-Time Game Engines,76
+The Mamba in the Llama: Distilling and Accelerating Hybrid Models,21
+Build-A-Scene: Interactive 3D Layout Control for Diffusion-Based Image Generation,13
+GenCA: A Text-conditioned Generative Model for Realistic and Drivable Codec Avatars,13
+Generative Inbetweening: Adapting Image-to-Video Models for Keyframe Interpolation,13
+Text2SQL is Not Enough: Unifying AI and Databases with TAG,11
+Platypus: A Generalized Specialist Model for Reading Text in Various Forms,7
+Project SHADOW: Symbolic Higher-order Associative Deductive reasoning On Wikidata using LM probing,1
+DSTI at LLMs4OL 2024 Task A: Intrinsic versus extrinsic knowledge for type classification,1
+Temporally-consistent 3D Reconstruction of Birds,1
+LLM-3D Print: Large Language Models To Monitor and Control 3D Printing,
+
+Date: 27-08-2024
+Paper Title,Upvotes
+SwiftBrush v2: Make Your One-step Diffusion Model Better Than Its Teacher, 41
+SWE-bench-java: A GitHub Issue Resolving Benchmark for Java, 31
+K-Sort Arena: Efficient and Reliable Benchmarking for Generative Models via K-wise Human Preferences, 28
+LlamaDuo: LLMOps Pipeline for Seamless Migration from Service LLMs to Small-Scale Local LLMs, 15
+Foundation Models for Music: A Survey, 15
+Learning to Move Like Professional Counter-Strike Players, 11
+Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler, 11
+Training-free Long Video Generation with Chain of Diffusion Model Experts, 11
+NanoFlow: Towards Optimal Large Language Model Serving Throughput, 10
+LLaVaOLMoBitnet1B: Ternary LLM goes Multimodal!, 7
+MobileQuant: Mobile-friendly Quantization for On-device Language Models, 7
+TVG: A Training-free Transition Video Generation Method with Diffusion Models, 6 
+
+Date: 26-08-2024
+Paper Title,Upvotes
+Building and better understanding vision-language models: insights and future directions,36
+LayerPano3D: Layered 3D Panorama for Hyper-Immersive Scene Generation,18
+MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?,16
+Multi-Layer Transformers Gradient Can be Approximated in Almost Linear Time,10
+CustomCrafter: Customized Video Generation with Preserving Motion and Concept Composition Abilities,7
+T3M: Text Guided 3D Human Motion Synthesis from Speech,6
+Memory-Efficient LLM Training with Online Subspace Descent,5
+A Web-Based Solution for Federated Learning with LLM-Based Automation,4
+FLoD: Integrating Flexible Level of Detail into 3D Gaussian Splatting for Customizable Rendering,2
+RoundTable: Leveraging Dynamic Schema and Contextual Autocomplete for Enhanced Query Precision in Tabular Question Answering,1
+HiRED: Attention-Guided Token Dropping for Efficient Inference of High-Resolution Vision-Language Models in Resource-Constrained Environments,1
+CODE: Confident Ordinary Differential Editing,1
+
+Date: 23-08-2024
+Paper Title,Upvotes
+Controllable Text Generation for Large Language Models: A Survey,40
+Sapiens: Foundation for Human Vision Models,37
+Show-o: One Single Transformer to Unify Multimodal Understanding and Generation,27
+xGen-VideoSyn-1: High-fidelity Text-to-Video Synthesis with Compressed Representations,24
+DreamCinema: Cinematic Transfer with Free Camera and 3D Character,18
+Jamba-1.5: Hybrid Transformer-Mamba Models at Scale,14
+Scalable Autoregressive Image Generation with Mamba,13
+Hermes 3 Technical Report,12
+Real-Time Video Generation with Pyramid Attention Broadcast,11
+Strategist: Learning Strategic Skills by LLMs via Bi-Level Tree Search,9
+Open-FinLLMs: Open Multimodal Large Language Models for Financial Applications,8
+SPARK: Multi-Vision Sensor Perception and Reasoning Benchmark for Large-scale Vision-Language Models,8 
+
+Date: 22-08-2024
+Paper Title,Upvotes
+TWLV-I: Analysis and Insights from Holistic Evaluation on Video Foundation Models, 42
+LLM Pruning and Distillation in Practice: The Minitron Approach, 30
+FocusLLM: Scaling LLM's Context by Parallel Decoding, 11
+TrackGo: A Flexible and Efficient Method for Controllable Video Generation, 9
+GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models, 5
+Iterative Object Count Optimization for Text-to-image Diffusion Models, 4
+Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation, 2
+Unboxing Occupational Bias: Grounded Debiasing LLMs with US Labor Data, 2
+FRAP: Faithful and Realistic Text-to-Image Generation with Adaptive Prompt Weighting, 2
+Expanding FLORES+ Benchmark for more Low-Resource Settings: Portuguese-Emakhuwa Machine Translation Evaluation, 1
+Out-of-Distribution Detection with Attention Head Masking for Multimodal Document Classification, 1
+Backward-Compatible Aligned Representations via an Orthogonal Transformation Layer, 1
+
+Date: 21-08-2024
+Paper Title,Upvotes
+TableBench: A Comprehensive and Complex Benchmark for Table Question Answering,34
+To Code, or Not To Code? Exploring Impact of Code in Pre-training,25
+Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model,23
+MagicDec: Breaking the Latency-Throughput Tradeoff for Long Context Generation with Speculative Decoding,7
+MegaFusion: Extend Diffusion Models towards Higher-resolution Image Generation without Further Tuning,6
+NeCo: Improving DINOv2's spatial representations in 19 GPU hours with Patch Neighbor Consistency,6
+PhysBERT: A Text Embedding Model for Physics Scientific Literature,5
+Ferret: Faster and Effective Automated Red Teaming with Reward-Based Scoring Technique,5
+Predicting Rewards Alongside Tokens: Non-disruptive Parameter Insertion for Efficient Inference Intervention in Large Language Model,5
+Audio Match Cutting: Finding and Creating Matching Audio Transitions in Movies and Videos,4
+The Brittleness of AI-Generated Image Watermarking Techniques: Examining Their Robustness Against Visual Paraphrasing Attacks,3
+MambaEVT: Event Stream based Visual Object Tracking using State Space Model,3
+
+Date: 20-08-2024
+Paper Title,Upvotes
+LongVILA: Scaling Long-Context Visual Language Models for Long Videos,33
+MeshFormer: High-Quality Mesh Generation with 3D-Guided Reconstruction Model,22
+Segment Anything with Multiple Modalities,13
+ShortCircuit: AlphaZero-Driven Circuit Design,11
+NeuFlow v2: High-Efficiency Optical Flow Estimation on Edge Devices,10
+Factorized-Dreamer: Training A High-Quality Video Generator with Limited and Low-Quality Data,9
+Photorealistic Object Insertion with Diffusion-Guided Inverse Rendering,8
+SpaRP: Fast 3D Object Reconstruction and Pose Estimation from Sparse Views,7
+Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges,6
+TraDiffusion: Trajectory-Based Training-Free Image Generation,5
+Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risk of Language Models,4
+
+Date: 16-08-2024
+Paper Title,Upvotes
+DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search,24
+I-SHEEP: Self-Alignment of LLM from Scratch through an Iterative Self-Enhancement Paradigm,18
+Heavy Labels Out! Dataset Distillation with Label Space Lightening,13
+Towards flexible perception with visual memory,8
+FancyVideo: Towards Dynamic and Consistent Video Generation via Cross-frame Textual Guidance,8
+Training Language Models on the Knowledge Graph: Insights on Hallucinations and Their Detectability,6
+BAM! Just Like That: Simple and Efficient Parameter Upcycling for Mixture of Experts,4
+MVInpainter: Learning Multi-View Consistent Inpainting to Bridge 2D and 3D Editing,4
+FuseChat: Knowledge Fusion of Chat Models,4
+Accelerating High-Fidelity Waveform Generation via Adversarial Flow Matching Optimization,4
+The ShareLM Collection and Plugin: Contributing Human-Model Chats for the Benefit of the Community,2
+Can Large Language Models Understand Symbolic Graphics Programs?,2
+
+Date: 15-08-2024
+Paper Title,Upvotes
+Generative Photomontage,10
+DeepSpeak Dataset v1.0,7
+InfinityMATH: A Scalable Instruction Tuning Dataset in Programmatic Mathematical Reasoning,7
+3D Gaussian Editing with A Single Image,6
+Seeing and Understanding: Bridging Vision with Chemical Knowledge Via ChemVLM,5
+Aquila2 Technical Report,5
+PeriodWave: Multi-Period Flow Matching for High-Fidelity Waveform Generation,4
+Rethinking Open-Vocabulary Segmentation of Radiance Fields in 3D Space,3
