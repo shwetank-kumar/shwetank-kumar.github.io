@@ -4,7 +4,7 @@ author: "Shwetank Kumar"
 date: "Oct 10, 2024"
 categories: [Neural Networks, Vision-Language Models, Text-to-Image Generation, Multimodal Large Language Models, Mixture-of-Experts, Text-to-Video Models, Multimodal Foundation Models, Large Language Models, Multimodal Language Models]
 # image: "ai-papers-summary.svg"
-draft: true
+draft: false
 ---
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from October 04 to October 10, 2024.
