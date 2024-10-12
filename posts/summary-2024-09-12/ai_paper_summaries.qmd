@@ -4,7 +4,7 @@ author: "Shwetank Kumar"
 date: "Sep 12, 2024"
 categories: [Fuzzing, Multimodal Large Language Models, Document Compressing, Real Image Editing, Natural Language Processing, Formula Recognition, Large Language Models]
 # image: "ai-papers-summary.svg"
-draft: true
+draft: false
 ---
 
 Here's a summary of the AI papers from last week, formatted as requested for your blog post:
