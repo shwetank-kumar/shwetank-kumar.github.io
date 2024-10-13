@@ -8,8 +8,12 @@ format:
 twitter-card:
   card-style: summary
   creator: "@shwetankumar"
-# listing: 
-#   feed: true
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
 ---
 
 ## Personal info in a nutshell
