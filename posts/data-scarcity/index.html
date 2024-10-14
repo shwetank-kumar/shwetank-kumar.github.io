@@ -61,15 +61,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </script>
-</head><body class="nav-fixed">::: {.column-margin}
-<iframe src="https://aiafterhours.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-:::
 
 
 <link rel="stylesheet" href="../../styles.css">
+</head>
 
-
-
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -125,9 +122,9 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
       <h1 class="title">The Great Data Famine: Why the AI that Ate the Web Is Still Starving</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">genai</div>
@@ -138,7 +135,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta">
 
       <div>
       <div class="quarto-title-meta-heading">Author</div>
@@ -158,12 +155,10 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
@@ -174,7 +169,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>Let me paint you a picture: There I was, surrounded by caffeine and a stack of AI whitepapers, trying to coax these silicon savants into solving some basic coding problems. It became painfully clear that to tackle even the most fundamental challenges, we’re in desperate need of a quantum leap in LLM complexity.</p>
 <p>What we really need is for these models to channel their inner project manager – breaking down problems into bite-sized chunks, crafting plans, and methodically conquering each incremental hurdle. But instead of this sophisticated problem-solving, our current crop of AI tools often resemble a caffeinated squirrel trying to solve a Rubik’s cube – lots of frantic activity, not a lot of progress.</p>
 <section id="the-transformer-plateau-when-bigger-isnt-always-better" class="level2">
-<h2 class="anchored" data-anchor-id="the-transformer-plateau-when-bigger-isnt-always-better">The Transformer Plateau: When Bigger Isn’t Always Better</h2>
+<h2 data-anchor-id="the-transformer-plateau-when-bigger-isnt-always-better">The Transformer Plateau: When Bigger Isn’t Always Better</h2>
 <p>Remember when we thought the solution to every AI challenge was simply to make it bigger? It was like Silicon Valley’s version of “supersize me,” but instead of fries, we were supersizing parameters and datasets. Well, folks, that all-you-can-eat buffet of data and compute has reached its limit.</p>
 <p>Since the “Attention is all you need” paper dropped and gave us the Transformer architecture, we’ve been playing a game of “who can build the biggest model?” It’s been like a digital arms race, with each new model flexing more parameters. And for a while, it worked! We fed these hungry, hungry hippos more data, cranked up the parameter count, and watched the benchmarks climb.</p>
 <p>But now, we’ve hit a wall. A big, data-shaped wall that’s putting a damper on our “bigger is better” party. We’re now facing a trifecta of challenges that even the most optimistic VC can’t hand-wave away:</p>
@@ -187,14 +182,14 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>Lets explore why our current AI models are perpetually data-starved, uncover the fundamental limitations of our learning approaches (backprop, SGD …), and maybe even find a path forward that doesn’t involve sacrificing our firstborns to the GPU gods. Welcome to the frontlines of the AI data crisis, in the land of diminishing returns – where the future is bright, but the training datasets are running on empty.</p>
 </section>
 <section id="beyond-chinchilla-llama-3.1-and-the-quest-for-more-data" class="level2">
-<h2 class="anchored" data-anchor-id="beyond-chinchilla-llama-3.1-and-the-quest-for-more-data">Beyond Chinchilla: Llama 3.1 and the Quest for More Data</h2>
+<h2 data-anchor-id="beyond-chinchilla-llama-3.1-and-the-quest-for-more-data">Beyond Chinchilla: Llama 3.1 and the Quest for More Data</h2>
 <p>Imagine an AI as a toddler with an endless appetite for knowledge. Now, picture that toddler devouring the entire internet and still asking for seconds. That’s our current predicament with Large Language Models (LLMs). These digital gluttons are slow learners with an insatiable hunger for data, and folks, we’re running out of internet to feed them. Who would’ve thought “we’ve run out of internet” would be a legitimate concern in 2024?</p>
 <section id="exhibit-a-metas-llama-3.1---the-data-devourer" class="level3">
-<h3 class="anchored" data-anchor-id="exhibit-a-metas-llama-3.1---the-data-devourer">Exhibit A: Meta’s Llama 3.1 - The Data Devourer</h3>
+<h3 data-anchor-id="exhibit-a-metas-llama-3.1---the-data-devourer">Exhibit A: Meta’s Llama 3.1 - The Data Devourer</h3>
 <p>Let’s dive into a real-world example that’ll make your head spin: Meta’s latest 8B parameter Llama 3.1 model. This digital beast was fed a whopping 15 trillion tokens during training. For those keeping score at home, that’s essentially the entire publicly available internet. The Llama paper [1] claims it’s all public data, but they’re keeping the exact dataset under wraps. The closest we’ve got to peeking behind the curtain is the “Fine Web Dataset” [2] on Hugging Face, tipping the scales at a hefty 44TB.</p>
 </section>
 <section id="breaking-the-rules-when-more-is-more" class="level3">
-<h3 class="anchored" data-anchor-id="breaking-the-rules-when-more-is-more">Breaking the Rules: When More is… More?</h3>
+<h3 data-anchor-id="breaking-the-rules-when-more-is-more">Breaking the Rules: When More is… More?</h3>
 <p>Now, if you’ve been following the AI literature like it’s the new Netflix, you might be thinking, “Wait a minute, isn’t that overkill?” And you’d be right - sort of. The Chinchilla paper [3], our previous guidebook for “compute optimal” training, would suggest that an 8B parameter model only needs about 160B tokens. Llama 3.1 ate roughly 100 times that amount!</p>
 <p>But here’s the kicker: it worked. Meta’s decision to massively overindulge their model led to continued performance improvements. This reveals two mind-bending facts:</p>
 <ol type="1">
@@ -204,15 +199,15 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>Even after this data feast, Llama 3.1 hadn’t reached what we’d classically call convergence. It was still improving, like a bottomless pit of potential [4]. This, combined with Microsoft’s Tiny Stories paper [5], is forcing us to rethink the data requirements for training these models.</p>
 </section>
 <section id="the-bigger-they-are-the-hungrier-they-get" class="level3">
-<h3 class="anchored" data-anchor-id="the-bigger-they-are-the-hungrier-they-get">The Bigger They Are, The Hungrier They Get</h3>
+<h3 data-anchor-id="the-bigger-they-are-the-hungrier-they-get">The Bigger They Are, The Hungrier They Get</h3>
 <p>And now consider the data requirements for 405B parameter version of Llama 3.1. It should ideally be trained on proportionally more data - we’re talking “several internets” worth. But guess what? It was trained on the same 15T tokens as its smaller sibling. If that dataset was barely enough for the 8B model, it’s like trying to feed a blue whale with a goldfish bowl for the 405B version.</p>
 </section>
 <section id="a-silver-lining-in-the-ai-cloud" class="level3">
-<h3 class="anchored" data-anchor-id="a-silver-lining-in-the-ai-cloud">A Silver Lining in the AI Cloud</h3>
+<h3 data-anchor-id="a-silver-lining-in-the-ai-cloud">A Silver Lining in the AI Cloud</h3>
 <p>Before you start stockpiling hard drives and building your own internet, there’s a glimmer of hope. For enterprises sitting on a goldmine of non-public data (that you’re legally allowed to use, of course), you’re in luck. This is your chance to fine-tune these models for specialized tasks and potentially push their performance beyond what’s publicly possible. And for the efficiency enthusiasts out there, there’s still plenty of room to explore knowledge distillation - teaching smaller models to mimic their bigger, data-guzzling cousins.</p>
 </section>
 <section id="the-tldr-version" class="level3">
-<h3 class="anchored" data-anchor-id="the-tldr-version">The TL;DR Version</h3>
+<h3 data-anchor-id="the-tldr-version">The TL;DR Version</h3>
 <ol type="1">
 <li>Llama 3.1’s training reveals that our “well-trained” models might actually be underfed data-wise.</li>
 <li>We’ve essentially run out of high-quality public data to train these ever-growing models.</li>
@@ -222,28 +217,28 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </section>
 </section>
 <section id="synthetic-data-ais-infinite-mirror-of-confusion" class="level2">
-<h2 class="anchored" data-anchor-id="synthetic-data-ais-infinite-mirror-of-confusion">Synthetic Data: AI’s Infinite Mirror of Confusion</h2>
+<h2 data-anchor-id="synthetic-data-ais-infinite-mirror-of-confusion">Synthetic Data: AI’s Infinite Mirror of Confusion</h2>
 <p>When faced with data scarcity, researchers and engineers came up with a brilliant idea: Why not leverage AI models to generate their own training data? This concept, far from being a desperate measure, is actually a legitimate and innovative approach to addressing the data hunger of large language models which offers many advantages like unparalleled scalability, solution for privacy preservation in training data, and customization for specialized tasks. However, it also comes with its own set of challenges.</p>
 <section id="model-collapse-when-ai-goes-on-a-bland-diet" class="level3">
-<h3 class="anchored" data-anchor-id="model-collapse-when-ai-goes-on-a-bland-diet">Model Collapse: When AI Goes on a Bland Diet</h3>
+<h3 data-anchor-id="model-collapse-when-ai-goes-on-a-bland-diet">Model Collapse: When AI Goes on a Bland Diet</h3>
 <p>This self-cannibalization of data leads to what’s ominously known as ‘model collapse’. Don’t let the fancy term scare you - it’s simply what happens when your AI goes on a diet of nothing but its own increasingly bland word salad.</p>
 <p>Here’s how it works: the model (or its bigger cousin) generates tokens based on probability distributions so it favors tokens closer to the mean (the “average” outputs) providing fewer examples of tokens out in the wings of the distribution. After a few cycles of generating and training on synthetic data, you lose all the diverse content from the original dataset. Result? Your models over generations lose the brilliance and versatility that would come from diversity and start generating singular, monochromatic data which doesn’t capture the real world anymore.</p>
 <p>Its like making a photocopy of a photocopy - each generation gets blurrier and weirder until you end up with something that looks like it came from a glitchy parallel universe where creativity went to die.</p>
 </section>
 <section id="bias-on-steroids" class="level3">
-<h3 class="anchored" data-anchor-id="bias-on-steroids">Bias on Steroids</h3>
+<h3 data-anchor-id="bias-on-steroids">Bias on Steroids</h3>
 <p>The opposite side of the same coin is that any small biases in the initial dataset get amplified out of propostion. So now the slight bias in your dataset is dialed to 11 on a scale of 10 and it thinks the entire world population consists of cat-loving, pizza-eating coders who never see the sun. Diversity? That’s just a myth, like inbox zero or bug-free code.</p>
 </section>
 <section id="quality-control-nightmare" class="level3">
-<h3 class="anchored" data-anchor-id="quality-control-nightmare">Quality Control Nightmare</h3>
+<h3 data-anchor-id="quality-control-nightmare">Quality Control Nightmare</h3>
 <p>Validating synthetic data is like fact-checking a politician’s promises - a Sisyphusean task (i.e.&nbsp;can’t be done, easily anyway). It’s a guessing game where the grand prize is “maybe your AI won’t embarrass itself in public.” And good luck keeping it current - by the time you’ve generated your synthetic data, the real world has moved on, leaving your AI stuck in last season’s trends like a digital fashion faux pas.</p>
 </section>
 <section id="cybersecurity-swiss-cheese" class="level3">
-<h3 class="anchored" data-anchor-id="cybersecurity-swiss-cheese">Cybersecurity Swiss Cheese</h3>
+<h3 data-anchor-id="cybersecurity-swiss-cheese">Cybersecurity Swiss Cheese</h3>
 <p>Just when you thought it couldn’t get worse, enter the hackers. Synthetic data is like a new chew toy for cybercriminals. They’re gleefully exploring all the ways they can mess with your data generation process, turning your AI into their personal puppet show.</p>
 </section>
 <section id="silver-linings-for-synthetic-data" class="level3">
-<h3 class="anchored" data-anchor-id="silver-linings-for-synthetic-data">Silver Linings for Synthetic Data</h3>
+<h3 data-anchor-id="silver-linings-for-synthetic-data">Silver Linings for Synthetic Data</h3>
 <p>But wait! Don’t despair just yet. One person’s data dilemma is another’s research opportunity. Here are some tantalizing questions for the brave AI researchers of tomorrow:</p>
 <ul>
 <li>Can we develop smarter sampling strategies to generate synthetic data from the neglected “wings” of the probability distribution?</li>
@@ -252,7 +247,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </ul>
 </section>
 <section id="the-tldr-version-1" class="level3">
-<h3 class="anchored" data-anchor-id="the-tldr-version-1">The TL;DR Version</h3>
+<h3 data-anchor-id="the-tldr-version-1">The TL;DR Version</h3>
 <ol type="1">
 <li>Synthetic data is a promising solution to data scarcity, offering scalability, privacy, and customization.</li>
 <li>However, it comes with significant challenges: model collapse, bias amplification, quality control issues, and security risks.</li>
@@ -262,28 +257,28 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </section>
 </section>
 <section id="deep-networks-are-slow-learners" class="level2">
-<h2 class="anchored" data-anchor-id="deep-networks-are-slow-learners">Deep Networks are Slow Learners</h2>
+<h2 data-anchor-id="deep-networks-are-slow-learners">Deep Networks are Slow Learners</h2>
 <p>The underlying problem that is a root cause of all our AI woes is that neural networks and other architectures using a combination of back propagation and stochastic gradient descent (let’s call these SGD &amp; Progeny Pvt. Ltd.&nbsp;to include other algorithms like Adam, Ada etc.) are slow learners - absorbing knowledge at the speed of continental drift. They’re the Pangaea of machine learning, slowly but inexorably shuffling bits of information around until, eons later, you might just have a functional model. Let’s look at how these work.</p>
 <section id="the-sgd-conundrum-navigating-ikea-blindfolded" class="level3">
-<h3 class="anchored" data-anchor-id="the-sgd-conundrum-navigating-ikea-blindfolded">The SGD Conundrum: Navigating IKEA Blindfolded</h3>
+<h3 data-anchor-id="the-sgd-conundrum-navigating-ikea-blindfolded">The SGD Conundrum: Navigating IKEA Blindfolded</h3>
 <p>Stochastic Gradient Descent (SGD) and its variants are the cornerstone of modern machine learning optimization techniques. However, their effectiveness is limited by their inherent randomness. It’s basically like trying to find your way out of an IKEA blindfolded by randomly stumbling around, making small adjustments to your trajectory based on very limited local information. You might eventually find the exit, but you’ll bump into a lot of BILLY bookcases along the way.</p>
 </section>
 <section id="escape-from-local-minima-the-comfortable-rut" class="level3">
-<h3 class="anchored" data-anchor-id="escape-from-local-minima-the-comfortable-rut">Escape from Local Minima: The Comfortable Rut</h3>
+<h3 data-anchor-id="escape-from-local-minima-the-comfortable-rut">Escape from Local Minima: The Comfortable Rut</h3>
 <p>Neural networks often get trapped in suboptimal solutions, or “local minima,” during training. To overcome this, we need to expose our models to diverse, high-quality data repeatedly. However, the scale at which this needs to happen is staggering - often requiring millions of iterations. Of course, there are heuristics that can help you along in the process, but coming up with the right set of parameters for training and escaping each minima requires a lot of experimentation with hyperparameters.</p>
 </section>
 <section id="the-hyperparameter-labyrinth-cracking-the-infinite-safe" class="level3">
-<h3 class="anchored" data-anchor-id="the-hyperparameter-labyrinth-cracking-the-infinite-safe">The Hyperparameter Labyrinth: Cracking the Infinite Safe</h3>
+<h3 data-anchor-id="the-hyperparameter-labyrinth-cracking-the-infinite-safe">The Hyperparameter Labyrinth: Cracking the Infinite Safe</h3>
 <p>Hyperparameter tuning in machine learning is akin to trying to crack a safe with an infinite number of dials. Each parameter - learning rate, batch size, network architecture, etc. - can dramatically affect model performance, yet their interactions are often unpredictable and non-linear. It’s not uncommon for researchers to spend more time tuning hyperparameters than actually training models. This process is often more art than science, relying heavily on intuition, experience, and, frankly, a fair bit of luck.</p>
 <p>Automated hyperparameter optimization techniques exist, and while helpful, often require significant computational resources and can still miss optimal configurations due to the vast search space. Moreover, hyperparameters that work well for one dataset or task might fail spectacularly on another, making it challenging to develop generalizable best practices.</p>
 <p>The complexity of hyperparameter tuning also raises questions about the robustness and interpretability of our models. If slight tweaks to these parameters can lead to drastically different results, how can we trust the stability and reliability of our AI systems?</p>
 </section>
 <section id="the-curse-of-memorization-ais-the-office-obsession" class="level3">
-<h3 class="anchored" data-anchor-id="the-curse-of-memorization-ais-the-office-obsession">The Curse of Memorization: AI’s “The Office” Obsession</h3>
+<h3 data-anchor-id="the-curse-of-memorization-ais-the-office-obsession">The Curse of Memorization: AI’s “The Office” Obsession</h3>
 <p>These models are turning into the Rain Man of useless information. Great if you need to count toothpicks, not so great for actual intelligence. As these models grow larger, they’re not getting smarter – they’re just getting better at regurgitating what they’ve seen before. It’s like that friend who can recite every line from “The Office” but can’t hold a conversation about anything else.</p>
 </section>
 <section id="the-silver-lining-future-directions" class="level3">
-<h3 class="anchored" data-anchor-id="the-silver-lining-future-directions">The Silver Lining: Future Directions</h3>
+<h3 data-anchor-id="the-silver-lining-future-directions">The Silver Lining: Future Directions</h3>
 <p>Data scarcity, which is a direct result of these fundamental limitations, is pushing us towards an inflection point. We can’t just keep making models bigger and feeding them more data. We need to fundamentally rethink how these models learn and generalize. It’s like we’ve been trying to build a skyscraper by just piling up more and more bricks. Now we need to stop and think about architecture, efficiency, and maybe invest in an elevator or two.</p>
 <p>Some promising directions include:</p>
 <ul>
@@ -294,7 +289,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </ul>
 </section>
 <section id="the-tldr-version-2" class="level3">
-<h3 class="anchored" data-anchor-id="the-tldr-version-2">The TL;DR Version</h3>
+<h3 data-anchor-id="the-tldr-version-2">The TL;DR Version</h3>
 <ol type="1">
 <li>Deep networks learn slowly due to limitations in optimization techniques like SGD.</li>
 <li>Key challenges include navigating complex loss landscapes, escaping local minima, tuning hyperparameters, and avoiding mere memorization.</li>
@@ -305,7 +300,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </section>
 </section>
 <section id="conclusion-the-tip-of-the-ai-iceberg" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-the-tip-of-the-ai-iceberg">Conclusion: The Tip of the AI Iceberg</h2>
+<h2 data-anchor-id="conclusion-the-tip-of-the-ai-iceberg">Conclusion: The Tip of the AI Iceberg</h2>
 <p>As we’ve explored in this article, the challenges facing AI development are numerous and complex. We’ve only scratched the surface of the data scarcity issue, and there are still two major hurdles we haven’t yet discussed: power consumption and system complexity.</p>
 <p>The energy requirements for training and running these increasingly large AI models are staggering. As we push the boundaries of model size and complexity, we’re also pushing the limits of our computational infrastructure. The power consumption of these models isn’t just a technical issue—it’s an environmental and economic concern that the AI community will need to address.</p>
 <p>System complexity is another critical challenge. As our AI systems grow more sophisticated, managing and optimizing them becomes increasingly difficult. We’re rapidly approaching a point where the complexity of these systems may outpace our ability to understand and control them effectively.</p>
@@ -323,7 +318,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 
 </section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

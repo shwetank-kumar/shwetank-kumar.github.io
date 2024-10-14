@@ -95,9 +95,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </script>
-</head><body class="nav-fixed">::: {.column-margin}
-<iframe src="https://aiafterhours.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-:::
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -130,9 +127,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
+</head>
 
-
-
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -188,9 +185,9 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
       <h1 class="title">Less Magic, More Math: Why Inference Scaling is the New Black</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">genai</div>
@@ -200,7 +197,7 @@ window.Quarto = {
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta">
 
       <div>
       <div class="quarto-title-meta-heading">Author</div>
@@ -220,12 +217,10 @@ window.Quarto = {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
@@ -282,20 +277,20 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <p><strong>Navigation Prompt:</strong> Details of algorithms in Step 5 is what inference scaling is all about. If you are familiar with various token generation strategies skip ahead otherwise please read on.</p>
 </blockquote>
 <section id="the-fundamentals-of-token-selection-navigating-vast-probability-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="the-fundamentals-of-token-selection-navigating-vast-probability-spaces">The Fundamentals of Token Selection: Navigating Vast Probability Spaces</h2>
+<h2 data-anchor-id="the-fundamentals-of-token-selection-navigating-vast-probability-spaces">The Fundamentals of Token Selection: Navigating Vast Probability Spaces</h2>
 <p>At its core, inference in a Large Language Model (LLM) is about predicting the next token in a sequence, given the previous tokens. It’s like playing a cosmic game of “what comes next?” where the stakes are coherent communication. LLMs accomplish this feat by learning the underlying distribution of the training data and storing a compressed version of it in their parameters. However, this nominally simple task hides a universe of complexity that would make even the most seasoned computer scientists break out in a cold sweat.</p>
 <section id="the-vastness-of-possibility" class="level3">
-<h3 class="anchored" data-anchor-id="the-vastness-of-possibility">The Vastness of Possibility</h3>
+<h3 data-anchor-id="the-vastness-of-possibility">The Vastness of Possibility</h3>
 <p>Imagine you’re an LLM with a vocabulary of |V| tokens, trying to generate a sequence of length T. The naive search space for this task is O(|V|^T). To put this into perspective, if you have a modest vocabulary of 50,000 tokens (which is on the small side for modern LLMs) and you’re generating a sequence of just 20 tokens, you’re looking at 50,000^20 possibilities.</p>
 <p>That’s a number so large it makes the number of atoms in the observable universe look like pocket change. If each possibility were a grain of sand, you’d have enough to build a beach that stretches from here to Alpha Centauri, with enough left over to fill the Mariana Trench. Twice.</p>
 <p>Clearly, brute-forcing our way through this cosmic beach of possibilities isn’t feasible, even with the most powerful supercomputers at our disposal. We need a smarter approach.</p>
 </section>
 <section id="enter-the-decoding-strategies" class="level3">
-<h3 class="anchored" data-anchor-id="enter-the-decoding-strategies">Enter the Decoding Strategies</h3>
+<h3 data-anchor-id="enter-the-decoding-strategies">Enter the Decoding Strategies</h3>
 <p>So given these insurmountable odds, how do LLMs figure out what token to generate next? Enter the world of decoding strategies! Depending on the strategies used and the choice of parameters used to tune them you might get text that is coherent, engaging, surprising or a combination there of. Just remember it will always be sampled from the underlying probability distribution that was learned during the training phase.</p>
 <p>Let’s dive into some of these strategies which we will need to understand inference scaling. There are many more which are well covered in [2] and similar articles.</p>
 <section id="beam-search-the-chess-grandmaster" class="level4">
-<h4 class="anchored" data-anchor-id="beam-search-the-chess-grandmaster">1. Beam Search: The Chess Grandmaster</h4>
+<h4 data-anchor-id="beam-search-the-chess-grandmaster">1. Beam Search: The Chess Grandmaster</h4>
 <p>Beam search is like a chess grandmaster, always thinking several moves ahead to find the best overall strategy. It explores multiple possible sequences simultaneously, keeping track of the most promising paths.</p>
 <p>At each step, beam search maintains a set number (let’s call it <code>k</code>) of the most likely partial sequences, known as hypotheses. This allows the model to consider sequences that may start with lower probability tokens but have higher overall probability, potentially leading to better quality outputs than simple greedy search.</p>
 <p>The beauty of beam search is that it strikes a balance between exploration and exploitation. It’s not just picking the best immediate option, but considering how that choice might pan out in the long run. The final output is the sequence with the highest overall probability.</p>
@@ -310,7 +305,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <p>Importantly, traditional beam search with a width k reduces our astronomical search space from O(|V|^T) to O(k|V|T). That’s a significant improvement, though still a hefty computational load for real-time applications!</p>
 </section>
 <section id="multinomial-sampling-the-creative-writer" class="level4">
-<h4 class="anchored" data-anchor-id="multinomial-sampling-the-creative-writer">2. Multinomial Sampling: The Creative Writer</h4>
+<h4 data-anchor-id="multinomial-sampling-the-creative-writer">2. Multinomial Sampling: The Creative Writer</h4>
 <p>If beam search is our chess grandmaster, multinomial sampling is the free-spirited writer who throws caution to the wind and lets inspiration guide their pen.</p>
 <p>This method introduces an element of controlled randomness into the text generation process. Unlike greedy search, which always picks the most probable token, multinomial sampling randomly selects the next token based on the probability distribution provided by the model. It’s like rolling a weighted die, where each face represents a possible next word, and the size of each face corresponds to its probability.</p>
 <p>Why is this important? It allows for more diverse outputs. Every token with a non-zero probability has a chance of being selected, reducing the risk of bland, repetitive text. It’s how AI can surprise us with creative turns of phrase or unexpected (yet coherent) continuations of a prompt.</p>
@@ -326,7 +321,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenizer.decode(outputs[<span class="dv">0</span>], skip_special_tokens<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="beam-search-multinomial-sampling-the-best-of-both-worlds" class="level4">
-<h4 class="anchored" data-anchor-id="beam-search-multinomial-sampling-the-best-of-both-worlds">3. Beam Search Multinomial Sampling: The Best of Both Worlds</h4>
+<h4 data-anchor-id="beam-search-multinomial-sampling-the-best-of-both-worlds">3. Beam Search Multinomial Sampling: The Best of Both Worlds</h4>
 <p>What if we could combine the strategic foresight of beam search with the creative spark of multinomial sampling? Enter beam search multinomial sampling, the hybrid approach that aims to give us the best of both worlds.</p>
 <p>This method maintains multiple hypotheses like beam search, but instead of always choosing the most probable token for each beam, it samples from the probability distribution. It’s as if our chess player occasionally makes a slightly unorthodox move, not because it’s objectively the best, but because it might lead to an interesting game state.</p>
 <p>The result? Outputs that are both high-quality and diverse, striking a delicate balance between coherence and creativity.</p>
@@ -342,7 +337,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenizer.decode(outputs[<span class="dv">0</span>], skip_special_tokens<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="diverse-beam-search-the-brainstorming-session" class="level4">
-<h4 class="anchored" data-anchor-id="diverse-beam-search-the-brainstorming-session">4. Diverse Beam Search: The Brainstorming Session</h4>
+<h4 data-anchor-id="diverse-beam-search-the-brainstorming-session">4. Diverse Beam Search: The Brainstorming Session</h4>
 <p>Sometimes, we don’t just want one good output – we want several distinctly different options. That’s where diverse beam search comes in. Think of it as a brainstorming session where participants are explicitly told to come up with ideas that are different from each other.</p>
 <p>Diverse beam search divides the beams into groups and applies a diversity penalty to ensure that the outputs from different groups are distinct. Within each group, standard beam search is applied. This approach is particularly useful when you want to generate multiple alternative outputs that are significantly different from each other, not just minor variations.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diverse Beam Search Example</span></span>
@@ -356,16 +351,16 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 </section>
 </section>
 <section id="the-art-of-balancing" class="level3">
-<h3 class="anchored" data-anchor-id="the-art-of-balancing">The Art of Balancing</h3>
+<h3 data-anchor-id="the-art-of-balancing">The Art of Balancing</h3>
 <p>Each of these decoding strategies offers different trade-offs between output quality, diversity, &amp; computational cost. The choice of strategy depends on the specific requirements of your task and the desired characteristics of the generated text. For example by playing with just a few parameters you can go from Greedy algorithm with extremely repetitive responses to versatile text giving human like responses.</p>
 <p>Understanding these strategies is crucial for anyone working with or developing language models. They’re not just technical details – they’re the brushstrokes that determine the final picture painted by our AI artists and to emulate reflection and thoughtfulness by your friendly neighborhood AI which is what we cover in the next section.</p>
 </section>
 </section>
 <section id="in-ais-deep-reflection-where-probability-flirts-with-search-and-models-judge-other-models-pickup-lines" class="level2">
-<h2 class="anchored" data-anchor-id="in-ais-deep-reflection-where-probability-flirts-with-search-and-models-judge-other-models-pickup-lines">In AI’s Deep Reflection: Where Probability Flirts with Search and Models Judge Other Models’ Pickup Lines</h2>
+<h2 data-anchor-id="in-ais-deep-reflection-where-probability-flirts-with-search-and-models-judge-other-models-pickup-lines">In AI’s Deep Reflection: Where Probability Flirts with Search and Models Judge Other Models’ Pickup Lines</h2>
 <p>For years, the AI community has been on a bulk-up routine that would make bodybuilders jealous - just feed the model more parameters and data. Inference scaling changes this up by giving AI models a gym membership and a personal trainer instead. It asks the question - instead of always making our models bigger, how do we make them think harder? Let’s dive into the three main approaches for that with a bit more technical detail this time.</p>
 <section id="parallel-sampling-the-brute-force-charmer" class="level3">
-<h3 class="anchored" data-anchor-id="parallel-sampling-the-brute-force-charmer">1. Parallel Sampling: The Brute Force Charmer</h3>
+<h3 data-anchor-id="parallel-sampling-the-brute-force-charmer">1. Parallel Sampling: The Brute Force Charmer</h3>
 <p>Parallel sampling is a straightforward yet powerful technique in the world of inference scaling. At its core, it’s about generating multiple independent solutions and selecting the best one.</p>
 <p><strong>How It Works:</strong></p>
 <p>When presented with an input, the AI model doesn’t generate just one answer. Instead, it produces N complete, independent answers. This process is akin to running the model N times in parallel, each time generating a full response to the input.</p>
@@ -395,7 +390,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <p>All-in-all it is a simple but brute-force approach to inference scaling. Its straightforward nature makes it an attractive option, especially when dealing with tasks where the generation of multiple diverse attempts is likely to yield at least one high-quality result. However, its effectiveness needs to be balanced against its potential computational costs, especially for more complex tasks or when scaling to very large N.</p>
 </section>
 <section id="beam-search-the-chess-grandmaster-of-inference" class="level3">
-<h3 class="anchored" data-anchor-id="beam-search-the-chess-grandmaster-of-inference">2. Beam Search: The Chess Grandmaster of Inference</h3>
+<h3 data-anchor-id="beam-search-the-chess-grandmaster-of-inference">2. Beam Search: The Chess Grandmaster of Inference</h3>
 <p>Unlike parallel sampling, which generates complete independent answers, beam search constructs solutions incrementally, making decisions at each step about which partial solutions are most promising to develop further.</p>
 <p><strong>How It Works:</strong></p>
 <ol type="1">
@@ -436,7 +431,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 <p>Beam search is particularly suited for problems where the solution quality depends on a series of interconnected decisions. Its ability to maintain and explore multiple promising solution paths makes it a go-to approach for complex, multi-step reasoning tasks in AI.</p>
 </section>
 <section id="revision-based-approach-the-perfectionists-dream" class="level3">
-<h3 class="anchored" data-anchor-id="revision-based-approach-the-perfectionists-dream">3. Revision-Based Approach: The Perfectionist’s Dream</h3>
+<h3 data-anchor-id="revision-based-approach-the-perfectionists-dream">3. Revision-Based Approach: The Perfectionist’s Dream</h3>
 <p>This approach is focuses on iterative improvement of an initial response. Unlike parallel sampling or beam search, which generate multiple independent answers or explore multiple paths simultaneously, this approach generates a single answer and then repeatedly refines it.</p>
 <p><strong>How It Works:</strong></p>
 <ol type="1">
@@ -482,13 +477,13 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 </section>
 </section>
 <section id="conclusion-the-art-of-thinking-harder-not-just-bigger" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-the-art-of-thinking-harder-not-just-bigger">Conclusion: The Art of Thinking Harder, Not Just Bigger</h2>
+<h2 data-anchor-id="conclusion-the-art-of-thinking-harder-not-just-bigger">Conclusion: The Art of Thinking Harder, Not Just Bigger</h2>
 <p>This post has become way longer than originally intended so thanks for staying with it. For more details on performance metrics, and specific use-cases for each technique, I highly recommend checking out reference [3] below.</p>
 <p>As I wrap up this journey, it’s clear to me that we are amid a paradigm shift (no not AGI). We’re moving from an era of “bigger is better” during training to a more nuanced approach that folds in clever inference algorithms as well in which ORM and PRM models are the unsung heroes. Their quality will set the upper bound on the quality of your inference scaling strategy.</p>
 <p>And while these techniques will enable us to use copilots capable of more nuanced approaches to the problem this shift also means what earlier used to be a heavy training related capital expense borne by the model provider will turn more into an operational expense borne by the user.</p>
 </section>
 <section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<h2 data-anchor-id="references">References</h2>
 <ol type="1">
 <li><a href="https://jalammar.github.io/illustrated-transformer/">The illustrated transformer</a></li>
 <li><a href="https://huggingface.co/docs/transformers/en/generation_strategies">Text generation strategies</a></li>
@@ -499,7 +494,7 @@ softmax(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 </section>
 </section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
