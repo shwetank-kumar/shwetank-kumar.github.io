@@ -23,14 +23,6 @@ website:
         href: index.xml
   google-analytics: "G-WYRPY1S3G7"
   search: false
-  # sidebar:
-  #     - id: subscribe
-  #       title: "Subscribe"
-  #       style: "floating"
-  #       collapse-level: 2
-  #       align: right
-  #       contents: 
-  #         - subscribe.qmd
 
 format:
   html:
@@ -38,4 +30,12 @@ format:
     theme: cosmo
     css: styles.css
     page-layout: custom
+    sidebar:
+      - id: subscribe
+        title: "Subscribe"
+        style: "floating"
+        collapse-level: 2
+        align: right
+        contents: 
+          - subscribe.qmd
     mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
