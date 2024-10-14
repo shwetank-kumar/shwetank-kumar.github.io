@@ -23,14 +23,14 @@ website:
         href: index.xml
   google-analytics: "G-WYRPY1S3G7"
   search: false
-  sidebar:
-      - id: subscribe
-        title: "Subscribe"
-        style: "floating"
-        collapse-level: 2
-        align: right
-        contents: 
-          - subscribe.qmd
+  # sidebar:
+  #     - id: subscribe
+  #       title: "Subscribe"
+  #       style: "floating"
+  #       collapse-level: 2
+  #       align: right
+  #       contents: 
+  #         - subscribe.qmd
 
 format:
   html:
