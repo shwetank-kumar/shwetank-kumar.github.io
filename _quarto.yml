@@ -38,7 +38,4 @@ format:
         align: right
         contents: 
           - subscribe.qmd
-    # grid:
-    #   sidebar-width: 0px  # Add this line
-    #   body-width: 1200px  # Add this line
     mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
