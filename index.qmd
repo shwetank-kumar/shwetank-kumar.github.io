@@ -1,6 +1,6 @@
 ---
 # title: false
-sidebar: false
+sidebar: subscribe
 format:
   html:
     css: styles.css
