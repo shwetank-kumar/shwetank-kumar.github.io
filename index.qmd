@@ -1,5 +1,5 @@
 ---
-title: false
+title: False
 sidebar: subscribe
 format:
   html:
