@@ -124,7 +124,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -178,17 +178,27 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Blog</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-body">
       <h1 class="title">Blog</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-body">
 
       
     
@@ -198,11 +208,24 @@ window.Quarto = {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./subscribe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subscribe</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="3D Computer Vision">3D Computer Vision <span class="quarto-category-count">(1)</span></div><div class="category" data-category="3D Mesh Generation">3D Mesh Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Audio-Driven Video Generation">Audio-Driven Video Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Controllable Text Generation">Controllable Text Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Cross-Modal Segmentation">Cross-Modal Segmentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Diffusion Models">Diffusion Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Document Compressing">Document Compressing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Formula Recognition">Formula Recognition <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Fuzzing">Fuzzing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Generative Diffusion Models">Generative Diffusion Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Generative Models">Generative Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Image Synthesis">Image Synthesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Imitation Learning">Imitation Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Knowledge Distillation">Knowledge Distillation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Language Model Compression">Language Model Compression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Large Language Models">Large Language Models <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Logic Synthesis">Logic Synthesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MIMO">MIMO <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mixture-of-Experts">Mixture-of-Experts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Foundation Models">Multimodal Foundation Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Generation">Multimodal Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Language Models">Multimodal Language Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Large Language Models">Multimodal Large Language Models <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Multimodal Large Language Models (MLLMs)">Multimodal Large Language Models (MLLMs) <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Learning">Multimodal Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Multimodal Models">Multimodal Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Natural Language Processing">Natural Language Processing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Neural Networks">Neural Networks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Optical Flow Estimation">Optical Flow Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Real Image Editing">Real Image Editing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reinforcement Learning">Reinforcement Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Table Question Answering">Table Question Answering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Text-to-Image Generation">Text-to-Image Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Text-to-Video Generation">Text-to-Video Generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Text-to-Video Models">Text-to-Video Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Video Foundation Models">Video Foundation Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Vision Transformers">Vision Transformers <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Vision-Language Models">Vision-Language Models <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Visual Language Models">Visual Language Models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dataset_distillation">dataset_distillation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="genai">genai <span class="quarto-category-count">(3)</span></div><div class="category" data-category="inference">inference <span class="quarto-category-count">(2)</span></div><div class="category" data-category="investment">investment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="recommenders">recommenders <span class="quarto-category-count">(1)</span></div><div class="category" data-category="strategy">strategy <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
 
 
