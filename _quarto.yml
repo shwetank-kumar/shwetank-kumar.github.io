@@ -23,14 +23,7 @@ website:
         href: index.xml
   google-analytics: "G-WYRPY1S3G7"
   search: false
-
-format:
-  html:
-    toc: false
-    theme: cosmo
-    css: styles.css
-    page-layout: custom
-    sidebar:
+  sidebar:
       - id: subscribe
         title: "Subscribe"
         style: "floating"
@@ -38,4 +31,11 @@ format:
         align: right
         contents: 
           - subscribe.qmd
+
+format:
+  html:
+    toc: false
+    theme: cosmo
+    css: styles.css
+    page-layout: custom
     mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
