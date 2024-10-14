@@ -9,14 +9,13 @@ body {
 
 .quarto-content {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  align-items: center; /* Center child elements horizontally */
+  justify-content: space-between;
 }
 
 main {
   width: 100%;
-  max-width: 900px; /* Adjust this value as needed */
+  max-width: 900px;
 }
 
 /* Target the title, body, and comments to ensure consistent width and alignment */
@@ -25,7 +24,7 @@ main {
 .section,
 #comments {
   width: 100%;
-  max-width: 100%; /* Use full width of the main container */
+  max-width: 100%;
 }
 
 /* Ensure content inside main is full width */
@@ -40,21 +39,42 @@ main > * {
 }
 
 #quarto-margin-sidebar {
+  width: 250px;
+  margin-left: 20px;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  margin-left: 20px;
+}
+
+.sidebar iframe {
   width: 100%;
-  max-width: 900px; /* Match the main content width */
-  margin: 2em auto 0;
-  padding: 1em 0;
-  border-top: 1px solid #e0e0e0;
+  height: 320px;
+  border: 1px solid #EEE;
+  background: white;
 }
 
 /* Responsive design */
-@media (max-width: 940px) { /* Adjust breakpoint as needed */
+@media (max-width: 940px) {
   body {
     padding: 0 10px;
   }
   
+  .quarto-content {
+    flex-direction: column;
+  }
+
   main {
     max-width: 100%;
+  }
+
+  #quarto-margin-sidebar,
+  .sidebar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
   }
 }
 
@@ -82,6 +102,13 @@ main > * {
   height: 100%;
 }
 
+/* About page styles */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .about-section {
   width: 100%;
   margin-bottom: 2em;
@@ -92,10 +119,8 @@ main > * {
   margin-bottom: 0.5em;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .about-content {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 }
