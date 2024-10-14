@@ -34,8 +34,4 @@ format:
       sidebar-width: 0px  # Add this line
       body-width: 1200px  # Add this line
     mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
-
-margin-header:
-  website:
-  # (additional metadata excluded for brevity)
-    margin-header: subscribe.html
+    include-in-header: _margins.qmd
