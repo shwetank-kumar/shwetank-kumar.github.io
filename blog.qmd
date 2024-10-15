@@ -11,5 +11,8 @@ listing:
   feed: true
 page-layout: full
 title-block-banner: true
-margin-header: subscribe.html
+# margin-header: subscribe.html
 ---
+
+
+{{< include _subscribe.qmd >}}

@@ -1,0 +1,8 @@
+---
+title: "{{< meta title >}}"
+date: "{{< meta date >}}"
+---
+
+{{< include _subscribe.qmd >}}
+
+{{< content >}}
