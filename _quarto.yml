@@ -45,4 +45,4 @@ listing:
   sort-ui: false
   filter-ui: false
   fields: [date, title, reading-time, description]
-  feed: true
+  # feed: true
