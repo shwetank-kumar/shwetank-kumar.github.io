@@ -11,7 +11,7 @@ listing:
   feed: true
 page-layout: full
 title-block-banner: true
-before-body: subscribe.html
+# before-body: subscribe.html
 ---
 
 <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1728988");</style>
