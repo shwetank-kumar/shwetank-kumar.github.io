@@ -2,7 +2,7 @@
 title: "{{< meta title >}}"
 date: "{{< meta date >}}"
 ---
-
+```html
 {{< include _subscribe.qmd >}}
 
 {{< content >}}
