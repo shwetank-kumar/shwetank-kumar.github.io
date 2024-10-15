@@ -61,6 +61,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -86,6 +88,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WYRPY1S3G7"></script>
 
 <script type="text/javascript">
@@ -96,9 +127,38 @@ gtag('js', new Date());
 gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
-</head>
+<link rel="alternate" type="application/rss+xml" title="Shwetank Kumar" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed">
 
@@ -433,10 +493,18 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>While we’ve covered significant ground in this post, we’ve only scratched the surface of what’s possible. In our next installment, we’ll explore how cutting-edge AI techniques can take our recommendation system to the next level. We’ll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they’ll want next. From leveraging deep learning to harnessing the power of contextual bandits, we’ll explore how to create a recommendation engine that doesn’t just react to customer behavior, but anticipates it. It’s the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D.&nbsp;in data science). In the end, that’s what separates a good recommendation system from a great one. It’s not just about predicting what customers want - it’s about inspiring them, delighting them, and yes, maybe even surprising them a little. So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
