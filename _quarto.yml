@@ -24,7 +24,6 @@ website:
   google-analytics: "G-WYRPY1S3G7"
   search: false
   page-navigation: false
-  margin-header: subscribe.html
 
 format:
   html:
