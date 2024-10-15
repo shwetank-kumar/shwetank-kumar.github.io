@@ -37,12 +37,12 @@ format:
       body-width: 1200px  # Add this line
     mainfont: "Helvetica, Arial, sans-serif"  # Optional: for consistent font
 
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [date, title, reading-time, description]
-  # feed: true
+# listing:
+#   contents: posts
+#   sort: "date desc"
+#   type: default
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+#   fields: [date, title, reading-time, description]
+#   feed: true

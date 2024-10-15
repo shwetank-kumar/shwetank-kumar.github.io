@@ -7,8 +7,17 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
+  fields: [date, title, reading-time, description]
+  feed: true
 page-layout: full
 title-block-banner: true
 ---
 
-<iframe src="https://aiafterhours.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 0;">
+  <iframe src="https://aiafterhours.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</div>
+
+::: {.content-container}
+::: {#listing-posts}
+:::
+:::
