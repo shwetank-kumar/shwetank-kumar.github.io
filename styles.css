@@ -11,29 +11,26 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center; /* Center child elements horizontally */
+  align-items: center;
 }
 
 main {
   width: 100%;
-  max-width: 900px; /* Adjust this value as needed */
+  max-width: 1200px; /* Increased to match body max-width */
 }
 
-/* Target the title, body, and comments to ensure consistent width and alignment */
 .quarto-title-block,
 .quarto-body-text,
 .section,
 #comments {
   width: 100%;
-  max-width: 100%; /* Use full width of the main container */
+  max-width: 100%;
 }
 
-/* Ensure content inside main is full width */
 main > * {
   width: 100%;
 }
 
-/* Style for better readability */
 .quarto-body-text {
   line-height: 1.6;
   font-size: 1.1rem;
@@ -41,14 +38,13 @@ main > * {
 
 #quarto-margin-sidebar {
   width: 100%;
-  max-width: 900px; /* Match the main content width */
+  max-width: 1200px; /* Increased to match main content width */
   margin: 2em auto 0;
   padding: 1em 0;
   border-top: 1px solid #e0e0e0;
 }
 
-/* Responsive design */
-@media (max-width: 940px) { /* Adjust breakpoint as needed */
+@media (max-width: 1220px) { /* Adjusted breakpoint */
   body {
     padding: 0 10px;
   }
@@ -58,7 +54,6 @@ main > * {
   }
 }
 
-/* Ensure consistent alignment for post content and comments */
 .quarto-body-text > *,
 #comments > * {
   max-width: 100%;
@@ -68,7 +63,7 @@ main > * {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -97,4 +92,41 @@ main > * {
 
 #listing-posts {
   margin-top: 2em;
+}
+
+/* New styles for blog listing */
+.listings {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.quarto-listing-container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.quarto-listing-container > * {
+  width: 100%;
+}
+
+.quarto-listing-container .quarto-listing-category,
+.quarto-listing-container .list {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 992px) {
+  .quarto-listing-container .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Ensure full width for blog page content */
+.quarto-title-block,
+.content-container {
+  width: 100%;
+  max-width: 1200px;
 }
