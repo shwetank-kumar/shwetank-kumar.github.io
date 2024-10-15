@@ -25,8 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -52,35 +50,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WYRPY1S3G7"></script>
 
 <script type="text/javascript">
@@ -91,43 +60,14 @@ gtag('js', new Date());
 gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Shwetank Kumar" href="index.xml" data-external="1"><meta name="twitter:title" content="– Shwetank Kumar">
+<meta name="twitter:title" content="– Shwetank Kumar">
 <meta name="twitter:creator" content="@shwetankumar">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -183,19 +123,17 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
 
 
 
 
 <div class="about-content">
 <section id="personal-info-in-a-nutshell" class="level2 about-section">
-<h2 class="anchored" data-anchor-id="personal-info-in-a-nutshell">Personal info in a nutshell</h2>
+<h2 data-anchor-id="personal-info-in-a-nutshell">Personal info in a nutshell</h2>
 <p>I’m a physicist, engineering exec, investor. Here’s my story:</p>
 <ul>
 <li>Born and raised in NCR, India. Delhi native, I live in SF.</li>
@@ -206,7 +144,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="some-things-ive-done" class="level2 about-section">
-<h2 class="anchored" data-anchor-id="some-things-ive-done">Some things I’ve done</h2>
+<h2 data-anchor-id="some-things-ive-done">Some things I’ve done</h2>
 <ul>
 <li>Built AI systems that crunch petabytes of data across image, text, and tabular formats.</li>
 <li>Scaled these systems to serve millions of customers simultaneously <a href="achieve.com">1</a>, <a href="turo.com">2</a>.</li>
@@ -215,7 +153,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="tech-i-love-working-with" class="level2 about-section">
-<h2 class="anchored" data-anchor-id="tech-i-love-working-with">Tech I love working with:</h2>
+<h2 data-anchor-id="tech-i-love-working-with">Tech I love working with:</h2>
 <ul>
 <li>PyTorch, Hugging Face, Langchain, Pydantic</li>
 <li>GCP, Snowflake, Bigquery</li>
@@ -223,7 +161,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="investing" class="level2 about-section">
-<h2 class="anchored" data-anchor-id="investing">Investing:</h2>
+<h2 data-anchor-id="investing">Investing:</h2>
 <ul>
 <li>My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.</li>
 <li>Some companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…</li>
@@ -232,7 +170,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="where-you-can-find-me" class="level2 about-section">
-<h2 class="anchored" data-anchor-id="where-you-can-find-me">Where you can find me:</h2>
+<h2 data-anchor-id="where-you-can-find-me">Where you can find me:</h2>
 <ul>
 <li>Writing about AI musings, tech &amp; leadership, and data science on this blog</li>
 <li>Sharing insights on <a href="https://www.linkedin.com/in/shwetankkumar/">LinkedIn</a></li>
@@ -245,243 +183,6 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Neural Networks,Vision-Language Models,Text-to-Image Generation,Multimodal Large Language Models,Mixture-of-Experts,Text-to-Video Models,Multimodal Foundation Models,Large Language Models,Multimodal Language Models" data-listing-date-sort="1728543600000" data-listing-file-modified-sort="1728775299018" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="958">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-10-10/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Oct 04 - Oct 10, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-10-10/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-10-10/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-10-10/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Oct 10, 2024
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Multimodal Learning,Imitation Learning,MIMO,Natural Language Processing,Multimodal Generation,Knowledge Distillation,3D Computer Vision,Large Language Models,Multimodal Models" data-listing-date-sort="1727679600000" data-listing-file-modified-sort="1728769364296" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1083">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-10-03/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Sep 30 - Oct 02, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-10-03/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-10-03/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-10-03/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Sep 30, 2024
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="genai,inference" data-listing-date-sort="1727420400000" data-listing-file-modified-sort="1728411760422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="516">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/llama-stack/index.html" class="no-external">Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/llama-stack/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/llama-stack/index.html" class="no-external">Ready to level up from AI novice to silicon symphony conductor? Meta’s latest brainchild, Llama Stack, is here to make that happen! This freshly minted framework isn’t just…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/llama-stack/index.html" class="no-external">
-<div class="listing-date">
-Sep 27, 2024
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="genai,inference" data-listing-date-sort="1726470000000" data-listing-file-modified-sort="1728411760409" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4311">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/inference-scaling/index.html" class="no-external">Less Magic, More Math: Why Inference Scaling is the New Black</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/inference-scaling/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/inference-scaling/index.html" class="no-external">Ah, the sweet smell of progress in the morning! OpenAI has just dropped their shiny new o1-mini and o1 models, and the internet is abuzz with hot takes faster than you can…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/inference-scaling/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2024
-</div>
-<div class="listing-reading-time">
-22 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Fuzzing,Multimodal Large Language Models,Document Compressing,Real Image Editing,Natural Language Processing,Formula Recognition,Large Language Models" data-listing-date-sort="1726124400000" data-listing-file-modified-sort="1728766481204" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="990">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-09-12/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Sep 06 - Sep 12, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-09-12/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-09-12/ai_paper_summaries.html" class="no-external">Here’s a summary of the AI papers from last week, formatted as requested for your blog post:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-09-12/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Sep 12, 2024
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="genai,strategy,investment" data-listing-date-sort="1725606000000" data-listing-file-modified-sort="1728411760392" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2732">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/data-scarcity/index.html" class="no-external">The Great Data Famine: Why the AI that Ate the Web Is Still Starving</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/data-scarcity/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/data-scarcity/index.html" class="no-external">If you’re a software engineer or data scientist who’s been losing sleep over the Twitter-fueled hysteria that “English is the new coding language,” I’ve got news for you…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/data-scarcity/index.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2024
-</div>
-<div class="listing-reading-time">
-14 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Vision Transformers,Audio-Driven Video Generation,Large Language Models,Generative Diffusion Models,Multimodal Large Language Models (MLLMs)" data-listing-date-sort="1725001200000" data-listing-file-modified-sort="1728686551416" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="544">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-09-05/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Aug 30 - Sep 05, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-09-05/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-09-05/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-09-05/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Aug 30, 2024
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="Generative Models,Video Foundation Models,Vision Transformers,Table Question Answering,Controllable Text Generation,Large Language Models,Diffusion Models,Vision-Language Models,Language Model Compression" data-listing-date-sort="1724742000000" data-listing-file-modified-sort="1728677534069" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-08-27/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Aug 21 - Aug 27, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-08-27/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-08-27/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-08-27/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2024
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="recommenders,code" data-listing-date-sort="1724482800000" data-listing-file-modified-sort="1729007223969" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3124">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/cold-start/index.html" class="no-external">The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/cold-start/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/cold-start/index.html" class="no-external">While everyone seems captivated by AGI and busy building Just-Another-Chatbot (JAC<sup>TM</sup>), they’re overlooking the real problems that can be solved (and the money to be made)…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/cold-start/index.html" class="no-external">
-<div class="listing-date">
-Aug 24, 2024
-</div>
-<div class="listing-reading-time">
-16 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="Reinforcement Learning,dataset_distillation,Cross-Modal Segmentation,Image Synthesis,Logic Synthesis,Optical Flow Estimation,Visual Language Models,Text-to-Video Generation,3D Mesh Generation" data-listing-date-sort="1724137200000" data-listing-file-modified-sort="1728677536909" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="684">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summary-2024-08-20/ai_paper_summaries.html" class="no-external">
-<div class="listing-date">
-Aug 20, 2024
-</div>
-<div class="listing-reading-time">
-4 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
