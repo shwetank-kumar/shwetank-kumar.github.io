@@ -13,6 +13,3 @@ page-layout: full
 title-block-banner: true
 margin-header: subscribe.html
 ---
-```html
-
-{{< include _subscribe.qmd >}}
