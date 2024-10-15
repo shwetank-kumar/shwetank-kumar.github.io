@@ -23,26 +23,19 @@ website:
         href: index.xml
   google-analytics: "G-WYRPY1S3G7"
   search: false
-  page-navigation: false
-  sidebar: false
+  sidebar:
+    - id: subscribe
+      title: "Subscribe"
+      style: "floating"
+      collapse-level: 2
+      align: right
+      contents: 
+        - subscribe.qmd
 
 format:
   html:
-    toc: false
     theme: cosmo
     css: styles.css
-    page-layout: full
-    grid:
-      sidebar-width: 0px
-      body-width: 1200px
+    toc: false
+    page-layout: custom
     mainfont: "Helvetica, Arial, sans-serif"
-
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [date, title, reading-time, description]
-  feed: true
