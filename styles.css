@@ -81,3 +81,20 @@ main > * {
   width: 100%;
   height: 100%;
 }
+
+.content-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.quarto-title-block .quarto-title-banner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#listing-posts {
+  margin-top: 2em;
+}
