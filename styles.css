@@ -1,54 +1,140 @@
-/* Add these styles to your styles.css */
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
 
-/* For screens wider than 992px */
-@media (min-width: 992px) {
-  .quarto-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  main {
-    width: calc(100% - 300px); /* Adjust the width as needed */
-    margin-right: 2rem;
-  }
-
-#quarto-margin-sidebar {
-  width: 100%;
+.content-container {
   max-width: 1200px;
-  margin: 2em auto 0;
-  padding: 1em 0;
-  border-top: 1px solid #e0e0e0;
-  clear: both;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Style for the subscription box content */
-#quarto-margin-sidebar .quarto-alternate-notebooks {
-  background-color: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  padding: 1em;
-  margin-top: 1em;
-}
-}
-
-/* For screens narrower than 992px */
-@media (max-width: 991px) {
-  #quarto-margin-sidebar {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 2rem;
-    padding: 1rem 0;
-    border-top: 1px solid #e0e0e0;
-  }
+/* Subscription box styles */
+#quarto-margin-sidebar {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #f0f0f0;
+  padding: 2em 0;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Ensure the content doesn't overflow on smaller screens */
-.quarto-title-block,
-.quarto-body-text,
-.section,
-#comments {
+.quarto-alternate-notebooks {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#quarto-margin-sidebar h4 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+  text-align: center;
+}
+
+#quarto-margin-sidebar p {
+  margin-bottom: 1.5em;
+  color: #34495e;
+  text-align: center;
+}
+
+#quarto-margin-sidebar input[type="email"] {
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  padding: 12px;
+  margin-bottom: 1em;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#quarto-margin-sidebar button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#quarto-margin-sidebar button:hover {
+  background-color: #2980b9;
+}
+
+/* Blog listing styles */
+.quarto-listing-container {
+  margin-top: 2em;
+}
+
+.quarto-listing-container .list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+
+.quarto-listing-container .list > * {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5em;
+  transition: box-shadow 0.3s ease;
+}
+
+.quarto-listing-container .list > *:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.listing-date {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.listing-title {
+  font-size: 1.4em;
+  margin: 0.5em 0;
+  color: #2c3e50;
+}
+
+.listing-description {
+  color: #34495e;
+}
+
+/* Navigation styles */
+.navbar {
+  background-color: white;
+  padding: 1em 0;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.navbar-nav .nav-link {
+  color: #34495e;
+  margin-left: 1em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .quarto-alternate-notebooks {
+    padding: 1.5em;
+  }
 }
