@@ -6,8 +6,7 @@ categories: [Retrieval-Augmented Generation, Latent Diffusion Model, Vision-Lang
 # image: "ai-papers-summary.svg"
 draft: false
 page-layout: article
-sidebar: 
-  - contents: subscribe.html
+margin-header: subscribe.html
 ---
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from October 11 to October 17, 2024.
