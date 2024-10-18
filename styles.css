@@ -1,140 +1,132 @@
-/* General styles */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-
-.content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Subscription box styles */
+.quarto-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px; /* Increased to match body max-width */
+}
+
+.quarto-title-block,
+.quarto-body-text,
+.section,
+#comments {
+  width: 100%;
+  max-width: 100%;
+}
+
+main > * {
+  width: 100%;
+}
+
+.quarto-body-text {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
 #quarto-margin-sidebar {
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px; /* Increased to match main content width */
+  margin: 2em auto 0;
+  padding: 1em 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 1220px) { /* Adjusted breakpoint */
+  body {
+    padding: 0 10px;
+  }
+  
+  main {
+    max-width: 100%;
+  }
+}
+
+.quarto-body-text > *,
+#comments > * {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.video-container {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #f0f0f0;
-  padding: 2em 0;
-  margin-bottom: 2em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-.quarto-alternate-notebooks {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2em;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-#quarto-margin-sidebar h4 {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
-  color: #2c3e50;
-  text-align: center;
-}
-
-#quarto-margin-sidebar p {
-  margin-bottom: 1.5em;
-  color: #34495e;
-  text-align: center;
-}
-
-#quarto-margin-sidebar input[type="email"] {
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 12px;
-  margin-bottom: 1em;
-  border: 1px solid #bdc3c7;
-  border-radius: 4px;
-  font-size: 1em;
+  height: 100%;
 }
 
-#quarto-margin-sidebar button {
-  width: 100%;
-  padding: 12px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.content-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-#quarto-margin-sidebar button:hover {
-  background-color: #2980b9;
+.quarto-title-block .quarto-title-banner {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/* Blog listing styles */
-.quarto-listing-container {
+#listing-posts {
   margin-top: 2em;
 }
 
+/* New styles for blog listing */
+.listings {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.quarto-listing-container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.quarto-listing-container > * {
+  width: 100%;
+}
+
+.quarto-listing-container .quarto-listing-category,
 .quarto-listing-container .list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.quarto-listing-container .list > * {
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1.5em;
-  transition: box-shadow 0.3s ease;
-}
-
-.quarto-listing-container .list > *:hover {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.listing-date {
-  color: #7f8c8d;
-  font-size: 0.9em;
-}
-
-.listing-title {
-  font-size: 1.4em;
-  margin: 0.5em 0;
-  color: #2c3e50;
-}
-
-.listing-description {
-  color: #34495e;
-}
-
-/* Navigation styles */
-.navbar {
-  background-color: white;
-  padding: 1em 0;
-  margin-bottom: 2em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbar-brand {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-.navbar-nav .nav-link {
-  color: #34495e;
-  margin-left: 1em;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .quarto-alternate-notebooks {
-    padding: 1.5em;
+@media (min-width: 992px) {
+  .quarto-listing-container .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
   }
+}
+
+/* Ensure full width for blog page content */
+.quarto-title-block,
+.content-container {
+  width: 100%;
+  max-width: 1200px;
 }
