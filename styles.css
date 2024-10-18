@@ -35,35 +35,13 @@ main > * {
   line-height: 1.6;
   font-size: 1.1rem;
 }
-/* Add these new styles */
-#newsletter-signup {
-  width: 100%;
-  max-width: 1200px;
-  margin: 2em auto;
-  padding: 1em;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
-#listing-posts {
+#quarto-margin-sidebar {
   width: 100%;
-  max-width: 1200px;
-  margin: 2em auto;
-}
-
-/* Modify existing styles */
-.quarto-title-block,
-.content-container,
-main {
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.quarto-listing-container {
-  width: 100%;
+  max-width: 1200px; /* Increased to match main content width */
+  margin: 2em auto 0;
+  padding: 1em 0;
+  border-top: 1px solid #e0e0e0;
 }
 
 @media (max-width: 1220px) { /* Adjusted breakpoint */
