@@ -100,7 +100,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -156,9 +156,9 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
       <h1 class="title">The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">recommenders</div>
@@ -168,7 +168,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta">
 
       <div>
       <div class="quarto-title-meta-heading">Author</div>
@@ -188,12 +188,10 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
@@ -202,7 +200,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>While everyone seems captivated by AGI and busy building Just-Another-Chatbot (JAC<sup>TM</sup>), they’re overlooking the real problems that can be solved (and the money to be made) through practical ML Engineering. In this inaugural series of blog posts, I’ll dive deep into one such problem: bootstrapping and building a brand recommender system from the ground up. Drawing from my experience as an engineer, executive, and consultant across multiple consumer tech companies and marketplaces, I’ll guide you through the process of creating a recommendation engine that not only predicts customer preferences but also enhances their overall shopping experience.</p>
 <p>We’ll explore the journey from raw data to a sophisticated system that can significantly boost your bottom line while offering your customers a personalized and delightful experience. So, let’s embark on this data-driven adventure and unlock the potential of personalized recommendations in e-commerce. By the end of this series, you’ll have the tools to transform your e-commerce platform into a cash machine that keeps both your customers and CFOs happy.</p>
 <section id="the-problem-e-commerce-is-a-jungle-and-your-customers-are-lost" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-e-commerce-is-a-jungle-and-your-customers-are-lost">The Problem: E-commerce Is a Jungle (And Your Customers Are Lost)</h2>
+<h2 data-anchor-id="the-problem-e-commerce-is-a-jungle-and-your-customers-are-lost">The Problem: E-commerce Is a Jungle (And Your Customers Are Lost)</h2>
 <p>Imagine you’ve just launched an e-commerce platform. It’s sleek, efficient, and boasts an impressive array of brands. Initially, you’re confident in its success. However, user feedback quickly reveals a common challenge in the e-commerce world:</p>
 <ul>
 <li>“I’m overwhelmed by the number of options.”</li>
@@ -213,7 +211,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>This, my friends, is why a good recommendation system is invaluable. It’s like having a wise, all-knowing friend who gently guides your customers to their next favorite purchase. And today, we’re going to build that friend from scratch.</p>
 </section>
 <section id="step-0-the-oh-crap-we-have-no-data-phase---totally-random-model" class="level2">
-<h2 class="anchored" data-anchor-id="step-0-the-oh-crap-we-have-no-data-phase---totally-random-model">Step 0: The “Oh Crap, We Have No Data” Phase - Totally Random Model</h2>
+<h2 data-anchor-id="step-0-the-oh-crap-we-have-no-data-phase---totally-random-model">Step 0: The “Oh Crap, We Have No Data” Phase - Totally Random Model</h2>
 <p>Let’s start at the beginning (a very good place to start…). You’ve just launched your e-commerce platform. It looks great, it works smoothly, but there’s one big problem: you have no data. Your recommendation system is a blank slate. What do you do?</p>
 <p>Take a deep breath and repeat after me: “Random is better than nothing.” Now, I know what you’re thinking. “But this is just throwing darts blindfolded! How is this helping anyone?” And you’re right, it’s not ideal. But here’s the secret: it’s not about being perfect; it’s about starting the flywheel.</p>
 <p>Every time a user sees a random recommendation, you’re gathering data. Maybe they ignore it (data point!). Maybe they click on it (data point!). Maybe they buy it (cha-ching and data point!). Every product interaction (or lack thereof) is a breadcrumb that will lead you out of the data desert.</p>
@@ -229,7 +227,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>Pro tip: While you’re showing random recommendations, make sure you’re logging EVERYTHING. Every view, every click, every purchase. This data will be worth its weight in gold later on. Trust me, future you will thank present you for this foresight. And while you are at it do make sure that the data is high quality. Algorithms are fickle and state of the art on those changes every week – nay day! But poor quality data once logged sets the ceiling on what you can do with it.</p>
 </section>
 <section id="step-1-the-we-have-some-data-but-its-not-about-users-phase---feature-based-clustering-model" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-the-we-have-some-data-but-its-not-about-users-phase---feature-based-clustering-model">Step 1: The “We Have Some Data, But It’s Not About Users” Phase - Feature-Based Clustering Model</h2>
+<h2 data-anchor-id="step-1-the-we-have-some-data-but-its-not-about-users-phase---feature-based-clustering-model">Step 1: The “We Have Some Data, But It’s Not About Users” Phase - Feature-Based Clustering Model</h2>
 <p>Alright, so you’ve been running your random recommendation engine for a while. You’ve got some sales, you’ve got some brand data, but you still don’t have enough user interaction data to build a proper collaborative filtering system. Don’t worry, we’re going to make lemonade out of these lemons.</p>
 <p>Enter: Feature-Based Clustering.</p>
 <p>Now, gather ’round, because I’m about to share a secret: brands, like people, have personalities. And just like you wouldn’t set up your quiet, bookish friend with your party-animal cousin (trust me, I’ve made that mistake), you shouldn’t be recommending wildly dissimilar brands to your users.</p>
@@ -278,7 +276,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>In this case, it wasn’t just the algorithm doing the work automatically, but the entire system we built around it. We maintained a degree of randomness in our recommendations to continue generating new data and learning from it. It’s like saying, “We know you’re interested in vintage decor, but have you considered this modern minimalist piece?” This approach not only serves immediate customer interests but also introduces them to new products they might enjoy. The lesson here? Even a relatively simple clustering approach can significantly improve your recommendation engine. It’s not about having the fanciest algorithm on the block; it’s about understanding your customers and not trying to sell snowshoes to someone shopping for flip-flops. So, whether you’re dealing with luxury items and budget options, or niche products and mainstream goods, remember: cluster wisely, but maintain some variety. Your conversion rates (and your customers) will thank you.</p>
 </section>
 <section id="step-2-the-now-were-cooking-with-gas-phase---purchase-based-association-model" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-the-now-were-cooking-with-gas-phase---purchase-based-association-model">Step 2: The “Now We’re Cooking with Gas” Phase - Purchase-Based Association Model</h2>
+<h2 data-anchor-id="step-2-the-now-were-cooking-with-gas-phase---purchase-based-association-model">Step 2: The “Now We’re Cooking with Gas” Phase - Purchase-Based Association Model</h2>
 <p>Alright, my data-hungry friends, we’ve arrived at the juicy part. You’ve been diligently collecting user interaction data (you have, haven’t you?), and now it’s time to put it to use. We’re going to build a purchase-based association model.</p>
 <p>This is where the magic really starts to happen. We’re going to create a system that understands that people who buy brand A often buy brand B, even if we don’t know why. It’s like being a really good matchmaker without understanding the intricacies of human psychology.</p>
 <p>Let’s cook up a simple association model:</p>
@@ -324,7 +322,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>While the paper doesn’t provide specific sales figures, it does mention that Amazon’s recommendation system significantly improved click-through and conversion rates compared to untargeted content such as top sellers.</p>
 </section>
 <section id="step-3-the-six-degrees-of-kevin-bacon-phase---transitive-association-model" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-the-six-degrees-of-kevin-bacon-phase---transitive-association-model">Step 3: The “Six Degrees of Kevin Bacon” Phase - Transitive Association Model</h2>
+<h2 data-anchor-id="step-3-the-six-degrees-of-kevin-bacon-phase---transitive-association-model">Step 3: The “Six Degrees of Kevin Bacon” Phase - Transitive Association Model</h2>
 <p>Ever played “Six Degrees of Kevin Bacon”? Well, we’re about to do something similar with our brands, and it’s going to blow your recommendation socks off.</p>
 <p>Direct associations are great, but they’re limited. What if we could create a web of associations, where brand A is connected to brand B, which is connected to brand C, creating an indirect link between A and C? It’s like being at a party where your network explodes as friends introduce you to their friends.</p>
 <p>By considering second-order and third-order connections, we can uncover hidden relationships in our data, leading to nuanced and unexpected recommendations. Here’s how to do it in &lt; 10 lines of code:</p>
@@ -352,10 +350,10 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <p>This approach enables academics to joyfully tumble down rabbit holes of related obscure topics, much to the store owner’s delight. It illustrates the power of transitive associations, especially for businesses with niche catalogs or sparse collaborative filtering matrices. We’re transforming a sparse matrix into a dense one, uncovering “hidden” connections that create a discovery engine to surprise and delight customers, potentially leading them down purchasing paths they never knew existed.</p>
 </section>
 <section id="step-4-fine-tuning-the-magic---hyperparameters-and-evaluation" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-fine-tuning-the-magic---hyperparameters-and-evaluation">Step 4: Fine-Tuning the Magic - Hyperparameters and Evaluation</h2>
+<h2 data-anchor-id="step-4-fine-tuning-the-magic---hyperparameters-and-evaluation">Step 4: Fine-Tuning the Magic - Hyperparameters and Evaluation</h2>
 <p>Alright, data enthusiasts, we’ve built our transitive association model, but now it’s time to give it that extra polish. Think of it as tuning a high-performance engine - we need to adjust the nitrous levels just right.</p>
 <section id="hyperparameter-tuning-finding-the-sweet-spot" class="level3">
-<h3 class="anchored" data-anchor-id="hyperparameter-tuning-finding-the-sweet-spot">Hyperparameter Tuning: Finding the Sweet Spot</h3>
+<h3 data-anchor-id="hyperparameter-tuning-finding-the-sweet-spot">Hyperparameter Tuning: Finding the Sweet Spot</h3>
 <p>Remember our <code>expand_adjacency_matrix</code> function? It comes with two key hyperparameters:</p>
 <ol type="1">
 <li><code>max_order</code>: How far down the rabbit hole of connections we’re willing to go</li>
@@ -383,7 +381,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best score: </span><span class="sc">{</span>best_score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="model-evaluation-separating-the-wheat-from-the-chaff" class="level3">
-<h3 class="anchored" data-anchor-id="model-evaluation-separating-the-wheat-from-the-chaff">Model Evaluation: Separating the Wheat from the Chaff</h3>
+<h3 data-anchor-id="model-evaluation-separating-the-wheat-from-the-chaff">Model Evaluation: Separating the Wheat from the Chaff</h3>
 <p>Now, how do we know if our model is actually any good? We can’t just take it out for a test drive on the same roads we built it on. That’s where train-test splits come in handy.</p>
 <p>Here’s our game plan:</p>
 <ol type="1">
@@ -417,7 +415,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </section>
 </section>
 <section id="the-secret-sauce-continuous-improvement" class="level2">
-<h2 class="anchored" data-anchor-id="the-secret-sauce-continuous-improvement">The Secret Sauce: Continuous Improvement</h2>
+<h2 data-anchor-id="the-secret-sauce-continuous-improvement">The Secret Sauce: Continuous Improvement</h2>
 <p>Now, here’s what separates the good recommendation systems from the great ones: continuous improvement. Everything we’ve built so far is just the foundation. The real magic happens when you start iterating and refining.</p>
 <ol type="1">
 <li><p><strong>Fine-tune your clustering:</strong> As you gather more data, you might discover that certain features are more predictive than others. Don’t hesitate to adjust your approach.</p></li>
@@ -428,7 +426,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </ol>
 <p>Remember, the goal isn’t perfection - it’s continuous improvement. Aim to build a system that consistently outperforms random chance, and then focus on making it a little better every day.</p>
 <section id="the-real-world-impact-beyond-the-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="the-real-world-impact-beyond-the-numbers">The Real-World Impact: Beyond the Numbers</h3>
+<h3 data-anchor-id="the-real-world-impact-beyond-the-numbers">The Real-World Impact: Beyond the Numbers</h3>
 <p>Now, I won’t give you specific numbers here because, let’s face it, your mileage may vary. But if you’ve done everything right, your transitive model should be outperforming the others like a sports car in a bicycle race. But here’s the real kicker: this isn’t just about better numbers on a spreadsheet. It’s about creating a recommendation system that feels almost eerily intuitive to your customers.</p>
 <p>While we’ve covered significant ground in this post, we’ve only scratched the surface of what’s possible. In our next installment, we’ll explore how cutting-edge AI techniques can take our recommendation system to the next level. We’ll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they’ll want next. From leveraging deep learning to harnessing the power of contextual bandits, we’ll explore how to create a recommendation engine that doesn’t just react to customer behavior, but anticipates it. It’s the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D.&nbsp;in data science). In the end, that’s what separates a good recommendation system from a great one. It’s not just about predicting what customers want - it’s about inspiring them, delighting them, and yes, maybe even surprising them a little. So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!</p>
 
@@ -436,7 +434,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 </section>
 </section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
