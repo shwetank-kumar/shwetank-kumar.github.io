@@ -9,10 +9,15 @@ body {
 
 /* Subscription box styles */
 #quarto-margin-sidebar {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-color: #f0f0f0;
   padding: 2em 0;
-  margin: 0 0 2em 0;
+  margin-bottom: 2em;
 }
 
 .quarto-alternate-notebooks {
@@ -82,13 +87,6 @@ body {
   margin-top: 1em;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .quarto-alternate-notebooks {
-    padding: 0 10px;
-  }
-}
-
 /* Ensure content doesn't overflow on smaller screens */
 .quarto-title-block,
 .quarto-body-text,
@@ -146,4 +144,66 @@ footer {
   background-color: #f8f9fa;
   text-align: center;
   color: #7f8c8d;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .quarto-alternate-notebooks {
+    padding: 0 10px;
+  }
+  
+  .quarto-listing-container .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Additional styles for better readability and spacing */
+main {
+  margin-top: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Style for code blocks */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Style for inline code */
+code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Style for blockquotes */
+blockquote {
+  border-left: 4px solid #3498db;
+  padding-left: 1em;
+  margin-left: 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Style for links */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
 }
