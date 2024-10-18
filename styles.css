@@ -1,49 +1,78 @@
-/* Add these styles to your styles.css */
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-/* For screens wider than 992px */
-@media (min-width: 992px) {
-  .quarto-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+/* Subscription box styles */
+#quarto-margin-sidebar {
+  width: 100%;
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  main {
-    width: calc(100% - 300px); /* Adjust the width as needed */
-    margin-right: 2rem;
-  }
+#quarto-margin-sidebar h4 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+}
 
+#quarto-margin-sidebar p {
+  margin-bottom: 1em;
+  color: #34495e;
+}
+
+#quarto-margin-sidebar input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1em;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#quarto-margin-sidebar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#quarto-margin-sidebar button:hover {
+  background-color: #2980b9;
+}
+
+/* Content styles */
+.quarto-title-block {
+  margin-top: 2em;
+}
+
+.quarto-body-text {
+  margin-top: 1em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   #quarto-margin-sidebar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 2em auto 0;
-    padding: 1em 0;
-    border-top: 1px solid #e0e0e0;
-    clear: both;
-  }
-  
-  /* Style for the subscription box content */
-  #quarto-margin-sidebar .quarto-alternate-notebooks {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 1em;
-    margin-top: 1em;
+    padding: 1.5em;
   }
 }
 
-/* For screens narrower than 992px */
-@media (max-width: 991px) {
-  #quarto-margin-sidebar {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 2rem;
-    padding: 1rem 0;
-    border-top: 1px solid #e0e0e0;
-  }
-}
-
-/* Ensure the content doesn't overflow on smaller screens */
+/* Ensure content doesn't overflow on smaller screens */
 .quarto-title-block,
 .quarto-body-text,
 .section,
@@ -51,4 +80,53 @@
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Blog listing styles */
+.quarto-listing-container {
+  margin-top: 2em;
+}
+
+.quarto-listing-container .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.quarto-listing-container .list > * {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1em;
+  transition: box-shadow 0.3s ease;
+}
+
+.quarto-listing-container .list > *:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styles */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 1em 0;
+  margin-bottom: 2em;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.navbar-nav .nav-link {
+  color: #34495e;
+  margin-left: 1em;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 2em;
+  padding: 1em 0;
+  background-color: #f8f9fa;
+  text-align: center;
+  color: #7f8c8d;
 }
