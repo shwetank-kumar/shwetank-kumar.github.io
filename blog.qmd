@@ -11,5 +11,7 @@ listing:
   feed: true
 page-layout: full
 title-block-banner: true
-margin-header: subscribe.html
+format:
+  html:
+    include-before-body: ../../subscribe.html
 ---
