@@ -57,11 +57,51 @@
   </div>
 </div>
 
-<style>
+<style type="text/css">
+@import url("https://assets.mlcdn.com/fonts.css?version=1728988");
+
+/* LOADER */
+.ml-form-embedSubmitLoad {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.ml-form-embedSubmitLoad:after {
+  content: " ";
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #ffffff #ffffff #ffffff transparent;
+  animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+}
+@keyframes ml-form-embedSubmitLoad {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #mlb2-18937141.ml-form-embedContainer {
   box-sizing: border-box;
   display: table;
-  margin: 0 auto;
+  margin: 0 auto 40px; /* Added margin-bottom */
   position: static;
   width: 100% !important;
 }
