@@ -1,6 +1,50 @@
-/* Existing styles ... */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Center the main content */
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f6f6f6;
+}
+
+/* Header and navigation */
+header {
+  background-color: #4682B4;
+  padding: 1rem 0;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Main content layout */
 .quarto-content {
   display: flex;
   flex-direction: column;
@@ -13,10 +57,11 @@
 
 #quarto-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
+/* Title and banner */
 .quarto-title-block {
   width: 100%;
   text-align: center;
@@ -24,7 +69,7 @@
 
 .quarto-title-banner {
   padding: 2em 0;
-  background-color: #4682B4; /* Match your current blue background */
+  background-color: #4682B4;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding-left: calc(50vw - 50%);
@@ -33,22 +78,33 @@
 
 .quarto-title {
   margin-bottom: 1em;
+  color: white;
 }
 
-/* Newsletter form styling */
+/* Newsletter form */
 .newsletter-form {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 2em auto;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .newsletter-form h4 {
+  color: #000000;
+  font-size: 28px;
+  margin-bottom: 15px;
   text-align: center;
-  margin-bottom: 1em;
+}
+
+.newsletter-form p {
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .newsletter-form form {
@@ -58,24 +114,33 @@
 
 .newsletter-form input[type="email"] {
   flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ced4da;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
   border-radius: 4px 0 0 4px;
 }
 
 .newsletter-form button {
-  padding: 10px 20px;
   background-color: #000000;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 0 4px 4px 0;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Center content on listing page */
+.newsletter-form button:hover {
+  background-color: #333333;
+}
+
+/* Blog listing */
 .quarto-listing-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -93,10 +158,48 @@
 
 .listing-category {
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Blog post cards */
+.quarto-post {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.quarto-post:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.listing-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.listing-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.listing-description {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.listing-date, .listing-reading-time {
+  font-size: 0.8rem;
+  color: #888;
 }
 
 /* Responsive adjustments */
-@media (max-width: 820px) {
+@media (max-width: 1020px) {
   .quarto-content,
   .newsletter-form,
   .quarto-listing-container {
@@ -114,4 +217,62 @@
   .quarto-listing-container .list > * {
     width: calc(50% - 1rem);
   }
+}
+
+/* Code blocks */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Footer */
+footer {
+  background-color: #4682B4;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* Links */
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
