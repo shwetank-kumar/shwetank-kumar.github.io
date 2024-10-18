@@ -1,0 +1,75 @@
+Date: 17-10-2024
+Paper Title,Upvotes
+VidEgoThink: Assessing Egocentric Video Understanding Capabilities for Embodied AI,39
+HumanEval-V: Evaluating Visual Understanding and Reasoning Abilities of Large Multimodal Models Through Coding Tasks,34
+The Curse of Multi-Modalities: Evaluating Hallucinations of Large Multimodal Models across Language, Visual, and Audio,24
+Revealing the Barriers of Language Agents in Planning,19
+Exploring Model Kinship for Merging Large Language Models,17
+Large Language Model Evaluation via Matrix Nuclear-Norm,16
+DocLayout-YOLO: Enhancing Document Layout Analysis through Diverse Synthetic Data and Global-to-Local Adaptive Perception,15
+ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs,11
+Controllable Safety Alignment: Inference-Time Adaptation to Diverse Safety Requirements,10
+Improving Long-Text Alignment for Text-to-Image Diffusion Models,10
+DyVo: Dynamic Vocabularies for Learned Sparse Retrieval with Entities,8
+ZipVL: Efficient Large Vision-Language Models with Dynamic Token Sparsification and KV Cache Compression,7
+
+Date: 16-10-2024
+Paper Title,Upvotes
+Your Mixture-of-Experts LLM Is Secretly an Embedding Model For Free,21
+What Matters in Transformers? Not All Attention is Needed,19
+MLLM can see? Dynamic Correction Decoding for Hallucination Mitigation,19
+MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models,16
+LLM$\times$MapReduce: Simplified Long-Sequence Processing using Large Language Models,15
+Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts,13
+SecCodePLT: A Unified Platform for Evaluating the Security of Code GenAI,12
+Efficient Diffusion Models: A Comprehensive Survey from Principles to Practices,10
+EchoPrime: A Multi-Video View-Informed Vision-Language Model for Comprehensive Echocardiography Interpretation,10
+LVD-2M: A Long-take Video Dataset with Temporally Dense Captions,10
+GS^3: Efficient Relighting with Triple Gaussian Splatting,9
+NesTools: A Dataset for Evaluating Nested Tool Learning Abilities of Large Language Models,9
+
+Date: 15-10-2024
+Paper Title,Upvotes
+LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models,47
+MMIE: Massive Multimodal Interleaved Comprehension Benchmark for Large Vision-Language Models,43
+Toward General Instruction-Following Alignment for Retrieval-Augmented Generation,34
+Animate-X: Universal Character Image Animation with Enhanced Motion Representation,26
+MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks,24
+LiveXiv -- A Multi-Modal Live Benchmark Based on Arxiv Papers Content,22
+Omni-MATH: A Universal Olympiad Level Mathematic Benchmark For Large Language Models,20
+Cavia: Camera-controllable Multi-view Video Diffusion with View-Integrated Attention,19
+Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations,17
+VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents,14
+TemporalBench: Benchmarking Fine-grained Temporal Understanding for Multimodal Video Models,11
+Rethinking Data Selection at Scale: Random Selection is Almost All You Need,9
+
+Date: 14-10-2024
+Paper Title,Upvotes
+Baichuan-Omni Technical Report, 52
+Meissonic: Revitalizing Masked Generative Transformers for Efficient High-Resolution Text-to-Image Synthesis, 35
+From Generalist to Specialist: Adapting Vision Language Models via Task-Specific Visual Instruction Tuning, 24
+EvolveDirector: Approaching Advanced Text-to-Image Generation with Large Vision-Language Models, 15
+StructRAG: Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization, 14
+SuperCorrect: Supervising and Correcting Language Models with Error-Driven Insights, 12
+PositionID: LLMs can Control Lengths, Copy and Paste with Explicit Positional Awareness, 11
+Semantic Score Distillation Sampling for Compositional Text-to-3D Generation, 10
+Multi-Agent Collaborative Data Selection for Efficient LLM Pretraining, 8
+KV Prediction for Improved Time to First Token, 7
+Mechanistic Permutability: Match Features Across Layers, 3
+DA-Code: Agent Data Science Code Generation Benchmark for Large Language Models, 3
+
+Date: 11-10-2024
+Paper Title,Upvotes
+MathCoder2: Better Math Reasoning from Continued Pretraining on Model-translated Mathematical Code, 27
+PrefixQuant: Static Quantization Beats Dynamic through Prefixed Outliers in LLMs, 25
+MLLM as Retriever: Interactively Learning Multimodal Retrieval for Embodied Agents, 23
+DICE: Discrete Inversion Enabling Controllable Editing for Multinomial Diffusion and Masked Generative Models, 15
+Benchmarking Agentic Workflow Generation, 13
+Rectified Diffusion: Straightness Is Not Your Need in Rectified Flow, 9
+Agent S: An Open Agentic Framework that Uses Computers Like a Human, 9
+Progressive Autoregressive Video Diffusion Models, 7
+Intriguing Properties of Large Language and Vision Models, 7
+SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe, 7
+Towards Self-Improvement of LLMs via MCTS: Leveraging Stepwise Knowledge with Curriculum Preference Learning, 6
+Preserving Multi-Modal Capabilities of Pre-trained VLMs for Improving Vision-Linguistic Compositionality, 6
+
