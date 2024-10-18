@@ -13,5 +13,5 @@ page-layout: full
 title-block-banner: true
 format:
   html:
-    include-before-body: ../../subscribe.html
+    include-before-body: subscribe.html
 ---
