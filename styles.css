@@ -130,32 +130,3 @@ main > * {
   width: 100%;
   max-width: 1200px;
 }
-
-.subscription-form {
-  background-color: #f8f9fa;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-.subscription-form h2 {
-  margin-top: 0;
-}
-
-.subscription-form form {
-  display: flex;
-  gap: 10px;
-}
-
-.subscription-form input[type="email"] {
-  flex-grow: 1;
-  padding: 5px 10px;
-}
-
-.subscription-form button {
-  padding: 5px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
