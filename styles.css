@@ -1,132 +1,50 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Add these styles to your styles.css */
+
+/* For screens wider than 992px */
+@media (min-width: 992px) {
+  .quarto-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main {
+    width: calc(100% - 300px); /* Adjust the width as needed */
+    margin-right: 2rem;
+  }
+
+  #quarto-margin-sidebar {
+    width: 300px; /* Adjust the width as needed */
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    height: auto;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding: 1rem;
+    border-top: none;
+    border-left: 1px solid #e0e0e0;
+    margin-top: 0;
+  }
 }
 
-.quarto-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
+/* For screens narrower than 992px */
+@media (max-width: 991px) {
+  #quarto-margin-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e0e0e0;
+  }
 }
 
-main {
-  width: 100%;
-  max-width: 1200px; /* Increased to match body max-width */
-}
-
+/* Ensure the content doesn't overflow on smaller screens */
 .quarto-title-block,
 .quarto-body-text,
 .section,
 #comments {
   width: 100%;
   max-width: 100%;
-}
-
-main > * {
-  width: 100%;
-}
-
-.quarto-body-text {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-#quarto-margin-sidebar {
-  width: 100%;
-  max-width: 1200px; /* Increased to match main content width */
-  margin: 2em auto 0;
-  padding: 1em 0;
-  border-top: 1px solid #e0e0e0;
-}
-
-@media (max-width: 1220px) { /* Adjusted breakpoint */
-  body {
-    padding: 0 10px;
-  }
-  
-  main {
-    max-width: 100%;
-  }
-}
-
-.quarto-body-text > *,
-#comments > * {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.content-container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.quarto-title-block .quarto-title-banner {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#listing-posts {
-  margin-top: 2em;
-}
-
-/* New styles for blog listing */
-.listings {
-  width: 100%;
-  max-width: 1200px;
-}
-
-.quarto-listing-container {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.quarto-listing-container > * {
-  width: 100%;
-}
-
-.quarto-listing-container .quarto-listing-category,
-.quarto-listing-container .list {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-@media (min-width: 992px) {
-  .quarto-listing-container .list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-  }
-}
-
-/* Ensure full width for blog page content */
-.quarto-title-block,
-.content-container {
-  width: 100%;
-  max-width: 1200px;
+  overflow-x: hidden;
 }

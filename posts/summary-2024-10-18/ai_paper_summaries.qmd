@@ -5,7 +5,9 @@ date: "Oct 17, 2024"
 categories: [Retrieval-Augmented Generation, Latent Diffusion Model, Vision-Language Models, Synthetic Data Detection, Multimodal_Language_Models, Embodied AI, Large Language Models, Text-to-Image Synthesis, Natural Language Processing]
 # image: "ai-papers-summary.svg"
 draft: false
-margin-header: subscribe.html
+page-layout: article
+sidebar: 
+  - contents: subscribe.html
 ---
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from October 11 to October 17, 2024.
