@@ -25,7 +25,7 @@ website:
   search: false
   page-navigation: false
   # (additional metadata excluded for brevity)
-  margin-header: subscribe.html
+  # margin-header: subscribe.html
 
 format:
   html:
