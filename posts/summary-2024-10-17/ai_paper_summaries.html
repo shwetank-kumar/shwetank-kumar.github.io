@@ -205,20 +205,25 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
             line-height: 1.6;
             margin-bottom: 25px;
         }
+        .form-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
         .form-control {
-            width: 100%;
+            flex-grow: 1;
             max-width: 400px;
             padding: 12px;
             font-size: 16px;
             border: 1px solid #cccccc;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            border-radius: 4px 0 0 4px;
+            margin-bottom: 0;
         }
         .primary {
             background-color: #000000;
             color: #ffffff;
             border: none;
-            border-radius: 4px;
+            border-radius: 0 4px 4px 0;
             padding: 12px 24px;
             font-size: 16px;
             font-weight: bold;
@@ -251,13 +256,15 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
                                 <div class="ml-form-formContent">
                                     <div class="ml-form-fieldRow ml-last-item">
                                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                            <div class="form-group">
+                                                <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                                <button type="submit" class="primary">Subscribe</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <input type="hidden" name="ml-submit" value="1">
-                                <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary">Subscribe</button>
+                                <div class="ml-form-embedSubmit" style="display: none;">
                                     <button disabled="disabled" style="display: none;" type="button" class="loading">
                                         <div class="ml-form-embedSubmitLoad"></div>
                                         <span class="sr-only">Loading...</span>
