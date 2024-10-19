@@ -14,13 +14,15 @@ body {
 
 /* Header and navigation */
 header {
-  /* background-color: #4682B4; */
   padding: 1rem 0;
+  background-color: #f6f6f6 !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Navigation bar styles */
 .navbar {
-  background-color: white !important;
+  background-color: #f6f6f6 !important;
 }
 
 /* Change text color to black for all navbar elements */
@@ -77,12 +79,20 @@ header {
   width: 100%;
   text-align: center;
   margin-bottom: 1rem !important;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* Title banner styles */
 .quarto-title-banner {
-  background-color: white !important;
+  background-color: #f6f6f6 !important;
   padding-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .quarto-title-banner .quarto-title .title,
@@ -284,17 +294,17 @@ img {
 
 /* Footer */
 footer {
-  /* background-color: #4682B4; */
-  color: white;
+  color: black;
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
+  background-color: #f6f6f6;
 }
 
 /* Links */
 a {
-  /* color: #4682B4; */
   text-decoration: none;
+  color: #0056b3;
 }
 
 a:hover {
@@ -313,8 +323,8 @@ a:hover {
 
 /* Style for categories */
 .quarto-category {
-  color: black !important;
-  background-color: #f0f0f0;
+  color: #333 !important;
+  background-color: #e0e0e0;
   padding: 2px 6px;
   margin: 2px;
   border-radius: 4px;
