@@ -30,7 +30,7 @@ website:
 format:
   html:
     toc: false
-    theme: default
+    theme: cosmos
     css: styles.css
     page-layout: full  # Add this line
     grid:
