@@ -310,3 +310,20 @@ a:hover {
 .quarto-title-meta {
   margin-top: 0.5rem !important;
 }
+
+/* Style for categories */
+.quarto-category {
+  color: black !important;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+/* Ensure category container is visible */
+.quarto-categories {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
