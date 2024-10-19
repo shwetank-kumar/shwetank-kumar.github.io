@@ -23,47 +23,35 @@ header {
   background-color: white !important;
 }
 
-/* Change data-bs-theme to light */
-.navbar[data-bs-theme="dark"] {
-  --bs-navbar-color: rgba(0, 0, 0, 0.65);
-  --bs-navbar-hover-color: rgba(0, 0, 0, 0.8);
-  --bs-navbar-active-color: rgba(0, 0, 0, 1);
-}
-
-/* Style for navbar brand, links, and icons */
-.navbar-brand,
-.navbar-nav .nav-link,
-.navbar-nav .nav-link i {
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-toggler-icon {
   color: black !important;
 }
 
-/* Style for active nav item */
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-link.active {
-  color: black !important;
-  font-weight: bold;
+.navbar-dark .navbar-toggler {
+  border-color: black !important;
 }
 
-/* Style for navbar toggler icon */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+/* For the icons */
+.navbar-dark .navbar-nav .nav-link i {
+  color: black !important;
 }
 
 /* For the dropdown menu */
-.navbar .dropdown-menu {
+.navbar-dark .dropdown-menu {
   background-color: white !important;
 }
 
-.navbar .dropdown-item {
+.navbar-dark .dropdown-item {
   color: black !important;
 }
 
-.navbar .dropdown-item:hover,
-.navbar .dropdown-item:focus {
+.navbar-dark .dropdown-item:hover,
+.navbar-dark .dropdown-item:focus {
   background-color: #f8f9fa !important;
   color: black !important;
 }
-
 /* Main content layout */
 .quarto-content {
   display: flex;
