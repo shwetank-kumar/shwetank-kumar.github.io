@@ -76,11 +76,13 @@ header {
 .quarto-title-block {
   width: 100%;
   text-align: center;
+  margin-bottom: 1rem !important;
 }
 
 /* Title banner styles */
 .quarto-title-banner {
   background-color: white !important;
+  padding-bottom: 1rem !important;
 }
 
 .quarto-title-banner .quarto-title .title,
@@ -89,6 +91,20 @@ header {
 .quarto-title-banner .quarto-title-block .quarto-title-banner-title .title {
   color: black !important;
 }
+
+.column-page {
+  padding-top: 1rem !important;
+}
+
+/* Adjust newsletter form spacing */
+.container {
+  padding-top: 0 !important;
+}
+
+.newsletter-form {
+  margin-top: 0 !important;
+}
+
 
 /* Newsletter form */
 .newsletter-form {
