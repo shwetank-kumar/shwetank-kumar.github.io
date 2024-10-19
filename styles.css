@@ -78,7 +78,7 @@ header {
 .quarto-title-block {
   width: 100%;
   text-align: center;
-  margin-bottom: 0.5rem !important; /* Reduced from 1rem */
+  margin-bottom: 0.5rem !important;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -89,8 +89,8 @@ header {
 /* Title banner styles */
 .quarto-title-banner {
   background-color: #f6f6f6 !important;
-  padding-bottom: 0.5rem !important; /* Reduced from 1rem */
-  margin-bottom: 0.5rem !important; /* Reduced from 1rem */
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
   box-shadow: none !important;
   border: none !important;
 }
@@ -103,7 +103,7 @@ header {
 }
 
 .column-page {
-  padding-top: 0.5rem !important; /* Reduced from 1rem */
+  padding-top: 0.5rem !important;
 }
 
 /* Adjust newsletter form spacing */
@@ -143,23 +143,28 @@ header {
 
 .newsletter-form form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .newsletter-form input[type="email"] {
-  flex-grow: 1;
-  max-width: 400px;
+  width: 100%;
   padding: 12px;
   font-size: 16px;
   border: 1px solid #cccccc;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .newsletter-form button {
+  width: 100%;
   background-color: #000000;
   color: #ffffff;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
@@ -292,12 +297,12 @@ a:hover {
 
 /* Reduce space under title */
 .content {
-  padding-top: 0.5rem !important; /* Reduced from 1rem */
+  padding-top: 0.5rem !important;
 }
 
 /* Reduce space between title and metadata */
 .quarto-title-meta {
-  margin-top: 0.25rem !important; /* Reduced from 0.5rem */
+  margin-top: 0.25rem !important;
 }
 
 /* Reduce space between metadata items */
@@ -322,8 +327,8 @@ a:hover {
 
 /* Ensure category container is visible */
 .quarto-categories {
-  margin-top: 5px; /* Reduced from 10px */
-  margin-bottom: 5px; /* Reduced from 10px */
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* Responsive adjustments */
@@ -332,6 +337,24 @@ a:hover {
   .newsletter-form,
   .quarto-listing-container {
     padding: 0 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter-form form {
+    flex-direction: row;
+    max-width: none;
+  }
+
+  .newsletter-form input[type="email"] {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .newsletter-form button {
+    width: auto;
+    border-radius: 0 4px 4px 0;
   }
 }
 
