@@ -75,18 +75,13 @@ header {
   text-align: center;
 }
 
+/* Title banner styles */
 .quarto-title-banner {
-  padding: 2em 0;
-  background-color: #4682B4;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
+  background-color: white !important;
 }
 
-.quarto-title {
-  margin-bottom: 1em;
-  color: white;
+.quarto-title-banner .quarto-title .title {
+  color: black !important;
 }
 
 /* Newsletter form */
