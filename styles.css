@@ -105,7 +105,6 @@ header {
   margin-top: 0 !important;
 }
 
-
 /* Newsletter form */
 .newsletter-form {
   width: 100%;
@@ -300,4 +299,14 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* New styles to reduce space under title */
+.content {
+  padding-top: 1rem !important;
+}
+
+/* Reduce space between title and metadata */
+.quarto-title-meta {
+  margin-top: 0.5rem !important;
 }
