@@ -6,12 +6,14 @@ categories: [Retrieval-Augmented Generation, Latent Diffusion Model, Vision-Lang
 # image: "ai-papers-summary.svg"
 draft: false
 page-layout: article
-format:
-  html:
-    include-before-body: ../../subscribe.html
+# format:
+#   html:
+#     include-before-body: ../../subscribe.html
 ---
 
 Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from October 11 to October 17, 2024.
+
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form"></iframe>
 
 **The Baichuan-Omni model, detailed in a new technical report, is pushing the boundaries of multimodal large language models.** This powerhouse can process text, images, videos, and audio, achieving state-of-the-art performance across various benchmarks. We're talking about significant leaps here - it outperformed VITA by 25.6% on the CMMLU benchmark. The secret sauce? A comprehensive pipeline including multimodal alignment pre-training and supervised fine-tuning. This could revolutionize applications like multimodal dialogue systems and content generation. If you're working on anything that requires understanding and generating content across different modalities, Baichuan-Omni is definitely one to watch.
 
