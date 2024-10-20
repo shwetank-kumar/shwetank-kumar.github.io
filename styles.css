@@ -25,7 +25,6 @@ header {
   background-color: #f6f6f6 !important;
 }
 
-/* Change text color to black for all navbar elements */
 .navbar-brand,
 .navbar-nav .nav-link,
 .navbar-nav .nav-item a,
@@ -34,24 +33,20 @@ header {
   color: black !important;
 }
 
-/* Style for active nav item */
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-link.active {
   color: black !important;
   font-weight: bold;
 }
 
-/* Style for navbar toggler icon */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/* For the icons */
 .navbar-nav .nav-link i {
   color: black !important;
 }
 
-/* Hover effects */
 .navbar-nav .nav-link:hover,
 .navbar .dropdown-item:hover {
   color: #333333 !important;
@@ -78,7 +73,7 @@ header {
 .quarto-title-block {
   width: 100%;
   text-align: center;
-  margin-bottom: 0.5rem !important; /* Reduced from 1rem */
+  margin-bottom: 0.5rem !important;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -86,11 +81,10 @@ header {
   padding-right: 20px;
 }
 
-/* Title banner styles */
 .quarto-title-banner {
   background-color: #f6f6f6 !important;
-  padding-bottom: 0.5rem !important; /* Reduced from 1rem */
-  margin-bottom: 0.5rem !important; /* Reduced from 1rem */
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
   box-shadow: none !important;
   border: none !important;
 }
@@ -103,19 +97,14 @@ header {
 }
 
 .column-page {
-  padding-top: 0.5rem !important; /* Reduced from 1rem */
+  padding-top: 0.5rem !important;
 }
 
-/* Adjust newsletter form spacing */
+/* Newsletter form */
 .container {
   padding-top: 0 !important;
 }
 
-.newsletter-form {
-  margin-top: 0 !important;
-}
-
-/* Newsletter form */
 .newsletter-form {
   width: 100%;
   max-width: 1200px;
@@ -292,12 +281,12 @@ a:hover {
 
 /* Reduce space under title */
 .content {
-  padding-top: 0.5rem !important; /* Reduced from 1rem */
+  padding-top: 0.5rem !important;
 }
 
 /* Reduce space between title and metadata */
 .quarto-title-meta {
-  margin-top: 0.25rem !important; /* Reduced from 0.5rem */
+  margin-top: 0.25rem !important;
 }
 
 /* Reduce space between metadata items */
@@ -322,8 +311,57 @@ a:hover {
 
 /* Ensure category container is visible */
 .quarto-categories {
-  margin-top: 5px; /* Reduced from 10px */
-  margin-bottom: 5px; /* Reduced from 10px */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Updated iframe and related styles */
+iframe {
+  border: none !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: block !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Target the specific container of the iframe */
+.quarto-content > div > div:has(> iframe),
+.quarto-content > div:has(> iframe) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Ensure newsletter form within iframe doesn't have unwanted styling */
+iframe .newsletter-form,
+.newsletter-form {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Additional styling to remove any potential borders or shadows */
+iframe *,
+.newsletter-form * {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Preserve styling for list items */
+.quarto-post {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
 }
 
 /* Responsive adjustments */
@@ -332,6 +370,17 @@ a:hover {
   .newsletter-form,
   .quarto-listing-container {
     padding: 0 10px;
+  }
+  
+  iframe,
+  .quarto-content > div > div:has(> iframe),
+  .quarto-content > div:has(> iframe) {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .quarto-post {
+    padding: 1.5rem;  /* Maintain padding for list items */
   }
 }
 
