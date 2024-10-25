@@ -1,0 +1,74 @@
+Date: 24-10-2024
+Paper Title,Upvotes
+MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models,30
+WorldSimBench: Towards Video Generation Models as World Simulators,15
+Scalable Ranked Preference Optimization for Text-to-Image Generation,11
+DynamicCity: Large-Scale LiDAR Generation from Dynamic Scenes,10
+Scaling Diffusion Language Models via Adaptation from Autoregressive Models,9
+Lightweight Neural App Control,6
+TP-Eval: Tap Multimodal LLMs' Potential in Evaluation by Customizing Prompts,5
+MedINST: Meta Dataset of Biomedical Instructions,5
+ARKit LabelMaker: A New Scale for Indoor 3D Scene Understanding,5
+M-RewardBench: Evaluating Reward Models in Multilingual Settings,5
+LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding,4
+Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance,1
+
+Date: 23-10-2024
+Paper Title,Upvotes
+PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction, 30
+SpectroMotion: Dynamic 3D Reconstruction of Specular Scenes, 24
+Aligning Large Language Models via Self-Steering Optimization, 11
+xGen-MM-Vid (BLIP-3-Video): You Only Need 32 Tokens to Represent a Video Even in VLMs, 7
+JMMMU: A Japanese Massive Multi-discipline Multimodal Understanding Benchmark for Culture-aware Evaluation, 7
+Improve Vision Language Model Chain-of-thought Reasoning, 6
+MiniPLM: Knowledge Distillation for Pre-Training Language Models, 5
+EvoPress: Towards Optimal Dynamic Model Compression via Evolutionary Search, 4
+LLM-based Optimization of Compound AI Systems: A Survey, 4
+Mitigating Object Hallucination via Concentric Causal Attention, 3
+Frontiers in Intelligent Colonoscopy, 1
+Math Neurosurgery: Isolating Language Models' Math Reasoning Abilities Using Only Forward Passes, 1
+
+Date: 22-10-2024
+Paper Title,Upvotes
+FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors,57
+CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution,51
+SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree,46
+PUMA: Empowering Unified MLLM with Multi-granular Visual Generation,41
+SemiEvol: Semi-supervised Fine-tuning for LLM Adaptation,38
+AutoTrain: No-code training for state-of-the-art models,36
+Baichuan Alignment Technical Report,32
+Pangea: A Fully Open Multilingual Multimodal LLM for 39 Languages,28
+RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style,20
+Meta-Chunking: Learning Efficient Text Segmentation via Logical Perception,14
+Pre-training Distillation for Large Language Models: A Design Space Exploration,12
+Alchemy: Amplifying Theorem-Proving Capability through Symbolic Mutation,10
+
+Date: 21-10-2024
+Paper Title,Upvotes
+UCFE: A User-Centric Financial Expertise Benchmark for Large Language Models,36
+Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation,31
+MagicTailor: Component-Controllable Personalization in Text-to-Image Diffusion Models,23
+NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples,22
+SeerAttention: Learning Intrinsic Sparse Attention in Your LLMs,16
+FiTv2: Scalable and Improved Flexible Vision Transformer for Diffusion Model,13
+Mini-Omni2: Towards Open-source GPT-4o with Vision, Speech and Duplex Capabilities,10
+Diffusion Curriculum: Synthetic-to-Real Generative Curriculum Learning via Image-Guided Diffusion,9
+DAWN: Dynamic Frame Avatar with Non-autoregressive Diffusion Framework for Talking Head Video Generation,8
+Are AI Detectors Good Enough? A Survey on Quality of Datasets With Machine-Generated Texts,6
+DPLM-2: A Multimodal Diffusion Protein Language Model,6
+HART: Efficient Visual Generation with Hybrid Autoregressive Transformer,4
+
+Date: 18-10-2024
+Paper Title,Upvotes
+Movie Gen: A Cast of Media Foundation Models, 50
+MixEval-X: Any-to-Any Evaluations from Real-World Data Mixtures, 50
+Harnessing Webpage UIs for Text-Rich Visual Understanding, 19
+MobA: A Two-Level Agent System for Efficient Mobile Task Automation, 18
+Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation, 16
+A Unified View of Delta Parameter Editing in Post-Trained Large-Scale Models, 11
+BenTo: Benchmark Task Reduction with In-Context Transferability, 10
+MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models, 10
+PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment, 9
+JudgeBench: A Benchmark for Evaluating LLM-based Judges, 9
+DreamVideo-2: Zero-Shot Subject-Driven Video Customization with Precise Motion Control, 9
+WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines, 7
