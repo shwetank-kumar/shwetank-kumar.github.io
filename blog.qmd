@@ -11,7 +11,9 @@ listing:
   feed: true
 page-layout: full
 title-block-banner: true
-format:
-  html:
-    include-before-body: subscribe.html
+# format:
+#   html:
+#     include-before-body: subscribe.html
 ---
+
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form"></iframe>    
