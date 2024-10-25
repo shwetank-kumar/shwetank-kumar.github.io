@@ -9,8 +9,59 @@
 <link>https://shwetank-kumar.github.io/blog.html</link>
 <atom:link href="https://shwetank-kumar.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Shwetank Kumar&#39;s personal website</description>
-<generator>quarto-1.5.56</generator>
-<lastBuildDate>Thu, 17 Oct 2024 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.5.57</generator>
+<lastBuildDate>Thu, 24 Oct 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>🌙 AI Afterhours: Top AI Papers for Oct 18 - Oct 24, 2024</title>
+  <dc:creator>Shwetank Kumar</dc:creator>
+  <link>https://shwetank-kumar.github.io/posts/summary-2024-10-25/ai_paper_summaries.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let’s dive into the most exciting AI research from the past week.</p>
+<p>If you would prefer to listen instead of read here is a NotebookLM generated summary:</p>
+<iframe src="https://podcasters.spotify.com/pod/show/shwetankkumar/embed" height="200px" width="400px" frameborder="0" scrolling="no">
+</iframe>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+<p><strong>FrugalNeRF</strong> tackles one of the most pressing challenges in Neural Radiance Fields - the need for faster, more efficient scene reconstruction from limited viewpoints. By introducing a clever weight-sharing scheme across multiple voxel scales and a cross-scale geometric adaptation mechanism, the team achieved remarkable efficiency gains. The results speak for themselves: high-quality novel view synthesis in just 10 minutes on the LLFF dataset and 6 minutes on the DTU dataset, with superior PSNR, SSIM, and LPIPS scores compared to existing methods. This breakthrough could revolutionize applications from virtual reality to architectural visualization, where quick turnaround times from limited input data are crucial.</p>
+<p><a href="https://arxiv.org/pdf/2410.16271v1">arXiv:2410.16271v1</a> 👍57</p>
+<p><strong>CompassJudger-1</strong> represents a significant step forward in how we evaluate large language models. This comprehensive judge model, trained on 900,000 entries of diverse data, achieves an impressive 95% accuracy rate on the JDB-B benchmark. What makes this particularly interesting is its optimal training data ratio discovery: 1:3:1 for critique data, reward data, and general SFT data respectively. The implications for AI development are substantial - we’re moving towards more reliable, consistent evaluation methods that could accelerate the improvement cycle of language models.</p>
+<p><a href="https://arxiv.org/pdf/2410.16256v1">arXiv:2410.16256v1</a> 👍51</p>
+<p><strong>Movie Gen</strong> is pushing the boundaries of media generation with an impressive suite of foundation models. The system shows remarkable capabilities in text-to-video synthesis and editing, backed by solid numbers: a 35.02% net win rate over previous work in overall quality and 48.49% in realness. With its largest model boasting 30B parameters and capable of generating 16-second videos at 16 fps, it’s a significant leap forward. The implications for creative industries are enormous - from rapid prototyping in film production to democratizing video content creation.</p>
+<p><a href="https://arxiv.org/pdf/2410.13720v1">arXiv:2410.13720v1</a> 👍50</p>
+<p><strong>MixEval-X</strong> introduces a fresh approach to evaluating multi-modal AI models using real-world data mixtures. The framework demonstrates impressive correlation with real-world evaluations - 98.1% Spearman correlation with Vision Arena and 96.3% with Arena (Vision) for Image2Text tasks. What’s particularly noteworthy is its adaptation-rectification pipeline, showing a 0.75 correlation between model judges and human preference Elo. This could fundamentally change how we benchmark AI systems, providing more realistic and reliable evaluation metrics.</p>
+<p><a href="https://arxiv.org/pdf/2410.13754v2">arXiv:2410.13754v2</a> 👍50</p>
+<p><strong>SAM2Long</strong> addresses a critical limitation in video segmentation with a clever memory tree approach. The results are compelling: an average improvement of 3.0 points in J&amp;F score across six VOS benchmarks, with particularly impressive gains of 5.3 points on the challenging SA-V test set. The beauty of this solution lies in its training-free nature - it requires no additional parameters or training, making it immediately applicable to existing SAM 2 implementations. This could be a game-changer for long-form video analysis and editing applications.</p>
+<p><a href="https://arxiv.org/pdf/2410.16268v1">arXiv:2410.16268v1</a> 👍46</p>
+<p><strong>PUMA</strong> brings a fresh perspective to image generation with its multi-granular approach. The model achieves impressive CLIP scores - 0.736 for CLIP-I and 0.317 for CLIP-T in text-to-image generation, while hitting 0.846 and 0.270 respectively in image editing tasks. This balance between coarse and fine-grained control opens up new possibilities in creative applications, from detailed image editing to nuanced artistic generation.</p>
+<p><a href="https://arxiv.org/pdf/2410.13861v2">arXiv:2410.13861v2</a> 👍41</p>
+<p><strong>SemiEvol</strong> presents an innovative approach to adapting large language models with limited labeled data. The framework demonstrates up to 83.3% error reduction compared to traditional fine-tuning methods across seven datasets. Particularly impressive is its performance in specialized fields like Law, Engineering, and Philosophy, where it achieves over 55% improvement after just four iterations. This could be a breakthrough for organizations looking to customize LLMs for specific domains without extensive labeled datasets.</p>
+<p><a href="https://arxiv.org/pdf/2410.14745v1">arXiv:2410.14745v1</a> 👍38</p>
+<p><strong>AutoTrain</strong> is democratizing machine learning by offering a no-code solution for training state-of-the-art models. Supporting 22 different tasks (16 text-based, 4 image-based, and 2 tabular-based), it makes sophisticated model training accessible through both GUI and CLI interfaces. While it currently has some limitations around sample weights and model ensembling, its potential impact on democratizing AI development is significant.</p>
+<p><a href="https://arxiv.org/pdf/2410.15735v1">arXiv:2410.15735v1</a> 👍36</p>
+<p><strong>UCFE</strong> introduces a comprehensive benchmark for evaluating LLMs’ financial expertise. With 330 data points covering multi-round dialogues and a strong 0.78 Pearson correlation coefficient with human preferences, it provides a robust framework for assessing AI capabilities in finance. This could be crucial for financial institutions evaluating AI adoption, potentially accelerating the responsible integration of AI in financial services.</p>
+<p><a href="https://arxiv.org/pdf/2410.14059v2">arXiv:2410.14059v2</a> 👍36</p>
+<p><strong>Baichuan Alignment</strong> presents impressive results in optimizing large language models, achieving user experience improvements of 17-28%. The three-stage approach combining Prompt Augmentation, Supervised Fine-Tuning, and Preference Alignment shows particular strength on challenging tasks. These gains could significantly impact the practical deployment of LLMs in real-world applications.</p>
+<p><a href="https://arxiv.org/pdf/2410.14940v1">arXiv:2410.14940v1</a> 👍32</p>
+<p>That’s a wrap for this week’s AI Afterhours! If you enjoyed reading this or listening to it please susbscribe for weekly updates.</p>
+
+
+
+ ]]></description>
+  <category>Video Object Segmentation</category>
+  <category>Multi-Modal AI</category>
+  <category>PyTorch</category>
+  <category>Neural Radiance Fields</category>
+  <category>Text-to-Video Synthesis</category>
+  <category>Large Language Models</category>
+  <category>Multi-Granular Visual Generation</category>
+  <guid>https://shwetank-kumar.github.io/posts/summary-2024-10-25/ai_paper_summaries.html</guid>
+  <pubDate>Thu, 24 Oct 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>🌙 AI Afterhours: Top AI Papers for Oct 11 - Oct 17, 2024</title>
   <dc:creator>Shwetank Kumar</dc:creator>
