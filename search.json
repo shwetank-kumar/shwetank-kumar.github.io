@@ -63,6 +63,132 @@
     "text": "References\n\nThe illustrated transformer\nText generation strategies\nScaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters"
   },
   {
+    "objectID": "posts/constrained-generation-draft/index.html",
+    "href": "posts/constrained-generation-draft/index.html",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "",
+    "text": "Ever had that moment when your shiny new AI system confidently generates the most beautiful, grammatically perfect, and utterly broken JSON you’ve ever seen? You know, the kind that makes your production system throw its hands up in digital despair? Welcome to the club! These language models are like that brilliant friend who can explain quantum physics but somehow can’t remember to close their parentheses.\nAnd that’s not just a minor inconvenience – your business runs on structured text. Not the forgiving chatter of Slack, but rigid formats that tolerate zero mistakes. JSON, XML, SQL, CSV – these aren’t just data formats, they’re diplomatic protocols between sovereign digital nations. One misplaced comma, and everything stops. Consider what’s at stake:\nAs a Chief Data Officer, I’ve watched the same crisis unfold countless times: a missing quote freezes orders, a rogue comma corrupts exports, a malformed XML turns a routine deployment into an all-hands crisis. These are so common that companies like Monte Carlo and Accel Data built billion-dollar empires just ensuring data stays clean and correct. In this world, format errors aren’t bugs – they’re declarations of war."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#the-hidden-cost-of-ai-errors",
+    "href": "posts/constrained-generation-draft/index.html#the-hidden-cost-of-ai-errors",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "The Hidden Cost of AI Errors",
+    "text": "The Hidden Cost of AI Errors\nNow enter the Large Language Model (LLM). These systems are remarkable at generating human-like text - ask them to write you a poem about debugging JavaScript, and they’ll craft something worthy of a tech conference keynote. But ask them to generate strictly formatted output like a JSON packet with a specified schema, and they stumble. They’re like brilliant novelists trying to file your taxes - technically capable of understanding numbers, but prone to adding creative flourishes that will make the IRS frown. Let’s try to understand the impact of these structural errors by quantifying them:\n\n\n\n\n\n\n\nMetric\nImpact\n\n\n\n\nBase Error Rate\n1-2% of generated structured outputs contain syntax errors\n\n\nDaily Requests\n10,000 typical for medium-scale API\n\n\nDaily Failures\n100-200 requests require regeneration\n\n\nEngineer Time per Failure\n15 minutes average investigation time\n\n\nDaily Engineering Cost\n$3,000-$6,000 (at $200/hour fully loaded cost)\n\n\nAnnual Impact\n$1.1M - $2.2M in direct engineering costs\n\n\n\n\nAnd these calculations assume your errors are merely expensive, not catastrophic. In financial services, where I’ve overseen numerous AI implementations, even a single malformed response can trigger automated safety protocols that halt entire processing pipelines. Several major banks now mandate strict format validation and fallback systems for any AI-generated data - requirements born from hard-learned lessons about what happens when structured data isn’t quite as structured as you thought. The true cost wasn’t just in fixing errors - it was in the growing lack of trust in their AI systems."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#the-its-just-json-fallacy",
+    "href": "posts/constrained-generation-draft/index.html#the-its-just-json-fallacy",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "The “It’s Just JSON” Fallacy",
+    "text": "The “It’s Just JSON” Fallacy\nAt this point, I can hear the seasoned engineers in the room saying, “Hold on - this is a solved problem, right? We’ll just validate the output after generation. It’s just JSON/XML/SQL, after all!” I call this the “It’s Just JSON” fallacy, and I’ve watched it drain millions from engineering budgets. The reasoning seems sound at first: we have parsers, we have schema validators, we have retry logic. But here’s what actually happens in production:\n\nValidation after generation is like spell-checking a letter after you’ve mailed it - you’ve already paid for the postage\nEvery validation failure triggers another API call to regenerate the content\nEach retry not only costs money but adds latency to your customer-facing systems impacting important business metrics like conversion\n\nEven worse: some responses can be syntactically perfect but semantically nonsensical - they pass your validators but corrupt your data. For example, a well-formed JSON packet with {\"age\": -2147483648} might sail through basic JSON schema validation (it’s a valid integer!) while representing an impossible human age that could skew your analytics pipeline.\nHere’s what this looks like at scale: One large marketplace built what seemed like a bulletproof system around AI-generated structured data. They had validation layers, retry logic, semantic checks, and fallback systems. Six months in, their cloud bill had tripled and their API costs had quintupled. Their engineers were spending more time fine-tuning validation rules than building new features. They weren’t fixing the problem - they were just getting better at handling failures.\nThis pattern is so common in enterprise AI that cloud providers have started offering specific tooling around retry logic and validation pipelines. But adding more safety nets doesn’t solve the fundamental problem - it just makes failing more expensive. Welcome to the world of Agentic workflows!"
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#teaching-ai-to-mind-its-manners-constrained-generation",
+    "href": "posts/constrained-generation-draft/index.html#teaching-ai-to-mind-its-manners-constrained-generation",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "Teaching AI to Mind Its Manners: Constrained Generation",
+    "text": "Teaching AI to Mind Its Manners: Constrained Generation\nSo how do we fix this? The answer is constrained generation, and it’s more elegant than you might expect. Instead of the current “generate and pray” approach, we’re going to put our AI through grammar school. Think of it like teaching an overenthusiastic five-year-old to write - you wouldn’t just hand them a blank piece of paper and correct their mistakes afterward. Instead, you’d give them a template with clear rules.\nLet’s look at a concrete example with generating a simple JSON: {\"name\": \"Alice\"}. At each step:\n\nThe LLM predicts probabilities for every possible next token:\n\n“name” (30% likely)\n“{” (20% likely)\n“Alice” (15% likely)\n“}” (10% likely)\nAnd thousands more possibilities…\n\nA grammar filter examines these predictions and removes any tokens that would break our formatting rules. After typing {\"name, only a closing quotation mark is valid - everything else gets zeroed out.\nThe system picks from the remaining valid tokens and updates its state. It’s like having autocorrect, but instead of fixing mistakes after you make them, it prevents them entirely.\n\n\n\n\n\n\n\n\n\nConstrained token generation for structured text\n\n\n\n\nFor the visual learners among us, here’s a flowchart of how these pieces fit together. A structured output is enforced by combining two key components: a state machine that tracks our position in the structure, and a filter that controls what the LLM can generate next. The state machine knows if we’re inside a JSON object, array, or string, while the filter ensures only valid tokens can be selected at each step. For example, after an opening brace ‘{’, the filter only allows string literals that could be valid property names."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#the-fast-lane-trick",
+    "href": "posts/constrained-generation-draft/index.html#the-fast-lane-trick",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "The “Fast Lane” Trick",
+    "text": "The “Fast Lane” Trick\nNow here’s where it gets really interesting: once we know the valid patterns, we can optimize them. Think about it - why should an AI model waste time (and your money) generating tokens that are completely predictable? Using our {\"name\": \"Alice\"} example, let’s look at which parts actually need creative thinking versus which parts are just following rules:\n{ \"name\" : \"Alice\" }\n↑   ↑    ↑   ↑     ↑\n1   2    3   4     5\n\n1: Must start with {\n2: Need to generate the key name\n3: Must be \": \" (guaranteed sequence)\n4: Need to generate the value\n5: Must end with }\nIf you look carefully at position 3 - after you’ve written {\"name\", what comes next isn’t a creative decision. It has to be a quote mark followed by a colon and a space. There’s no other possibility. So why waste time (and money) having the AI model pretend to think about each of these tokens? Instead, we can skip straight past the \": \" sequence.\nThis is like having a GPS that doesn’t just keep you on the right road, but also tells you where you can safely put your foot down. In our example:\n\nHave to think: What should the key name be? → “name”\nFast lane: The \": \" sequence is automatic\nHave to think: What should the value be? → “Alice”\nFast lane: The closing } is automatic\n\nBy identifying these guaranteed sequences, we can skip generating probabilities for tokens that are 100% predetermined. In a simple example like this, we might save just a few tokens, but in complex JSON structures with nested objects and arrays, these savings add up quickly."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#zero-not-fewer-making-structural-llm-errors-impossible",
+    "href": "posts/constrained-generation-draft/index.html#zero-not-fewer-making-structural-llm-errors-impossible",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "Zero, Not “Fewer”: Making Structural LLM Errors Impossible",
+    "text": "Zero, Not “Fewer”: Making Structural LLM Errors Impossible\nLet’s examine what happens when an LLM encounters decision points while generating structured data. At the value position in our {\"name\": \"Alice\"} example (after {\"name\":), here’s what the model initially predicts:\n\"Alice\"    : 0.15\n\"Bob\"      : 0.12\n42         : 0.08\ntrue       : 0.05\n{          : 0.04\n[          : 0.03\n... (other tokens)\nWithout constraints, this leads to common JSON errors like unquoted numbers ({\"name\": 42}), incomplete objects ({\"name\": {\"age\"}), or unquoted text ({\"name\": Alice}).\nConstrained generation on the other hand applies token masking, transforming those probabilities to:\n\"          : 1.0  (only valid option to start a string)\n42         : 0.0  (masked - would create invalid JSON)\n{          : 0.0  (masked - would create invalid JSON)\n... (all other tokens masked)\nThis isn’t making the model smarter - it’s enforcing structural guarantees through probability masking. The impact? When generating thousands of records, even a 99.9% success rate means consistent failures at scale. Constrained generation doesn’t improve those odds - it makes structural errors mathematically impossible."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#the-punctuation-tax-a-cfos-nightmare",
+    "href": "posts/constrained-generation-draft/index.html#the-punctuation-tax-a-cfos-nightmare",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "The Punctuation Tax: A CFO’s Nightmare",
+    "text": "The Punctuation Tax: A CFO’s Nightmare\nLet me translate the impact of all of this into plain CFO-speak:\n\nZero invalid outputs. Not “fewer.” Zero. It is mathematically impossible to generate invalid output\n40-60% lower API costs - no more retries\n30-50% additional savings by skipping predictable tokens\nNo more “ai-output-broken” emergency Slack channels\n\nLet’s be blunt: you’re paying AI model prices for punctuation marks. Every time your LLM generates a JSON structure, you’re burning tokens on braces and commas. That’s like hiring a McKinsey consultant to type semicolons. Here’s what a typical JSON response looks like:\n{\n  \"apiVersion\": \"v1\",\n  \"metadata\": {\n    \"timestamp\": \"2024-10-29T12:00:00Z\"\n  }\n}\nThis boilerplate alone is 20-30 tokens of pure syntax. At $0.01 per 1K tokens:\n\n100,000 daily API calls\n25 tokens of boilerplate each\nThat’s $9,125 annually just for punctuation\n\nFor a company spending $100K monthly on AI calls, up to $60K goes to generating predictable tokens. Most structured data is 50-65% syntax:\n\nJSON: ~60% structural tokens\nXML: ~65% structural tokens\nSQL: ~50% structural tokens\n\n\n🔮 Future Impact: This matters even more for autonomous AI workflows. Today, when AI systems chain operations together, each step needs extensive validation and error handling. With constrained generation, we shift from catching errors at runtime to preventing them entirely - like catching type errors in development instead of production. For businesses building autonomous systems, structural reliability isn’t just improved - it’s guaranteed. Your AI agents can’t generate structurally invalid queries or corrupt data structures so long as they can be defined by a grammar because they’re mathematically incapable of breaking those rules."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#putting-it-all-together-a-path-to-predictable-ai",
+    "href": "posts/constrained-generation-draft/index.html#putting-it-all-together-a-path-to-predictable-ai",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "Putting It All Together: A Path to Predictable AI",
+    "text": "Putting It All Together: A Path to Predictable AI\nI’ve thrown a lot of technical detail and business math at you. But here’s what I really want you to take away: constrained generation isn’t optional anymore. It’s table stakes for any business serious about deploying AI in production.\nThink about it this way: We don’t debate whether to use HTTPS anymore. We don’t have meetings about whether to validate user input. We don’t write blog posts weighing the pros and cons of using version control. These are just part of what we call “engineering.” Constrained generation is on the same trajectory – it’s rapidly moving from “interesting technique” to “standard practice.”\nRemember those numbers we walked through earlier? Let’s put them in perspective: - You’re either paying a “punctuation tax” of 40-70% on your API calls, or you’re not - Your engineering team is either firefighting format errors, or they’re building features - Your AI systems are either probabilistically reliable, or they’re mathematically guaranteed\nThis isn’t about optimization anymore – it’s about basic engineering competence. When you’re processing millions of structured outputs, “mostly correct” isn’t a standard, it’s a liability. Every CTO I know who has implemented constrained generation has the same reaction: “I can’t believe we used to do this any other way.”\nThe pattern in software engineering is always the same: first we make something possible, then we make it reliable, then we make it efficient. We’re watching this play out with AI in real-time. The companies that get ahead of this curve aren’t just going to save money – they’re going to be the ones whose AI initiatives succeed while their competitors are still debugging edge cases."
+  },
+  {
+    "objectID": "posts/constrained-generation-draft/index.html#getting-started-with-constrained-generation",
+    "href": "posts/constrained-generation-draft/index.html#getting-started-with-constrained-generation",
+    "title": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation",
+    "section": "Getting Started with Constrained Generation",
+    "text": "Getting Started with Constrained Generation\nFor the engineers in your life (or the engineering-curious), there are several frameworks that make constrained generation accessible - some more nascent than others:\n\nGuidance: Microsoft Research’s powerful framework that focuses on interleaving control flow with generation. It allows you to write pure Python code with LLM-specific extensions, making it feel natural for developers.\nOutlines: A lean, efficient library focused purely on structured generation to make AI speak a language that computers will understand.\nFormatron: The new performance-focused entrant, with an emphasis on efficient parsing and generation. It implements constraints using the Earley algorithm in Rust, making it both theoretically optimal and practically fast.\n\nThese frameworks are very much under active development and evolving fast. I am sure each of them will carve a niche for itself.\nIn a future post I plan to create a video that will help engineers get set up with a solution quickly. If you’re an engineer (or work with engineers), you’ll want to bookmark these two – it’s going to be the kind of post that saves weeks of trial and error.\n\nFound this valuable? Share it with your friends! Subscribe to ensure you don’t miss it – your future self will thank you when your AI systems are running smoothly at 3 AM instead of generating support tickets."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games.\n\n\n\n\n\nBuilt AI systems that crunch petabytes of data across image, text, and tabular formats.\nScaled these systems to serve millions of customers simultaneously 1, 2.\nCreated systems that use neural networks to analyze satellite imagery at planet scale.\nLed teams of 120+ brilliant minds in data science, engineering, and analytics.\n\n\n\n\n\nPyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake, Bigquery\nAnything that pushes the boundaries of what’s possible with data\n\n\n\n\n\nMy current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.\nSome companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…\nI am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.\nWe vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com.\n\n\n\n\n\nWriting about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
+  },
+  {
+    "objectID": "index.html#personal-info-in-a-nutshell",
+    "href": "index.html#personal-info-in-a-nutshell",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games."
+  },
+  {
+    "objectID": "index.html#some-things-ive-done",
+    "href": "index.html#some-things-ive-done",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "Built AI systems that crunch petabytes of data across image, text, and tabular formats.\nScaled these systems to serve millions of customers simultaneously 1, 2.\nCreated systems that use neural networks to analyze satellite imagery at planet scale.\nLed teams of 120+ brilliant minds in data science, engineering, and analytics."
+  },
+  {
+    "objectID": "index.html#tech-i-love-working-with",
+    "href": "index.html#tech-i-love-working-with",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "PyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake, Bigquery\nAnything that pushes the boundaries of what’s possible with data"
+  },
+  {
+    "objectID": "index.html#investing",
+    "href": "index.html#investing",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.\nSome companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…\nI am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.\nWe vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com."
+  },
+  {
+    "objectID": "index.html#where-you-can-find-me",
+    "href": "index.html#where-you-can-find-me",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "Writing about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation\n\n\n\n\n\n\n\n\n\n\n\nOct 29, 2024\n\n\n13 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Oct 18 - Oct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2024\n\n\n5 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Oct 11 - Oct 17, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2024\n\n\n6 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Oct 04 - Oct 10, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\n5 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Sep 30 - Oct 02, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2024\n\n\n6 min\n\n\n\n\n\n\n\nLlama Stack: Meta’s Impressive Stride in the AI Framework Marathon\n\n\n\n\n\n\n\n\n\n\n\nSep 27, 2024\n\n\n3 min\n\n\n\n\n\n\n\nLess Magic, More Math: Why Inference Scaling is the New Black\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\n22 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Sep 06 - Sep 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 12, 2024\n\n\n5 min\n\n\n\n\n\n\n\nThe Great Data Famine: Why the AI that Ate the Web Is Still Starving\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2024\n\n\n14 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 30 - Sep 05, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2024\n\n\n3 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 21 - Aug 27, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 27, 2024\n\n\n5 min\n\n\n\n\n\n\n\nThe Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\n16 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 20, 2024\n\n\n4 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "favorite-eggheads.html",
+    "href": "favorite-eggheads.html",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
+  },
+  {
+    "objectID": "favorite-eggheads.html#favorite-topics-and-experts",
+    "href": "favorite-eggheads.html#favorite-topics-and-experts",
+    "title": "Shwetank Kumar",
+    "section": "",
+    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
+  },
+  {
     "objectID": "posts/cold-start/index.html",
     "href": "posts/cold-start/index.html",
     "title": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash",
@@ -117,69 +243,6 @@
     "title": "The Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash",
     "section": "The Secret Sauce: Continuous Improvement",
     "text": "The Secret Sauce: Continuous Improvement\nNow, here’s what separates the good recommendation systems from the great ones: continuous improvement. Everything we’ve built so far is just the foundation. The real magic happens when you start iterating and refining.\n\nFine-tune your clustering: As you gather more data, you might discover that certain features are more predictive than others. Don’t hesitate to adjust your approach.\nAdjust association weights: Consider the context of purchases. Perhaps items bought together in the same transaction should carry more weight than those bought by the same customer on different days.\nOptimize hyperparameters: Regularly revisit your max_order and weight_factor settings. As your data grows and evolves, so too should your model’s parameters.\nIncorporate user feedback: If customers consistently ignore certain recommendations, use that information to refine your model.\nA/B test rigorously: Test different versions of your model against each other. Let the data guide your decisions on which approaches work best for your specific use case.\n\nRemember, the goal isn’t perfection - it’s continuous improvement. Aim to build a system that consistently outperforms random chance, and then focus on making it a little better every day.\n\nThe Real-World Impact: Beyond the Numbers\nNow, I won’t give you specific numbers here because, let’s face it, your mileage may vary. But if you’ve done everything right, your transitive model should be outperforming the others like a sports car in a bicycle race. But here’s the real kicker: this isn’t just about better numbers on a spreadsheet. It’s about creating a recommendation system that feels almost eerily intuitive to your customers.\nWhile we’ve covered significant ground in this post, we’ve only scratched the surface of what’s possible. In our next installment, we’ll explore how cutting-edge AI techniques can take our recommendation system to the next level. We’ll delve into methods that can create truly bespoke shopping experiences, predicting not just what a customer might want now, but what they’ll want next. From leveraging deep learning to harnessing the power of contextual bandits, we’ll explore how to create a recommendation engine that doesn’t just react to customer behavior, but anticipates it. It’s the difference between a skilled salesperson and a personal shopping psychic (with a Ph.D. in data science). In the end, that’s what separates a good recommendation system from a great one. It’s not just about predicting what customers want - it’s about inspiring them, delighting them, and yes, maybe even surprising them a little. So go forth, tune those hyperparameters, split that data, and may your conversion rates be ever in your favor!"
-  },
-  {
-    "objectID": "favorite-eggheads.html",
-    "href": "favorite-eggheads.html",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
-  },
-  {
-    "objectID": "favorite-eggheads.html#favorite-topics-and-experts",
-    "href": "favorite-eggheads.html#favorite-topics-and-experts",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "AI tutorials - Andrej Karpathy\nPublic company valuations - Ashwath Damodaran\nFinancial systems - Patrick McKenzie"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "🌙 AI Afterhours: Top AI Papers for Oct 18 - Oct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2024\n\n\n5 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Oct 11 - Oct 17, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2024\n\n\n6 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Oct 04 - Oct 10, 2024\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2024\n\n\n5 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Sep 30 - Oct 02, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2024\n\n\n6 min\n\n\n\n\n\n\n\nLlama Stack: Meta’s Impressive Stride in the AI Framework Marathon\n\n\n\n\n\n\n\n\n\n\n\nSep 27, 2024\n\n\n3 min\n\n\n\n\n\n\n\nLess Magic, More Math: Why Inference Scaling is the New Black\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\n22 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Sep 06 - Sep 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 12, 2024\n\n\n5 min\n\n\n\n\n\n\n\nThe Great Data Famine: Why the AI that Ate the Web Is Still Starving\n\n\n\n\n\n\n\n\n\n\n\nSep 6, 2024\n\n\n14 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 30 - Sep 05, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2024\n\n\n3 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 21 - Aug 27, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 27, 2024\n\n\n5 min\n\n\n\n\n\n\n\nThe Surprisingly Lucrative Journey of Bootstrapping a Brand Recommender System: From Chaos to Cash\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2024\n\n\n16 min\n\n\n\n\n\n\n\n🌙 AI Afterhours: Top AI Papers for Aug 15 - Aug 20, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 20, 2024\n\n\n4 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games.\n\n\n\n\n\nBuilt AI systems that crunch petabytes of data across image, text, and tabular formats.\nScaled these systems to serve millions of customers simultaneously 1, 2.\nCreated systems that use neural networks to analyze satellite imagery at planet scale.\nLed teams of 120+ brilliant minds in data science, engineering, and analytics.\n\n\n\n\n\nPyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake, Bigquery\nAnything that pushes the boundaries of what’s possible with data\n\n\n\n\n\nMy current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.\nSome companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…\nI am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.\nWe vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com.\n\n\n\n\n\nWriting about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
-  },
-  {
-    "objectID": "index.html#personal-info-in-a-nutshell",
-    "href": "index.html#personal-info-in-a-nutshell",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "I’m a physicist, engineering exec, investor. Here’s my story:\n\nBorn and raised in NCR, India. Delhi native, I live in SF.\nGot hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.\nLearned business by working at startups for 10+ years and getting MBA at Wharton.\nI founded a bootstrapped company to help data teams optimize their Snowflake spend.\nI enjoy building stuff for internet and physical systems using data and AI games."
-  },
-  {
-    "objectID": "index.html#some-things-ive-done",
-    "href": "index.html#some-things-ive-done",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "Built AI systems that crunch petabytes of data across image, text, and tabular formats.\nScaled these systems to serve millions of customers simultaneously 1, 2.\nCreated systems that use neural networks to analyze satellite imagery at planet scale.\nLed teams of 120+ brilliant minds in data science, engineering, and analytics."
-  },
-  {
-    "objectID": "index.html#tech-i-love-working-with",
-    "href": "index.html#tech-i-love-working-with",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "PyTorch, Hugging Face, Langchain, Pydantic\nGCP, Snowflake, Bigquery\nAnything that pushes the boundaries of what’s possible with data"
-  },
-  {
-    "objectID": "index.html#investing",
-    "href": "index.html#investing",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.\nSome companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion…\nI am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.\nWe vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let’s talk: shwetank.kumar@gmail.com."
-  },
-  {
-    "objectID": "index.html#where-you-can-find-me",
-    "href": "index.html#where-you-can-find-me",
-    "title": "Shwetank Kumar",
-    "section": "",
-    "text": "Writing about AI musings, tech & leadership, and data science on this blog\nSharing insights on LinkedIn\nTinkering with code on GitHub\nSpeaking on panels about the future of AI and data"
   },
   {
     "objectID": "posts/data-scarcity/index.html",

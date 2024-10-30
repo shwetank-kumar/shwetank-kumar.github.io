@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shwetank Kumar">
+<meta name="dcterms.date" content="2024-10-29">
+
+<title>Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation – Shwetank Kumar</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WYRPY1S3G7"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Shwetank Kumar</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../favorite-eggheads.html"> 
+<span class="menu-text">Eggheadery</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shwetank-kumar"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/shwetankumar"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shwetankkumar"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shwetank Kumar </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 29, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><strong>Programming note:</strong> Welcome new subscribers! This is a special deep dive into a critical gap in the GenAI stack that I’ve been researching extensively. If you have GenAI anywhere near your product, you need to know this: companies are quietly wasting up to 70% of their AI spend. Bookmark this longer-than-usual post for a thorough read. Regular bite-sized programming returns this weekend. Got papers or topics you want covered? Drop me a line at ai.afterhours.shwetank@gmail.com.</p>
+</blockquote>
+<p>Here’s what keeps CTOs awake at night: your business runs on structured text. Not the forgiving chatter of Slack, but rigid formats that tolerate zero mistakes. JSON, XML, SQL, CSV – these aren’t just data formats, they’re diplomatic protocols between sovereign digital nations. One misplaced comma, and everything stops. Mission critical systems rely on perfectly formatted data for:</p>
+<ul>
+<li>Payment Processing: When a customer makes a purchase, dozens of systems exchange structured messages within milliseconds, coordinating everything from fraud detection to inventory updates</li>
+<li>Supply Chain Operations: Your entire logistics network runs on EDI (Electronic Data Interchange) - structured messages that orchestrate shipments worth millions</li>
+<li>Financial Reporting: Your accounting systems process thousands of structured transactions daily, where even minor formatting errors can trigger audit flags</li>
+<li>Customer Experience: Every product recommendation, price update, and inventory check depends on clean, structured data exchange</li>
+</ul>
+<p>As a Chief Data Officer, I’ve watched the same crisis unfold countless times: a missing quote freezes orders, a rogue comma corrupts exports, a malformed XML turns a routine deployment into an all-hands crisis. These are so common that companies like Monte Carlo and Accel Data built billion-dollar empires just ensuring data stays clean and correct. In this world, format errors aren’t bugs – they’re declarations of war.</p>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+<section id="the-hidden-cost-of-ai-errors" class="level2">
+<h2 class="anchored" data-anchor-id="the-hidden-cost-of-ai-errors">The Hidden Cost of AI Errors</h2>
+<p>Now enter the Large Language Model (LLM). These systems are remarkable at generating human-like text - ask them to write you a poem about debugging JavaScript, and they’ll craft something worthy of a tech conference keynote. But ask them to generate strictly formatted output like a JSON packet with a specified schema, and they stumble. They’re like brilliant novelists trying to file your taxes - technically capable of understanding numbers, but prone to adding creative flourishes where precision is crucial. Let’s try to understand the impact of these structural errors by quantifying them:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Base Error Rate</td>
+<td>1-2% of generated structured outputs contain syntax errors</td>
+</tr>
+<tr class="even">
+<td>Daily Requests</td>
+<td>10,000 typical for medium-scale API</td>
+</tr>
+<tr class="odd">
+<td>Daily Failures</td>
+<td>100-200 requests require regeneration</td>
+</tr>
+<tr class="even">
+<td>Engineer Time per Failure</td>
+<td>15 minutes average investigation time</td>
+</tr>
+<tr class="odd">
+<td>Daily Engineering Cost</td>
+<td>$3,000-$6,000 (at $200/hour fully loaded cost)</td>
+</tr>
+<tr class="even">
+<td>Annual Impact</td>
+<td>$1.1M - $2.2M in direct engineering costs</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>And these calculations assume your errors are merely expensive, not catastrophic. In financial services, where I’ve overseen numerous AI implementations, even a single malformed response can trigger automated safety protocols that halt entire processing pipelines. Several major banks now mandate strict format validation and fallback systems for any AI-generated data - requirements born from hard-learned lessons about what happens when structured data isn’t quite as structured as you thought. The true cost wasn’t just in fixing errors - it was in the growing lack of trust in their AI systems.</p>
+</section>
+<section id="the-its-just-json-fallacy" class="level2">
+<h2 class="anchored" data-anchor-id="the-its-just-json-fallacy">The “It’s Just JSON” Fallacy</h2>
+<p>At this point, I can hear the seasoned engineers in the room saying, “Hold on - this is a solved problem, right? We’ll just validate the output after generation. It’s just JSON/XML/SQL, after all!” I call this the “It’s Just JSON” fallacy, and I’ve watched it drain millions from engineering budgets. The reasoning seems sound at first: we have parsers, we have schema validators, we have retry logic. But here’s what actually happens in production:</p>
+<ol type="1">
+<li>Validation after generation is like spell-checking a letter after you’ve mailed it - you’ve already paid for the postage</li>
+<li>Every validation failure triggers another API call to regenerate the content</li>
+<li>Each retry not only costs money but adds latency to your customer-facing systems impacting important business metrics like conversion</li>
+</ol>
+<p>Even worse: some responses can be syntactically perfect but semantically nonsensical - they pass your validators but corrupt your data. For example, a well-formed JSON packet with <code>{"age": -2147483648}</code> might sail through basic JSON schema validation (it’s a valid integer!) while representing an impossible human age that could skew your analytics pipeline.</p>
+<p>Here’s what this looks like at scale: One large marketplace built what seemed like a bulletproof system around AI-generated structured data. They had validation layers, retry logic, semantic checks, and fallback systems. Six months in, their cloud bill had tripled and their API costs had quintupled. Their engineers were spending more time fine-tuning validation rules than building new features. They weren’t fixing the problem - they were just getting better at handling failures.</p>
+<p>This pattern is so common in enterprise AI that cloud providers have started offering specific tooling around retry logic and validation pipelines. But adding more safety nets doesn’t solve the fundamental problem - it just makes failing more expensive. Welcome to the world of Agentic workflows!</p>
+</section>
+<section id="teaching-ai-to-mind-its-manners-constrained-generation" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-ai-to-mind-its-manners-constrained-generation">Teaching AI to Mind Its Manners: Constrained Generation</h2>
+<p>So how do we fix this? The answer is constrained generation, and it’s more elegant than you might expect. Instead of the current “generate and pray” approach, we’re going to put our AI through grammar school. Think of it like teaching an overenthusiastic five-year-old to write. You wouldn’t just hand them a blank piece of paper and correct their mistakes afterward. Instead, you’d give them a template with clear rules:</p>
+<ol type="1">
+<li>Start with “Dear”</li>
+<li>Write the person’s name</li>
+<li>Add a comma</li>
+<li>Start a new line</li>
+</ol>
+<p>Here’s how structured text generation with LLMs actually works:</p>
+<ol type="1">
+<li>The LLM predicts probabilities for every possible next word/token</li>
+<li>A grammar filter examines these predictions</li>
+<li>The filter removes any tokens that would break our formatting rules</li>
+<li>The system chooses from the remaining valid tokens and continues</li>
+</ol>
+<p>That’s it - we’re essentially putting guardrails on the LLM’s natural language generation. Instead of letting it freely choose any word, we constrain its choices to only those that maintain our required structure.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="flow.png" class="img-fluid" alt="Flow diagram of constrained generation process"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Constrained token generation for structured text</em></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For the visual learners among us, here’s a flowchart of how these pieces fit together. A structured output is enforced by combining two key components: a state machine that tracks our position in the structure, and a filter that controls what the LLM can generate next. The state machine knows if we’re inside a JSON object, array, or string, while the filter ensures only valid tokens can be selected at each step. For example, after an opening brace ‘{’, the filter only allows string literals that could be valid property names.</p>
+<p>This controlled generation process preserves the LLM’s token preferences while making syntax errors impossible. If the model strongly prefers certain property names or values, those preferences remain intact - but only among the grammatically valid options.</p>
+</section>
+<section id="the-punctuation-tax-a-cfos-nightmare" class="level2">
+<h2 class="anchored" data-anchor-id="the-punctuation-tax-a-cfos-nightmare">The Punctuation Tax: A CFO’s Nightmare</h2>
+<p>Let me translate this into CFO-speak:</p>
+<ul>
+<li>Zero invalid outputs. Not “fewer.” Zero. It is mathematically impossible to generate invalid output</li>
+<li>40-60% lower API costs - no more retries</li>
+<li>30-50% additional savings by skipping predictable tokens</li>
+<li>No more “ai-output-broken” emergency Slack channels</li>
+</ul>
+<p>Let’s be blunt: you’re paying AI model prices for punctuation marks. Every time your LLM generates a JSON structure, you’re burning tokens on braces and commas. That’s like hiring a McKinsey consultant to type semicolons. Let me back these assertions with some back of the envelope math. Here is what a typical JSON response might look like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"apiVersion"</span><span class="fu">:</span> <span class="st">"v1"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"metadata"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="st">"2024-10-29T12:00:00Z"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This boilerplate alone is 20-30 tokens of pure syntax. At $0.01 per 1K tokens:</p>
+<ul>
+<li>100,000 daily API calls</li>
+<li>25 tokens of boilerplate each</li>
+<li>That’s $9,125 annually just for punctuation</li>
+</ul>
+<p>For a company spending $100K monthly on AI calls, up to $60K goes to generating predictable tokens. Most structured data is 50-65% syntax:</p>
+<ul>
+<li>JSON: ~60% structural tokens</li>
+<li>XML: ~65% structural tokens</li>
+<li>SQL: ~50% structural tokens</li>
+</ul>
+<p>Constrained generation cuts these costs by 40-70%. It’s not just about savings - it’s about eliminating entire categories of errors and validation logic. Your systems aren’t just less likely to fail - they’re mathematically incapable of generating invalid output.</p>
+<blockquote class="blockquote">
+<p>🔮 <strong>Future Impact:</strong> This matters even more for autonomous AI workflows. Today, when AI systems chain operations together, each step needs extensive validation and error handling. With constrained generation, we shift from catching errors at runtime to preventing them entirely - like catching type errors in development instead of production. For businesses building autonomous systems, structural reliability isn’t just improved - it’s guaranteed. Your AI agents can’t generate structurally invalid queries or corrupt data structures so long as they can be defined by a grammar because they’re mathematically incapable of breaking those rules.</p>
+</blockquote>
+</section>
+<section id="how-the-magic-works-i-promise-this-wont-hurt" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-magic-works-i-promise-this-wont-hurt">How the Magic Works (I Promise This Won’t Hurt)</h2>
+<p>Let’s look at how constrained generation works with an example and without the kind of jargon that makes engineering blog posts read like someone threw a computer science textbook into a blender. Say, we want to generate this JSON: <code>{"name": "string"}</code>. The flowchart depicts a sequence of steps to make that happen.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="alice-flow.png" class="img-fluid" alt="Flow diagrame to generate json"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Constrained token generation for json example</em></td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>At each state, the LLM generates probabilities for every possible next token. Lets say these are something like:</p>
+<ul>
+<li>“name” (30% likely)</li>
+<li>“{” (20% likely)</li>
+<li>“Alice” (15% likely)</li>
+<li>“}” (10% likely)</li>
+<li>And thousands more possibilities…</li>
+</ul></li>
+<li><p>Next our grammar checks which of these tokens are valid next tokens. Any option that would break the rules gets its probability set to zero. In our example, after typing <code>{"name</code>, the only valid next token is <code>"</code> to close the key name while everything else gets zeroed out.</p></li>
+<li><p>The model picks from what’s left, and updates our location in the grammar FSM ensuring we stay on a valid path in our diagram.</p></li>
+</ol>
+<p>It’s like having autocorrect, but instead of fixing your mistakes after you make them, it prevents you from making them in the first place. In our example, it’s mathematically impossible to generate anything other than a valid JSON object with our properly quoted key “name” and a value generated by the LLM which in this case is “Alice”.</p>
+</section>
+<section id="the-fast-lane-trick" class="level2">
+<h2 class="anchored" data-anchor-id="the-fast-lane-trick">The “Fast Lane” Trick</h2>
+<p>Remember how we talked about skipping predictable parts? Here’s how that actually works using our <code>{"name": "Alice"}</code> example. Our grammar police officer isn’t just preventing mistakes - they’re also looking for shortcuts. When they see a situation where the rules say “these next tokens MUST be exactly this sequence”, they can just jump straight to the end.</p>
+<p>Let’s break down our JSON example into “thinking required” versus “fast lane” parts:</p>
+<pre><code>{ "name" : "Alice" }
+↑   ↑    ↑   ↑     ↑
+1   2    3   4     5
+
+1: Must start with {
+2: Need to generate the key name
+3: Must be ": " (guaranteed sequence)
+4: Need to generate the value
+5: Must end with }</code></pre>
+<p>Look at position 3 - after you’ve written <code>{"name"</code>, what comes next isn’t a creative decision. It has to be a quote mark followed by a colon and a space. There’s no other possibility. So why waste time (and money) having the AI model pretend to think about each of these tokens? Instead, we can skip straight past the <code>": "</code> sequence.</p>
+<p>This is like having a GPS that doesn’t just keep you on the right road, but also tells you where you can safely put your foot down. In our example:</p>
+<ul>
+<li>Have to think: What should the key name be? → “name”</li>
+<li>Fast lane: The <code>": "</code> sequence is automatic</li>
+<li>Have to think: What should the value be? → “Alice”</li>
+<li>Fast lane: The closing <code>}</code> is automatic</li>
+</ul>
+<p>By identifying these guaranteed sequences, we can skip generating probabilities for tokens that are 100% predetermined. In a simple example like this, we might save just a few tokens, but in complex JSON structures with nested objects and arrays, these savings add up quickly.</p>
+</section>
+<section id="when-things-get-spicy-error-handling" class="level2">
+<h2 class="anchored" data-anchor-id="when-things-get-spicy-error-handling">When Things Get Spicy: Error Handling</h2>
+<p>Let’s examine what happens when an LLM encounters decision points while generating structured data. Consider our <code>{"name": "Alice"}</code> example, but let’s look at what the model might actually predict at various points:</p>
+<p>At the value position (after <code>{"name":</code>), the model’s raw token probabilities might look like:</p>
+<pre><code>"Alice"    : 0.15
+"Bob"      : 0.12
+42         : 0.08
+true       : 0.05
+{          : 0.04
+[          : 0.03
+... (other tokens)</code></pre>
+<p>Without constraints, the model might occasionally generate invalid JSON by: 1. Inserting numbers without quotes (<code>{"name": 42}</code>) 2. Starting a nested object without completing it (<code>{"name": {"age"}</code>) 3. Using unquoted text (<code>{"name": Alice}</code>)</p>
+<p>Constrained generation prevents these errors through token masking. When generating a string value, it zeroes out probabilities for all tokens except those that could start a valid string (in this case, the quote mark). The model then renormalizes the remaining probabilities and selects from only valid options.</p>
+<p>Here’s what the constrained probabilities look like at the same position:</p>
+<pre><code>"          : 1.0  (only valid option to start a string)
+42         : 0.0  (masked - would create invalid JSON)
+{          : 0.0  (masked - would create invalid JSON)
+... (all other tokens masked)</code></pre>
+<p>This isn’t making the model smarter - it’s enforcing structural guarantees through straightforward probability masking. The technical impact is significant:</p>
+<ul>
+<li>Zero possibility of structural errors</li>
+<li>No runtime validation needed for JSON syntax</li>
+<li>Guaranteed completion of nested structures</li>
+<li>Type consistency throughout the generated output</li>
+</ul>
+<p>The difference between constrained and unconstrained generation becomes particularly apparent in long-running tasks. When generating thousands of records, even a 99.9% success rate means consistent failures at scale. Constrained generation doesn’t improve those odds - it makes structural errors mathematically impossible.</p>
+</section>
+<section id="putting-it-all-together-a-path-to-predictable-ai" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-all-together-a-path-to-predictable-ai">Putting It All Together: A Path to Predictable AI</h2>
+<p>I’ve thrown a lot of technical detail and business math at you. But here’s what I really want you to take away: constrained generation isn’t optional anymore. It’s table stakes for any business serious about deploying AI in production.</p>
+<p>Think about it this way: We don’t debate whether to use HTTPS anymore. We don’t have meetings about whether to validate user input. We don’t write blog posts weighing the pros and cons of using version control. These are just part of what we call “engineering.” Constrained generation is on the same trajectory – it’s rapidly moving from “interesting technique” to “standard practice.”</p>
+<p>Remember those numbers we walked through earlier? Let’s put them in perspective: - You’re either paying a “punctuation tax” of 40-70% on your API calls, or you’re not - Your engineering team is either firefighting format errors, or they’re building features - Your AI systems are either probabilistically reliable, or they’re mathematically guaranteed</p>
+<p>This isn’t about optimization anymore – it’s about basic engineering competence. When you’re processing millions of structured outputs, “mostly correct” isn’t a standard, it’s a liability. Every CTO I know who has implemented constrained generation has the same reaction: “I can’t believe we used to do this any other way.”</p>
+<p>The pattern in software engineering is always the same: first we make something possible, then we make it reliable, then we make it efficient. We’re watching this play out with AI in real-time. The companies that get ahead of this curve aren’t just going to save money – they’re going to be the ones whose AI initiatives succeed while their competitors are still debugging edge cases.</p>
+</section>
+<section id="getting-started-with-constrained-generation" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-constrained-generation">Getting Started with Constrained Generation</h2>
+<p>For the engineers in your life (or the engineering-curious), there are several robust frameworks that make constrained generation accessible:</p>
+<ul>
+<li><p><strong>Guidance</strong>: Microsoft Research’s powerful framework that focuses on interleaving control flow with generation. It allows you to write pure Python code with LLM-specific extensions, making it feel natural for developers. Particularly strong at complex nested structures and seamlessly integrating tool calls into the generation process. Great if your team wants fine-grained control over the generation process.</p></li>
+<li><p><strong>Outlines</strong>: A lean, efficient library focused purely on structured generation. It shines at regex-based constraints and JSON generation from Pydantic models. It’s designed to be a library rather than a framework, making it easy to integrate into existing codebases. Particularly appealing if you want something lightweight that does one thing (structured generation) extremely well.</p></li>
+<li><p><strong>Formatron</strong>: The new performance-focused entrant, with an emphasis on efficient parsing and generation. It implements constraints using the Earley algorithm in Rust, making it both theoretically optimal and practically fast. Particularly good at batched inference and complex grammatical constraints. If your team is processing high volumes of structured text, this one deserves a close look.</p></li>
+</ul>
+<p>Each has its sweet spot: - Use Guidance when you need deep integration with control flow and tool use - Use Outlines when you want something lightweight and focused purely on constraints - Use Formatron when performance at scale is your primary concern</p>
+<p>In my next post, I’ll do a deep technical dive into implementing constrained generation using these frameworks. We’ll look at real code, compare approaches, and walk through the gotchas that every engineering team should know about. If you’re an engineer (or work with engineers), you’ll want to bookmark these two – it’s going to be the kind of post that saves weeks of trial and error.</p>
+<hr>
+<p><em>Found this valuable? Share it with your friends! Subscribe to ensure you don’t miss it – your future self will thank you when your AI systems are running smoothly at 3 AM instead of generating support tickets.</em></p>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/shwetank-kumar\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

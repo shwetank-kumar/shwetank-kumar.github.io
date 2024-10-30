@@ -10,7 +10,245 @@
 <atom:link href="https://shwetank-kumar.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Shwetank Kumar&#39;s personal website</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Thu, 24 Oct 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 29 Oct 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation</title>
+  <dc:creator>Shwetank Kumar</dc:creator>
+  <link>https://shwetank-kumar.github.io/posts/constrained-generation-draft/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Ever had that moment when your shiny new AI system confidently generates the most beautiful, grammatically perfect, and utterly broken JSON you’ve ever seen? You know, the kind that makes your production system throw its hands up in digital despair? Welcome to the club! These language models are like that brilliant friend who can explain quantum physics but somehow can’t remember to close their parentheses.</p>
+<p>And that’s not just a minor inconvenience – your business runs on structured text. Not the forgiving chatter of Slack, but rigid formats that tolerate zero mistakes. JSON, XML, SQL, CSV – these aren’t just data formats, they’re diplomatic protocols between sovereign digital nations. One misplaced comma, and everything stops. Consider what’s at stake:</p>
+<ul>
+<li><strong>Payment Processing</strong>: Every transaction triggers dozens of precisely formatted messages coordinating fraud checks, inventory, and settlement</li>
+<li><strong>Supply Chain</strong>: Your entire logistics network depends on perfectly structured data exchange</li>
+<li><strong>Financial Systems</strong>: Where even minor format errors can trigger compliance alerts and halt operations</li>
+</ul>
+<p>As a Chief Data Officer, I’ve watched the same crisis unfold countless times: a missing quote freezes orders, a rogue comma corrupts exports, a malformed XML turns a routine deployment into an all-hands crisis. These are so common that companies like Monte Carlo and Accel Data built billion-dollar empires just ensuring data stays clean and correct. In this world, format errors aren’t bugs – they’re declarations of war.</p>
+<blockquote class="blockquote">
+<p><strong>Programming note:</strong> Welcome new subscribers! This is a special deep dive into a critical gap in the GenAI stack that I’ve been researching extensively. If you have GenAI anywhere near your product, you need to know this: companies are quietly wasting up to 70% of their AI spend. Bookmark this longer-than-usual post for a thorough read. Regular bite-sized programming returns this weekend. Got papers or topics you want covered? Drop me a line at ai.afterhours.shwetank@gmail.com.</p>
+</blockquote>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+<section id="the-hidden-cost-of-ai-errors" class="level2">
+<h2 class="anchored" data-anchor-id="the-hidden-cost-of-ai-errors">The Hidden Cost of AI Errors</h2>
+<p>Now enter the Large Language Model (LLM). These systems are remarkable at generating human-like text - ask them to write you a poem about debugging JavaScript, and they’ll craft something worthy of a tech conference keynote. But ask them to generate strictly formatted output like a JSON packet with a specified schema, and they stumble. They’re like brilliant novelists trying to file your taxes - technically capable of understanding numbers, but prone to adding creative flourishes that will make the IRS frown. Let’s try to understand the impact of these structural errors by quantifying them:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Base Error Rate</td>
+<td>1-2% of generated structured outputs contain syntax errors</td>
+</tr>
+<tr class="even">
+<td>Daily Requests</td>
+<td>10,000 typical for medium-scale API</td>
+</tr>
+<tr class="odd">
+<td>Daily Failures</td>
+<td>100-200 requests require regeneration</td>
+</tr>
+<tr class="even">
+<td>Engineer Time per Failure</td>
+<td>15 minutes average investigation time</td>
+</tr>
+<tr class="odd">
+<td>Daily Engineering Cost</td>
+<td>$3,000-$6,000 (at $200/hour fully loaded cost)</td>
+</tr>
+<tr class="even">
+<td>Annual Impact</td>
+<td>$1.1M - $2.2M in direct engineering costs</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>And these calculations assume your errors are merely expensive, not catastrophic. In financial services, where I’ve overseen numerous AI implementations, even a single malformed response can trigger automated safety protocols that halt entire processing pipelines. Several major banks now mandate strict format validation and fallback systems for any AI-generated data - requirements born from hard-learned lessons about what happens when structured data isn’t quite as structured as you thought. The true cost wasn’t just in fixing errors - it was in the growing lack of trust in their AI systems.</p>
+</section>
+<section id="the-its-just-json-fallacy" class="level2">
+<h2 class="anchored" data-anchor-id="the-its-just-json-fallacy">The “It’s Just JSON” Fallacy</h2>
+<p>At this point, I can hear the seasoned engineers in the room saying, “Hold on - this is a solved problem, right? We’ll just validate the output after generation. It’s just JSON/XML/SQL, after all!” I call this the “It’s Just JSON” fallacy, and I’ve watched it drain millions from engineering budgets. The reasoning seems sound at first: we have parsers, we have schema validators, we have retry logic. But here’s what actually happens in production:</p>
+<ol type="1">
+<li>Validation after generation is like spell-checking a letter after you’ve mailed it - you’ve already paid for the postage</li>
+<li>Every validation failure triggers another API call to regenerate the content</li>
+<li>Each retry not only costs money but adds latency to your customer-facing systems impacting important business metrics like conversion</li>
+</ol>
+<p>Even worse: some responses can be syntactically perfect but semantically nonsensical - they pass your validators but corrupt your data. For example, a well-formed JSON packet with <code>{"age": -2147483648}</code> might sail through basic JSON schema validation (it’s a valid integer!) while representing an impossible human age that could skew your analytics pipeline.</p>
+<p>Here’s what this looks like at scale: One large marketplace built what seemed like a bulletproof system around AI-generated structured data. They had validation layers, retry logic, semantic checks, and fallback systems. Six months in, their cloud bill had tripled and their API costs had quintupled. Their engineers were spending more time fine-tuning validation rules than building new features. They weren’t fixing the problem - they were just getting better at handling failures.</p>
+<p>This pattern is so common in enterprise AI that cloud providers have started offering specific tooling around retry logic and validation pipelines. But adding more safety nets doesn’t solve the fundamental problem - it just makes failing more expensive. Welcome to the world of Agentic workflows!</p>
+</section>
+<section id="teaching-ai-to-mind-its-manners-constrained-generation" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-ai-to-mind-its-manners-constrained-generation">Teaching AI to Mind Its Manners: Constrained Generation</h2>
+<p>So how do we fix this? The answer is constrained generation, and it’s more elegant than you might expect. Instead of the current “generate and pray” approach, we’re going to put our AI through grammar school. Think of it like teaching an overenthusiastic five-year-old to write - you wouldn’t just hand them a blank piece of paper and correct their mistakes afterward. Instead, you’d give them a template with clear rules.</p>
+<p>Let’s look at a concrete example with generating a simple JSON: <code>{"name": "Alice"}</code>. At each step:</p>
+<ol type="1">
+<li><p>The LLM predicts probabilities for every possible next token:</p>
+<ul>
+<li>“name” (30% likely)</li>
+<li>“{” (20% likely)</li>
+<li>“Alice” (15% likely)</li>
+<li>“}” (10% likely)</li>
+<li>And thousands more possibilities…</li>
+</ul></li>
+<li><p>A grammar filter examines these predictions and removes any tokens that would break our formatting rules. After typing <code>{"name</code>, only a closing quotation mark is valid - everything else gets zeroed out.</p></li>
+<li><p>The system picks from the remaining valid tokens and updates its state. It’s like having autocorrect, but instead of fixing mistakes after you make them, it prevents them entirely.</p></li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="https://shwetank-kumar.github.io/posts/constrained-generation-draft/flow.png" class="img-fluid" alt="Flow diagram of constrained generation process"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Constrained token generation for structured text</em></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For the visual learners among us, here’s a flowchart of how these pieces fit together. A structured output is enforced by combining two key components: a state machine that tracks our position in the structure, and a filter that controls what the LLM can generate next. The state machine knows if we’re inside a JSON object, array, or string, while the filter ensures only valid tokens can be selected at each step. For example, after an opening brace ‘{’, the filter only allows string literals that could be valid property names.</p>
+</section>
+<section id="the-fast-lane-trick" class="level2">
+<h2 class="anchored" data-anchor-id="the-fast-lane-trick">The “Fast Lane” Trick</h2>
+<p>Now here’s where it gets really interesting: once we know the valid patterns, we can optimize them. Think about it - why should an AI model waste time (and your money) generating tokens that are completely predictable? Using our <code>{"name": "Alice"}</code> example, let’s look at which parts actually need creative thinking versus which parts are just following rules:</p>
+<pre><code>{ "name" : "Alice" }
+↑   ↑    ↑   ↑     ↑
+1   2    3   4     5
+
+1: Must start with {
+2: Need to generate the key name
+3: Must be ": " (guaranteed sequence)
+4: Need to generate the value
+5: Must end with }</code></pre>
+<p>If you look carefully at position 3 - after you’ve written <code>{"name"</code>, what comes next isn’t a creative decision. It <strong>has to be</strong> a quote mark followed by a colon and a space. There’s no other possibility. So why waste time (and money) having the AI model pretend to think about each of these tokens? Instead, we can skip straight past the <code>": "</code> sequence.</p>
+<p>This is like having a GPS that doesn’t just keep you on the right road, but also tells you where you can safely put your foot down. In our example:</p>
+<ul>
+<li>Have to think: What should the key name be? → “name”</li>
+<li>Fast lane: The <code>": "</code> sequence is automatic</li>
+<li>Have to think: What should the value be? → “Alice”</li>
+<li>Fast lane: The closing <code>}</code> is automatic</li>
+</ul>
+<p>By identifying these guaranteed sequences, we can skip generating probabilities for tokens that are 100% predetermined. In a simple example like this, we might save just a few tokens, but in complex JSON structures with nested objects and arrays, these savings add up quickly.</p>
+</section>
+<section id="zero-not-fewer-making-structural-llm-errors-impossible" class="level2">
+<h2 class="anchored" data-anchor-id="zero-not-fewer-making-structural-llm-errors-impossible">Zero, Not “Fewer”: Making Structural LLM Errors Impossible</h2>
+<p>Let’s examine what happens when an LLM encounters decision points while generating structured data. At the value position in our <code>{"name": "Alice"}</code> example (after <code>{"name":</code>), here’s what the model initially predicts:</p>
+<pre><code>"Alice"    : 0.15
+"Bob"      : 0.12
+42         : 0.08
+true       : 0.05
+{          : 0.04
+[          : 0.03
+... (other tokens)</code></pre>
+<p>Without constraints, this leads to common JSON errors like unquoted numbers (<code>{"name": 42}</code>), incomplete objects (<code>{"name": {"age"}</code>), or unquoted text (<code>{"name": Alice}</code>).</p>
+<p>Constrained generation on the other hand applies token masking, transforming those probabilities to:</p>
+<pre><code>"          : 1.0  (only valid option to start a string)
+42         : 0.0  (masked - would create invalid JSON)
+{          : 0.0  (masked - would create invalid JSON)
+... (all other tokens masked)</code></pre>
+<p>This isn’t making the model smarter - it’s enforcing structural guarantees through probability masking. The impact? When generating thousands of records, even a 99.9% success rate means consistent failures at scale. Constrained generation doesn’t improve those odds - it makes structural errors mathematically impossible.</p>
+</section>
+<section id="the-punctuation-tax-a-cfos-nightmare" class="level2">
+<h2 class="anchored" data-anchor-id="the-punctuation-tax-a-cfos-nightmare">The Punctuation Tax: A CFO’s Nightmare</h2>
+<p>Let me translate the impact of all of this into plain CFO-speak:</p>
+<ul>
+<li>Zero invalid outputs. Not “fewer.” Zero. It is mathematically impossible to generate invalid output</li>
+<li>40-60% lower API costs - no more retries</li>
+<li>30-50% additional savings by skipping predictable tokens</li>
+<li>No more “ai-output-broken” emergency Slack channels</li>
+</ul>
+<p>Let’s be blunt: you’re paying AI model prices for punctuation marks. Every time your LLM generates a JSON structure, you’re burning tokens on braces and commas. That’s like hiring a McKinsey consultant to type semicolons. Here’s what a typical JSON response looks like:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb4-2">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"apiVersion"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"v1"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb4-3">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"metadata"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb4-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"timestamp"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"2024-10-29T12:00:00Z"</span></span>
+<span id="cb4-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb4-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+<p>This boilerplate alone is 20-30 tokens of pure syntax. At $0.01 per 1K tokens:</p>
+<ul>
+<li>100,000 daily API calls</li>
+<li>25 tokens of boilerplate each</li>
+<li>That’s $9,125 annually just for punctuation</li>
+</ul>
+<p>For a company spending $100K monthly on AI calls, up to $60K goes to generating predictable tokens. Most structured data is 50-65% syntax:</p>
+<ul>
+<li>JSON: ~60% structural tokens</li>
+<li>XML: ~65% structural tokens</li>
+<li>SQL: ~50% structural tokens</li>
+</ul>
+<blockquote class="blockquote">
+<p>🔮 <strong>Future Impact:</strong> This matters even more for autonomous AI workflows. Today, when AI systems chain operations together, each step needs extensive validation and error handling. With constrained generation, we shift from catching errors at runtime to preventing them entirely - like catching type errors in development instead of production. For businesses building autonomous systems, structural reliability isn’t just improved - it’s guaranteed. Your AI agents can’t generate structurally invalid queries or corrupt data structures so long as they can be defined by a grammar because they’re mathematically incapable of breaking those rules.</p>
+</blockquote>
+</section>
+<section id="putting-it-all-together-a-path-to-predictable-ai" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-all-together-a-path-to-predictable-ai">Putting It All Together: A Path to Predictable AI</h2>
+<p>I’ve thrown a lot of technical detail and business math at you. But here’s what I really want you to take away: constrained generation isn’t optional anymore. It’s table stakes for any business serious about deploying AI in production.</p>
+<p>Think about it this way: We don’t debate whether to use HTTPS anymore. We don’t have meetings about whether to validate user input. We don’t write blog posts weighing the pros and cons of using version control. These are just part of what we call “engineering.” Constrained generation is on the same trajectory – it’s rapidly moving from “interesting technique” to “standard practice.”</p>
+<p>Remember those numbers we walked through earlier? Let’s put them in perspective: - You’re either paying a “punctuation tax” of 40-70% on your API calls, or you’re not - Your engineering team is either firefighting format errors, or they’re building features - Your AI systems are either probabilistically reliable, or they’re mathematically guaranteed</p>
+<p>This isn’t about optimization anymore – it’s about basic engineering competence. When you’re processing millions of structured outputs, “mostly correct” isn’t a standard, it’s a liability. Every CTO I know who has implemented constrained generation has the same reaction: “I can’t believe we used to do this any other way.”</p>
+<p>The pattern in software engineering is always the same: first we make something possible, then we make it reliable, then we make it efficient. We’re watching this play out with AI in real-time. The companies that get ahead of this curve aren’t just going to save money – they’re going to be the ones whose AI initiatives succeed while their competitors are still debugging edge cases.</p>
+</section>
+<section id="getting-started-with-constrained-generation" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-constrained-generation">Getting Started with Constrained Generation</h2>
+<p>For the engineers in your life (or the engineering-curious), there are several frameworks that make constrained generation accessible - some more nascent than others:</p>
+<ul>
+<li><p><strong>Guidance</strong>: Microsoft Research’s powerful framework that focuses on interleaving control flow with generation. It allows you to write pure Python code with LLM-specific extensions, making it feel natural for developers.</p></li>
+<li><p><strong>Outlines</strong>: A lean, efficient library focused purely on structured generation to make AI speak a language that computers will understand.</p></li>
+<li><p><strong>Formatron</strong>: The new performance-focused entrant, with an emphasis on efficient parsing and generation. It implements constraints using the Earley algorithm in Rust, making it both theoretically optimal and practically fast.</p></li>
+</ul>
+<p>These frameworks are very much under active development and evolving fast. I am sure each of them will carve a niche for itself.</p>
+<p>In a future post I plan to create a video that will help engineers get set up with a solution quickly. If you’re an engineer (or work with engineers), you’ll want to bookmark these two – it’s going to be the kind of post that saves weeks of trial and error.</p>
+<hr>
+<p><em>Found this valuable? Share it with your friends! Subscribe to ensure you don’t miss it – your future self will thank you when your AI systems are running smoothly at 3 AM instead of generating support tickets.</em></p>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://shwetank-kumar.github.io/posts/constrained-generation-draft/</guid>
+  <pubDate>Tue, 29 Oct 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>🌙 AI Afterhours: Top AI Papers for Oct 18 - Oct 24, 2024</title>
   <dc:creator>Shwetank Kumar</dc:creator>
