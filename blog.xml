@@ -14,7 +14,7 @@
 <item>
   <title>Why Your Large Language Model Needs Grammar School: The Case for Constrained Generation</title>
   <dc:creator>Shwetank Kumar</dc:creator>
-  <link>https://shwetank-kumar.github.io/posts/constrained-generation-draft/</link>
+  <link>https://shwetank-kumar.github.io/posts/constrained-generation/</link>
   <description><![CDATA[ 
 
 
@@ -109,7 +109,7 @@
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><img src="https://shwetank-kumar.github.io/posts/constrained-generation-draft/flow.png" class="img-fluid" alt="Flow diagram of constrained generation process"></th>
+<th style="text-align: center;"><img src="https://shwetank-kumar.github.io/posts/constrained-generation/flow.png" class="img-fluid" alt="Flow diagram of constrained generation process"></th>
 </tr>
 </thead>
 <tbody>
@@ -246,7 +246,7 @@ font-style: inherit;">}</span></span></code></pre></div>
 </section>
 
  ]]></description>
-  <guid>https://shwetank-kumar.github.io/posts/constrained-generation-draft/</guid>
+  <guid>https://shwetank-kumar.github.io/posts/constrained-generation/</guid>
   <pubDate>Tue, 29 Oct 2024 07:00:00 GMT</pubDate>
 </item>
 <item>
