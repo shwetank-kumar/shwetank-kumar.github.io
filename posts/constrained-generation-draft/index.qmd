@@ -1,5 +1,5 @@
 ---
-title: "Why Your Large Language Model Needs Grammar School: The Business Case for Constrained Generation"
+title: "Why Your Large Language Model Needs Grammar School: The Case for Constrained Generation"
 author: "Shwetank Kumar"
 date: "2024-10-29"
 # categories: [genai, inference]
