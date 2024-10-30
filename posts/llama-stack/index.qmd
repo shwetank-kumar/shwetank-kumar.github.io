@@ -4,7 +4,6 @@ author: "Shwetank Kumar"
 date: "2024-09-27"
 categories: [genai, inference]
 image: "llama-stack.jpeg"
-# draft: true
 ---
 
 Ready to level up from AI novice to silicon symphony conductor? Meta's latest brainchild, Llama Stack, is here to make that happen! This freshly minted framework isn't just another dev tool – it's a full-fledged ecosystem designed to streamline AI model development and deployment from start to finish.

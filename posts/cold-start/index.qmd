@@ -4,7 +4,6 @@ author: "Shwetank Kumar"
 date: "2024-08-24"
 categories: [recommenders, code]
 image: "recommender-system-diagram.svg"
-# draft: true
 ---
 
 While everyone seems captivated by AGI and busy building Just-Another-Chatbot (JAC<sup>TM</sup>), they're overlooking the real problems that can be solved (and the money to be made) through practical ML Engineering. In this inaugural series of blog posts, I'll dive deep into one such problem: bootstrapping and building a brand recommender system from the ground up. Drawing from my experience as an engineer, executive, and consultant across multiple consumer tech companies and marketplaces, I'll guide you through the process of creating a recommendation engine that not only predicts customer preferences but also enhances their overall shopping experience.

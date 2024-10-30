@@ -4,7 +4,6 @@ author: "Shwetank Kumar"
 date: "2024-09-06"
 categories: [genai, strategy, investment]
 image: "robot.jpeg"
-# draft: true
 ---
 
 If you're a software engineer or data scientist who's been losing sleep over the Twitter-fueled hysteria that "English is the new coding language," I've got news for you: put down the panic button and step away from the job boards. I am here to tell you that despite what the Twitterverse might have you believe, AI isn't about to steal your job or create Skynet. And if you're an exec or investor who thinks otherwise, I've got a Nigerian prince who'd love to chat. 
