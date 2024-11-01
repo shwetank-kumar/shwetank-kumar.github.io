@@ -1,0 +1,73 @@
+Date: 31-10-2024
+Paper Title,Upvotes
+CORAL: Benchmarking Multi-turn Conversational Retrieval-Augmentation Generation,35
+A Large Recurrent Action Model: xLSTM enables Fast Inference for Robotics Tasks,12
+TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters,7
+Stealing User Prompts from Mixture of Experts,7
+AutoMIR: Effective Zero-Shot Medical Information Retrieval without Relevance Labels,6
+SlowFast-VGen: Slow-Fast Learning for Action-Driven Long Video Generation,4
+On Memorization of Large Language Models in Logical Reasoning,4
+Decoding Reading Goals from Eye Movements,4
+ReferEverything: Towards Segmenting Everything We Can Speak of in Videos,4
+Toxicity of the Commons: Curating Open-Source Pre-Training Data,4
+
+Date: 30-10-2024
+Paper Title,Upvotes
+CLEAR: Character Unlearning in Textual and Visual Modalities,174
+AutoKaggle: A Multi-Agent Framework for Autonomous Data Science Competitions,20
+OpenWebVoyager: Building Multimodal Web Agents via Iterative Real-World Exploration, Feedback and Optimization,13
+SocialGPT: Prompting LLMs for Social Relation Reasoning via Greedy Segment Optimization,13
+Flow-DPO: Improving LLM Mathematical Reasoning through Online Multi-Agent Learning,11
+ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference,6
+Robots Pre-train Robots: Manipulation-Centric Robotic Representation from Large-Scale Robot Dataset,6
+Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning,5
+Mind Your Step (by Step): Chain-of-Thought can Reduce Performance on Tasks where Thinking Makes Humans Worse,4
+Zero-Shot Dense Retrieval with Embeddings from Relevance Feedback,3
+Accelerating Direct Preference Optimization with Prefix Sharing,3
+Can Language Models Replace Programmers? REPOCOD Says 'Not Yet',2
+
+Date: 29-10-2024
+Paper Title,Upvotes
+GPT-4o System Card,33
+AgentStore: Scalable Integration of Heterogeneous Agents As Specialized Generalist Computer Assistant,25
+Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction,17
+DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation,13
+MarDini: Masked Autoregressive Diffusion for Video Generation at Scale,13
+A Survey of Small Language Models,13
+LongReward: Improving Long-context Large Language Models with AI Feedback,13
+GrounDiT: Grounding Diffusion Transformers via Noisy Patch Transplantation,11
+COAT: Compressing Optimizer states and Activation for Memory-Efficient FP8 Training,10
+Bielik 7B v0.1: A Polish Language Model -- Development, Insights, and Evaluation,10
+Fast Best-of-N Decoding via Speculative Rejection,5
+Vision Search Assistant: Empower Vision-Language Models as Multimodal Search Engines,5
+
+Date: 28-10-2024
+Paper Title,Upvotes
+ROCKET-1: Master Open-World Interaction with Visual-Temporal Context Prompting, 33
+Continuous Speech Synthesis using per-token Latent Diffusion, 22
+Teach Multimodal LLMs to Comprehend Electrocardiographic Images, 19
+MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark, 12
+Read-ME: Refactorizing LLMs as Router-Decoupled Mixture of Experts with System Co-Design, 12
+FasterCache: Training-Free Video Diffusion Model Acceleration with High Quality, 12
+Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance, 11
+Infinity-MM: Scaling Multimodal Performance with Large-Scale and High-Quality Instruction Data, 11
+Hybrid Preferences: Learning to Route Instances for Human vs. AI Feedback, 7
+Counting Ability of Large Language Models and Impact of Tokenization, 6
+Fictitious Synthetic Data Can Improve LLM Factuality via Prerequisite Learning, 5
+Analysing the Residual Stream of Language Models Under Knowledge Conflicts, 4
+
+Date: 25-10-2024
+Paper Title,Upvotes
+Breaking the Memory Barrier: Near Infinite Batch Size Scaling for Contrastive Loss,46
+Can Knowledge Editing Really Correct Hallucinations?,35
+LOGO -- Long cOntext aliGnment via efficient preference Optimization,34
+Unleashing Reasoning Capability of LLMs via Scalable Question Synthesis from Scratch,32
+Framer: Interactive Frame Interpolation,22
+Unbounded: A Generative Infinite Game of Character Life Simulation,17
+Why Does the Effective Context Length of LLMs Fall Short?,9
+Distill Visual Chart Reasoning Ability from LLMs to MLLMs,8
+Robust Watermarking Using Generative Priors Against Image Editing: From Benchmarking to Advances,7
+Skywork-Reward: Bag of Tricks for Reward Modeling in LLMs,7
+WAFFLE: Multi-Modal Model for Automated Front-End Development,7
+MotionCLR: Motion Generation and Training-free Editing via Understanding Attention Mechanisms,6
+
