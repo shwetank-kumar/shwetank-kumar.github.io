@@ -1,12 +1,10 @@
 ---
-title: "From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output"
+title: "From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output 🎯"
 author: "Shwetank Kumar"
 date: "2024-11-05"
 categories: [genai, inference, structured generation]
 # image: "llama-stack.jpeg"
 ---
-
-# From JSON Chaos to Structure: Your Guide to Taming LLM Output 🎯
 
 Ready to transform your LLM outputs from a wild beast into a well-behaved JSON generator? Buckle up, because we're about to turn that unpredictable text generator into your personal structured data dispenser! Picking up where our [deep dive  on structured generation](https://shwetank-kumar.github.io/posts/constrained-generation/) using constrained token generation left off, let's turn theory into practice with a hands-on guide to structured generation!
 
