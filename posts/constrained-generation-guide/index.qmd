@@ -11,6 +11,7 @@ categories: [genai, inference, structured generation]
 Ready to transform your LLM outputs from a wild beast into a well-behaved JSON generator? Buckle up, because we're about to turn that unpredictable text generator into your personal structured data dispenser! Picking up where our [deep dive  on structured generation](https://shwetank-kumar.github.io/posts/constrained-generation/) using constrained token generation left off, let's turn theory into practice with a hands-on guide to structured generation!
 
 In this guide (and the accompanying video), we're diving deep into the world of JSON generation with LLMs. And trust me, if you've ever found yourself desperately parsing through paragraphs of explanatory text just to find that one JSON object you asked for, this is going to be your new favorite bedtime story. 
+ 
  Warning: side effects may include significantly fewer 3 AM production incidents! 
 
 <br><br>
