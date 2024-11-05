@@ -1,7 +1,7 @@
 ---
 title: "From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output"
 author: "Shwetank Kumar"
-date: "2024-09-27"
+date: "2024-11-05"
 categories: [genai, inference, structured generation]
 # image: "llama-stack.jpeg"
 ---
