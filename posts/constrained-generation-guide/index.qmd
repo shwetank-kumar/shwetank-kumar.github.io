@@ -12,7 +12,7 @@ Ready to transform your LLM outputs from a wild beast into a well-behaved JSON g
 
 In this guide (and the accompanying video), we're diving deep into the world of JSON generation with LLMs. And trust me, if you've ever found yourself desperately parsing through paragraphs of explanatory text just to find that one JSON object you asked for, this is going to be your new favorite bedtime story. 
  
- Warning: side effects may include significantly fewer 3 AM production incidents! 
+ Warning: side effects may include significantly fewer 3 AM production incidents!😉
 
 <br><br>
 <div class="video-container">
