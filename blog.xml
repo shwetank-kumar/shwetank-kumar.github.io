@@ -10,7 +10,147 @@
 <atom:link href="https://shwetank-kumar.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Shwetank Kumar&#39;s personal website</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Thu, 31 Oct 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 05 Nov 2024 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output</title>
+  <dc:creator>Shwetank Kumar</dc:creator>
+  <link>https://shwetank-kumar.github.io/posts/constrained-generation-guide/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="from-json-chaos-to-structure-your-guide-to-taming-llm-output" class="level1">
+<h1>From JSON Chaos to Structure: Your Guide to Taming LLM Output 🎯</h1>
+<p><em>Picking up where our <a href="https://shwetank-kumar.github.io/posts/constrained-generation/">deep dive on structured generation using constrained token generation</a> left off, let’s turn theory into practice with a hands-on guide to structured generation!</em></p>
+<p>Ready to transform your LLM outputs from a wild beast into a well-behaved JSON generator? Buckle up, because we’re about to turn that unpredictable text generator into your personal structured data dispenser!</p>
+<p>In this guide (and the accompanying video), we’re diving deep into the world of JSON generation with LLMs. And trust me, if you’ve ever found yourself desperately parsing through paragraphs of explanatory text just to find that one JSON object you asked for, this is going to be your new favorite bedtime story. Warning: side effects may include significantly fewer 3 AM production incidents!</p>
+<br><br>
+<div class="video-container">
+<p><iframe width="560" height="315" src="https://youtu.be/_fSphczt7_g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></p>
+</div>
+<p><br><br></p>
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
+</iframe>
+<section id="the-problem-when-llms-try-too-hard-to-help" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-when-llms-try-too-hard-to-help">The Problem: When LLMs Try Too Hard to Help</h2>
+<p>Let’s start with what I like to call the “overly helpful assistant syndrome.” Watch what happens when we try to get a simple JSON object for a video game character:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""Generate a video game character using JSON format:</span></span>
+<span id="cb1-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb1-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    "name": "character name",</span></span>
+<span id="cb1-4"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    "age": "character age"</span></span>
+<span id="cb1-5"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">}"""</span></span></code></pre></div>
+<p>Oh boy. Our LLM friend here decides to throw in a doctoral thesis worth of explanations, complete with Python examples, implementation suggestions, and probably its grandmother’s secret recipe. It’s like asking for directions and getting the entire history of cartography! 🗺️</p>
+</section>
+<section id="the-be-more-specific-trap" class="level2">
+<h2 class="anchored" data-anchor-id="the-be-more-specific-trap">The “Be More Specific” Trap</h2>
+<p>“Aha!” you might think, “I’ll just tell it to ONLY give me JSON!” Nice try, but:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""Generate ONLY a JSON object for a character.</span></span>
+<span id="cb2-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">NO explanations. NO additional text. JUST JSON."""</span></span></code></pre></div>
+<p>Congratulations! You’ve now received the JSON… plus a step-by-step commentary on why it gave you exactly what you asked for. It’s like telling someone “don’t think about elephants” - guess what they’re thinking about? 🐘</p>
+</section>
+<section id="the-minimalist-approach-almost-but-not-quite" class="level2">
+<h2 class="anchored" data-anchor-id="the-minimalist-approach-almost-but-not-quite">The Minimalist Approach: Almost, But Not Quite</h2>
+<p>Getting desperate, we try the bare minimum:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""Create a character in JSON format: {"""</span></span></code></pre></div>
+<p>This actually gets us closer! But it’s like trying to hit a bullseye while riding a unicycle - sometimes you nail it, sometimes you end up with half a JSON object and a lot of regret.</p>
+</section>
+<section id="enter-outlines-your-json-whisperer" class="level2">
+<h2 class="anchored" data-anchor-id="enter-outlines-your-json-whisperer">Enter Outlines: Your JSON Whisperer</h2>
+<p>Here’s where things get interesting. Remember all those tricks and prompting gymnastics? And remember how we talked about coalescence making LLM inference 5x faster in our <a href="previous-post-link">last post</a>? Well, throw out the prompting tricks - Outlines is about to change your life faster than a Silicon Valley startup’s pivot strategy:</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> pydantic <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> BaseModel, constr</span>
+<span id="cb4-2"></span>
+<span id="cb4-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">class</span> Character(BaseModel):</span>
+<span id="cb4-4">    name: constr(max_length<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb4-5">    age: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span></span>
+<span id="cb4-6"></span>
+<span id="cb4-7">generator <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> outlines.generate.json(llm, Character)</span></code></pre></div>
+<p>And boom! 💥 Clean, valid JSON every single time:</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"name"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Luna"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"age"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+<p>No explanations. No war stories. Just pure, pristine JSON that would make your database admin weep tears of joy. This is coalescence in action - turning those theoretical token optimizations we discussed into practical, production-ready code.</p>
+</section>
+<section id="why-this-is-actually-revolutionary" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-actually-revolutionary">Why This Is Actually Revolutionary</h2>
+<p>Think about what we just did: - Turned an unpredictable text generator into a reliable JSON factory - Eliminated the need for prompt engineering wizardry - Got type-safe, schema-validated output every time - Made our error rates drop faster than a tech stock in a bear market - Put those token-level optimizations from our coalescence deep dive to work</p>
+<p>And the best part? This isn’t just about making your code prettier. This is about building reliable systems that don’t fall apart the moment your LLM decides to get creative with its responses.</p>
+</section>
+<section id="the-real-magic-scaling-this-up" class="level2">
+<h2 class="anchored" data-anchor-id="the-real-magic-scaling-this-up">The Real Magic: Scaling This Up</h2>
+<p>Imagine building a product where every API call needs structured data from an LLM. Without proper constraints, you’re basically running a digital Russian roulette. With Outlines and the power of constrained generation we discussed in our coalescence post, you’re running a Swiss watch factory. The difference? About 3 AM calls from your DevOps team.</p>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>Watch the video above to see this transformation in action. We’ll walk through each step, from chaos to structure, and show you exactly how to implement this in your own projects. Your future self (and your error logs) will thank you.</p>
+<p>Remember: In the world of LLMs, structure isn’t just about keeping things neat - it’s about turning possibility into probability, and probability into certainty. Now go forth and generate some JSON! 🚀</p>
+<p>P.S. If you’re still using regex to parse LLM outputs, first read our <a href="https://shwetank-kumar.github.io/posts/constrained-generation/">theory deep dive</a> on the subject, then we need to talk. Seriously. 😉</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>genai</category>
+  <category>inference</category>
+  <category>structured generation</category>
+  <guid>https://shwetank-kumar.github.io/posts/constrained-generation-guide/</guid>
+  <pubDate>Tue, 05 Nov 2024 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>🌙 AI Afterhours: Top AI Papers for Oct 25 - Oct 31, 2024</title>
   <dc:creator>Shwetank Kumar</dc:creator>
@@ -502,146 +642,6 @@ font-style: inherit;">}</span></span></code></pre></div>
   <category>Multimodal Models</category>
   <guid>https://shwetank-kumar.github.io/posts/summary-2024-10-03/ai_paper_summaries.html</guid>
   <pubDate>Mon, 30 Sep 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output</title>
-  <dc:creator>Shwetank Kumar</dc:creator>
-  <link>https://shwetank-kumar.github.io/posts/constrained-generation-guide/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="from-json-chaos-to-structure-your-guide-to-taming-llm-output" class="level1">
-<h1>From JSON Chaos to Structure: Your Guide to Taming LLM Output 🎯</h1>
-<p><em>Picking up where our <a href="https://shwetank-kumar.github.io/posts/constrained-generation/">deep dive on structured generation using constrained token generation</a> left off, let’s turn theory into practice with a hands-on guide to structured generation!</em></p>
-<p>Ready to transform your LLM outputs from a wild beast into a well-behaved JSON generator? Buckle up, because we’re about to turn that unpredictable text generator into your personal structured data dispenser!</p>
-<p>In this guide (and the accompanying video), we’re diving deep into the world of JSON generation with LLMs. And trust me, if you’ve ever found yourself desperately parsing through paragraphs of explanatory text just to find that one JSON object you asked for, this is going to be your new favorite bedtime story. Warning: side effects may include significantly fewer 3 AM production incidents!</p>
-<br><br>
-<div class="video-container">
-<p><iframe width="560" height="315" src="https://youtu.be/_fSphczt7_g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></p>
-</div>
-<p><br><br></p>
-<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
-</iframe>
-<section id="the-problem-when-llms-try-too-hard-to-help" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-when-llms-try-too-hard-to-help">The Problem: When LLMs Try Too Hard to Help</h2>
-<p>Let’s start with what I like to call the “overly helpful assistant syndrome.” Watch what happens when we try to get a simple JSON object for a video game character:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""Generate a video game character using JSON format:</span></span>
-<span id="cb1-2"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span id="cb1-3"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "name": "character name",</span></span>
-<span id="cb1-4"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "age": "character age"</span></span>
-<span id="cb1-5"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">}"""</span></span></code></pre></div>
-<p>Oh boy. Our LLM friend here decides to throw in a doctoral thesis worth of explanations, complete with Python examples, implementation suggestions, and probably its grandmother’s secret recipe. It’s like asking for directions and getting the entire history of cartography! 🗺️</p>
-</section>
-<section id="the-be-more-specific-trap" class="level2">
-<h2 class="anchored" data-anchor-id="the-be-more-specific-trap">The “Be More Specific” Trap</h2>
-<p>“Aha!” you might think, “I’ll just tell it to ONLY give me JSON!” Nice try, but:</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""Generate ONLY a JSON object for a character.</span></span>
-<span id="cb2-2"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">NO explanations. NO additional text. JUST JSON."""</span></span></code></pre></div>
-<p>Congratulations! You’ve now received the JSON… plus a step-by-step commentary on why it gave you exactly what you asked for. It’s like telling someone “don’t think about elephants” - guess what they’re thinking about? 🐘</p>
-</section>
-<section id="the-minimalist-approach-almost-but-not-quite" class="level2">
-<h2 class="anchored" data-anchor-id="the-minimalist-approach-almost-but-not-quite">The Minimalist Approach: Almost, But Not Quite</h2>
-<p>Getting desperate, we try the bare minimum:</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""Create a character in JSON format: {"""</span></span></code></pre></div>
-<p>This actually gets us closer! But it’s like trying to hit a bullseye while riding a unicycle - sometimes you nail it, sometimes you end up with half a JSON object and a lot of regret.</p>
-</section>
-<section id="enter-outlines-your-json-whisperer" class="level2">
-<h2 class="anchored" data-anchor-id="enter-outlines-your-json-whisperer">Enter Outlines: Your JSON Whisperer</h2>
-<p>Here’s where things get interesting. Remember all those tricks and prompting gymnastics? And remember how we talked about coalescence making LLM inference 5x faster in our <a href="previous-post-link">last post</a>? Well, throw out the prompting tricks - Outlines is about to change your life faster than a Silicon Valley startup’s pivot strategy:</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> pydantic <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> BaseModel, constr</span>
-<span id="cb4-2"></span>
-<span id="cb4-3"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">class</span> Character(BaseModel):</span>
-<span id="cb4-4">    name: constr(max_length<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>)</span>
-<span id="cb4-5">    age: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">int</span></span>
-<span id="cb4-6"></span>
-<span id="cb4-7">generator <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> outlines.generate.json(llm, Character)</span></code></pre></div>
-<p>And boom! 💥 Clean, valid JSON every single time:</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">{</span><span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">"name"</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Luna"</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">"age"</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">25</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">}</span></span></code></pre></div>
-<p>No explanations. No war stories. Just pure, pristine JSON that would make your database admin weep tears of joy. This is coalescence in action - turning those theoretical token optimizations we discussed into practical, production-ready code.</p>
-</section>
-<section id="why-this-is-actually-revolutionary" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-is-actually-revolutionary">Why This Is Actually Revolutionary</h2>
-<p>Think about what we just did: - Turned an unpredictable text generator into a reliable JSON factory - Eliminated the need for prompt engineering wizardry - Got type-safe, schema-validated output every time - Made our error rates drop faster than a tech stock in a bear market - Put those token-level optimizations from our coalescence deep dive to work</p>
-<p>And the best part? This isn’t just about making your code prettier. This is about building reliable systems that don’t fall apart the moment your LLM decides to get creative with its responses.</p>
-</section>
-<section id="the-real-magic-scaling-this-up" class="level2">
-<h2 class="anchored" data-anchor-id="the-real-magic-scaling-this-up">The Real Magic: Scaling This Up</h2>
-<p>Imagine building a product where every API call needs structured data from an LLM. Without proper constraints, you’re basically running a digital Russian roulette. With Outlines and the power of constrained generation we discussed in our coalescence post, you’re running a Swiss watch factory. The difference? About 3 AM calls from your DevOps team.</p>
-</section>
-<section id="whats-next" class="level2">
-<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
-<p>Watch the video above to see this transformation in action. We’ll walk through each step, from chaos to structure, and show you exactly how to implement this in your own projects. Your future self (and your error logs) will thank you.</p>
-<p>Remember: In the world of LLMs, structure isn’t just about keeping things neat - it’s about turning possibility into probability, and probability into certainty. Now go forth and generate some JSON! 🚀</p>
-<p>P.S. If you’re still using regex to parse LLM outputs, first read our <a href="https://shwetank-kumar.github.io/posts/constrained-generation/">theory deep dive</a> on the subject, then we need to talk. Seriously. 😉</p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>genai</category>
-  <category>inference</category>
-  <category>structured generation</category>
-  <guid>https://shwetank-kumar.github.io/posts/constrained-generation-guide/</guid>
-  <pubDate>Fri, 27 Sep 2024 07:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Llama Stack: Meta’s Impressive Stride in the AI Framework Marathon</title>
