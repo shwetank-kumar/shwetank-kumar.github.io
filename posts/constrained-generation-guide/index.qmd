@@ -81,17 +81,18 @@ No explanations. No war stories. Just pure, pristine JSON that would make your d
 ## Why This Is Actually Revolutionary
 
 Think about what we just did:
+
 - Turned an unpredictable text generator into a reliable JSON factory
 - Eliminated the need for prompt engineering wizardry
 - Got type-safe, schema-validated output every time
 - Made our error rates drop faster than a tech stock in a bear market
-- Put those token-level optimizations from our coalescence deep dive to work
+- Put those token-level optimizations from our deep dive to work
 
-And the best part? This isn't just about making your code prettier. This is about building reliable systems that don't fall apart the moment your LLM decides to get creative with its responses.
+And the best part? This isn't just about making your code prettier. This is about building reliable systems that don't fall apart the moment your LLM tries to get creative with its responses - since by construction it cant generate anything outside of the schema we provided it.
 
 ## The Real Magic: Scaling This Up
 
-Imagine building a product where every API call needs structured data from an LLM. Without proper constraints, you're basically running a digital Russian roulette. With Outlines and the power of constrained generation we discussed in our coalescence post, you're running a Swiss watch factory. The difference? About 3 AM calls from your DevOps team.
+Imagine building a product where every API call needs structured data from an LLM. Without proper constraints, you're basically running a digital Russian roulette. With Outlines / Guidance / Formatron etc. using the power of constrained generation, you're running a Swiss watch factory.
 
 ## What's Next?
 
@@ -99,7 +100,7 @@ Watch the video above to see this transformation in action. We'll walk through e
 
 Remember: In the world of LLMs, structure isn't just about keeping things neat - it's about turning possibility into probability, and probability into certainty. Now go forth and generate some JSON! 🚀
 
-P.S. If you're still using regex to parse LLM outputs, first read our [theory deep dive](https://shwetank-kumar.github.io/posts/constrained-generation/) on the subject, then we need to talk. Seriously. 😉
+P.S. If you're still using regex or Pydantic to parse LLM outputs, first read our [theory deep dive](https://shwetank-kumar.github.io/posts/constrained-generation/) on the subject, then we need to talk. Seriously. 😉
 
 
 
