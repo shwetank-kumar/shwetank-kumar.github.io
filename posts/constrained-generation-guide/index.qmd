@@ -18,7 +18,7 @@ In this guide (and the accompanying video), we're diving deep into the world of 
 <div class="video-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/_fSphczt7_g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<br><br>
+<br>
 
 <iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form"></iframe>   
 
