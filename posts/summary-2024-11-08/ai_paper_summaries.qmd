@@ -1,7 +1,7 @@
 ---
 title: "🌙 AI Afterhours: Top AI Papers for Nov 01 - Nov 07, 2024"
 author: "Shwetank Kumar"
-date: "Nov 8, 2024"
+date: "Nov 7, 2024"
 categories: [Sparse Autoencoders, GUI Grounding, Reinforcement Learning, Large Language Models, Multimodal Large Language Models, Retrieval-Augmented Generation (RAG), Android autonomous agents]
 # draft: true
 page-layout: article
