@@ -1,0 +1,47 @@
+---
+title: "🌙 AI Afterhours: Top AI Papers for Nov 01 - Nov 07, 2024"
+author: "Shwetank Kumar"
+date: "Nov 8, 2024"
+categories: [Sparse Autoencoders, GUI Grounding, Reinforcement Learning, Large Language Models, Multimodal Large Language Models, Retrieval-Augmented Generation (RAG), Android autonomous agents]
+# draft: true
+page-layout: article
+---
+
+Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let's dive into the most exciting AI research from November 01 to November 07, 2024. 
+
+<iframe src="https://podcasters.spotify.com/pod/show/shwetankkumar/embed" height="200px" width="400px" frameborder="0" scrolling="no"></iframe>
+
+<iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form"></iframe>   
+
+**HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems** introduces a fascinating improvement to how AI systems use external knowledge. Instead of stripping away structure and treating everything as plain text, they show that keeping HTML structure helps AI better understand and use the information. Their approach reduces the size of retrieved content from 1.6M tokens to just 4K while improving accuracy by 4-12%. This is particularly interesting for anyone building systems that need to work with web content - imagine search engines or chatbots that can better understand structured content from the web rather than treating everything as a wall of text.
+
+[arXiv:2411.02959v1](https://arxiv.org/pdf/2411.02959v1) 👍 49
+
+**AndroidLab: Training and Systematic Benchmarking of Android Autonomous Agents** presents a comprehensive framework for developing AI that can actually use Android phones. Their system achieved a 21.5% success rate with text-only models and 13.3% with multimodal models (ones that can see and interact with the screen). While these numbers might seem low, they represent a significant step forward - their best models are now performing at levels comparable to GPT-4 and better than Gemini-1.5-Pro. Think about the implications: we're getting closer to having AI assistants that can actually help users navigate complex mobile interfaces or automate repetitive tasks on phones.
+
+[arXiv:2410.24024v2](https://arxiv.org/pdf/2410.24024v2) 👍 45
+
+**OS-ATLAS: A Foundation Action Model for Generalist GUI Agents** tackles the challenge of creating AI that can interact with graphical user interfaces across different platforms. Their model achieves an impressive 85.7% accuracy on web interfaces and 58.5% on desktop applications - representing a 20% and 16% improvement over previous best results respectively. This is a big deal for anyone interested in automation or accessibility as it will enable AI assistants that can reliably help users navigate complex software interfaces or automate repetitive tasks across different types of applications.
+
+[arXiv:2410.23218v1](https://arxiv.org/pdf/2410.23218v1) 👍 43
+
+**OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models** shares the complete recipe for building high-performing AI coding assistants. They're not just sharing code - they're releasing the full training data (960 billion tokens across 607 programming languages), complete processing pipeline, and detailed protocols. Their model achieves a score of 94.5 on HumanEval, a key coding benchmark. This level of transparency is rare in AI research and could accelerate progress in making better coding assistants accessible to everyone, not just those with massive compute resources.
+
+[arXiv:2411.04905v1](https://arxiv.org/pdf/2411.04905v1) 👍 41
+
+**Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse Autoencoders** dives deep into understanding how modern AI image generation actually works. Using sparse autoencoders, they reveal how different parts of the model specialize in handling different aspects of image generation, with specific components showing causal strengths of up to 0.71 in their specialized areas. Better understanding of these models will lead to more controllable and efficient image generation, potentially reducing the computational resources needed for high-quality AI art.
+
+[arXiv:2410.22366v1](https://arxiv.org/pdf/2410.22366v1) 👍 38
+
+**Both Text and Images Leaked! A Systematic Analysis of Multimodal LLM Data Contamination** reveals concerning insights about data leakage in AI models that work with both text and images. Their detection framework, MM-Detect, found contamination levels of up to 8.7% in certain tasks, with the issue affecting both open-source and proprietary models. Data contamination is the a big issues for developing better models since it makes their evaluation unreliable. This paper provides crucial information for anyone deploying these systems in production environments.
+
+[arXiv:2411.03823v1](https://arxiv.org/pdf/2411.03823v1) 👍 36
+
+**Large Language Models Orchestrating Structured Reasoning Achieve Kaggle Grandmaster Level** describes an AI system that can compete in data science competitions at an expert level. The system achieved a 92.5% success rate across various types of competitions and earned 6 gold medals, placing it in the top 38% of nearly 6,000 human competitors. This demonstrates how AI could automate significant portions of the data science workflow, potentially making sophisticated data analysis more accessible to non-experts. You will need to of course ensure that the cost of getting it wrong 7.5% of the times is not very high! 
+
+[arXiv:2411.03562v1](https://arxiv.org/pdf/2411.03562v1) 👍 32
+
+**WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning** introduces a new way to train AI systems that interact with web interfaces. Using their approach, a relatively modest model (Llama-3.1-8B) achieved 42.4% accuracy on web tasks, outperforming even GPT-4-Turbo in specific scenarios like Gitlab (46.7%) and CMS (54.3%). This is particularly exciting because it shows how smaller, more efficient models can be trained to match or exceed the performance of much larger systems in specific domains.
+
+[arXiv:2411.02337v1](https://arxiv.org/pdf/2411.02337v1) 👍 30
+
