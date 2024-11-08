@@ -10,7 +10,7 @@
 <atom:link href="https://shwetank-kumar.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Shwetank Kumar&#39;s personal website</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 08 Nov 2024 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 07 Nov 2024 08:00:00 GMT</lastBuildDate>
 <item>
   <title>🌙 AI Afterhours: Top AI Papers for Nov 01 - Nov 07, 2024</title>
   <dc:creator>Shwetank Kumar</dc:creator>
@@ -54,7 +54,7 @@
   <category>Retrieval-Augmented Generation (RAG)</category>
   <category>Android autonomous agents</category>
   <guid>https://shwetank-kumar.github.io/posts/summary-2024-11-08/ai_paper_summaries.html</guid>
-  <pubDate>Fri, 08 Nov 2024 08:00:00 GMT</pubDate>
+  <pubDate>Thu, 07 Nov 2024 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>From JSON Chaos to Structure: Your Practical Guide to Taming LLM Output 🎯</title>
