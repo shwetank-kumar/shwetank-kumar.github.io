@@ -52,3 +52,5 @@ Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers 
 **Framer** introduces an interactive way to create smooth transitions between images, essentially letting users control how one image morphs into another. The system achieved the best FVD score (a measure of video quality) among all tested approaches (25.04 compared to competitors' 24.16-27.04) and was overwhelmingly preferred by human raters (90.5% versus 1.2-4.4% for alternatives). The system's "autopilot" mode can automatically handle many cases, but users can still step in to guide the process when needed. This could revolutionize video editing and special effects, making complex animation tasks more accessible to creators.
 
 [arxiv.org/pdf/2410.18978v1](https://arxiv.org/pdf/2410.18978v1) 👍 22
+
+That’s a wrap for this week’s AI Afterhours!

@@ -1,0 +1,59 @@
+Date: 14-11-2024
+Title,Upvotes
+MagicQuill: An Intelligent Interactive Image Editing System,26
+LLaMA-Mesh: Unifying 3D Mesh Generation with Language Models,17
+Cut Your Losses in Large-Vocabulary Language Models,11
+ClinicalBench: Can LLMs Beat Traditional ML Models in Clinical Prediction?,9
+Hermes: A Large Language Model Framework on the Journey to Autonomous Networks,2
+Sharingan: Extract User Action Sequence from Desktop Recordings,2
+Inconsistencies In Consistency Models: Better ODE Solving Does Not Imply Better Samples,1
+
+Date: 13-11-2024
+Title,Upvotes
+Large Language Models Can Self-Improve in Long-context Reasoning,42
+EgoVid-5M: A Large-Scale Video-Action Dataset for Egocentric Video Generation,16
+Direct Preference Optimization Using Sparse Feature-Level Constraints,12
+CamemBERT 2.0: A Smarter French Language Model Aged to Perfection,8
+PerceiverS: A Multi-Scale Perceiver with Effective Segmentation for Long-Term Expressive Symbolic Music Generation,6
+Can sparse autoencoders be used to decompose and interpret steering vectors?,6
+Motion Control for Enhanced Complex Action Video Generation,0
+
+Date: 12-11-2024
+Title,Upvotes
+SAMPart3D: Segment Any Part in 3D Objects,22
+Stronger Models are NOT Stronger Teachers for Instruction Tuning,19
+JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation,18
+BLIP3-KALE: Knowledge Augmented Large-Scale Dense Captions,17
+Wavelet Latent Diffusion (Wala): Billion-Parameter 3D Generative Model with Compact Wavelet Encodings,11
+Acoustic Volume Rendering for Neural Impulse Response Fields,4
+Hardware and Software Platform Inference,3
+
+Date: 11-11-2024
+Title,Upvotes
+Add-it: Training-Free Object Insertion in Images With Pretrained Diffusion Models,53
+OmniEdit: Building Image Editing Generalist Models Through Specialist Supervision,42
+M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework,42
+Chinese SimpleQA: A Chinese Factuality Evaluation for Large Language Models,33
+Edify Image: High-Quality Image Generation with Pixel Space Laplacian Diffusion Models,27
+GitChameleon: Unmasking the Version-Switching Capabilities of Code Generation Models,20
+Autoregressive Models in Vision: A Survey,12
+Game-theoretic LLM: Agent Workflow for Negotiation Games,6
+Ablation is Not Enough to Emulate DPO: How Neuron Dynamics Drive Toxicity Reduction,5
+Energy Efficient Protein Language Models: Leveraging Small Language Models with LoRA for Controllable Protein Generation,4
+NeKo: Toward Post Recognition Generative Correction Large Language Models with Task-Oriented Experts,4
+Counterfactual Generation from Language Models,4
+KMM: Key Frame Mask Mamba for Extended Motion Generation,3
+Golden Touchstone: A Comprehensive Bilingual Benchmark for Evaluating Financial Large Language Models,3
+
+10-11-2024
+Title,Upvotes
+LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation,28
+Language Models are Hidden Reasoners: Unlocking Latent Reasoning Capabilities via Self-Rewarding,22
+Balancing Pipeline Parallelism with Vocabulary Parallelism,18
+StdGEN: Semantic-Decomposed 3D Character Generation from Single Images,13
+Parameter-Efficient Fine-Tuning of Large Language Models for Unit Test Generation: An Empirical Study,9
+DELIFT: Data Efficient Language model Instruction Fine Tuning,8
+CAD-MLLM: Unifying Multimodality-Conditioned CAD Generation With MLLM,7
+RaVL: Discovering and Mitigating Spurious Correlations in Fine-Tuned Vision-Language Models,5
+The Semantic Hub Hypothesis: Language Models Share Semantic Representations Across Languages and Modalities,4
+Improving the detection of technical debt in Java source code with an enriched dataset,2

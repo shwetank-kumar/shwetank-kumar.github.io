@@ -45,3 +45,4 @@ Welcome to this week's AI Afterhours! Your weekly digest of most upvoted papers 
 
 [arXiv:2411.02337v1](https://arxiv.org/pdf/2411.02337v1) 👍 30
 
+That’s a wrap for this week’s AI Afterhours!
