@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Shwetank Kumar">
-<meta name="dcterms.date" content="2024-10-31">
+<meta name="dcterms.date" content="2024-11-14">
 
-<title>🌙 AI Afterhours: Top AI Papers for Oct 25 - Oct 31, 2024 – Shwetank Kumar</title>
+<title>🌙 AI Afterhours: Top AI Papers for Nov 11 - Nov 14, 2024 – Shwetank Kumar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,18 +125,16 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">🌙 AI Afterhours: Top AI Papers for Oct 25 - Oct 31, 2024</h1>
+      <h1 class="title">🌙 AI Afterhours: Top AI Papers for Nov 11 - Nov 14, 2024</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Multi-Agent Systems</div>
-                <div class="quarto-category">Visual-Temporal Context Prompting</div>
-                <div class="quarto-category">Machine Learning</div>
-                <div class="quarto-category">Long-Context Alignment</div>
-                <div class="quarto-category">Conversational AI</div>
-                <div class="quarto-category">Large Language Models (LLMs)</div>
-                <div class="quarto-category">Video Interpolation</div>
-                <div class="quarto-category">Text-to-Speech Synthesis</div>
-                <div class="quarto-category">Contrastive Learning</div>
                 <div class="quarto-category">Large Language Models</div>
+                <div class="quarto-category">Natural Language Processing</div>
+                <div class="quarto-category">Diffusion Models</div>
+                <div class="quarto-category">3D Object Segmentation</div>
+                <div class="quarto-category">Laplacian Diffusion Models</div>
+                <div class="quarto-category">Multimodal Document Understanding</div>
+                <div class="quarto-category">Language Models</div>
+                <div class="quarto-category">Image Editing</div>
               </div>
                   </div>
   </div>
@@ -154,7 +152,7 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 31, 2024</p>
+        <p class="date">November 14, 2024</p>
       </div>
     </div>
     
@@ -173,31 +171,29 @@ gtag('config', 'G-WYRPY1S3G7', { 'anonymize_ip': true});
 
 
 
-<p>Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let’s dive into the most exciting AI research from October 25 to October 31, 2024.</p>
-<iframe src="https://podcasters.spotify.com/pod/show/shwetankkumar/embed" height="200px" width="400px" frameborder="0" scrolling="no">
-</iframe>
+<p>Welcome to this week’s AI Afterhours! Your weekly digest of most upvoted papers in AI. Below is gist of the results, how they got them, and why you should care. With that, let’s dive into the most exciting AI research from November 11 to November 14, 2024.</p>
+<blockquote class="blockquote">
+<p><strong>Programming note 1:</strong> The audio version is on pause this week. If you typically listen to these summaries rather than read them, drop me a note - your feedback will help me prioritize bringing back the audio format.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Programming note 2:</strong> Heads up - AI Afterhours will be taking a brief hiatus as I’ll be away until early December. When we return, I’ll have a special edition covering all the fascinating AI developments that occurred during this period. Technology moves quickly, and I’m looking forward to catching you up on everything we missed.</p>
+</blockquote>
 <iframe src="../../subscribe.html" width="600" height="400" class="newsletter-form">
 </iframe>
-<p><strong>CLEAR</strong> tackles a fascinating challenge in AI ethics - helping AI systems “forget” specific individuals across both text and images. Think of it as implementing a digital “right to be forgotten.” The researchers created a benchmark with 200 fictional authors and nearly 8,000 test cases to evaluate how well different methods could selectively remove knowledge about specific people while preserving everything else. They found that a simple mathematical trick - using L1 regularization on specific neural network weights - could significantly reduce unwanted forgetting of other information, which has been a major hurdle in this field. This work is particularly relevant as regulations around AI and privacy rights continue to evolve, potentially requiring AI systems to “unlearn” specific data on request.</p>
-<p><a href="https://arxiv.org/pdf/2410.18057v1">arxiv.org/pdf/2410.18057v1</a> 👍 174</p>
-<p><strong>Breaking the Memory Barrier</strong> introduces a clever solution to one of the key bottlenecks in training large AI models - GPU memory limitations during contrastive learning. The researchers developed “Inf-CL,” which breaks down massive computations into smaller, manageable chunks that can be processed sequentially. The results are impressive: they reduced memory usage by 78 times for medium-sized batches and 281 times for larger ones, while maintaining competitive processing speeds. Most importantly, they managed to train with batch sizes of up to 12 million samples on 32 A800 GPUs - nearly 10 times more than previous methods. This breakthrough could significantly accelerate the development of self-supervised learning systems and dense text retrieval models.</p>
-<p><a href="https://arxiv.org/pdf/2410.17243v1">arxiv.org/pdf/2410.17243v1</a> 👍 46</p>
-<p><strong>CORAL</strong> introduces a comprehensive way to evaluate AI systems that combine conversation abilities with fact retrieval. The researchers created a benchmark of 8,000 diverse information-seeking conversations to test how well these systems can find relevant information and generate accurate responses. Interestingly, they found that fine-tuned open-source language models outperformed commercial closed-source ones in retrieval accuracy by 10%. They also discovered that while longer conversation histories generally improved performance, they could introduce redundant information. This work is crucial for developing more reliable AI assistants that can engage in factual conversations while accurately citing their sources.</p>
-<p><a href="https://arxiv.org/pdf/2410.23090v1">arxiv.org/pdf/2410.23090v1</a> 👍 35</p>
-<p><strong>Can Knowledge Editing Really Correct Hallucinations?</strong> brings some sobering news about our ability to fix AI models that make things up. The researchers developed HalluEditBench, a new way to test how well we can correct false information in large language models. Their findings suggest that current methods for fixing these hallucinations might be less effective than previously thought, with performance varying significantly across different domains and models. While some methods like ICE and GRACE showed promise with efficacy scores above 0.80, they found that fixing one type of error could sometimes create new problems elsewhere. This work is crucial for understanding the limitations of current approaches to making AI systems more truthful.</p>
-<p><a href="https://arxiv.org/pdf/2410.16251v2">arxiv.org/pdf/2410.16251v2</a> 👍 35</p>
-<p><strong>LOGO</strong> presents a new approach to help large language models better handle long pieces of text. The method achieved a 5-point improvement in average scores on standard benchmarks and managed to match GPT-4’s performance on real-world tasks involving long text. What’s particularly interesting is that LOGO can help smaller models work with longer texts more effectively than other methods, potentially making it easier to deploy more efficient AI systems. This could be especially valuable for applications like document analysis or conversation systems that need to maintain context over long exchanges.</p>
-<p><a href="https://arxiv.org/pdf/2410.18533v1">arxiv.org/pdf/2410.18533v1</a> 👍 34</p>
-<p><strong>ROCKET-1</strong> demonstrates an impressive advance in getting AI to interact with open-world environments, particularly in Minecraft. Using a combination of visual processing and action planning, their system achieved remarkable success rates: 91% for placing doors, 75% for wool dyeing, and even 100% for basic tool crafting tasks. Think of it as teaching AI to understand and interact with its environment the same way humans do - by seeing, understanding context, and taking appropriate actions. This work has significant implications for robotics and autonomous systems that need to operate in unstructured real-world environments.</p>
-<p><a href="https://arxiv.org/pdf/2410.17856v1">arxiv.org/pdf/2410.17856v1</a> 👍 33</p>
-<p><strong>ScaleQuest</strong> tackles the challenge of teaching AI systems to reason better through a clever data generation approach. Instead of relying on expensive human-created examples, they used smaller AI models to generate high-quality reasoning problems. The results were impressive: improvements of 29.2% to 46.4% on the MATH dataset compared to baseline models, and a 5.6% to 11.5% improvement over previous best results. They managed to generate 1 million question-answer pairs, showing how we might be able to scale up AI training data creation without prohibitive costs. This could be a game-changer for developing more capable AI systems, especially in domains requiring complex reasoning.</p>
-<p><a href="https://arxiv.org/pdf/2410.18693v1">arxiv.org/pdf/2410.18693v1</a> 👍 32</p>
-<p><strong>AgentStore</strong> introduces a fascinating new way to make AI systems better at handling computer tasks by combining multiple specialized agents. Think of it as an app store, but for AI agents - each specializing in different tasks but working together seamlessly. The system more than doubled the success rate on the OSWorld benchmark (from 11.21% to 23.85%) and demonstrated a 75% success rate when using their novel AgentToken strategy. With over 20 specialized agents integrated, this work shows how we might build more capable AI assistants by combining multiple experts rather than trying to create a single do-it-all system.</p>
-<p><a href="https://arxiv.org/pdf/2410.18603v1">arxiv.org/pdf/2410.18603v1</a> 👍 25</p>
-<p><strong>SALAD</strong> brings improvements to AI-generated speech synthesis through a new approach called per-token latent diffusion. The system achieved an impressive intelligibility error rate of just 0.739% compared to baseline approaches that had error rates of 1.231% to 2.298%. What’s particularly interesting is how well it handles challenging cases like accented speech and poor-quality recordings. This could lead to more natural-sounding AI voices and better text-to-speech systems, particularly important for accessibility tools and virtual assistants.</p>
-<p><a href="https://arxiv.org/pdf/2410.16048v1">arxiv.org/pdf/2410.16048v1</a> 👍 22</p>
-<p><strong>Framer</strong> introduces an interactive way to create smooth transitions between images, essentially letting users control how one image morphs into another. The system achieved the best FVD score (a measure of video quality) among all tested approaches (25.04 compared to competitors’ 24.16-27.04) and was overwhelmingly preferred by human raters (90.5% versus 1.2-4.4% for alternatives). The system’s “autopilot” mode can automatically handle many cases, but users can still step in to guide the process when needed. This could revolutionize video editing and special effects, making complex animation tasks more accessible to creators.</p>
-<p><a href="https://arxiv.org/pdf/2410.18978v1">arxiv.org/pdf/2410.18978v1</a> 👍 22</p>
+<p><strong>“Add-it”</strong> tackles one of the most challenging problems in image editing - inserting objects into existing images without requiring additional training. Think of those times you wished you could just drag and drop an object into a photo and have it look natural. That’s exactly what this system does, using something called weighted extended self-attention (imagine a sophisticated way of ensuring new objects fit naturally into their surroundings). The results are impressive - achieving an 83% score on their new affordance benchmark and winning 80% of human evaluations against existing methods. What makes this particularly interesting is that it works with pre-trained models, meaning we could see this technology integrated into consumer photo editing tools sooner rather than later.</p>
+<p><a href="https://arxiv.org/pdf/2411.07232v2">arXiv:2411.07232v2</a> 👍53</p>
+<p><strong>“OmniEdit”</strong> builds on this theme by creating what they call a “generalist” image editor that learns from specialist models. Think of it as assembling a dream team of image editing experts, each specialized in different tasks, and then teaching a single model to learn from all of them. The approach works remarkably well, scoring 8.38 on their technical VIEScore metric and 7.06 in human evaluations. The practical implications are significant - instead of having different tools for different editing tasks, we might soon have a single, highly capable editor that can handle everything from style transfer to object manipulation.</p>
+<p><a href="https://arxiv.org/pdf/2411.07199v1">arXiv:2411.07199v1</a> 👍42</p>
+<p><strong>“Large Language Models Can Self-Improve in Long-context Reasoning”</strong> presents SEALONG, a method that helps AI models get better at handling long pieces of text. The interesting part? The model improves itself by generating multiple possible answers and then picking the most consistent one - similar to how humans might solve a complex problem by considering different approaches. The results are impressive: Llama-3.1-8B-Instruct saw a 4.2 point improvement, and when using 128 samples, the system outperformed traditional methods by 11.5% on MuSiQue and 5% on both HotpotQA and 2WikiMultihopQA. This could be a game-changer for applications requiring deep understanding of lengthy documents, from legal analysis to research synthesis.</p>
+<p><a href="https://arxiv.org/pdf/2411.08147v1">arXiv:2411.08147v1</a> 👍42</p>
+<p><strong>“Language Models are Hidden Reasoners”</strong> introduces LaTRO, a fascinating approach to making AI systems better at reasoning without needing external guidance. Think of it as teaching an AI to be its own critic and coach. The results speak for themselves: models using this approach showed a 12.5% improvement over base models and 9.6% over supervised fine-tuning on the GSM8K dataset. What’s particularly exciting is that this could lead to AI systems that continuously improve their problem-solving abilities, much like how humans learn from experience.</p>
+<p><a href="https://arxiv.org/pdf/2411.04282v1">arXiv:2411.04282v1</a> 👍22</p>
+<p><strong>“Edify Image”</strong> brings a new approach to generating high-quality images using what’s called Laplacian diffusion models. Imagine building an image like a painter, starting with broad strokes and progressively adding finer details. The system achieves impressive technical metrics - a peak signal-to-noise ratio of 35.6 dB and a structural similarity index of 0.95. What makes this particularly exciting is its ability to handle everything from text-to-image generation to 4K upscaling and 360° HDR panoramas. This could revolutionize how we create and enhance images across industries, from entertainment to professional photography.</p>
+<p><a href="https://arxiv.org/pdf/2411.07126v1">arXiv:2411.07126v1</a> 👍27</p>
+<p><strong>“M-Longdoc”</strong> tackles the challenge of helping AI understand long, complex documents with both text and images. The researchers created a benchmark dataset with 851 samples and developed a new approach that improved response accuracy by 4.6% compared to existing models. This has huge implications for fields like legal research, academic literature review, and business intelligence where handling lengthy, multimodal documents is crucial.</p>
+<p><a href="https://arxiv.org/pdf/2411.06176v1">arXiv:2411.06176v1</a> 👍42</p>
+<p><strong>“SAMPart3D”</strong> introduces a fascinating system for breaking down 3D objects into meaningful parts without needing predefined labels. The system achieved a 34.7% score on zero-shot semantic segmentation and 53.7% on class-agnostic part segmentation on their benchmark dataset. This could transform how we work with 3D models in everything from computer-aided design to robotics, making it easier to modify and understand complex 3D objects.</p>
+<p><a href="https://arxiv.org/pdf/2411.07184v1">arXiv:2411.07184v1</a> 👍22</p>
 <p>That’s a wrap for this week’s AI Afterhours!</p>
 
 
