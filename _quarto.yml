@@ -10,7 +10,7 @@ website:
       - text: "About"
         href: index.qmd
       - text: "Blog"
-        href: blog.qmd
+        href: https://aiafterhours.substack.com/
       - text: "Eggheadery"
         href: favorite-eggheads.qmd
       - icon: github
@@ -19,8 +19,6 @@ website:
         href: https://twitter.com/shwetankumar
       - icon: linkedin
         href: https://www.linkedin.com/in/shwetankkumar
-      - icon: rss
-        href: blog.xml
   google-analytics: "G-WYRPY1S3G7"
   search: false
   page-navigation: false

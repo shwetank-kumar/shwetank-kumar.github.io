@@ -33,7 +33,7 @@ I'm a physicist, engineering exec, investor. Here's my story:
 
 <div class="about-section">
 ## Tech I love working with:
-* PyTorch, Hugging Face, Langchain, Pydantic
+* PyTorch, Hugging Face
 * GCP, Snowflake, Bigquery
 * Anything that pushes the boundaries of what's possible with data 
 </div>
