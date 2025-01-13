@@ -11,8 +11,6 @@ website:
         href: index.qmd
       - text: "Blog"
         href: https://aiafterhours.substack.com/
-      - text: "Eggheadery"
-        href: favorite-eggheads.qmd
       - icon: github
         href: https://github.com/shwetank-kumar
       - icon: twitter
