@@ -9,49 +9,45 @@ twitter-card:
   card-style: summary
   creator: "@shwetankumar"
 ---
-
 <div class="about-content">
-
 <div class="about-section">
 ## Personal info in a nutshell
-I'm a physicist, engineering exec, investor. Here's my story:
-
+I'm a physicist who builds AI systems for a living. Here's my story:
 * Born and raised in NCR, India. Delhi native, I live in SF.
-* Got hooked on science early, did my B.Tech in EE from IIT, PhD in Applied Physics from Caltech.
-* Learned business by working at startups for 10+ years and getting MBA at Wharton.
-* I founded a bootstrapped company to help data teams optimize their Snowflake spend.
-* I enjoy building stuff for internet and physical systems using data and AI games.
+* Physicist by instinct, engineer by training. Caltech Applied Physics was my attempt to split the difference. It worked — mostly...
+* Spent years deploying AI at scale — petabytes of data, millions of users — at Orbital Insight, IBM Research, Intel, and others.
+* Now Chief Scientist at [EnCharge AI](https://enchargeai.com), a Series B startup building analog in-memory computing chips that deliver 10-20x energy efficiency over GPUs for AI inference.
+* Write [AI Afterhours](https://aiafterhours.substack.com) — a newsletter about the full stack of AI efficiency.
 </div>
-
 <div class="about-section">
 ## Some things I've done
-* Built AI systems that crunch petabytes of data across image, text, and tabular formats.
-* Scaled these systems to serve millions of customers simultaneously [1](achieve.com), [2](turo.com).
-* [Created systems](https://orbitalinsight.com/geospatial-technology) that use neural networks to analyze satellite imagery at planet scale.
+* Driving AI strategy on compute-focused workloads at EnCharge AI — leading benchmarking, model architecture evaluation, and optimization of video generation models through attention sparsity and caching techniques.
+* Built AI systems serving millions of users simultaneously, processing petabytes across image, text, and tabular data. [1](https://achieve.com), [2](https://turo.com).
+* [Created systems](https://orbitalinsight.com/geospatial-technology) that use neural networks to analyze satellite imagery at planet scale at Orbital Insight.
 * Led teams of 120+ [brilliant minds](https://www.fastcompany.com/3067492/why-orbital-insight-is-one-of-the-most-innovative-companies-of-201) in data science, engineering, and analytics.
 </div>
-
 <div class="about-section">
-## Tech I love working with:
-* PyTorch, Hugging Face
-* GCP, Snowflake, Bigquery
-* Anything that pushes the boundaries of what's possible with data 
+## My current hypotheses
+* The AI energy crisis is already underway — we're just not calling it that yet. Within this decade, power constraints will become the primary bottleneck on AI scaling, ahead of compute and data.
+* Published efficiency gains are systematically overstated. Benchmark conditions and production conditions diverge enough that most claimed improvements fail to transfer at real utilization rates.
+* The next competitive moat in AI infrastructure will belong to teams that can co-design hardware and software simultaneously — not hand off between them.
+* Quantization is underutilized as a research lever and over-relied on as a deployment fix. The gap between what's theoretically achievable and what ships in production is large and largely unacknowledged.
+* Transformer attention has a fundamental scaling problem that architectural iteration alone won't resolve. The field will be forced to confront this sooner than current roadmaps assume.
+* If you measure AI progress in gigawatts, you are measuring the wrong thing. Energy consumed per useful inference operation is the metric that will matter.
+* Production performance and benchmark performance are measuring different systems. Most efficiency claims don't survive the translation.
+* Physics sets the floor on energy requirements regardless of software cleverness. The joules required are the joules required — and that constraint will increasingly shape what gets built.
 </div>
-
 <div class="about-section">
-## Investing:
-* My current areas of interest are: AI, infrastructure, open source, physical systems / frontier tech.
-* Some companies I have invested in - Comet, Startree, Inference, Nimble, Turnstile, Dandelion...
-* I am a founding member and part of the steering committee at Invest in Data where I co-invest with a group of ~50 other Data execs.
-* We vet and invest on a quarterly cadence. If you have an exciting AI project or a game-changing startup idea? Let's talk: shwetank.kumar@gmail.com.
+## Tech I work with
+* PyTorch, model architectures, quantization (PTQ/QAT), hardware-software co-design
+* Analog in-memory computing, MAC operations, attention profiling, caching methods, anything to make compute-dominated workloads go brrrrr on arbitrary accelerators
+* Video generation models: Wan 2.1, LTX-Video, Flux and related architectures
 </div>
-
 <div class="about-section">
-## Where you can find me:
-* Writing about AI musings, tech & leadership, and data science on this blog
-* Sharing insights on [LinkedIn](https://www.linkedin.com/in/shwetankkumar/)
+## Where you can find me
+* Writing about AI inference, energy efficiency, and hardware at [AI Afterhours](https://aiafterhours.substack.com) — my Substack newsletter
+* Sharing shorter takes on [LinkedIn](https://www.linkedin.com/in/shwetankkumar/)
 * Tinkering with code on [GitHub](https://github.com/shwetank-kumar)
-* Speaking on panels about the future of AI and data
+* Reach me at shwetank.kumar@gmail.com
 </div>
-
 </div>
